@@ -26,11 +26,10 @@ jobs:
   deploy:
     executor: heroku/default
     steps:
-      - checkout
-      - run:
-          name: Deploy Main to Heroku
-          command: |
-            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git main
+      - attach_workspace:
+          at: ~/project
+      - heroku/deploy-via-git:
+          force: true
 workflows:
   test_my_app:
     jobs:
