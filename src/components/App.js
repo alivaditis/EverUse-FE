@@ -1,5 +1,4 @@
 import { gql, useQuery, useMutation } from '@apollo/client';
-import './App.css';
 
 function App() {
 
