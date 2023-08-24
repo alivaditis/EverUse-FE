@@ -7,15 +7,30 @@ function App() {
   //  an example of a get query
   const GET_POST = gql`
     query {
-      post(id: 1) {
-        id
-        title
-        body
+      posts {
+        data {
+          id
+          title
+          body
+        }
       }
     }`;
 
   const {loading, error, data} = useQuery(GET_POST)
-  {!loading && console.log(data)}
+  
+  // using data to render posts
+  let posts
+
+  if (!loading) {
+    console.log('data:', data)
+    posts = data.posts.data.map(post => {
+      return <div key={post.id}>
+        <h1>{post.title}</h1>
+        <p>{post.body}</p>
+      </div>
+    })
+  }
+
 
   // an example of a post
   const CREATE_POST = gql`
@@ -32,7 +47,7 @@ function App() {
     body: "Some interesting content."
   };
 
-  const [createPost, { loading: mutationLoading, error: mutationError, data: mutationData }] = useMutation(CREATE_POST);
+  const [createPost] = useMutation(CREATE_POST);
 
   const handleCreatePost = () => {
     createPost({
@@ -47,11 +62,10 @@ function App() {
     <div className="App">
       {!loading && 
         <>
-          <h1>{data.post.title}</h1>
-          <p>{data.post.body}</p>
           <button onClick={handleCreatePost}>
             create post
           </button>
+          {posts}
         </>
       }
     </div>
