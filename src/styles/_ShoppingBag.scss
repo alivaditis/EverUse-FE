@@ -1,0 +1,70 @@
+@use 'variables' as v;
+
+p {
+  font-size: 10px
+}
+
+.bag {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: v.$primary-background-color;
+  min-height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+.bag__items {
+  width: 95%;
+  border-top: v.$secondary-accent-color;
+  border-bottom: v.$secondary-accent-color;
+  border-radius: 3px;
+}
+
+.item {
+  background-color: v.$ternary-background-color;
+  margin: 5px;
+  display: flex;
+  padding: 5px;
+  justify-content: space-between;
+}
+
+.item__title {
+  margin: 0;
+}
+
+.item__img {
+  height: 50px;
+  // margin: 5px;
+}
+
+.item__details {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;
+}
+
+.item__counter {
+  display: flex;
+  align-items: center;
+}
+
+.bag__summary {
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+}
+
+.bag__subtotal {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bag__button {
+  align-self: center;
+  text-decoration: none;
+  background-color: v.$secondary-accent-color;
+  padding: 1rem;
+  border-radius: 30px;
+  color: v.$primary-text-color;
+}
