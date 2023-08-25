@@ -1,4 +1,4 @@
-import { useQuery, useMutation } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 import { GET_ALL_ITEMS } from '../api';
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
     <div className="App">
       {!loading && 
         <>
-          {allItems}
+          {!error && allItems}
         </>
       }
     </div>
