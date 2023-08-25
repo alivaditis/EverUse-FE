@@ -5,13 +5,11 @@
   background-position: 10% center;
   margin: 0;
   padding: 0;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  // align-items: center;
   .landing__header {
-    // border: solid 1px white;
     height: 18rem;
     display: flex;
     flex-direction: column;

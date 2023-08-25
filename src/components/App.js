@@ -1,6 +1,7 @@
 import { useQuery } from '@apollo/client';
 import { GET_ALL_ITEMS } from '../api';
 import Landing from './Landing';
+import Products from './Products';
 import '../styles/input.css';
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
       {!loading && 
         <>
           <Landing />
+          <Products />
           {/* {!error && allItems} */}
         </>
       }
