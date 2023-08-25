@@ -19,11 +19,6 @@ jobs:
           root: ~/project
           paths:
             - .
-  test:
-    - cypress/run:
-      cypress-command: npx cypress run --browser chrome
-      install-browsers: true
-      start-command: npm run start:dev
   deploy:
     executor: heroku/default
     steps:
@@ -34,10 +29,9 @@ jobs:
 workflows:
   test_my_app:
     jobs:
-      - test
-      - build:
-          requires:
-            - test
+      - cypress/run:
+          start: npm start
+      - build
       - deploy:
           requires:
             - build # only deploy if the build_and_test job has completed
