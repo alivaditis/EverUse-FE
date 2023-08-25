@@ -22,6 +22,7 @@ function App() {
     <div className="App">
       {!loading && 
         <>
+          <h1>Remove this line once writing code.</h1>
           {!error && allItems}
         </>
       }
