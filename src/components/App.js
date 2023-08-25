@@ -6,15 +6,16 @@ function App() {
 
   let allItems
 
-  if (!loading) {
+  if (!loading && !error) {
     console.log('data:', data)
-    allItems = data.queryItems.map(item => {
-      return <div>
+    allItems = data.products.map(item => {
+      return (
+      <div key={item.id} id={item.id}>
         <h1>{item.name}</h1>
         <p>{item.description}</p>
         <p>{item.color}</p>
         <p>{item.price}</p>
-      </div>
+      </div>)
     })
   }
 
