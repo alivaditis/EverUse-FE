@@ -8,22 +8,25 @@ body {
 }
 
 .landing {
-  background-image: url("https://images.unsplash.com/photo-1461301214746-1e109215d6d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80");
+  background-image: url("../images/landing-bg.png");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: 10% center;
   margin: 0;
   padding: 0;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
 }
 .landing .landing__header {
-  border: solid 1px white;
+  height: 18rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 .landing h1 {
-  font-size: 3rem;
+  font-size: 2.7rem;
+  margin: 1rem;
   color: white;
 }/*# sourceMappingURL=input.css.map */

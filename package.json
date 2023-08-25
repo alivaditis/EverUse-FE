@@ -40,6 +40,7 @@
     ]
   },
   "devDependencies": {
-    "cypress": "^12.17.4"
+    "cypress": "^12.17.4",
+    "sass": "^1.66.1"
   }
 }
