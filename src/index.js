@@ -10,7 +10,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 const client = new ApolloClient({
   // uri is going to change
-  uri: 'https://graphqlzero.almansi.me/api',
+  uri: 'https://88b2389c-c16e-4bf8-9ab2-202e67a99183.mock.pstmn.io/graphql',
   cache: new InMemoryCache(),
 });
 
