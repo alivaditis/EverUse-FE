@@ -2,7 +2,7 @@ version: 2.1
 
 orbs:
   node: circleci/node@4.7
-  cypress: cypress-io/cypress@1
+  cypress: cypress-io/cypress@3
   heroku: circleci/heroku@1.2.6
 
 jobs:
@@ -29,8 +29,9 @@ jobs:
 workflows:
   test_my_app:
     jobs:
-      - build
       - cypress/run
+          start-command: 'npm run start'
+      - build
       - deploy:
           requires:
             - build # only deploy if the build_and_test job has completed
