@@ -29,8 +29,9 @@ jobs:
 workflows:
   test_my_app:
     jobs:
-      - cypress/run
+      - cypress/run:
           start-command: 'npm run start'
+          cypress-command: 'npx cypress run'
       - build
       - deploy:
           requires:
