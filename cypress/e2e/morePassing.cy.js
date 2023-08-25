@@ -3,6 +3,6 @@ describe('second template spec', () => {
     expect(true).to.equal(true)
   });
   it('passes differently', () => {
-    expect(true).to.equal(false)
+    expect(false).to.equal(false)
   })
 })

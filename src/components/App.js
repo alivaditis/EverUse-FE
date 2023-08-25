@@ -22,7 +22,7 @@ function App() {
     <div className="App">
       {!loading && 
         <>
-          <h1>something is wrong</h1>
+          <h1>Remove this line once writing code.</h1>
           {!error && allItems}
         </>
       }
