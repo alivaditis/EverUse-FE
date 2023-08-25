@@ -2,10 +2,10 @@ import { gql } from '@apollo/client';
   
 const GET_ALL_ITEMS = gql`
 query getItems {
-  queryItems {
+  products {
       id
       name
-      productType
+      category
       image
       description
       color

@@ -8,7 +8,7 @@ function App() {
 
   if (!loading) {
     console.log('data:', data)
-    allItems = data.queryItems.map(item => {
+    allItems = data.products.map(item => {
       return <div>
         <h1>{item.name}</h1>
         <p>{item.description}</p>
