@@ -6,9 +6,6 @@ orbs:
   heroku: circleci/heroku@1.2.6
 
 jobs:
-  test:
-      cypress/run:
-          command: npx cypress run --headless --component
   build:
     executor: node/default
     steps:
@@ -32,10 +29,9 @@ jobs:
 workflows:
   test_my_app:
     jobs:
-      - test
-      - build:
-          requires:
-            - test
+      - cypress/run:
+          command: npx cypress run --headless --component
+      - build
       - deploy:
           requires:
             - build # only deploy if the build_and_test job has completed
