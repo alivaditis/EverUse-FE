@@ -30,7 +30,7 @@ workflows:
   test_my_app:
     jobs:
       - cypress/run:
-          command: npx cypress run --headless --parallel
+          command: npx cypress run --headless
       - build
       - deploy:
           requires:
