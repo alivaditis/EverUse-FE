@@ -1,30 +1,30 @@
 import { useQuery } from '@apollo/client';
 import { GET_ALL_ITEMS } from '../api';
+import { useEffect, useState } from 'react';
 
 function App() {
   const { loading, error, data } = useQuery(GET_ALL_ITEMS)
+  const [items, setItems] = useState([])
 
-  let allItems
+  useEffect(() => {
+    if (!items.length && !loading) {
+      console.log('here')
+      setItems(data.products)
+    }
+  }, [data]);
 
-  if (!loading && !error) {
-    console.log('data:', data)
-    allItems = data.products.map(item => {
-      return (
-      <div key={item.id} id={item.id}>
-        <h1>{item.name}</h1>
-        <p>{item.description}</p>
-        <p>{item.color}</p>
-        <p>{item.price}</p>
-      </div>)
-    })
-  }
+  useEffect(()=> {
+    console.log(data, "data")
+    console.log(items, "items")
+    
+  }, [items])
 
   return (
     <div className="App">
       {!loading && 
         <>
           <h1>Remove this line once writing code.</h1>
-          {!error && allItems}
+          {/* {!error && allItems} */}
         </>
       }
     </div>
