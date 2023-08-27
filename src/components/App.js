@@ -16,6 +16,7 @@ function App() {
       setItems(data.products)
     }
   }, [data]);
+  
 
 
   return (
@@ -24,7 +25,6 @@ function App() {
         <>
           <Landing />
           <Products items={items} />
-          {/* {!error && allItems} */}
         </>
       }
     </div>
