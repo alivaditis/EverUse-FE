@@ -11,6 +11,7 @@ query getItems {
       color
       quantity
       size
+      price
   }
 }`
 

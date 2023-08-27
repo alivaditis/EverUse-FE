@@ -13,15 +13,9 @@ function App() {
   
   useEffect(() => {
     if (!items.length && !loading) {
-      console.log('here')
       setItems(data.products)
     }
   }, [data]);
-
-  useEffect(()=> {
-    console.log(data, "data")
-    console.log(items, "items")
-  }, [items])
 
 
   return (
