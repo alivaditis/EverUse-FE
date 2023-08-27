@@ -48,33 +48,53 @@ body {
   cursor: pointer;
 }
 .landing .landing__header .landing__button:hover {
-  background-color: #ff6666;
+  background-color: #867C77;
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
   margin: 1rem;
+  min-width: 200px;
+  height: 300px;
   border: 1px solid #efefef;
   background: #fff;
 }
 .card .card__image {
   max-width: 100%;
-  max-height: 200px;
+  height: 200px;
   -o-object-fit: cover;
      object-fit: cover;
 }
 .card .card__info {
-  padding: 1rem;
   text-align: left;
 }
-.card .card__info .card__title {
+.card .card__info .card__name {
   font-size: 1.25rem;
-  font-weight: bold;
-  text-transform: uppercase;
+  margin: 1rem 0;
 }
 .card .card__info .card__price {
   font-size: 1.25rem;
+  margin: 0.5rem 0;
 }
 .card .card__info .card__description {
   font-size: 1rem;
   color: #999;
+}
+
+.products {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.products .products__header {
+  margin: 5rem 0;
+}
+.products .products__container {
+  display: flex;
+  max-width: 100%;
+  height: auto;
+  overflow-x: scroll;
 }/*# sourceMappingURL=input.css.map */
