@@ -11,22 +11,70 @@ body {
   background-image: url("../images/landing-bg.png");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: 10% center;
+  background-position: 0% center;
   margin: 0;
-  padding: 0;
+  padding: 2rem;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 .landing .landing__header {
-  height: 18rem;
+  height: 25rem;
   display: flex;
+  margin: 0;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
+  justify-content: flex-start;
 }
-.landing h1 {
-  font-size: 2.7rem;
-  margin: 1rem;
+.landing .landing__header h1 {
+  font-size: 2.5rem;
   color: white;
+  font-weight: 600;
+}
+.landing .landing__header .landing__button {
+  opacity: 0.8;
+  padding: 0;
+  width: 8rem;
+  height: 3rem;
+  background-color: #7B4734;
+  border: none;
+  border-radius: 0.5rem;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 1rem 2rem;
+  cursor: pointer;
+}
+.landing .landing__header .landing__button:hover {
+  background-color: #ff6666;
+}
+
+.card {
+  margin: 1rem;
+  border: 1px solid #efefef;
+  background: #fff;
+}
+.card .card__image {
+  max-width: 100%;
+  max-height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.card .card__info {
+  padding: 1rem;
+  text-align: left;
+}
+.card .card__info .card__title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.card .card__info .card__price {
+  font-size: 1.25rem;
+}
+.card .card__info .card__description {
+  font-size: 1rem;
+  color: #999;
 }/*# sourceMappingURL=input.css.map */

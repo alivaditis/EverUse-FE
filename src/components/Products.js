@@ -10,7 +10,6 @@ export default function Products({itemsForDisplay}) {
         <div className="card__info">
           <h2 className="card__name">{item.name}</h2>
           <p className="card__price">${item.price}</p>
-          <p className="card__description">{item.description}</p>
         </div>
       </div>
     )
