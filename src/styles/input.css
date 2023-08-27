@@ -51,39 +51,9 @@ body {
   background-color: #867C77;
 }
 
-.card {
-  display: flex;
-  flex-direction: column;
-  padding: 0.5rem;
-  margin: 1rem;
-  min-width: 200px;
-  height: 300px;
-  border: 1px solid #efefef;
-  background: #fff;
-}
-.card .card__image {
-  max-width: 100%;
-  height: 200px;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.card .card__info {
-  text-align: left;
-}
-.card .card__info .card__name {
-  font-size: 1.25rem;
-  margin: 1rem 0;
-}
-.card .card__info .card__price {
-  font-size: 1.25rem;
-  margin: 0.5rem 0;
-}
-.card .card__info .card__description {
-  font-size: 1rem;
-  color: #999;
-}
-
 .products {
+  font-family: "Roboto", sans-serif;
+  background-color: #F4F4F4;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -93,8 +63,43 @@ body {
   margin: 5rem 0;
 }
 .products .products__container {
-  display: flex;
   max-width: 100%;
-  height: auto;
-  overflow-x: scroll;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  margin: auto;
+  width: 13rem;
+  height: 16.5rem;
+  background: #fff;
+}
+.card .card__image {
+  max-width: 100%;
+  height: 11rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.card .card__info {
+  text-align: left;
+}
+.card .card__info .card__name {
+  font-size: 1.1rem;
+  font-weight: normal;
+  margin: 1rem 0;
+}
+.card .card__info .card__price {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+.card .card__info .card__description {
+  font-size: 1rem;
+  color: #999;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }/*# sourceMappingURL=input.css.map */

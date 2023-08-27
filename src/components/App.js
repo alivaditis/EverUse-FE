@@ -3,6 +3,7 @@ import { GET_ALL_ITEMS } from '../api';
 import { useState, useEffect } from 'react';
 import Landing from './Landing';
 import Products from './Products';
+
 import '../styles/input.css';
 
 function App() {
