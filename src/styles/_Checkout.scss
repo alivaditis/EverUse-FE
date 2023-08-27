@@ -1,0 +1,17 @@
+@mixin space-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.checkout {
+  .checkout-header {
+    text-align: center;
+  }
+  .pricing {
+    @include space-between;
+  }
+  .request-summary {
+    margin: 0 auto;
+    padding: 6px 12px;
+  }
+}
