@@ -19,15 +19,15 @@ const ShoppingBag = () =>{
                   <p className='item__spec'>Color: Moss</p>
                   <p className='item__spec'>Unit Price: $10</p>
                 </div>
-                <p className='item__counter'>
-                  <span className="material-icons-round">remove</span>
+                <p className='counter'>
+                  <span className="material-icons-round counter__icon">remove</span>
                   1
-                  <span className="material-icons-round">add</span>
+                  <span className="material-icons-round counter__icon">add</span>
                 </p>
                 <p className='item__price'>$10</p>
               </div>
             </span>
-            <span className="material-icons-round">close</span>
+            <span className="material-icons-round item__delete">close</span>
           </article>
       </section>
       <section className='bag__summary'>
