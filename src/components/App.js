@@ -128,7 +128,7 @@ function App() {
                 updateQuantity={updateQuantity} 
               />} 
             />
-            {/* <Route path='/checkout' element={<Checkout />} /> */}
+            <Route path='/checkout' element={<Checkout />} />
           </Routes>
         </>
       }
