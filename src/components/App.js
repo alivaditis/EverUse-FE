@@ -5,6 +5,8 @@ import { useState, useEffect } from 'react';
 import Landing from './Landing';
 import Products from './Products';
 import About from './About';
+import { Route, Routes } from 'react-router-dom';
+import ProductDetail from './ProductDetail';
 
 function App() {
   const [items, setItems] = useState([])
@@ -61,13 +63,16 @@ function App() {
 
   return (
     <div className="app">
-      {!loading && 
+      {/* {!loading && 
         <>
           <Landing />
           <Products itemsForDisplay={itemsForDisplay} />
           <About />
         </>
-      }
+      } */}
+      <Routes>
+        <Route path='/:productID' Component={ProductDetail}/>
+      </Routes>
     </div>
   );
 }
