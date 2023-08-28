@@ -1,0 +1,31 @@
+@import './_variables';
+
+.about {
+  font-family: $secondary-font;
+  min-height: 100vh;
+  background-color: $secondary-background-color;
+  .about__header {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    background-image: url('../images/about-bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin: 0;
+    height: 20rem;
+    .about__header-text {
+      color: white;
+      margin: 0;
+      padding: 0 2rem;
+      font-weight: 600;
+    }
+  }
+  .about__description {
+    color: white;
+    padding: 2rem;
+    line-height: 1.5;
+    font-weight: normal;
+    text-align: left;
+  } 
+}

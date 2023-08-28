@@ -3,6 +3,7 @@ import { GET_ALL_ITEMS } from '../api';
 import { useState, useEffect } from 'react';
 import Landing from './Landing';
 import Products from './Products';
+import About from './About';
 
 import '../styles/input.css';
 
@@ -67,6 +68,7 @@ function App() {
         <>
           <Landing />
           <Products itemsForDisplay={itemsForDisplay} />
+          <About />
         </>
       }
     </div>
