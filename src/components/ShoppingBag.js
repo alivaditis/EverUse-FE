@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
-const ShoppingBag = ({shoppingBag, totalPrice, addTotalPrice, removeItemFromBag }) =>{
+const ShoppingBag = ({ shoppingBag, totalPrice, addTotalPrice, removeItemFromBag, updateQuantity }) =>{
   useEffect(() => {
     addTotalPrice();
   }, [shoppingBag])
@@ -19,14 +19,14 @@ const ShoppingBag = ({shoppingBag, totalPrice, addTotalPrice, removeItemFromBag 
             <p className='item__spec'>Unit Price: ${item.price}</p>
           </div>
           <div className='item__detail item__counter'>
-            <span className="material-icons-round counter__icon">remove</span>
+            <span className="material-icons-round counter__icon" onClick={() => updateQuantity(item.id)}>remove</span>
             {item.quantity}
-            <span className="material-icons-round counter__icon">add</span>
+            <span className="material-icons-round counter__icon" onClick={() => updateQuantity(item.id, 'add')}>add</span>
           </div>
           <p className='item__detail item__price'>${item.price * item.quantity}</p>
         </div>
       </span>
-      <span className="material-icons-round item__delete" id={item.id} onClick={(e) => removeItemFromBag(e)}>close</span>
+      <span className="material-icons-round item__delete" id={item.id} onClick={(e) => removeItemFromBag(e.target.id)}>close</span>
     </article>)
   })
 

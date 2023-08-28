@@ -9,28 +9,31 @@ function App() {
   const [shoppingBag, setShoppingBag] = useState(
     [
       {
-          type: "bracelet",
-          color: "moss",
-          size: 'M',
-          quantity: 2,
-          price: 10.00,
-          image: 'https://cdn.shopify.com/s/files/1/0192/8012/products/friendship-bracelet-adjustable-camp-minimalist-rope-dowling-brothers-bangle-jewellery-740.jpg'
+        id: 1,  
+        type: "bracelet",
+        color: "moss",
+        size: 'M',
+        quantity: 2,
+        price: 10.00,
+        image: 'https://cdn.shopify.com/s/files/1/0192/8012/products/friendship-bracelet-adjustable-camp-minimalist-rope-dowling-brothers-bangle-jewellery-740.jpg'
       },
       {
-          type: "bracelet",
-          color: "orange plaid",
-          size: 'S',
-          quantity: 3,
-          price: 10.00,
-          image: 'https://cdn.shopify.com/s/files/1/0192/8012/products/friendship-bracelet-adjustable-camp-minimalist-rope-dowling-brothers-bangle-jewellery-740.jpg'
+        id: 2,
+        type: "bracelet",
+        color: "orange plaid",
+        size: 'S',
+        quantity: 3,
+        price: 10.00,
+        image: 'https://cdn.shopify.com/s/files/1/0192/8012/products/friendship-bracelet-adjustable-camp-minimalist-rope-dowling-brothers-bangle-jewellery-740.jpg'
       },
       {
-          type: "leash",
-          color: "lime",
-          size: 'onesize',
-          quantity: 1,
-          price: 20.00,
-          image: 'https://cdn.shopify.com/s/files/1/0192/8012/products/friendship-bracelet-adjustable-camp-minimalist-rope-dowling-brothers-bangle-jewellery-740.jpg'
+        id: 3,
+        type: "leash",
+        color: "lime",
+        size: 'onesize',
+        quantity: 1,
+        price: 20.00,
+        image: 'https://cdn.shopify.com/s/files/1/0192/8012/products/friendship-bracelet-adjustable-camp-minimalist-rope-dowling-brothers-bangle-jewellery-740.jpg'
       }       
     ])
   const [totalPrice, setTotalPrice] = useState(0);
@@ -42,8 +45,22 @@ function App() {
     setTotalPrice(total)
   }
 
-  const removeItemFromBag = e => {
-    setShoppingBag(shoppingBag.filter(item => item.id !== e.target.id))
+  const removeItemFromBag = id => {
+    setShoppingBag(shoppingBag.filter(item => item.id !== parseInt(id)))
+  }
+
+  const updateQuantity = (id, operation = 'subtract') => {
+    // when plus or minus button is clicked, identify bag item
+    // change quantity depending on which button is clicked
+    // if quantity is 0, run remove function
+    let index;
+    const newItem = {...shoppingBag.find((item, i) => {
+      index = i;
+      return item.id === id
+    })}
+    operation === 'add' ? newItem.quantity += 1 : newItem.quantity -=1;
+    newItem.quantity ? setShoppingBag(shoppingBag.toSpliced(index, 1, newItem)) : removeItemFromBag(id)
+    
   }
 
   const { loading, error, data } = useQuery(GET_ALL_ITEMS)
@@ -72,8 +89,8 @@ function App() {
         </>
       }
       <Routes>
-        <Route path='/shopping-bag' element={<ShoppingBag shoppingBag={shoppingBag} totalPrice={totalPrice} addTotalPrice={addTotalPrice} removeItemFromBag={removeItemFromBag} />} />
-        <Route path='/checkout' element={<Checkout />} />
+        <Route path='/shopping-bag' element={<ShoppingBag shoppingBag={shoppingBag} totalPrice={totalPrice} addTotalPrice={addTotalPrice} removeItemFromBag={removeItemFromBag} updateQuantity={updateQuantity} />} />
+        {/* <Route path='/checkout' element={<Checkout />} /> */}
       </Routes>
     </div>
   );
