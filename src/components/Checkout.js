@@ -1,11 +1,8 @@
 import { useState } from 'react'
+import Form from './Form'
 import '../styles/_Checkout.scss'
 
 const Checkout = ({shoppingBag}) => {
-  const [email, setEmail] = useState('')
-  const [firstName, setFirstName] = useState('')
-  const [lastName, setLastName] = useState('')
-  const [comments, setComments] = useState('')
   
   const items = shoppingBag.map(item => {
     return <div className='request-item' id={Date.now()}>
@@ -42,18 +39,7 @@ const Checkout = ({shoppingBag}) => {
           <p>${getTotal(shoppingBag)}</p>
         </div>
       </div>
-      <form className='request-form'>
-        <h2>Customer Info</h2>
-        <label for='request-email'>Email Address</label>
-        <input name='request-email' type='text' value={email} onChange={(e) => setEmail(e.target.value)}/>
-        <label for='request-first-name'>First Name</label>
-        <input name='request-first-name' type='text' value={firstName} onChange={(e) => setFirstName(e.target.value)}/>
-        <label for='request-last-name'>Last Name</label>
-        <input name='request-last-name' type='text' value={lastName} onChange={(e) => setLastName(e.target.value)}/>
-        <label for='request-comments'>Comments/Questions/Concerns</label>
-        <textarea name='request-comments' className='request-comments' value={comments} onChange={(e) => setComments(e.target.value)}/>
-        <button className='request-submit'>Submit</button>
-      </form>
+    <Form/>
     </div>
   </div>)
 }

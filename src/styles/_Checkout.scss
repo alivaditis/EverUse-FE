@@ -5,19 +5,16 @@
   justify-content: space-between;
 }
 
-// * {
-//   border: solid red;
-// }
-
 .checkout {
   min-height: 100vh;
-  padding: 0 1em;
+  padding: 0 2.5em;
   font: v.$primary-font;
   background-color: v.$primary-background-color;
   .checkout-header {
     text-align: center;
   }
   .request-summary {
+    border-radius: 3px;
     display: flex;
     flex-direction: column;
     width: 70%;
@@ -44,32 +41,6 @@
     p {
       margin: 0;
     }
-  }
-  .request-form {
-    display: flex;
-    flex-direction: column;
-    height: 400px;
-    input, textarea {
-      margin: .6em 0;
-    }
-  }
-  .request-comments {
-    height: 120px;
-    max-width: 100%;
-  }
-  .request-submit {
-    margin-top: auto;
-    padding: 8px 10px;
-    width: 80px;
-    border-radius: 10px;
-    border: none;
-    text-decoration: none;
-    background-color: v.$secondary-accent-color;
-    color: v.$ternary-background-color;
-    font: v.$secondary-font;
-  }
-  .request-submit:hover {
-    cursor: pointer;
   }
 
   @media screen and (min-width: 600px) {
