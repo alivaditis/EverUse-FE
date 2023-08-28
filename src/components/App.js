@@ -46,13 +46,10 @@ function App() {
   }
 
   const removeItemFromBag = id => {
-    setShoppingBag(shoppingBag.filter(item => item.id !== parseInt(id)))
+    setShoppingBag(shoppingBag.filter(item => item.id != id))
   }
 
   const updateQuantity = (id, operation = 'subtract') => {
-    // when plus or minus button is clicked, identify bag item
-    // change quantity depending on which button is clicked
-    // if quantity is 0, run remove function
     let index;
     const newItem = {...shoppingBag.find((item, i) => {
       index = i;
@@ -60,7 +57,6 @@ function App() {
     })}
     operation === 'add' ? newItem.quantity += 1 : newItem.quantity -=1;
     newItem.quantity ? setShoppingBag(shoppingBag.toSpliced(index, 1, newItem)) : removeItemFromBag(id)
-    
   }
 
   const { loading, error, data } = useQuery(GET_ALL_ITEMS)
