@@ -45,6 +45,7 @@ function App() {
 
 
   
+  // eslint-disable-next-line no-unused-vars
   const { loading, error, data } = useQuery(GET_ALL_ITEMS)
   
   useEffect(() => {
