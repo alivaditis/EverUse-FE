@@ -1,4 +1,4 @@
-import '../styles/input.css';
+// LANDING COMPONENT //
 
 export default function Landing() {
   return (

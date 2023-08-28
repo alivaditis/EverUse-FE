@@ -1,9 +1,9 @@
-@import './_variables';
+@use 'variables' as v;
 
 .about {
-  font-family: $secondary-font;
+  font-family: v.$secondary-font;
   min-height: 100vh;
-  background-color: $secondary-background-color;
+  background-color: v.$secondary-background-color;
   .about__header {
     display: flex;
     align-items: center;

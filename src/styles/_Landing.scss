@@ -1,4 +1,4 @@
-@import './_variables';
+@use 'variables' as v;
 
 .landing {
   background-image: url('../images/landing-bg.png');
@@ -20,7 +20,7 @@
     justify-content: center;
     justify-content: flex-start;
     h1 {
-      font-family: $primary-font;
+      font-family: v.$primary-font;
       font-size: 2.5rem;
       color: white;
       font-weight: 600;
@@ -30,7 +30,7 @@
       padding: 0;
       width: 8rem;
       height: 3rem;
-      background-color: $secondary-background-color;
+      background-color: v.$secondary-background-color;
       border: none;
       border-radius: 0.5rem;
       color: white;
@@ -39,7 +39,7 @@
       padding: 1rem 2rem;
       cursor: pointer;
       &:hover {
-        background-color: $secondary-accent-color;
+        background-color: v.$secondary-accent-color;
       }
     }
   }

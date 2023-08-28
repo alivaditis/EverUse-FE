@@ -5,8 +5,6 @@ import Landing from './Landing';
 import Products from './Products';
 import About from './About';
 
-import '../styles/input.css';
-
 function App() {
   const [items, setItems] = useState([])
   const [itemsForDisplay, setItemsForDisplay] = useState([])
@@ -47,7 +45,6 @@ function App() {
 
   
   const { loading, error, data } = useQuery(GET_ALL_ITEMS)
-  console.log(data)
   
   useEffect(() => {
     if (!items.length && !loading) {

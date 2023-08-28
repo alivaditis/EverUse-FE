@@ -1,9 +1,9 @@
 
-@import 'variables.scss';
+@use 'variables' as v;
 
 .products {
-  font-family: $secondary-font;
-  background-color: $primary-background-color;
+  font-family: v.$secondary-font;
+  background-color: v.$primary-background-color;
   min-height: 100vh;
   display: flex;
   flex-direction: column;

@@ -1,4 +1,4 @@
-import '../styles/input.css';
+// ABOUT COMPONENT //
 
 export default function About() {
   return (
