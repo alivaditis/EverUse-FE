@@ -3,7 +3,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Pagination, Mousewheel, Keyboard } from 'swiper/modules';
 
 export default function Products({itemsForDisplay}) {
   
@@ -25,15 +25,20 @@ export default function Products({itemsForDisplay}) {
     <div className="products">
       <h1 className="products__header">Products</h1>
       <div className="products__container">
-        <Swiper 
-          pagination={true} 
-          modules={[Pagination]} 
+        <Swiper
+          cssMode={true} 
+          pagination={true}
+          mousewheel={true}
+          keyboard={true} 
+          modules={[Pagination, Mousewheel, Keyboard]} 
           className="swiper"
           breakpoints={
-            {672: {
+            {
+              672: {
               slidesPerView: 3
+              },
             }
-          }}
+          }
           >
           {cards}
         </Swiper>
