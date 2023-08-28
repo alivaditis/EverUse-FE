@@ -5,9 +5,8 @@ import { Route, Routes, NavLink } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import ShoppingBag from './ShoppingBag';
 import Checkout from './Checkout';
-import Landing from './Landing';
-import Products from './Products';
-import About from './About';
+import Home from './Home';
+
 
 function App() {
   const [shoppingBag, setShoppingBag] = useState(
@@ -117,17 +116,22 @@ function App() {
       {!loading && 
         <>
           <NavLink to='/shopping-bag'>Cart</NavLink>
-          {/* {!error && allItems} */}
-          {/* <ShoppingBag /> */}
-          <Landing />
-          <Products itemsForDisplay={itemsForDisplay} />
-          <About />
+          <Routes>
+            <Route path='/' element={<Home itemsForDisplay={itemsForDisplay} />} />
+            <Route 
+              path='/shopping-bag' 
+              element={<ShoppingBag 
+                shoppingBag={shoppingBag} 
+                totalPrice={totalPrice} 
+                addTotalPrice={addTotalPrice} 
+                removeItemFromBag={removeItemFromBag} 
+                updateQuantity={updateQuantity} 
+              />} 
+            />
+            {/* <Route path='/checkout' element={<Checkout />} /> */}
+          </Routes>
         </>
       }
-      <Routes>
-        <Route path='/shopping-bag' element={<ShoppingBag shoppingBag={shoppingBag} totalPrice={totalPrice} addTotalPrice={addTotalPrice} removeItemFromBag={removeItemFromBag} updateQuantity={updateQuantity} />} />
-        {/* <Route path='/checkout' element={<Checkout />} /> */}
-      </Routes>
     </div>
   );
 }
