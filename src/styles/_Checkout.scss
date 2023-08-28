@@ -1,4 +1,4 @@
-@import './variables';
+@use 'variables' as v;
 
 @mixin space-between {
   display: flex;
@@ -10,9 +10,10 @@
 // }
 
 .checkout {
+  min-height: 100vh;
   padding: 0 1em;
-  font: $primary-font;
-  background-color: $primary-background-color;
+  font: v.$primary-font;
+  background-color: v.$primary-background-color;
   .checkout-header {
     text-align: center;
   }
@@ -22,7 +23,7 @@
     width: 70%;
     margin: auto;
     padding: 1em;
-    background-color: $ternary-background-color;
+    background-color: v.$ternary-background-color;
   }
   .pricing {
     @include space-between;
@@ -48,6 +49,9 @@
     display: flex;
     flex-direction: column;
     height: 400px;
+    input, textarea {
+      margin: .6em 0;
+    }
   }
   .request-comments {
     height: 120px;
@@ -55,17 +59,19 @@
   }
   .request-submit {
     margin-top: auto;
-    width: 120px;
+    padding: 8px 10px;
+    width: 80px;
     border-radius: 10px;
     border: none;
     text-decoration: none;
-    background-color: $secondary-accent-color;
-    color: $ternary-background-color;
-    font: $secondary-font;
+    background-color: v.$secondary-accent-color;
+    color: v.$ternary-background-color;
+    font: v.$secondary-font;
   }
   .request-submit:hover {
     cursor: pointer;
   }
+
   @media screen and (min-width: 600px) {
     .checkout-header {
       display: flex;
