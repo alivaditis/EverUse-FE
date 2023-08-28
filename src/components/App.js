@@ -71,7 +71,7 @@ function App() {
         </>
       } */}
       <Routes>
-        <Route path='/:productID' Component={ProductDetail}/>
+        <Route path='/:productID' element={<ProductDetail itemsForDisplay={itemsForDisplay} />}/>
       </Routes>
     </div>
   );
