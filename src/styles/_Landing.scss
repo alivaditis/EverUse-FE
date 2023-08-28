@@ -45,3 +45,19 @@
   }
 }
 
+@media screen and (min-width: 720px) {
+  .landing {
+    background-size: cover;
+    .landing__header {
+      padding: 0 3rem;
+      align-self: flex-start;
+      h1 {
+        font-size: 3rem;
+
+      }
+      .landing__button {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}

@@ -37,6 +37,9 @@ export default function Products({itemsForDisplay}) {
               672: {
               slidesPerView: 3
               },
+              1050: {
+                slidesPerView: 4
+              }
             }
           }
           >
