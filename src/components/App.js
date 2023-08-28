@@ -90,7 +90,9 @@ function App() {
           <Landing />
           <Products itemsForDisplay={itemsForDisplay} />
           <About />
-          <Route path='/checkout' element={<Checkout shoppingBag={shoppingBag}/>}/>
+          <Routes>
+            <Route path='/checkout' element={<Checkout shoppingBag={shoppingBag}/>}/>
+          </Routes>
         </>
       }
     </div>
