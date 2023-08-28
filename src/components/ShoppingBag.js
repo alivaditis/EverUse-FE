@@ -34,17 +34,26 @@ const ShoppingBag = ({ shoppingBag, totalPrice, addTotalPrice, removeItemFromBag
     <div className='bag'>
       <h1>EverUse</h1>
       <h2>Shopping Bag</h2>
-      <section className='bag__items'>
-        {items}
-      </section>
-      <section className='bag__summary'>
-        <h3>Request Summary</h3>
-        <div className='bag__subtotal'>
-          <p>Order Subtotal:</p>
-          <p>${totalPrice}</p>
-        </div>
-        {/* <NavLink to='/checkout' className='bag__button'>Continue to Request</NavLink> */}
-      </section>
+      {shoppingBag.length ?
+      <>
+        <section className='bag__items'>
+          {items}
+        </section>
+        <section className='bag__summary'>
+          <h3>Request Summary</h3>
+          <div className='bag__subtotal'>
+            <p>Order Subtotal:</p>
+            <p>${totalPrice}</p>
+          </div>
+          <NavLink to='/checkout' className='bag__button'>Continue to Request</NavLink>
+        </section>
+      </>
+      :
+      <>
+        <h3>Your shopping bag is empty.</h3>
+        <NavLink className='bag__button'>Continue Shopping</NavLink>
+      </>
+      }
     </div>
   )
 }
