@@ -1,3 +1,138 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+}
 
+.app {
+  width: 100vw;
+  max-width: 1600px;
+  height: 100vh;
+}
+
+.landing {
+  background-image: url("../images/landing-bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0% center;
+  margin: 0;
+  padding: 2rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.landing .landing__header {
+  height: 25rem;
+  display: flex;
+  margin: 0;
+  flex-direction: column;
+  justify-content: center;
+  justify-content: flex-start;
+}
+.landing .landing__header h1 {
+  font-family: "Amaranth", sans-serif;
+  font-size: 2.5rem;
+  color: white;
+  font-weight: 600;
+}
+.landing .landing__header .landing__button {
+  opacity: 0.8;
+  padding: 0;
+  width: 8rem;
+  height: 3rem;
+  background-color: #58889C;
+  border: none;
+  border-radius: 0.5rem;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 1rem 2rem;
+  cursor: pointer;
+}
+.landing .landing__header .landing__button:hover {
+  background-color: #867C77;
+}
+
+.products {
+  font-family: "Roboto", sans-serif;
+  background-color: #F4F4F4;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.products .products__header {
+  margin: 5.5rem 0;
+  font-size: 1.5rem;
+}
+.products .products__container {
+  max-width: 100%;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  margin: auto;
+  width: 13rem;
+  height: 16.5rem;
+  background: #fff;
+}
+.card .card__image {
+  max-width: 100%;
+  height: 11rem;
+  object-fit: cover;
+}
+.card .card__info {
+  text-align: left;
+}
+.card .card__info .card__name {
+  font-size: 1.1rem;
+  font-weight: normal;
+  margin: 1rem 0;
+}
+.card .card__info .card__price {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about {
+  font-family: "Roboto", sans-serif;
+  min-height: 100vh;
+  background-color: #58889C;
+}
+.about .about__header {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  background-image: url("../images/about-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin: 0;
+  height: 20rem;
+}
+.about .about__header .about__header-text {
+  color: white;
+  margin: 0;
+  padding: 0 2rem;
+  font-weight: 600;
+}
+.about .about__description {
+  color: white;
+  padding: 2rem;
+  line-height: 1.5;
+  font-weight: normal;
+  text-align: left;
+}
 
 /*# sourceMappingURL=output.css.map */
