@@ -1,46 +1,59 @@
 import { useState } from 'react'
 import '../styles/_Checkout.scss'
-import { isCompositeComponent } from 'react-dom/test-utils'
 
 const Checkout = ({shoppingBag}) => {
   const [email, setEmail] = useState('')
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
+  const [comments, setComments] = useState('')
   
   const items = shoppingBag.map(item => {
-    return <div id={Date.now()}>
+    return <div className='request-item' id={Date.now()}>
       <div>
         <p>{item.quantity}x {item.type}</p>
-        <p>color: {item.color}</p>
+        <p>Color: {item.color}</p>
+        {item.size !== 'onesize' && <p>Size: {item.size}</p>}
       </div>
-      <p>${item.quantity * item.price}</p>
+      <p>${(item.quantity * item.price).toFixed(2)}</p>
     </div>
   })
+
+  const getTotal = (shoppingBag) => {
+    return shoppingBag.reduce((acc, curr) => {
+      return (acc + (curr.price * curr.quantity))
+    }, 0).toFixed(2) 
+  }
 
   return (<div className="checkout">
     <div className="checkout-header">
       <h2>EverUse</h2>
-      <h3>Customer Info</h3>
+      <h3>Order Request</h3>
     </div>
     <p>
     Requests will be sent to EverUse and followed up within 5 business days. Payment through (methods) will be discussed over email.
     </p>
-    <div className='request-summary'>
-      <h3>Request Summary</h3>
-      <p><b>2 items</b></p>
-      {items}
-      <div className='pricing'>
-        <p>Order Subtotal</p>
-        <p>$4.99</p>
+    <div className='checkout-container'>
+      <div className='request-summary'>
+        <h3>Request Summary</h3>
+        <p><b>2 items</b></p>
+        {items}
+        <div className='pricing'>
+          <p>Estimated Total</p>
+          <p>${getTotal(shoppingBag)}</p>
+        </div>
       </div>
-      <div className='pricing'>
-        <p>Estimated Shipping</p>
-        <p>$4.99</p>
-      </div>
-      <div className='pricing'>
-        <p>Estimated Total</p>
-        <p>$24.99</p>
-      </div>
+      <form className='request-form'>
+        <h2>Customer Info</h2>
+        <label for='request-email'>Email Address</label>
+        <input name='request-email' type='text' value={email} onChange={(e) => setEmail(e.target.value)}/>
+        <label for='request-first-name'>First Name</label>
+        <input name='request-first-name' type='text' value={firstName} onChange={(e) => setFirstName(e.target.value)}/>
+        <label for='request-last-name'>Last Name</label>
+        <input name='request-last-name' type='text' value={lastName} onChange={(e) => setLastName(e.target.value)}/>
+        <label for='request-comments'>Comments/Questions/Concerns</label>
+        <textarea name='request-comments' className='request-comments' value={comments} onChange={(e) => setComments(e.target.value)}/>
+        <button className='request-submit'>Submit</button>
+      </form>
     </div>
   </div>)
 }

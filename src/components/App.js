@@ -7,6 +7,7 @@ import Landing from './Landing';
 import Products from './Products';
 import About from './About';
 import Checkout from './Checkout';
+import '../styles/_App.scss'
 
 function App() {
   const [items, setItems] = useState([])
@@ -29,6 +30,7 @@ function App() {
     {
         type: "leash",
         color: "lime",
+        size: 'onesize',
         quantity: 1,
         price: 20
     }       

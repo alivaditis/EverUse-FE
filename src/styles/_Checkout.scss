@@ -1,17 +1,84 @@
+@import './variables';
+
 @mixin space-between {
   display: flex;
   justify-content: space-between;
 }
 
+// * {
+//   border: solid red;
+// }
+
 .checkout {
+  padding: 0 1em;
+  font: $primary-font;
+  background-color: $primary-background-color;
   .checkout-header {
     text-align: center;
   }
+  .request-summary {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: auto;
+    padding: 1em;
+    background-color: $ternary-background-color;
+  }
   .pricing {
     @include space-between;
+    margin-top: auto;
+    align-self: flex-end;
+    p {
+      margin: 0;
+    }
+    width: 70%;
+    margin-left: auto;
+    border-bottom: solid black 2px;
   }
-  .request-summary {
-    margin: 0 auto;
-    padding: 6px 12px;
+  .request-item {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    margin-bottom: 16px;
+    p {
+      margin: 0;
+    }
+  }
+  .request-form {
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+  }
+  .request-comments {
+    height: 120px;
+    max-width: 100%;
+  }
+  .request-submit {
+    margin-top: auto;
+    width: 120px;
+    border-radius: 10px;
+    border: none;
+    text-decoration: none;
+    background-color: $secondary-accent-color;
+    color: $ternary-background-color;
+    font: $secondary-font;
+  }
+  .request-submit:hover {
+    cursor: pointer;
+  }
+  @media screen and (min-width: 600px) {
+    .checkout-header {
+      display: flex;
+      justify-content: space-between;
+    }
+    .checkout-container {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+    }
+    .request-summary, .request-form {
+      margin: 0;
+      width: 45%;
+    }
   }
 }
