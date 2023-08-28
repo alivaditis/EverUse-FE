@@ -127,7 +127,6 @@ function App() {
               element={<ShoppingBag 
                 shoppingBag={shoppingBag} 
                 totalPrice={totalPrice} 
-                // addTotalPrice={addTotalPrice} 
                 removeItemFromBag={removeItemFromBag} 
                 updateQuantity={updateQuantity} 
               />} 
