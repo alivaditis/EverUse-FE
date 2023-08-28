@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 
 const ShoppingBag = ({ shoppingBag, totalPrice, addTotalPrice, removeItemFromBag, updateQuantity }) =>{
   useEffect(() => {
