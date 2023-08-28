@@ -1,11 +1,8 @@
 import '../styles/input.css'
 import { Swiper, SwiperSlide } from 'swiper/react';
-
 import 'swiper/css';
 import 'swiper/css/navigation';
-import '../styles/input.css';
 import { Navigation } from 'swiper/modules';
-import Card from './Card'
 
 export default function Products({itemsForDisplay}) {
   
@@ -27,7 +24,7 @@ export default function Products({itemsForDisplay}) {
     <div className="products">
       <h1 className="products__header">Products</h1>
       <div className="products__container">
-        <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
+        <Swiper navigation={true} modules={[Navigation]} className="swiper">
           {cards}
         </Swiper>
       </div>
