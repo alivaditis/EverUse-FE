@@ -51,6 +51,7 @@ const ShoppingBag = ({ shoppingBag, totalPrice, addTotalPrice, removeItemFromBag
       :
       <>
         <h3>Your shopping bag is empty.</h3>
+        {/* possibly replace with hash link? */}
         <NavLink className='bag__button'>Continue Shopping</NavLink>
       </>
       }
