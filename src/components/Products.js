@@ -9,7 +9,7 @@ export default function Products({itemsForDisplay}) {
   
   const cards = itemsForDisplay.map(item => {
     return (
-        <SwiperSlide key={item.name}>
+        <SwiperSlide key={item.id}>
           <div className="card">
             <img src={item.image} alt={item.name} className="card__image" />
             <div className="card__info">

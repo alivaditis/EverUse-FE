@@ -11,7 +11,7 @@ function App() {
   const [itemsForDisplay, setItemsForDisplay] = useState([])
 
   const getItemsForDisplay = () => {
-    let productsForDisplay = [];
+    const productsForDisplay = [];
     
     const productNames = new Set (items.map(product => product.name))
     
@@ -43,13 +43,11 @@ function App() {
     return productsForDisplay
   }
 
-
-  
   // eslint-disable-next-line no-unused-vars
   const { loading, error, data } = useQuery(GET_ALL_ITEMS)
   
   useEffect(() => {
-    if (!items.length && !loading) {
+    if (!items.length && !loading && !error) {
       setItems(data.products)
     }
   }, [data]);
@@ -62,7 +60,7 @@ function App() {
 
 
   return (
-    <div className="App">
+    <div className="app">
       {!loading && 
         <>
           <Landing />
