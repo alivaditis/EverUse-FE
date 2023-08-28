@@ -20,6 +20,7 @@
     justify-content: center;
     justify-content: flex-start;
     h1 {
+      font-family: $primary-font;
       font-size: 2.5rem;
       color: white;
       font-weight: 600;
@@ -29,7 +30,7 @@
       padding: 0;
       width: 8rem;
       height: 3rem;
-      background-color: $primary-accent-color;
+      background-color: $secondary-background-color;
       border: none;
       border-radius: 0.5rem;
       color: white;
