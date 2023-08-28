@@ -2,15 +2,13 @@ import { NavLink } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 const ShoppingBag = ({shoppingBag, totalPrice, addTotalPrice, removeItemFromBag }) =>{
-  console.log(shoppingBag)
-
   useEffect(() => {
     addTotalPrice();
-  }, [])
+  }, [shoppingBag])
 
-  const items = shoppingBag?.map(item => {
+  const items = shoppingBag.map(item => {
     return (
-    <article key={item.id} id={item.id} className='item'>
+    <article key={item.id} className='item'>
       <img src={item.image} className='item__img' />
       <span className='item__info'>
         <h4 className='item__title'>{item.type}</h4>
@@ -28,7 +26,7 @@ const ShoppingBag = ({shoppingBag, totalPrice, addTotalPrice, removeItemFromBag 
           <p className='item__detail item__price'>${item.price * item.quantity}</p>
         </div>
       </span>
-      <span className="material-icons-round item__delete" onClick={(e) => removeItemFromBag(e)}>close</span>
+      <span className="material-icons-round item__delete" id={item.id} onClick={(e) => removeItemFromBag(e)}>close</span>
     </article>)
   })
 
@@ -45,7 +43,7 @@ const ShoppingBag = ({shoppingBag, totalPrice, addTotalPrice, removeItemFromBag 
           <p>Order Subtotal:</p>
           <p>${totalPrice}</p>
         </div>
-        <NavLink to='/checkout' className='bag__button'>Continue to Request</NavLink>
+        {/* <NavLink to='/checkout' className='bag__button'>Continue to Request</NavLink> */}
       </section>
     </div>
   )
