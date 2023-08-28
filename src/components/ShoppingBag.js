@@ -1,15 +1,12 @@
 import { NavLink } from 'react-router-dom';
 import { useEffect } from 'react';
 
-const ShoppingBag = ({ shoppingBag, totalPrice, addTotalPrice, removeItemFromBag, updateQuantity }) =>{
-  useEffect(() => {
-    addTotalPrice();
-  }, [shoppingBag])
+const ShoppingBag = ({ shoppingBag, totalPrice, removeItemFromBag, updateQuantity }) =>{
 
   const items = shoppingBag.map(item => {
     return (
     <article key={item.id} className='item'>
-      <img src={item.image} className='item__img' />
+      <img src={item.image} alt='bracelet' className='item__img' />
       <span className='item__info'>
         <h4 className='item__title'>{item.type}</h4>
         <div className='item__details'>

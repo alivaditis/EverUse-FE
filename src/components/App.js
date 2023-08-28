@@ -50,8 +50,12 @@ function App() {
     setTotalPrice(total)
   }
 
+  useEffect(() => {
+    addTotalPrice();
+  }, [shoppingBag])
+
   const removeItemFromBag = id => {
-    setShoppingBag(shoppingBag.filter(item => item.id != id))
+    setShoppingBag(shoppingBag.filter(item => item.id !== parseInt(id)))
   }
 
   const updateQuantity = (id, operation = 'subtract') => {
@@ -123,7 +127,7 @@ function App() {
               element={<ShoppingBag 
                 shoppingBag={shoppingBag} 
                 totalPrice={totalPrice} 
-                addTotalPrice={addTotalPrice} 
+                // addTotalPrice={addTotalPrice} 
                 removeItemFromBag={removeItemFromBag} 
                 updateQuantity={updateQuantity} 
               />} 
