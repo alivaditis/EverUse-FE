@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import { NavHashLink } from 'react-router-hash-link';
 
 const ShoppingBag = ({ shoppingBag, totalPrice, removeItemFromBag, updateQuantity }) =>{
 
@@ -48,7 +49,7 @@ const ShoppingBag = ({ shoppingBag, totalPrice, removeItemFromBag, updateQuantit
       <>
         <h3>Your shopping bag is empty.</h3>
         {/* possibly replace with hash link? */}
-        <NavLink className='bag__button'>Continue Shopping</NavLink>
+        <NavHashLink smooth to='/#products' className='bag__button'>Continue Shopping</NavHashLink>
       </>
       }
     </div>
