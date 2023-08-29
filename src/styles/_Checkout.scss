@@ -24,6 +24,7 @@
   }
   .pricing {
     @include space-between;
+    font-weight: bold;
     margin-top: auto;
     align-self: flex-end;
     p {

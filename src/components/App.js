@@ -3,10 +3,6 @@ import { useQuery } from '@apollo/client';
 import { GET_ALL_ITEMS } from '../api';
 import { Route, Routes, NavLink } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
-import Landing from './Landing';
-import Products from './Products';
-import About from './About';
 import Checkout from './Checkout';
 import '../styles/_App.scss'
 import ShoppingBag from './ShoppingBag';
@@ -136,7 +132,7 @@ function App() {
                 updateQuantity={updateQuantity} 
               />} 
             />
-            <Route path='/checkout' element={<Checkout shoppingBag={shoppingBag}/>}/>
+            <Route path='/checkout' element={<Checkout shoppingBag={shoppingBag} totalPrice={totalPrice}/>}/>
           </Routes>
         </>
       }

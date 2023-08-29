@@ -1,25 +1,23 @@
-import { useState } from 'react'
 import Form from './Form'
 import '../styles/_Checkout.scss'
 
-const Checkout = ({shoppingBag}) => {
-  
+const Checkout = ({shoppingBag, totalPrice}) => {
+
   const items = shoppingBag.map(item => {
     return <div className='request-item' id={Date.now()}>
       <div>
-        <p>{item.quantity}x {item.type}</p>
+        <b>{item.quantity}x {item.type}</b>
         <p>Color: {item.color}</p>
         {item.size !== 'onesize' && <p>Size: {item.size}</p>}
       </div>
-      <p>${(item.quantity * item.price).toFixed(2)}</p>
+      <b>${(item.quantity * item.price)}</b>
     </div>
   })
 
-  const getTotal = (shoppingBag) => {
-    return shoppingBag.reduce((acc, curr) => {
-      return (acc + (curr.price * curr.quantity))
-    }, 0).toFixed(2) 
-  }
+  const numberOfItems =
+    shoppingBag.reduce((acc, curr) => {
+      return acc + curr.quantity
+    }, 0)
 
   return (<div className="checkout">
     <div className="checkout-header">
@@ -32,11 +30,11 @@ const Checkout = ({shoppingBag}) => {
     <div className='checkout-container'>
       <div className='request-summary'>
         <h3>Request Summary</h3>
-        <p><b>2 items</b></p>
+        <b>{numberOfItems} items</b>
         {items}
         <div className='pricing'>
           <p>Estimated Total</p>
-          <p>${getTotal(shoppingBag)}</p>
+          <p>${totalPrice}</p>
         </div>
       </div>
     <Form/>
