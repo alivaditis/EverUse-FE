@@ -79,7 +79,7 @@ function App() {
         .filter(product => product.name === productName)
       
       const filteredProduct = filteredProducts.reduce((acc, curr) => {
-        acc.id = curr.name;
+        acc.id = curr.id;
         acc.name = curr.name;
         acc.price = curr.price;
         acc.category = curr.category
@@ -125,14 +125,14 @@ function App() {
           <NavLink to='/shopping-bag'>Cart</NavLink>
           <Routes>
             <Route path='/' element={<Home itemsForDisplay={itemsForDisplay} />} />
-            <Route 
+            {/* <Route 
               path='/shopping-bag' 
               element={<ShoppingBag 
                 shoppingBag={shoppingBag} 
                 totalPrice={totalPrice} 
                 removeItemFromBag={removeItemFromBag} 
                 updateQuantity={updateQuantity} 
-              />}/> 
+              />}/>  */}
             <Route path='/:productID' element={<ProductDetail itemsForDisplay={itemsForDisplay} />}/>
             <Route path='/checkout' element={<Checkout />} />
           </Routes>

@@ -3,9 +3,8 @@ import { camelToPascalCase } from "../helperFunctions";
 import ProductDetailOrderForm from "./ProductDetailOrderForm";
 
 const ProductDetail = ({itemsForDisplay}) => {
-  console.log(itemsForDisplay)
   const productID = useParams().productID;
-  const product = itemsForDisplay.find(item => item.id === camelToPascalCase(productID));
+  const product = itemsForDisplay.find(item => item.id.toString() === (productID.toString()));
   console.log(product)
  
   return (
