@@ -4,7 +4,7 @@ import '../styles/_Checkout.scss'
 const Checkout = ({shoppingBag, totalPrice}) => {
 
   const items = shoppingBag.map(item => {
-    return <div className='request-item' id={Date.now()}>
+    return <div className='request-item' key={item.id}>
       <div>
         <b>{item.quantity}x {item.type}</b>
         <p>Color: {item.color}</p>

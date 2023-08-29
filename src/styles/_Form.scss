@@ -14,9 +14,10 @@
   .request-comments {
     height: 120px;
     max-width: 100%;
+    min-width: 100%;
   }
   .request-submit {
-    margin-top: auto;
+    margin-top: 2em;
     padding: 8px 10px;
     width: 80px;
     border-radius: 10px;
@@ -27,6 +28,12 @@
     font: v.$secondary-font;
     &:hover {
     cursor: pointer;
+    }
+  }
+
+  @media screen and (min-width: 600px) {
+    .request-submit {
+      margin-top: auto;
     }
   }
 }
