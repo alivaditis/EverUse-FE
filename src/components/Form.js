@@ -35,13 +35,14 @@ const Form = ({ shoppingBag, totalPrice }) => {
     if (validator.validate(email) && firstName && lastName) {
       const newRequest = {}
       newRequest.email = email
-      newRequest.name = `${firstName[0].toUpperCase() + firstName.slice(1)} ${lastName[0].toUpperCase() + lastName.slice(1)}`
-      newRequest.comments = comments
-      newRequest.total = parseInt(totalPrice)
+      newRequest.customer = `${firstName[0].toUpperCase() + firstName.slice(1)} ${lastName[0].toUpperCase() + lastName.slice(1)}`
+      newRequest.comment = comments
+      newRequest.total = parseFloat(totalPrice)
       newRequest.products = shoppingBag.map(item => {
         return {
           name: item.type,
           color: item.color,
+          size: item.size,
           quantity: parseInt(item.quantity)
         }
       })

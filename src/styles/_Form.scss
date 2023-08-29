@@ -1,6 +1,7 @@
 @use 'variables' as v;
 
 .checkout__form {
+  background-color: inherit;
   height: 550px;
   font: v.$primary-font;
   display: flex;
@@ -17,7 +18,7 @@
     min-width: 100%;
   }
   .checkout__form__submit {
-    margin-top: 2em;
+    margin-top: 2rem;
     padding: 8px 10px;
     width: 80px;
     border-radius: 10px;
