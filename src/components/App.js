@@ -3,8 +3,9 @@ import { useQuery } from '@apollo/client';
 import { GET_ALL_ITEMS } from '../api';
 import { Route, Routes, NavLink } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import ShoppingBag from './ShoppingBag';
 import Checkout from './Checkout';
+import '../styles/_App.scss'
+import ShoppingBag from './ShoppingBag';
 import Home from './Home';
 import ProductDetail from './ProductDetail';
 
@@ -125,16 +126,17 @@ function App() {
           <NavLink to='/shopping-bag'>Cart</NavLink>
           <Routes>
             <Route path='/' element={<Home itemsForDisplay={itemsForDisplay} />} />
-            {/* <Route 
+            <Route 
               path='/shopping-bag' 
               element={<ShoppingBag 
                 shoppingBag={shoppingBag} 
                 totalPrice={totalPrice} 
                 removeItemFromBag={removeItemFromBag} 
                 updateQuantity={updateQuantity} 
-              />}/>  */}
+              />} 
+            />
+            <Route path='/checkout' element={<Checkout shoppingBag={shoppingBag} totalPrice={totalPrice}/>}/>
             <Route path='/:productID' element={<ProductDetail itemsForDisplay={itemsForDisplay} />}/>
-            <Route path='/checkout' element={<Checkout />} />
           </Routes>
         </>
       }
@@ -144,3 +146,4 @@ function App() {
 
 
 export default App;
+
