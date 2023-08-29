@@ -55,13 +55,12 @@ const ProductDetailOrderForm = ({product, addToShoppingBag, shoppingBag, updateQ
     const result = cart.find(existingItem => {
       return (existingItem.type?.toLowerCase() === item.type?.toLowerCase()) && (existingItem.size === item.size) && (existingItem.color === item.color)
     });
-    console.log(result)
     return result?.id;
   }
 
   const saveItem = (e) => {
     e.preventDefault();
-    console.log(inputFields)
+
     const newItem = {
       id: shoppingBag.length+1,  
       type: product.name,
@@ -70,9 +69,11 @@ const ProductDetailOrderForm = ({product, addToShoppingBag, shoppingBag, updateQ
       quantity: Number(inputFields.quantity),
       price: Number(product.price).toFixed(2),
       image: `${product.image}`
-    }
-    if (checkForExistingMatch(shoppingBag, newItem)) {
-      updateQuantity(checkForExistingMatch(shoppingBag, newItem), 'add')
+    };
+
+    const matchedProductID = checkForExistingMatch(shoppingBag, newItem);
+    if (matchedProductID) {
+      updateQuantity(matchedProductID, 'add')
     } else {
       addToShoppingBag(newItem);
     }
