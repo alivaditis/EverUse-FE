@@ -2,7 +2,7 @@ import Form from './Form'
 import { useNavigate } from 'react-router-dom'
 import '../styles/_Checkout.scss'
 
-const Checkout = ({shoppingBag, totalPrice}) => {
+const Checkout = ({shoppingBag, totalPrice, emptyShoppingBag, updateSuccessMessage}) => {
 
   const navigate = useNavigate()
 
@@ -44,7 +44,7 @@ const Checkout = ({shoppingBag, totalPrice}) => {
           <p>${totalPrice}</p>
         </div>
       </div>
-    <Form shoppingBag={shoppingBag} totalPrice={totalPrice}/>
+    <Form shoppingBag={shoppingBag} totalPrice={totalPrice} emptyShoppingBag={emptyShoppingBag} updateSuccessMessage={updateSuccessMessage}/>
     </div>
   </div>)
 }

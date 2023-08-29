@@ -1,10 +1,12 @@
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 import { useMutation } from "@apollo/client";
 import { SUBMIT_REQUEST } from "../api";
 import '../styles/_Form.scss'
 const validator = require("email-validator");
 
-const Form = ({ shoppingBag, totalPrice }) => {
+const Form = ({ shoppingBag, totalPrice, emptyShoppingBag, updateSuccessMessage }) => {
+  
   const [email, setEmail] = useState('')
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
@@ -14,6 +16,8 @@ const Form = ({ shoppingBag, totalPrice }) => {
   const [lastNameError, setLastNameError] = useState(false)
 
   const [postRequest, { data, loading, error }] = useMutation(SUBMIT_REQUEST)
+
+  const navigate = useNavigate()
 
   const submitRequest = (e) => {
     e.preventDefault()
@@ -52,7 +56,12 @@ const Form = ({ shoppingBag, totalPrice }) => {
             input: newRequest
           }
         })
-        .then(res => console.log('response:', res))
+        .then(res => {
+          console.log('response:', res)
+          updateSuccessMessage(res)
+          emptyShoppingBag()
+          navigate('/success')
+        })
     }
   }
 

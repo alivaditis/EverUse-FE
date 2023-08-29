@@ -1,0 +1,8 @@
+@use 'variables' as v;
+
+.success {
+  background-color: v.$primary-background-color;
+  min-height: 100vh;
+  text-align: center;
+  padding: 1rem;
+}
