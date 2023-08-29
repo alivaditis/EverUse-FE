@@ -12,7 +12,7 @@ const ProductDetail = ({itemsForDisplay}) => {
     <>
       <div className="details">
         <div className="details__header">
-          <h2 className="details__header-text">Products handmade from upcycled climbing rope in an effort to reduce unnecessary waste</h2>
+          <h2 className="details__header-text">Products handmade from upcycled climbing ropes in an effort to reduce unnecessary waste</h2>
         </div>
       </div>
     </>

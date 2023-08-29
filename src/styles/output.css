@@ -66,13 +66,14 @@ body {
   height: 20rem;
   display: flex;
   align-items: center;
-  padding: 0 2rem;
+  padding: 3rem;
 }
 .details .details__header .details__header-text {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-family: "Roboto", sans-serif;
   font-weight: 600;
   color: #FFFFFF;
+  text-align: center;
 }
 
 .products {

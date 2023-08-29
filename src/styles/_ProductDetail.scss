@@ -9,12 +9,13 @@
     height: 20rem;
     display: flex;
     align-items: center;
-    padding: 0 2rem;
+    padding: 3rem;
     .details__header-text {
-      font-size: 1.5rem;
+      font-size: 2rem;
       font-family: v.$secondary-font;
       font-weight: 600;
       color: v.$primary-text-color;
+      text-align: center;
     }
   }
 }
