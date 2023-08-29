@@ -3,9 +3,12 @@ import SizeOptionsContainer from "./SizeOptionsContainer";
 import { camelToPascalCase } from "../../helperFunctions";
 
 const ProductDetailOrderForm = ({product}) => {
-  console.log(product)
   const [isSingleSize, setIsSingleSize] = useState(false);
-  const [inputFields, setInputFields] = useState({});
+  const [inputFields, setInputFields] = useState({
+    "color":"",
+    "size": "",
+    "quantity":0
+  });
   const [colorOptions, setColorOptions] = useState([]);
   
   useEffect(() => {
@@ -25,6 +28,10 @@ const ProductDetailOrderForm = ({product}) => {
     return options;
   }
 
+  const addToShoppingBag = () => {
+
+  }
+
   return (
     <form className="details-order-form" onSubmit={(e) => {addToShoppingBag(e)}}>
       <div className="details-order-form__title">
@@ -33,17 +40,17 @@ const ProductDetailOrderForm = ({product}) => {
       </div>
       <div className="selection-pair">
          <p className="selection-text">Size:</p> 
-         <SizeOptionsContainer isSingleSize={isSingleSize} />
+         <SizeOptionsContainer isSingleSize={isSingleSize} handleSelect={handleSelect}/>
       </div>
       <div className="selection-pair">
          <label className="selection-text">Color:</label> 
-         <select id="colorOptions" value={inputColor} onChange={(e)=> {handleSelect(e, "color")}}>
+         <select id="colorOptions" value={inputFields.color} onChange={(e)=> {handleSelect(e, "color")}}>
           <ColorOptionsCode />
          </select>
       </div>
       <div className="selection-pair">
          <label className="selection-text">Quantity:</label> 
-         <select id="quantityOptions" value={inputQuantity} onChange={(e) => {handleSelect(e, "quantity")}}>
+         <select id="quantityOptions" value={inputFields.quantity} onChange={(e) => {handleSelect(e, "quantity")}}>
             <option value={1}> 1 </option>
             <option value={2}> 2 </option>
             <option value={3}> 3 </option>

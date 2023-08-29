@@ -1,6 +1,6 @@
-const SizeOptionsContainer = ({isSingleSize}) => {
+const SizeOptionsContainer = ({isSingleSize, handleSelect}) => {
   return (
-    <div className="size-options-container">
+    <div className="size-options-container" onChange={(e) => handleSelect(e, "size")}>
       {!isSingleSize && <div className="multiple-choice-container">
         <>
           <input type="radio" name="size-options" id="S" value="small" className="multiple-choice-option"/>
