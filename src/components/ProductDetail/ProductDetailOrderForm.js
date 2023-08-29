@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import SizeOptionsContainer from "./SizeOptionsContainer";
 import { camelToPascalCase } from "../../helperFunctions";
 
-const ProductDetailOrderForm = ({product, addToShoppingBag, shoppingBag}) => {
+const ProductDetailOrderForm = ({product, addToShoppingBag, shoppingBag, updateQuantity}) => {
   const [isSingleSize, setIsSingleSize] = useState(false);
   const [inputFields, setInputFields] = useState({
     "color":"",
@@ -50,9 +50,18 @@ const ProductDetailOrderForm = ({product, addToShoppingBag, shoppingBag}) => {
       </>
     );
   }
+  
+  const checkForExistingMatch = (cart, item) => {
+    const result = cart.find(existingItem => {
+      return (existingItem.type?.toLowerCase() === item.type?.toLowerCase()) && (existingItem.size === item.size) && (existingItem.color === item.color)
+    });
+    console.log(result)
+    return result?.id;
+  }
 
   const saveItem = (e) => {
     e.preventDefault();
+    console.log(inputFields)
     const newItem = {
       id: shoppingBag.length+1,  
       type: product.name,
@@ -62,9 +71,13 @@ const ProductDetailOrderForm = ({product, addToShoppingBag, shoppingBag}) => {
       price: Number(product.price).toFixed(2),
       image: `${product.image}`
     }
-    console.log(newItem)
+    if (checkForExistingMatch(shoppingBag, newItem)) {
+      updateQuantity(checkForExistingMatch(shoppingBag, newItem), 'add')
+    } else {
+      addToShoppingBag(newItem);
+    }
+  };
 
-  }
 
   return (
     <form className="details-order-form" onSubmit={(e) => {saveItem(e)}}>

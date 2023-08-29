@@ -55,6 +55,7 @@ function App() {
 
   useEffect(() => {
     addTotalPrice();
+    console.log(shoppingBag)
   }, [shoppingBag])
 
   const removeItemFromBag = id => {
@@ -70,7 +71,7 @@ function App() {
     operation === 'add' ? newItem.quantity += 1 : newItem.quantity -=1;
     newItem.quantity ? setShoppingBag(shoppingBag.toSpliced(index, 1, newItem)) : removeItemFromBag(id)
   }
-
+ 
   const addToShoppingBag = (item) => {
     setShoppingBag([...shoppingBag, item]);
   }
@@ -85,7 +86,7 @@ function App() {
         .filter(product => product.name === productName)
       
       const filteredProduct = filteredProducts.reduce((acc, curr) => {
-        acc.id = curr.id;
+        acc.id = curr.name;
         acc.name = curr.name;
         acc.price = curr.price;
         acc.category = curr.category
@@ -139,7 +140,7 @@ function App() {
               />} 
             />
             <Route path='/checkout' element={<Checkout shoppingBag={shoppingBag} totalPrice={totalPrice}/>}/>
-            <Route path='/:productID' element={<ProductDetail shoppingBag={shoppingBag} addToShoppingBag={addToShoppingBag} itemsForDisplay={itemsForDisplay} />}/>
+            <Route path='/:productID' element={<ProductDetail updateQuantity={updateQuantity} shoppingBag={shoppingBag} addToShoppingBag={addToShoppingBag} itemsForDisplay={itemsForDisplay} />}/>
           </Routes>
         </>
       }
