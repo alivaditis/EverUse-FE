@@ -5,7 +5,6 @@ import ProductDetailOrderForm from "./ProductDetailOrderForm";
 const ProductDetail = ({itemsForDisplay}) => {
   const productID = useParams().productID;
   const product = itemsForDisplay.find(item => item.id.toString() === (productID.toString()));
-  console.log(product)
  
   return (
     <>

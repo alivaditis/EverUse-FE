@@ -39,7 +39,9 @@ function App() {
         price: 20.00,
         image: 'https://cdn.shopify.com/s/files/1/0192/8012/products/friendship-bracelet-adjustable-camp-minimalist-rope-dowling-brothers-bangle-jewellery-740.jpg'
       }       
-  ])
+    ])
+    
+  const { loading, error, data } = useQuery(GET_ALL_ITEMS)
   const [totalPrice, setTotalPrice] = useState(0);
   const [items, setItems] = useState([])
   const [itemsForDisplay, setItemsForDisplay] = useState([])
@@ -71,7 +73,6 @@ function App() {
     
   const getItemsForDisplay = () => {
     const productsForDisplay = [];
-    
     const productNames = new Set (items.map(product => product.name))
     
     productNames.forEach(productName => {
@@ -103,8 +104,6 @@ function App() {
   }
 
   // eslint-disable-next-line no-unused-vars
-  const { loading, error, data } = useQuery(GET_ALL_ITEMS)
-  
   useEffect(() => {
     if (!items.length && !loading && !error) {
       setItems(data.products)

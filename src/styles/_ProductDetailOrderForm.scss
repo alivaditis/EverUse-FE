@@ -1,2 +1,25 @@
 @use 'variables' as v;
 @use 'mixins' as m;
+
+.details-order-form {
+  min-width: 80%;
+  border: solid 1px black;
+  padding: 10px;
+  @include m.vertically-aligned-flex;
+ 
+  .details-order-form__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.6rem;
+    font-weight: 500;
+    width: 70%;
+ }
+
+ .selection-pair {
+  @include m.vertically-aligned-flex;
+  .selection-text {
+    font-size: 1.2rem;
+  }
+ }
+}

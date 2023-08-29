@@ -149,26 +149,6 @@ body {
 .details-order-form {
   min-width: 80%;
   border: solid 1px black;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.details-order-form .details-order-form__title {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 1.6rem;
-  font-weight: 500;
-  width: 70%;
-}
-.details-order-form .selection-pair {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.details-order-form .selection-pair .selection-text {
-  font-size: 1.2rem;
 }
 
 .products {
@@ -199,7 +179,8 @@ body {
 .card .card__image {
   max-width: 100%;
   height: 11rem;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .card .card__info {
   text-align: left;
@@ -379,6 +360,4 @@ body {
   .request-form .request-submit {
     margin-top: auto;
   }
-}
-
-/*# sourceMappingURL=output.css.map */
+}/*# sourceMappingURL=input.css.map */
