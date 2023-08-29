@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
 import ShoppingBag from './ShoppingBag';
 import Checkout from './Checkout';
 import Home from './Home';
-
+import ProductDetail from './ProductDetail';
 
 function App() {
   const [shoppingBag, setShoppingBag] = useState(
@@ -117,7 +117,7 @@ function App() {
 
   return (
     <div className="app">
-      {/* {!loading && 
+      {!loading && 
         <>
           <NavLink to='/shopping-bag'>Cart</NavLink>
           <Routes>
@@ -129,15 +129,12 @@ function App() {
                 totalPrice={totalPrice} 
                 removeItemFromBag={removeItemFromBag} 
                 updateQuantity={updateQuantity} 
-              />} 
-            />
+              />}/> 
+            <Route path='/:productID' element={<ProductDetail itemsForDisplay={itemsForDisplay} />}/>
             <Route path='/checkout' element={<Checkout />} />
           </Routes>
         </>
-      } */}
-      <Routes>
-        <Route path='/:productID' element={<ProductDetail itemsForDisplay={itemsForDisplay} />}/>
-      </Routes>
+      }
     </div>
   );
 }

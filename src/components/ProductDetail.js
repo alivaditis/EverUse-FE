@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { camelToPascalCase } from "../helperFunctions";
+import horizontalBG from '../images/detail-horizontal-bg.jpg';
 
 const ProductDetail = ({itemsForDisplay}) => {
   console.log(itemsForDisplay)
@@ -8,7 +9,13 @@ const ProductDetail = ({itemsForDisplay}) => {
   console.log(product)
  
   return (
-    <h1> test</h1>
+    <>
+      <div className="details">
+        <div className="details__header">
+          <h2 className="details__header-text">Products handmade from upcycled climbing rope in an effort to reduce unnecessary waste</h2>
+        </div>
+      </div>
+    </>
   )
 }
 
