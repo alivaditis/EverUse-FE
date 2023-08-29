@@ -47,7 +47,7 @@ function App() {
     const total = shoppingBag.reduce((price, item) => {
       return price += (item.price * item.quantity)
     }, 0)
-    setTotalPrice(total)
+    setTotalPrice(parseInt(total).toFixed(2))
   }
 
   useEffect(() => {
