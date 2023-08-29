@@ -1,0 +1,39 @@
+@use 'variables' as v;
+
+.request-form {
+  height: 550px;
+  font: v.$primary-font;
+  display: flex;
+  flex-direction: column;
+  input, textarea {
+    margin: .6em 0;
+  }
+  .field-error {
+    color: red;
+  }
+  .request-comments {
+    min-height: 20%;
+    max-width: 100%;
+    min-width: 100%;
+  }
+  .request-submit {
+    margin-top: 2em;
+    padding: 8px 10px;
+    width: 80px;
+    border-radius: 10px;
+    border: none;
+    text-decoration: none;
+    background-color: v.$secondary-accent-color;
+    color: v.$ternary-background-color;
+    font: v.$secondary-font;
+    &:hover {
+    cursor: pointer;
+    }
+  }
+
+  @media screen and (min-width: 600px) {
+    .request-submit {
+      margin-top: auto;
+    }
+  }
+}
