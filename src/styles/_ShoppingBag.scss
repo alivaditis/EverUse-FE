@@ -8,6 +8,13 @@
   width: 100%;
   margin: 0;
 
+  .bag__empty {
+    @include m.center-column;
+    background-color: v.$ternary-background-color;
+    width: 98%;
+    text-align: center;
+  }
+
   .bag__contents {
     @include m.center-column;
     flex-wrap: wrap;

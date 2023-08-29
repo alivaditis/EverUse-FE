@@ -46,10 +46,10 @@ const ShoppingBag = ({ shoppingBag, totalPrice, removeItemFromBag, updateQuantit
         </section>
       </div>
       :
-      <>
+      <div className='bag__empty'>
         <h3>Your shopping bag is empty.</h3>
         <NavHashLink smooth to='/#products' className='bag__button'>Continue Shopping</NavHashLink>
-      </>
+      </div>
       }
     </div>
   )

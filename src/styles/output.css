@@ -170,6 +170,14 @@ body {
   width: 100%;
   margin: 0;
 }
+.bag .bag__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #FFFFFF;
+  width: 98%;
+  text-align: center;
+}
 .bag .bag__contents {
   display: flex;
   flex-direction: column;
