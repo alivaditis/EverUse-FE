@@ -1,6 +1,6 @@
 describe(('Shopping Bag Page'), () => {
   beforeEach(() => {
-    cy.intercept('POST', 'https://everuse-be-b6017dbfcc94.herokuapp.com/graphql', {
+    cy.intercept('POST', 'https://everuse-be-b6017dbfcc94.herokuapp.com/', {
       statusCode: 201,
       fixture: 'mockBag'
     }).as('getAllItems')
@@ -35,7 +35,8 @@ describe(('Shopping Bag Page'), () => {
   })
 
   it('Should change quantities and prices', () =>  {
-    cy.get('.counter__plus').first().click()
+    cy.wait('@getAllItems').then((interception) => {
+      cy.get('.counter__plus').first().click()
       .get('.counter__plus').first().click()
       .get('.item__price').first().contains('$40.00')
       .get('.bag__total').contains('$90.00');
@@ -50,14 +51,19 @@ describe(('Shopping Bag Page'), () => {
     cy.get('.counter__minus').last().click()
       .get('.item__price').last().contains('$40.00')
       .get('.bag__total').contains('$100.00');
-    
-    cy.get('.item__delete').first().click()
-      .get('.bag__total').contains('$70.00');
-    cy.get('.item__delete').last().click()
-      .get('.bag__total').contains('$30.00');
-    cy.get('.item__delete').click()
-      .get('h3').contains('Your shopping bag is empty.')
-      .get('.bag__button').contains('Continue Shopping').click();
-    cy.url('eq', 'http://localhost:3000/#products')
+    })
+  })
+
+  it('Should delete items and redirect to products section of landing page', () =>  {  
+    cy.wait('@getAllItems').then((interception) => {
+      cy.get('.item__delete').first().click()
+      .get('.bag__total').contains('$50.00');
+      cy.get('.item__delete').last().click()
+        .get('.bag__total').contains('$30.00');
+      cy.get('.item__delete').click()
+        .get('h3').contains('Your shopping bag is empty.')
+        .get('.bag__button').contains('Continue Shopping').click();
+      cy.url('eq', 'http://localhost:3000/#products')
+    })
   })
 })
