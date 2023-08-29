@@ -6,6 +6,13 @@ import 'swiper/css/pagination';
 import { Pagination, Mousewheel, Keyboard } from 'swiper/modules';
 
 const Products = ({itemsForDisplay}) => {
+
+  const formatItemName = (name) => {
+    if (name === 'dogLeash') {
+      return 'Dog Leash'
+    }
+    return name.charAt(0).toUpperCase() + name.slice(1);
+  }
   
   const cards = itemsForDisplay.map(item => {
     return (
@@ -13,7 +20,7 @@ const Products = ({itemsForDisplay}) => {
           <div className="card">
             <img src={item.image} alt={item.name} className="card__image" />
             <div className="card__info">
-              <h2 className="card__name">{item.name}</h2>
+              <h2 className="card__name">{formatItemName(item.name)}</h2>
               <p className="card__price">${item.price}</p>
             </div>
           </div>
