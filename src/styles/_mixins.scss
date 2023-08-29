@@ -1,0 +1,10 @@
+@mixin horizontally-aligned-flex {
+  display: flex;
+  align-items: center;
+}
+
+@mixin vertically-aligned-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

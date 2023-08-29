@@ -58,6 +58,9 @@ body {
 
 .details {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .details .details__header {
   background-image: url("../images/detail-horizontal-bg.jpg");
@@ -74,6 +77,17 @@ body {
   font-weight: 600;
   color: #FFFFFF;
   text-align: center;
+}
+.details .details__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.details .details__info .details__info-img-container {
+  width: 70%;
+}
+.details .details__info .details__info-img-container .details__info-img {
+  width: 100%;
 }
 
 .products {

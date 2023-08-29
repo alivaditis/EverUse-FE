@@ -14,6 +14,11 @@ const ProductDetail = ({itemsForDisplay}) => {
         <div className="details__header">
           <h2 className="details__header-text">Products handmade from upcycled climbing ropes in an effort to reduce unnecessary waste</h2>
         </div>
+        <div className="details__info">
+          <div className="details__info-img-container">
+            <img className="details__info-img" alt={product.name} src={product.image}/>
+          </div>
+        </div>
       </div>
     </>
   )

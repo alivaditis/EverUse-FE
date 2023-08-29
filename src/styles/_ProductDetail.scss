@@ -1,7 +1,9 @@
 @use 'variables' as v;
+@use 'mixins' as m;
 
 .details {
   min-height: 100vh;
+  @include m.vertically-aligned-flex;
   .details__header {
     background-image: url('../images/detail-horizontal-bg.jpg');
     background-size: cover;
@@ -16,6 +18,15 @@
       font-weight: 600;
       color: v.$primary-text-color;
       text-align: center;
+    }
+  }
+  .details__info {
+    @include m.vertically-aligned-flex;
+    .details__info-img-container {
+      width: 70%;
+      .details__info-img {
+        width: 100%;
+      }
     }
   }
 }
