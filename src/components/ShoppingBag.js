@@ -17,7 +17,7 @@ const ShoppingBag = ({ shoppingBag, totalPrice, removeItemFromBag, updateQuantit
           </div>
           <div className='item__counter'>
             <span className="material-icons-round counter__icon" onClick={() => updateQuantity(item.id)}>remove</span>
-            {item.quantity}
+            <p className='item__quantity'>{item.quantity}</p>
             <span className="material-icons-round counter__icon" onClick={() => updateQuantity(item.id, 'add')}>add</span>
           </div>
           <p className='item__price'>${(item.price * item.quantity).toFixed(2)}</p>
