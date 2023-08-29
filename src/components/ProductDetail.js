@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { camelToPascalCase } from "../helperFunctions";
-import horizontalBG from '../images/detail-horizontal-bg.jpg';
+import ProductDetailOrderForm from "./ProductDetailOrderForm";
 
 const ProductDetail = ({itemsForDisplay}) => {
   console.log(itemsForDisplay)
@@ -18,6 +18,7 @@ const ProductDetail = ({itemsForDisplay}) => {
           <div className="details__info-img-container">
             <img className="details__info-img" alt={product.name} src={product.image}/>
           </div>
+          <ProductDetailOrderForm product={product}/>
         </div>
       </div>
     </>
