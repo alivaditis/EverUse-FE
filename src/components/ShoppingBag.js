@@ -16,9 +16,9 @@ const ShoppingBag = ({ shoppingBag, totalPrice, removeItemFromBag, updateQuantit
             <p className='item__spec'>Unit Price: ${item.price}</p>
           </div>
           <div className='item__counter'>
-            <span className="material-icons-round counter__icon" onClick={() => updateQuantity(item.id)}>remove</span>
+            <span className="material-icons-round counter__icon counter__minus" onClick={() => updateQuantity(item.id)}>remove</span>
             <p className='item__quantity'>{item.quantity}</p>
-            <span className="material-icons-round counter__icon" onClick={() => updateQuantity(item.id, 'add')}>add</span>
+            <span className="material-icons-round counter__icon counter__plus" onClick={() => updateQuantity(item.id, 'add')}>add</span>
           </div>
           <p className='item__price'>${(item.price * item.quantity).toFixed(2)}</p>
         </div>
@@ -40,7 +40,7 @@ const ShoppingBag = ({ shoppingBag, totalPrice, removeItemFromBag, updateQuantit
           <h3 className='bag__summary-header'>Request Summary</h3>
           <div className='bag__subtotal'>
             <p>Order Subtotal:</p>
-            <p>${totalPrice}</p>
+            <p className='bag__total'>${totalPrice}</p>
           </div>
           <NavLink to='/checkout' className='bag__button'>Continue to Request</NavLink>
         </section>
