@@ -1,6 +1,6 @@
 // ABOUT COMPONENT //
 
-export default function About() {
+const About = () => {
   return (
     <div className="about">
       <div className="about__header">
@@ -12,3 +12,5 @@ export default function About() {
     </div>
   );
 }
+
+export default About;

@@ -1,6 +1,6 @@
 // LANDING COMPONENT //
 
-export default function Landing() {
+const Landing = () => {
   return (
     <div className="landing">
       <div className="landing__header">
@@ -9,5 +9,6 @@ export default function Landing() {
       </div>
     </div>
   );
+};
 
-}
+export default Landing;

@@ -6,7 +6,7 @@ import Landing from './Landing';
 import Products from './Products';
 import About from './About';
 
-function App() {
+const App = () => {
   const [items, setItems] = useState([])
   const [itemsForDisplay, setItemsForDisplay] = useState([])
 
@@ -45,6 +45,7 @@ function App() {
 
   // eslint-disable-next-line no-unused-vars
   const { loading, error, data } = useQuery(GET_ALL_ITEMS)
+  console.log(data)
   
   useEffect(() => {
     if (!items.length && !loading && !error) {

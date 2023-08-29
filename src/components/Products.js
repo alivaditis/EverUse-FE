@@ -5,7 +5,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination, Mousewheel, Keyboard } from 'swiper/modules';
 
-export default function Products({itemsForDisplay}) {
+const Products = ({itemsForDisplay}) => {
   
   const cards = itemsForDisplay.map(item => {
     return (
@@ -48,4 +48,6 @@ export default function Products({itemsForDisplay}) {
       </div>
     </div>
   )
-}
+};
+
+export default Products;
