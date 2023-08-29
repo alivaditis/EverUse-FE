@@ -70,6 +70,10 @@ function App() {
     operation === 'add' ? newItem.quantity += 1 : newItem.quantity -=1;
     newItem.quantity ? setShoppingBag(shoppingBag.toSpliced(index, 1, newItem)) : removeItemFromBag(id)
   }
+
+  const addToShoppingBag = (item) => {
+    setShoppingBag([...shoppingBag, item]);
+  }
     
   const getItemsForDisplay = () => {
     const productsForDisplay = [];
@@ -135,7 +139,7 @@ function App() {
               />} 
             />
             <Route path='/checkout' element={<Checkout shoppingBag={shoppingBag} totalPrice={totalPrice}/>}/>
-            <Route path='/:productID' element={<ProductDetail itemsForDisplay={itemsForDisplay} />}/>
+            <Route path='/:productID' element={<ProductDetail shoppingBag={shoppingBag} addToShoppingBag={addToShoppingBag} itemsForDisplay={itemsForDisplay} />}/>
           </Routes>
         </>
       }

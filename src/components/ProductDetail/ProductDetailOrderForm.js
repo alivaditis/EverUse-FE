@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import SizeOptionsContainer from "./SizeOptionsContainer";
 import { camelToPascalCase } from "../../helperFunctions";
 
-const ProductDetailOrderForm = ({product}) => {
+const ProductDetailOrderForm = ({product, addToShoppingBag, shoppingBag}) => {
   const [isSingleSize, setIsSingleSize] = useState(false);
   const [inputFields, setInputFields] = useState({
     "color":"",
@@ -28,7 +28,6 @@ const ProductDetailOrderForm = ({product}) => {
     }
   }
 
-
   useEffect(() => {
     console.log(isFormHealthy)
   }, [isFormHealthy])
@@ -45,20 +44,30 @@ const ProductDetailOrderForm = ({product}) => {
       return <option key={color} value={color}> { camelToPascalCase(color) } </option>
     })
     return (
-    <>
-      <option value="">Choose color</option>
-      {options}
-    </>
-      );
+      <>
+        <option value="">Choose color</option>
+        {options}
+      </>
+    );
   }
 
-  const addToShoppingBag = (e) => {
+  const saveItem = (e) => {
     e.preventDefault();
-    console.log(inputFields)
+    const newItem = {
+      id: shoppingBag.length+1,  
+      type: product.name,
+      color: inputFields.color,
+      size: inputFields.size,
+      quantity: Number(inputFields.quantity),
+      price: Number(product.price).toFixed(2),
+      image: `${product.image}`
+    }
+    console.log(newItem)
+
   }
 
   return (
-    <form className="details-order-form" onSubmit={(e) => {addToShoppingBag(e)}}>
+    <form className="details-order-form" onSubmit={(e) => {saveItem(e)}}>
       <div className="details-order-form__title">
         <p>{product.name}</p>
         <p>${product.price}</p>

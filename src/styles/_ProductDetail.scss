@@ -23,6 +23,7 @@
     }
   }
   .details__info {
+    margin-top: 2rem;
     @include m.vertically-aligned-flex;
     .details__info-img-container {
       width: 70%;

@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import ProductDetailOrderForm from "./ProductDetailOrderForm";
 import DescriptionText from "./DescriptionText";
 
-const ProductDetail = ({itemsForDisplay}) => {
+const ProductDetail = ({itemsForDisplay, addToShoppingBag, shoppingBag}) => {
   const productID = useParams().productID;
   const product = itemsForDisplay.find(item => item.id.toString() === (productID.toString()));
  
@@ -17,7 +17,7 @@ const ProductDetail = ({itemsForDisplay}) => {
             <img className="details__info-img" alt={product.name} src={product.image}/>
           </div>
           <DescriptionText description={product.description} />
-          <ProductDetailOrderForm product={product}/>
+          <ProductDetailOrderForm product={product} shoppingBag={shoppingBag} addToShoppingBag={addToShoppingBag}/>
         </div>
       </div>
     </>
