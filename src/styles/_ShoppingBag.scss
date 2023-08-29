@@ -1,0 +1,101 @@
+@use 'variables' as v;
+
+.bag {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: v.$primary-background-color;
+  min-height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+.bag__items {
+  width: 98%;
+  border-top: v.$secondary-accent-color;
+  border-bottom: v.$secondary-accent-color;
+  border-radius: 3px;
+}
+
+.bag__summary {
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+}
+
+.bag__subtotal {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+}
+
+.bag__button {
+  align-self: center;
+  text-decoration: none;
+  background-color: v.$secondary-accent-color;
+  padding: 1rem;
+  border-radius: 30px;
+  color: v.$primary-text-color;
+  margin: 1rem;
+}
+
+.item {
+  background-color: v.$ternary-background-color;
+  display: flex;
+  padding: 8px;
+  margin: 5px 0;
+}
+
+.item__img {
+  height: 50px;
+}
+
+.item__title {
+  margin: 0;
+}
+
+.item__info {
+  width: 100%;
+  margin-left: 1rem;
+}
+
+.item__details {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  font-size: 10px;
+
+  .item__detail {
+    width: 100%;
+  }
+  
+  .item__spec {
+    margin: 0;
+  }
+  
+  .item__counter {
+    display: flex;
+    align-items: center;
+    margin: 0 1rem;
+  }
+  
+  .counter__icon {
+    font-size: 1rem;
+    background-color: v.$ternary-accent-color;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  
+  .item__price {
+    margin: 0;
+    font-weight: 600;
+    font-size: 15px;
+  }
+
+}
+
+.item__delete {
+  font-size: 1.5rem;
+  color: v.$ternary-accent-color;
+  cursor: pointer;
+}
