@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import SizeOptionsContainer from "./SizeOptionsContainer";
 import { camelToPascalCase } from "../../helperFunctions";
-import { cleanFetchedData } from "../../helperFunctions";
 
 const ProductDetailOrderForm = ({product, addToShoppingBag, shoppingBag, updateQuantity}) => {
   const [isSingleSize, setIsSingleSize] = useState(false);
@@ -14,7 +13,7 @@ const ProductDetailOrderForm = ({product, addToShoppingBag, shoppingBag, updateQ
   const [isFormHealthy, setIsFormHealthy] = useState(false);
   
   useEffect(() => {
-    setColorOptions(product.colorOptions)
+    setColorOptions(product?.colorOptions)
   }, []);
   
   useEffect(() => {
@@ -41,7 +40,7 @@ const ProductDetailOrderForm = ({product, addToShoppingBag, shoppingBag, updateQ
   }
 
   const ColorOptionsCode = () => {
-    const options = colorOptions.map(color => {
+    const options = colorOptions?.map(color => {
       return <option key={color} value={color}> { camelToPascalCase(color) } </option>
     })
     return (

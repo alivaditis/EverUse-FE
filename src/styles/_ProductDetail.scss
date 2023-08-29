@@ -4,12 +4,12 @@
 .details {
   font-family: v.$secondary-font;
   min-height: 100vh;
+  height: 100%;
   @include m.vertically-aligned-flex;
   overflow: auto;
   .details__header {
     background-image: url('../images/detail-horizontal-bg.jpg');
     background-size: cover;
-    background-repeat: no-repeat;
     height: 15rem;
     display: flex;
     align-items: center;
