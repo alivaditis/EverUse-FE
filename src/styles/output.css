@@ -192,6 +192,23 @@ body {
   background-color: black;
   color: white;
 }
+.details-order-form .selection-pair .size-options-container .single-choice-container {
+  width: 100%;
+  display: flex;
+}
+.details-order-form .selection-pair .size-options-container input {
+  display: none;
+}
+.details-order-form .selection-pair .size-options-container label {
+  text-align: center;
+  width: 2.1rem;
+  padding: 15px;
+  border: 1px solid black;
+}
+.details-order-form .selection-pair .size-options-container input:checked + label {
+  background-color: black;
+  color: white;
+}
 
 .products {
   font-family: "Roboto", sans-serif;
