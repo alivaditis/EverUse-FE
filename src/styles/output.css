@@ -176,9 +176,26 @@ body {
   font-size: 1.4rem;
   margin: 5px;
 }
+.details-order-form .selection-pair .faded {
+  color: rgba(0, 0, 0, 0.4);
+}
 .details-order-form .selection-pair select {
   height: 3rem;
   font-size: 1.5rem;
+}
+.details-order-form .submit-btn {
+  margin: 10px;
+  width: 40%;
+  height: 3rem;
+  background-color: black;
+  color: white;
+}
+.details-order-form .faded-btn {
+  margin: 10px;
+  width: 40%;
+  height: 3rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
 }
 
 .products {

@@ -10,26 +10,51 @@ const ProductDetailOrderForm = ({product}) => {
     "quantity":0
   });
   const [colorOptions, setColorOptions] = useState([]);
+  const [isFormHealthy, setIsFormHealthy] = useState(false);
   
   useEffect(() => {
     setColorOptions(product.colorOptions)
-  }, [])
+  }, []);
+  
+  useEffect(() => {
+    checkFormHealth()
+  }, [inputFields]);
+
+  const checkFormHealth = () => {
+    if (inputFields.color && inputFields.size && inputFields.quantity) {
+      setIsFormHealthy(true);
+    } else {
+      setIsFormHealthy(false);
+    }
+  }
+
+
+  useEffect(() => {
+    console.log(isFormHealthy)
+  }, [isFormHealthy])
 
   const handleSelect = (e, changedField) => {
     const clonedInputs = {...inputFields};
     clonedInputs[changedField] = e.target.value;
     setInputFields(clonedInputs);
+    checkFormHealth();
   }
 
   const ColorOptionsCode = () => {
     const options = colorOptions.map(color => {
       return <option key={color} value={color}> { camelToPascalCase(color) } </option>
     })
-    return options;
+    return (
+    <>
+      <option value="">Choose color</option>
+      {options}
+    </>
+      );
   }
 
-  const addToShoppingBag = () => {
-
+  const addToShoppingBag = (e) => {
+    e.preventDefault();
+    console.log(inputFields)
   }
 
   return (
@@ -44,13 +69,14 @@ const ProductDetailOrderForm = ({product}) => {
       </div>
       <div className="selection-pair">
          <label className="selection-text">Color:</label> 
-         <select id="colorOptions" value={inputFields.color} onChange={(e)=> {handleSelect(e, "color")}}>
+         <select id="colorOptions" className={!inputFields.color? "faded":""} value={inputFields.color} onChange={(e)=> {handleSelect(e, "color")}}>
           <ColorOptionsCode />
          </select>
       </div>
       <div className="selection-pair">
          <label className="selection-text">Quantity:</label> 
-         <select id="quantityOptions" value={inputFields.quantity} onChange={(e) => {handleSelect(e, "quantity")}}>
+         <select id="quantityOptions" className={!inputFields.quantity? "faded":""} value={inputFields.quantity} onChange={(e) => {handleSelect(e, "quantity")}}>
+            <option value="" className="faded">Choose quantity</option>
             <option value={1}> 1 </option>
             <option value={2}> 2 </option>
             <option value={3}> 3 </option>
@@ -62,7 +88,7 @@ const ProductDetailOrderForm = ({product}) => {
             <option value={9}> 9 </option>
          </select>
       </div>
-      <button className="submit-btn">
+      <button disabled={!isFormHealthy} className={isFormHealthy? "submit-btn": "faded-btn"}>
         Add to Bag
       </button>
       

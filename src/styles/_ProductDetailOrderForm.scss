@@ -28,9 +28,28 @@
       font-size: 1.4rem;
       margin: 5px;
     }
+    .faded {
+      color: rgba(0, 0, 0, 0.4);
+    }
     select {
       height: 3rem;
       font-size: 1.5rem;
     }
+ }
+
+ .submit-btn {
+  margin: 10px;
+  width: 40%;
+  height: 3rem;
+  background-color: black;
+  color: white;
+ }
+
+ .faded-btn {
+  margin: 10px;
+  width: 40%;
+  height: 3rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
  }
 }
