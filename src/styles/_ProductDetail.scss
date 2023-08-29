@@ -4,6 +4,7 @@
 .details {
   min-height: 100vh;
   @include m.vertically-aligned-flex;
+  overflow: auto;
   .details__header {
     background-image: url('../images/detail-horizontal-bg.jpg');
     background-size: cover;

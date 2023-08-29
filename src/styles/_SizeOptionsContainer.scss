@@ -24,12 +24,11 @@
   .single-choice-container {
     width: 100%;
     display: flex;
-  }
-  input {
-    display: none;
-  }
-  label {
-    text-align: center;
+    input {
+      display: none;
+    }
+    label {
+      text-align: center;
       width: 2.1rem;
       padding: 15px;
       border: 1px solid black;
@@ -38,4 +37,5 @@
       background-color: black;
       color: white;
     }
+  }
 }

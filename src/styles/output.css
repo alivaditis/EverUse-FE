@@ -117,6 +117,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: auto;
 }
 .details .details__header {
   background-image: url("../images/detail-horizontal-bg.jpg");
@@ -165,11 +166,19 @@ body {
 }
 .details-order-form .selection-pair {
   width: 90%;
+  min-height: 5rem;
+  margin: 10px;
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
 }
 .details-order-form .selection-pair .selection-text {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+  margin: 5px;
+}
+.details-order-form .selection-pair select {
+  height: 3rem;
+  font-size: 1.5rem;
 }
 
 .products {
@@ -340,16 +349,16 @@ body {
   width: 100%;
   display: flex;
 }
-.size-options-container input {
+.size-options-container .single-choice-container input {
   display: none;
 }
-.size-options-container label {
+.size-options-container .single-choice-container label {
   text-align: center;
   width: 2.1rem;
   padding: 15px;
   border: 1px solid black;
 }
-.size-options-container input:checked + label {
+.size-options-container .single-choice-container input:checked + label {
   background-color: black;
   color: white;
 }
