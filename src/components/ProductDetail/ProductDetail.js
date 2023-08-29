@@ -4,6 +4,7 @@ import DescriptionText from "./DescriptionText";
 import { useQuery } from "@apollo/client";
 import { GET_SINGLE_ITEM } from "../../api";
 import { useEffect, useState } from "react";
+import { cleanFetchedData } from "../../helperFunctions";
 
 const ProductDetail = ({itemsForDisplay, addToShoppingBag, shoppingBag, updateQuantity}) => {
   const [product, setProduct] = useState({});
@@ -15,8 +16,12 @@ const ProductDetail = ({itemsForDisplay, addToShoppingBag, shoppingBag, updateQu
   })
 
   useEffect(() => {
+    console.log(product, "product")
+  }, [product])
+
+  useEffect(() => {
     if(!product.name && data?.product && !loading) {
-      setProduct(data.product)
+      setProduct(cleanFetchedData(data.product)[0]);
     }
   },[data])
 

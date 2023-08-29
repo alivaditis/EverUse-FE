@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import SizeOptionsContainer from "./SizeOptionsContainer";
 import { camelToPascalCase } from "../../helperFunctions";
+import { cleanFetchedData } from "../../helperFunctions";
 
 const ProductDetailOrderForm = ({product, addToShoppingBag, shoppingBag, updateQuantity}) => {
   const [isSingleSize, setIsSingleSize] = useState(false);

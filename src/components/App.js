@@ -8,6 +8,7 @@ import '../styles/_App.scss'
 import ShoppingBag from './ShoppingBag';
 import Home from './Home';
 import ProductDetail from './ProductDetail/ProductDetail';
+import { cleanFetchedData } from '../helperFunctions';
 
 function App() {
   const [shoppingBag, setShoppingBag] = useState(
@@ -76,35 +77,7 @@ function App() {
   }
     
   const getItemsForDisplay = () => {
-    const productsForDisplay = [];
-    const productNames = new Set (items.map(product => product.name))
-    
-    productNames.forEach(productName => {
-      
-      const filteredProducts = items
-        .filter(product => product.name === productName)
-      
-      const filteredProduct = filteredProducts.reduce((acc, curr) => {
-        acc.id = curr.name;
-        acc.name = curr.name;
-        acc.price = curr.price;
-        acc.category = curr.category
-        acc.image = curr.image
-        acc.description = curr.description
-        if (!acc.colorOptions.includes(curr.color)) {
-          acc.colorOptions.push(curr.color)
-        }
-        if (!acc.sizeOptions.includes(curr.size)) {
-          acc.sizeOptions.push(curr.size)
-        }
-        return acc;
-      }, {
-        colorOptions: [],
-        sizeOptions: []
-      })
-      productsForDisplay.push(filteredProduct)
-    }) 
-    return productsForDisplay
+    return cleanFetchedData(items);
   }
 
   // eslint-disable-next-line no-unused-vars
