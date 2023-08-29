@@ -180,9 +180,8 @@ body {
 }
 .bag .bag__contents {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   flex-wrap: wrap;
+  justify-content: space-evenly;
   width: 100%;
 }
 .bag .bag__items,
@@ -285,10 +284,6 @@ body {
   }
 }
 @media screen and (min-width: 732px) {
-  .bag .bag__contents {
-    flex-direction: row;
-    justify-content: space-evenly;
-  }
   .bag .bag__items {
     width: 60%;
   }

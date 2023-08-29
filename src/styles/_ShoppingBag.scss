@@ -16,8 +16,9 @@
   }
 
   .bag__contents {
-    @include m.center-column;
+    display: flex;
     flex-wrap: wrap;
+    justify-content: space-evenly;
     width: 100%;
   }
 
@@ -149,11 +150,6 @@
 
 @media screen and (min-width: 732px) {
   .bag {
-    .bag__contents {
-      flex-direction: row;
-      justify-content: space-evenly;
-    }
-
     .bag__items {
       width: 60%;
     }
