@@ -113,6 +113,7 @@ body {
 }
 
 .details {
+  font-family: "Roboto", sans-serif;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -194,7 +195,7 @@ body {
   margin: 10px;
   width: 40%;
   height: 3rem;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.4);
   color: white;
 }
 
@@ -339,6 +340,23 @@ body {
   font-size: 1.5rem;
   color: #D9CFC9;
   cursor: pointer;
+}
+
+.product-description-text {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  font-size: 1.1rem;
+}
+.product-description-text h2 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-family: "Roboto", sans-serif;
+}
+.product-description-text p {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-family: "Spinnaker", sans-serif;
 }
 
 .size-options-container {

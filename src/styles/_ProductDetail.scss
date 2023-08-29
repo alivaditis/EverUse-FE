@@ -2,6 +2,7 @@
 @use 'mixins' as m;
 
 .details {
+  font-family: v.$secondary-font;
   min-height: 100vh;
   @include m.vertically-aligned-flex;
   overflow: auto;

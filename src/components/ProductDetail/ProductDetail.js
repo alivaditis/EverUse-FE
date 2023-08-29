@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import ProductDetailOrderForm from "./ProductDetailOrderForm";
+import DescriptionText from "./DescriptionText";
 
 const ProductDetail = ({itemsForDisplay}) => {
   const productID = useParams().productID;
@@ -15,6 +16,7 @@ const ProductDetail = ({itemsForDisplay}) => {
           <div className="details__info-img-container">
             <img className="details__info-img" alt={product.name} src={product.image}/>
           </div>
+          <DescriptionText description={product.description} />
           <ProductDetailOrderForm product={product}/>
         </div>
       </div>
