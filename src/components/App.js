@@ -115,6 +115,9 @@ function App() {
     setItemsForDisplay(displayProducts)
   }, [items]);
 
+  useEffect(() => {
+  }, [itemsForDisplay])
+
   return (
     <div className="app">
       {!loading && 
