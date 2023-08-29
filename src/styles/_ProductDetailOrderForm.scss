@@ -24,43 +24,5 @@
     .selection-text {
       font-size: 1.2rem;
     }
-    .size-options-container {
-      width: 100%;
-      .multiple-choice-container {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        input {
-          display: none;
-        }
-        label {
-          text-align: center;
-          width: 2.1rem;
-          padding: 15px;
-          border: 1px solid black;
-        }
-        input:checked+label {
-          background-color: black;
-          color: white;
-        }
-      }
-      .single-choice-container {
-        width: 100%;
-        display: flex;
-      }
-      input {
-        display: none;
-      }
-      label {
-        text-align: center;
-          width: 2.1rem;
-          padding: 15px;
-          border: 1px solid black;
-        }
-        input:checked+label {
-          background-color: black;
-          color: white;
-        }
-    }
  }
 }

@@ -1,5 +1,4 @@
 import { useParams } from "react-router-dom";
-import { camelToPascalCase } from "../helperFunctions";
 import ProductDetailOrderForm from "./ProductDetailOrderForm";
 
 const ProductDetail = ({itemsForDisplay}) => {

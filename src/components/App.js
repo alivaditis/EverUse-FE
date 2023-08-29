@@ -7,7 +7,7 @@ import Checkout from './Checkout';
 import '../styles/_App.scss'
 import ShoppingBag from './ShoppingBag';
 import Home from './Home';
-import ProductDetail from './ProductDetail';
+import ProductDetail from './ProductDetail/ProductDetail';
 
 function App() {
   const [shoppingBag, setShoppingBag] = useState(

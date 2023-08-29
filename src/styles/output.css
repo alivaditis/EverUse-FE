@@ -171,44 +171,6 @@ body {
 .details-order-form .selection-pair .selection-text {
   font-size: 1.2rem;
 }
-.details-order-form .selection-pair .size-options-container {
-  width: 100%;
-}
-.details-order-form .selection-pair .size-options-container .multiple-choice-container {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-}
-.details-order-form .selection-pair .size-options-container .multiple-choice-container input {
-  display: none;
-}
-.details-order-form .selection-pair .size-options-container .multiple-choice-container label {
-  text-align: center;
-  width: 2.1rem;
-  padding: 15px;
-  border: 1px solid black;
-}
-.details-order-form .selection-pair .size-options-container .multiple-choice-container input:checked + label {
-  background-color: black;
-  color: white;
-}
-.details-order-form .selection-pair .size-options-container .single-choice-container {
-  width: 100%;
-  display: flex;
-}
-.details-order-form .selection-pair .size-options-container input {
-  display: none;
-}
-.details-order-form .selection-pair .size-options-container label {
-  text-align: center;
-  width: 2.1rem;
-  padding: 15px;
-  border: 1px solid black;
-}
-.details-order-form .selection-pair .size-options-container input:checked + label {
-  background-color: black;
-  color: white;
-}
 
 .products {
   font-family: "Roboto", sans-serif;
@@ -351,6 +313,45 @@ body {
   font-size: 1.5rem;
   color: #D9CFC9;
   cursor: pointer;
+}
+
+.size-options-container {
+  width: 100%;
+}
+.size-options-container .multiple-choice-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.size-options-container .multiple-choice-container input {
+  display: none;
+}
+.size-options-container .multiple-choice-container label {
+  text-align: center;
+  width: 2.1rem;
+  padding: 15px;
+  border: 1px solid black;
+}
+.size-options-container .multiple-choice-container input:checked + label {
+  background-color: black;
+  color: white;
+}
+.size-options-container .single-choice-container {
+  width: 100%;
+  display: flex;
+}
+.size-options-container input {
+  display: none;
+}
+.size-options-container label {
+  text-align: center;
+  width: 2.1rem;
+  padding: 15px;
+  border: 1px solid black;
+}
+.size-options-container input:checked + label {
+  background-color: black;
+  color: white;
 }
 
 .about {
