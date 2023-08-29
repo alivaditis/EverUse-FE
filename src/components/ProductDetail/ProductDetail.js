@@ -1,10 +1,25 @@
 import { useParams } from "react-router-dom";
 import ProductDetailOrderForm from "./ProductDetailOrderForm";
 import DescriptionText from "./DescriptionText";
+import { useQuery } from "@apollo/client";
+import { GET_SINGLE_ITEM } from "../../api";
+import { useEffect, useState } from "react";
 
 const ProductDetail = ({itemsForDisplay, addToShoppingBag, shoppingBag, updateQuantity}) => {
+  const [product, setProduct] = useState({});
   const productID = useParams().productID;
-  const product = itemsForDisplay.find(item => item.id.toString() === (productID.toString()));
+  const { loading, error, data } = useQuery(GET_SINGLE_ITEM, {
+    variables: {
+      name: productID
+    }
+  })
+
+  useEffect(() => {
+    if(!product.name && data?.product && !loading) {
+      setProduct(data.product)
+    }
+  },[data])
+
  
   return (
     <>

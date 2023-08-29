@@ -55,7 +55,6 @@ function App() {
 
   useEffect(() => {
     addTotalPrice();
-    console.log(shoppingBag)
   }, [shoppingBag])
 
   const removeItemFromBag = id => {
