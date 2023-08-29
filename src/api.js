@@ -1,7 +1,7 @@
 import { gql } from '@apollo/client';
   
 const GET_ALL_ITEMS = gql`
-query GetItems {
+query {
   products {
       id
       name
@@ -12,6 +12,13 @@ query GetItems {
       quantity
       size
       price
+  }
+}`
+
+const SUBMIT_REQUEST = gql`
+mutation CreateOrderForm {
+  createOrderForm(input: $input) {
+      message
   }
 }`
 
@@ -41,4 +48,4 @@ query GetItems {
   //   .then(res => console.log('post response:', res))
   // };  
 
-  export { GET_ALL_ITEMS }
+  export { GET_ALL_ITEMS, SUBMIT_REQUEST }

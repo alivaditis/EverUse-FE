@@ -1,6 +1,6 @@
 @use 'variables' as v;
 
-.request-form {
+.checkout__form {
   height: 550px;
   font: v.$primary-font;
   display: flex;
@@ -8,15 +8,15 @@
   input, textarea {
     margin: .6em 0;
   }
-  .field-error {
+  .checkout__form__fielderror {
     color: red;
   }
-  .request-comments {
+  .checkout__form__comments {
     min-height: 20%;
     max-width: 100%;
     min-width: 100%;
   }
-  .request-submit {
+  .checkout__form__submit {
     margin-top: 2em;
     padding: 8px 10px;
     width: 80px;
@@ -32,7 +32,7 @@
   }
 
   @media screen and (min-width: 600px) {
-    .request-submit {
+    .checkout__form__submit {
       margin-top: auto;
     }
   }

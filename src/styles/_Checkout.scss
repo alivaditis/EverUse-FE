@@ -10,10 +10,13 @@
   padding: 0 2.5em;
   font: v.$primary-font;
   background-color: v.$primary-background-color;
-  .checkout-header {
+  .checkout__header {
     text-align: center;
   }
-  .request-summary {
+  .checkout__summary {
+    h3 {
+      margin-top: 0;
+    }
     border-radius: 3px;
     display: flex;
     flex-direction: column;
@@ -22,7 +25,7 @@
     padding: 1em;
     background-color: v.$ternary-background-color;
   }
-  .pricing {
+  .checkout__pricing {
     @include space-between;
     font-weight: bold;
     margin-top: auto;
@@ -34,7 +37,7 @@
     margin-left: auto;
     border-bottom: solid black 2px;
   }
-  .request-item {
+  .checkout__item {
     display: flex;
     justify-content: space-between;
     margin-top: 8px;
@@ -45,16 +48,16 @@
   }
 
   @media screen and (min-width: 600px) {
-    .checkout-header {
+    .checkout__header {
       display: flex;
       justify-content: space-between;
     }
-    .checkout-container {
+    .checkout__container {
       display: flex;
       flex-direction: row-reverse;
       justify-content: space-between;
     }
-    .request-summary, .request-form {
+    .checkout__summary, .checkout__form {
       margin: 0;
       width: 45%;
     }
