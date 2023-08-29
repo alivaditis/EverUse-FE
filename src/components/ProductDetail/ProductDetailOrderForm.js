@@ -5,21 +5,17 @@ import { camelToPascalCase } from "../../helperFunctions";
 const ProductDetailOrderForm = ({product}) => {
   console.log(product)
   const [isSingleSize, setIsSingleSize] = useState(false);
-  const [inputSize, setInputSize] = useState('');
-  const [inputColor, setInputColor] = useState('');
-  const [inputQuantity, setInputQuantity] = useState('');
+  const [inputFields, setInputFields] = useState({});
   const [colorOptions, setColorOptions] = useState([]);
   
   useEffect(() => {
     setColorOptions(product.colorOptions)
   }, [])
 
-  const handleSelect = (e, change) => {
-    if (change === `color`) {
-      setInputColor(e.target.value);
-    } else {
-      setInputQuantity(Number(e.target.value));
-    }
+  const handleSelect = (e, changedField) => {
+    const clonedInputs = {...inputFields};
+    clonedInputs[changedField] = e.target.value;
+    setInputFields(clonedInputs);
   }
 
   const ColorOptionsCode = () => {
@@ -30,7 +26,7 @@ const ProductDetailOrderForm = ({product}) => {
   }
 
   return (
-    <form className="details-order-form">
+    <form className="details-order-form" onSubmit={(e) => {addToShoppingBag(e)}}>
       <div className="details-order-form__title">
         <p>{product.name}</p>
         <p>${product.price}</p>
@@ -59,7 +55,9 @@ const ProductDetailOrderForm = ({product}) => {
             <option value={9}> 9 </option>
          </select>
       </div>
-      
+      <button className="submit-btn">
+        Add to Bag
+      </button>
       
     </form>
   )
