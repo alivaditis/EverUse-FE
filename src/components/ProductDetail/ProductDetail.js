@@ -10,7 +10,7 @@ const ProductDetail = ({itemsForDisplay, addToShoppingBag, shoppingBag, updateQu
     <>
       <div className="details">
         <div className="details__header">
-          <h2 className="details__header-text">Products handmade from upcycled climbing ropes in an effort to reduce unnecessary waste</h2>
+          <h2 className="details__header-text">Products handmade from upcycled climbing ropes in an effort to reduce waste</h2>
         </div>
         <div className="details__info">
           <div className="details__info-img-container">
