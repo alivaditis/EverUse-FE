@@ -6,6 +6,7 @@
   max-width: 65%;
   border: solid 1px black;
   padding: 20px;
+  margin-bottom: 30px;
   @include m.vertically-aligned-flex;
  
   .details-order-form__title {

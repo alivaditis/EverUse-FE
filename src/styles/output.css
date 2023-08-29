@@ -155,6 +155,7 @@ body {
   max-width: 65%;
   border: solid 1px black;
   padding: 20px;
+  margin-bottom: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
