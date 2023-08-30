@@ -1,42 +1,59 @@
 @use 'variables' as v;
+@use 'mixins' as m;
 
 .bag {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include m.center-column;
   background-color: v.$primary-background-color;
   min-height: 100%;
   width: 100%;
   margin: 0;
-}
 
-.bag__items {
-  width: 98%;
-  border-top: v.$secondary-accent-color;
-  border-bottom: v.$secondary-accent-color;
-  border-radius: 3px;
-}
+  .bag__empty {
+    @include m.center-column;
+    background-color: v.$ternary-background-color;
+    width: 98%;
+    text-align: center;
+  }
 
-.bag__summary {
-  display: flex;
-  flex-direction: column;
-  width: 95%;
-}
+  .bag__contents {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+  }
 
-.bag__subtotal {
-  display: flex;
-  justify-content: space-between;
-  font-weight: 600;
-}
+  .bag__items,
+  .bag__summary {
+    width: 98%;
+  }
 
-.bag__button {
-  align-self: center;
-  text-decoration: none;
-  background-color: v.$secondary-accent-color;
-  padding: 1rem;
-  border-radius: 30px;
-  color: v.$primary-text-color;
-  margin: 1rem;
+  .bag__summary {
+    display: flex;
+    flex-direction: column;
+    background-color: v.$ternary-background-color;
+    margin: 5px 0;
+  }
+
+  .bag__summary-header {
+    margin: 5%;
+  }
+
+  .bag__subtotal {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    margin: 0 5%;
+  }
+
+  .bag__button {
+    align-self: center;
+    text-decoration: none;
+    background-color: v.$secondary-accent-color;
+    padding: 1rem;
+    border-radius: 30px;
+    color: v.$primary-text-color;
+    margin: 1rem;
+  }
 }
 
 .item {
@@ -44,58 +61,127 @@
   display: flex;
   padding: 8px;
   margin: 5px 0;
-}
 
-.item__img {
-  height: 50px;
-}
-
-.item__title {
-  margin: 0;
-}
-
-.item__info {
-  width: 100%;
-  margin-left: 1rem;
-}
-
-.item__details {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: flex-end;
-  font-size: 10px;
-
-  .item__detail {
-    width: 100%;
+  .item__img {
+    height: 50px;
   }
-  
-  .item__spec {
+
+  .item__title {
     margin: 0;
   }
-  
-  .item__counter {
-    display: flex;
-    align-items: center;
-    margin: 0 1rem;
+
+  .item__info {
+    width: 100%;
+    margin-left: 1rem;
   }
-  
-  .counter__icon {
-    font-size: 1rem;
-    background-color: v.$ternary-accent-color;
-    margin: 0 5px;
+
+  .item__delete {
+    font-size: 1.5rem;
+    color: v.$ternary-accent-color;
     cursor: pointer;
   }
+
+  .item__details {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    font-size: 10px;
+    width: 100%;
   
-  .item__price {
-    margin: 0;
-    font-weight: 600;
-    font-size: 15px;
+    .item__specs {
+      width: 40%;
+    }
+    
+    .item__spec {
+      margin: 0;
+    }
+    
+    .item__counter {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .item__quantity {
+      margin: 0;
+    }
+    
+    .counter__icon {
+      font-size: 1rem;
+      background-color: v.$ternary-accent-color;
+      margin: 0 5px;
+      cursor: pointer;
+    }
+    
+    .item__price {
+      margin: 0;
+      font-weight: 600;
+      font-size: 15px;
+    }
+  }
+}
+
+@media screen and (min-width: 375px) {
+  .bag {
+    .bag__items,
+    .bag__summary {
+      width: 90%;
+    }
   }
 
+  .item {
+    .item__details {
+      font-size: 12px
+    }
+  }
 }
 
-.item__delete {
-  font-size: 1.5rem;
-  color: v.$ternary-accent-color;
-  cursor: pointer;
+@media screen and (min-width: 425px) {
+  .item {
+    .item__img {
+      height: 70px;
+    }
+  }
 }
+
+@media screen and (min-width: 500px) {
+  .item {
+    .item__details {
+      font-size: 14px
+    }
+  }
+}
+
+@media screen and (min-width: 732px) {
+  .bag {
+    .bag__items {
+      width: 60%;
+    }
+
+    .bag__summary {
+      width: 30%;
+    }
+  }
+}
+
+@media screen and (min-width: 850px) {
+  .item {
+    .item__details {
+      font-size: 16px
+    }
+  }
+
+  .item {
+    .item__img {
+      height: 90px;
+    }
+  }
+}
+
+@media scren and (min-width: 1100px) {
+  body {
+    max-width: 1100px;
+  }
+}
+
+

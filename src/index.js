@@ -10,8 +10,6 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 const client = new ApolloClient({
   // uri is going to change
-  //https://everuse-be-b6017dbfcc94.herokuapp.com/graphql
-  //https://88b2389c-c16e-4bf8-9ab2-202e67a99183.mock.pstmn.io/graphql
   uri: 'https://everuse-be-b6017dbfcc94.herokuapp.com/graphql',
   cache: new InMemoryCache(),
 });
