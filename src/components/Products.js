@@ -26,7 +26,7 @@ const Products = ({itemsForDisplay}) => {
   });
 
   return (
-    <div className="products">
+    <div id="products" className="products">
       <h1 className="products__header">Products</h1>
       <div className="products__container">
         <Swiper

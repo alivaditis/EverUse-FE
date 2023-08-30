@@ -11,6 +11,62 @@ body {
   height: 100vh;
 }
 
+.checkout {
+  min-height: 100vh;
+  padding: 0 2.5em;
+  font: "Amaranth", sans-serif;
+  background-color: #F4F4F4;
+}
+.checkout .checkout-header {
+  text-align: center;
+}
+.checkout .request-summary {
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin: auto;
+  padding: 1em;
+  background-color: #FFFFFF;
+}
+.checkout .pricing {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  margin-top: auto;
+  align-self: flex-end;
+  width: 70%;
+  margin-left: auto;
+  border-bottom: solid black 2px;
+}
+.checkout .pricing p {
+  margin: 0;
+}
+.checkout .request-item {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  margin-bottom: 16px;
+}
+.checkout .request-item p {
+  margin: 0;
+}
+@media screen and (min-width: 600px) {
+  .checkout .checkout-header {
+    display: flex;
+    justify-content: space-between;
+  }
+  .checkout .checkout-container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+  .checkout .request-summary, .checkout .request-form {
+    margin: 0;
+    width: 45%;
+  }
+}
+
 .landing {
   background-image: url("../images/landing-bg.png");
   background-size: cover;
