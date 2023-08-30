@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import { NavHashLink } from 'react-router-hash-link';
 
 const ShoppingBag = ({ shoppingBag, totalPrice, removeItemFromBag, updateQuantity }) =>{
 
@@ -9,17 +10,17 @@ const ShoppingBag = ({ shoppingBag, totalPrice, removeItemFromBag, updateQuantit
       <span className='item__info'>
         <h4 className='item__title'>{item.type}</h4>
         <div className='item__details'>
-          <div className='item__detail item__specs'>
+          <div className='item__specs'>
             <p className='item__spec'>Size: {item.size}</p>
             <p className='item__spec'>Color: {item.color}</p>
             <p className='item__spec'>Unit Price: ${item.price}</p>
           </div>
-          <div className='item__detail item__counter'>
-            <span className="material-icons-round counter__icon" onClick={() => updateQuantity(item.id)}>remove</span>
-            {item.quantity}
-            <span className="material-icons-round counter__icon" onClick={() => updateQuantity(item.id, 'add')}>add</span>
+          <div className='item__counter'>
+            <span className="material-icons-round counter__icon counter__minus" onClick={() => updateQuantity(item.id)}>remove</span>
+            <p className='item__quantity'>{item.quantity}</p>
+            <span className="material-icons-round counter__icon counter__plus" onClick={() => updateQuantity(item.id, 'add')}>add</span>
           </div>
-          <p className='item__detail item__price'>${item.price * item.quantity}</p>
+          <p className='item__price'>${(item.price * item.quantity).toFixed(2)}</p>
         </div>
       </span>
       <span className="material-icons-round item__delete" id={item.id} onClick={(e) => removeItemFromBag(e.target.id)}>close</span>
@@ -31,25 +32,24 @@ const ShoppingBag = ({ shoppingBag, totalPrice, removeItemFromBag, updateQuantit
       <h1>EverUse</h1>
       <h2>Shopping Bag</h2>
       {shoppingBag.length ?
-      <>
+      <div className='bag__contents'>
         <section className='bag__items'>
           {items}
         </section>
         <section className='bag__summary'>
-          <h3>Request Summary</h3>
+          <h3 className='bag__summary-header'>Request Summary</h3>
           <div className='bag__subtotal'>
             <p>Order Subtotal:</p>
-            <p>${totalPrice}</p>
+            <p className='bag__total'>${totalPrice}</p>
           </div>
           <NavLink to='/checkout' className='bag__button'>Continue to Request</NavLink>
         </section>
-      </>
+      </div>
       :
-      <>
+      <div className='bag__empty'>
         <h3>Your shopping bag is empty.</h3>
-        {/* possibly replace with hash link? */}
-        <NavLink className='bag__button'>Continue Shopping</NavLink>
-      </>
+        <NavHashLink smooth to='/#products' className='bag__button'>Continue Shopping</NavHashLink>
+      </div>
       }
     </div>
   )

@@ -50,7 +50,7 @@ function App() {
     const total = shoppingBag.reduce((price, item) => {
       return price += (item.price * item.quantity)
     }, 0)
-    setTotalPrice(total)
+    setTotalPrice(parseInt(total).toFixed(2))
   }
 
   const emptyShoppingBag = () => {
@@ -75,12 +75,18 @@ function App() {
 
   const updateQuantity = (id, operation = 'subtract') => {
     let index;
-    const newItem = {...shoppingBag.find((item, i) => {
+    const newItem = shoppingBag.find((item, i) => {
       index = i;
       return item.id === id
-    })}
+    })
     operation === 'add' ? newItem.quantity += 1 : newItem.quantity -=1;
-    newItem.quantity ? setShoppingBag(shoppingBag.toSpliced(index, 1, newItem)) : removeItemFromBag(id)
+    !newItem.quantity ? 
+      removeItemFromBag(id) :
+      setShoppingBag(shoppingBag => {
+        const newBag = [...shoppingBag]
+        newBag.splice(index, 1, newItem)
+        return newBag
+      })
   }
     
   const getItemsForDisplay = () => {
