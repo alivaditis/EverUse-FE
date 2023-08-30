@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+
 import { useParams } from "react-router-dom";
 import ProductDetailOrderForm from "./ProductDetailOrderForm";
 import DescriptionText from "./DescriptionText";
