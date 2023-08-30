@@ -16,6 +16,11 @@ describe('home page', () => {
     cy.get('.landing__button').should('contain', 'Explore')
   });
 
+  it('should navigate to products page when explore button is clicked', () => {
+    cy.get('.landing__button').click()
+    cy.url().should('include', '/#products')
+  })
+
   it('should display product carousel with all products', () => {
     cy.get('.products__header').should('contain', 'Products')
     cy.get('.swiper-slide').should('have.length', 5)
