@@ -11,7 +11,7 @@
     background-image: url('../images/about-bg.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center center;
+    background-position: top center;
     margin: 0;
     height: 20rem;
     .about__header-text {
@@ -27,5 +27,41 @@
     line-height: 1.5;
     font-weight: normal;
     text-align: left;
+  }
+}
+
+@media screen and (min-width: 672px) {
+  .about {
+    .about__header {
+      height: 30rem;
+      padding: 0 3rem;
+      .about__header-text {
+        font-size: 3rem;
+        margin: 5rem 0 0 0;
+      }
+    }
+    .about__description {
+      padding: 3rem;
+      font-size: 1.1rem;
+      line-height: 2;
+    }
+  }
+}
+
+@media screen and (min-width: 1050px) {
+  .about {
+    .about__header {
+      height: 40rem;
+      padding: 0 3rem;
+      .about__header-text {
+        font-size: 4rem;
+        margin: 5rem 0 0 0;
+      }
+    }
+    .about__description {
+      padding: 3rem;
+      font-size: 1.2rem;
+      line-height: 2;
+    }
   }
 }

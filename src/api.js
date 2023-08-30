@@ -1,3 +1,5 @@
+// API CALLS //
+
 import { gql } from '@apollo/client';
   
 const GET_ALL_ITEMS = gql`
