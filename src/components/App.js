@@ -1,3 +1,5 @@
+// APP COMPONENT //
+
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useQuery } from '@apollo/client';
 import { GET_ALL_ITEMS } from '../api';

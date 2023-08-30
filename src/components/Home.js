@@ -1,3 +1,5 @@
+// HOME COMPONENT //
+
 import Landing from './Landing';
 import Products from './Products';
 import About from './About';

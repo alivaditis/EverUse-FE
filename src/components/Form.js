@@ -1,3 +1,5 @@
+// FORM COMPONENT //
+
 import { useState } from "react"
 import '../styles/_Form.scss'
 const validator = require("email-validator");
