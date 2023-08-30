@@ -1,7 +1,7 @@
 import { gql } from '@apollo/client';
   
 const GET_ALL_ITEMS = gql`
-query {
+query GetAllItems {
   products {
       id
       name

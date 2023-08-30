@@ -1,5 +1,33 @@
+export const hasOperationName = (req, operationName) => {
+  const { body } = req
+  return (
+    body.hasOwnProperty('operationName') && body.operationName === operationName
+  )
+}
+
+// Alias query if operationName matches
+export const aliasQuery = (req, operationName) => {
+  if (hasOperationName(req, operationName)) {
+    req.alias = `gql${operationName}Query`
+  }
+}
+
+// Alias mutation if operationName matches
+export const aliasMutation = (req, operationName) => {
+  if (hasOperationName(req, operationName)) {
+    req.alias = `gql${operationName}Mutation`
+  }
+}
+
 describe('checkout', () => {
   beforeEach(() => {
+    cy.intercept('POST', 'http://localhost:3000/graphql', (req) => {
+      // Queries
+      aliasQuery(req, 'GetAllItems')
+
+      // Mutations
+      aliasMutation(req, 'CreateOrderForm')
+    })
     cy.visit('http://localhost:3000/checkout')
   })
   it('All elements should be on the page and contain the correct values', () => {
