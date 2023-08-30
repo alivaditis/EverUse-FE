@@ -24,5 +24,20 @@ mutation CreateOrderForm ($input: CreateOrderFormInput!) {
   }
 }`
 
-  export { GET_ALL_ITEMS, SUBMIT_REQUEST }
+const GET_SINGLE_ITEM = gql`
+query GetItem ($name: String!) {
+  product (name: $name) {
+      id
+      name
+      category
+      image
+      description
+      color
+      quantity
+      size
+      price
+  }
+}`
+
+export { GET_ALL_ITEMS, SUBMIT_REQUEST, GET_SINGLE_ITEM }
   

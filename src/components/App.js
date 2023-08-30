@@ -11,6 +11,8 @@ import Home from './Home';
 import Success from './Sucess';
 import '../styles/_App.scss'
 
+import ProductDetail from './ProductDetail/ProductDetail';
+import { cleanFetchedData } from '../helperFunctions';
 
 function App() {
   const [shoppingBag, setShoppingBag] = useState(
@@ -42,7 +44,9 @@ function App() {
         price: 20.00,
         image: 'https://cdn.shopify.com/s/files/1/0192/8012/products/friendship-bracelet-adjustable-camp-minimalist-rope-dowling-brothers-bangle-jewellery-740.jpg'
       }       
-  ])
+    ])
+    
+  const { loading, error, data } = useQuery(GET_ALL_ITEMS)
   const [totalPrice, setTotalPrice] = useState(0);
   const [items, setItems] = useState([])
   const [itemsForDisplay, setItemsForDisplay] = useState([])
@@ -75,14 +79,14 @@ function App() {
     setShoppingBag(shoppingBag.filter(item => item.id !== parseInt(id)))
   }
 
-  const updateQuantity = (id, operation = 'subtract') => {
+  const updateQuantity = (id, operation = 'subtract', change) => {
     let index;
     const newItem = shoppingBag.find((item, i) => {
       index = i;
       return item.id === id
     })
-    operation === 'add' ? newItem.quantity += 1 : newItem.quantity -=1;
-    !newItem.quantity ? 
+    operation === 'add' ? newItem.quantity += Number(change) : newItem.quantity -= Number(change);
+    !newItem.quantity ?
       removeItemFromBag(id) :
       setShoppingBag(shoppingBag => {
         const newBag = [...shoppingBag]
@@ -90,43 +94,16 @@ function App() {
         return newBag
       })
   }
+ 
+  const addToShoppingBag = (item) => {
+    setShoppingBag([...shoppingBag, item]);
+  }
     
   const getItemsForDisplay = () => {
-    const productsForDisplay = [];
-    
-    const productNames = new Set (items.map(product => product.name))
-    
-    productNames.forEach(productName => {
-      
-      const filteredProducts = items
-        .filter(product => product.name === productName)
-      
-      const filteredProduct = filteredProducts.reduce((acc, curr) => {
-        acc.id = curr.name;
-        acc.name = curr.name;
-        acc.price = curr.price;
-        acc.category = curr.category
-        acc.image = curr.image
-        acc.description = curr.description
-        if (!acc.colorOptions.includes(curr.color)) {
-          acc.colorOptions.push(curr.color)
-        }
-        if (!acc.sizeOptions.includes(curr.size)) {
-          acc.sizeOptions.push(curr.size)
-        }
-        return acc;
-      }, {
-        colorOptions: [],
-        sizeOptions: []
-      })
-      productsForDisplay.push(filteredProduct)
-    }) 
-    return productsForDisplay
+    return cleanFetchedData(items);
   }
 
   // eslint-disable-next-line no-unused-vars
-  const { loading, error, data } = useQuery(GET_ALL_ITEMS)
-  
   useEffect(() => {
     if (!items.length && !loading && !error) {
       setItems(data.products)
@@ -156,6 +133,7 @@ function App() {
               />} 
             />
             <Route path='/checkout' element={<Checkout shoppingBag={shoppingBag} totalPrice={totalPrice} emptyShoppingBag={emptyShoppingBag} updateSuccessMessage={updateSuccessMessage}/>}/>
+            <Route path='/:productID' element={<ProductDetail updateQuantity={updateQuantity} shoppingBag={shoppingBag} addToShoppingBag={addToShoppingBag} itemsForDisplay={itemsForDisplay} />}/>
           </Routes>
         </>
       }

@@ -1,6 +1,7 @@
 @use 'variables' as v;
 
 .landing {
+  position: relative;
   background-image: url('../images/landing-bg.png');
   background-size: cover;
   background-repeat: no-repeat;
