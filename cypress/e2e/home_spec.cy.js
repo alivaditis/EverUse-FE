@@ -8,22 +8,20 @@ describe('home page', () => {
       statusCode: 201,
       fixture: 'items.json'
     }).as('getItems')
+    cy.wait('@getItems')
   })
   
   it('should display tagline and button on landing page', () => {
-    cy.wait('@getItems')
     cy.get('.landing__text').should('contain', 'FROM PEAK TO POCKET')
     cy.get('.landing__button').should('contain', 'Explore')
   });
 
   it('should display product carousel with all products', () => {
-    cy.wait('@getItems')
     cy.get('.products__header').should('contain', 'Products')
     cy.get('.swiper-slide').should('have.length', 5)
   });
 
   it('should display a product card with an image, title, and price', () => {
-    cy.wait('@getItems')
     cy.get('.swiper-slide-active > .card > .card__image').should('have.attr', 'src').should('include', 'https://live.staticflickr.com/65535/53141442338_6cc0cceeed.jpg')
     cy.get('.swiper-slide-active > .card > .card__info > .card__name').should('contain', 'Leash')
     cy.get('.swiper-slide-active > .card > .card__info > .card__price').should('contain', '$30')
@@ -33,7 +31,6 @@ describe('home page', () => {
   });
 
   it('should display an about us section with a header, image, and text', () => {
-    cy.wait('@getItems')
     cy.get('.about__header').should('contain', 'About Us')
     cy.get('.about__header').should('have.css', 'background-image', 'url("http://localhost:3000/static/media/about-bg.f697999f8a20621f9a79.jpg")')
     cy.get('.about__description-text').should('contain', 'EverUse aims to partner with gyms, retailers, and manufacturers throughout the climbing industry to collect and upcycle used climbing rope into high-quality products. We aim to reduce waste, extend the lifespan of climbing rope, and minimize the environmental footprint of the climbing industry. By offering sustainable products, we strive to become the go-to brand for climbers who are passionate about both their sport and the planet. We aim to form partnerships and provide funding to organizations that are dedicated to maintaining access, restoration, and safety in climbing.')
