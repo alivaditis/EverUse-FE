@@ -226,6 +226,8 @@ body {
   font-size: 1.2rem;
   color: black;
   border-radius: 50%;
+  height: 1rem;
+  width: 1rem;
   border: 1px solid black;
   margin: 0;
   position: absolute;
@@ -379,7 +381,7 @@ body {
 .product-description-text {
   display: flex;
   flex-direction: column;
-  width: 60%;
+  width: 70%;
   font-size: 1.1rem;
 }
 .product-description-text h2 {
