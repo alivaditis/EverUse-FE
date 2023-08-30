@@ -25,11 +25,37 @@
   .details__info {
     margin-top: 2rem;
     @include m.vertically-aligned-flex;
+    .details__info-product {
+      @include m.vertically-aligned-flex
+    }
     .details__info-img-container {
       width: 70%;
       .details__info-img {
         width: 100%;
       }
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  .details {
+    .details__info {
+      width: 80%;
+      margin: 20px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      .details__info-img-container {
+        width: 35%;
+      }
+    }
+  }
+}
+
+@media (min-width: 800px) {
+  .details {
+    .details__info {
+      display: fle;
     }
   }
 }

@@ -33,10 +33,12 @@ const ProductDetail = ({itemsForDisplay, addToShoppingBag, shoppingBag, updateQu
           <h2 className="details__header-text">Products handmade from upcycled climbing ropes in an effort to reduce waste</h2>
         </div>
         <div className="details__info">
-          <div className="details__info-img-container">
-            <img className="details__info-img" alt={product.name} src={product.image}/>
+          <div className="details__info-product">
+            <div className="details__info-img-container">
+              <img className="details__info-img" alt={product.name} src={product.image}/>
+            </div>
+            <DescriptionText description={product.description} />
           </div>
-          <DescriptionText description={product.description} />
           <ProductDetailOrderForm product={product} updateQuantity={updateQuantity} shoppingBag={shoppingBag} addToShoppingBag={addToShoppingBag}/>
         </div>
       </div>

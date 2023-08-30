@@ -12,9 +12,16 @@
     margin-bottom: 1rem;
     font-family: v.$secondary-font;
   }
+  
   p {
     margin-top: 0;
     margin-bottom: 2rem;
     font-family: v.$ternary-font;
+  }
+}
+
+@media (min-width: 600px) {
+  .product-description-text {
+    width: 55%;
   }
 }
