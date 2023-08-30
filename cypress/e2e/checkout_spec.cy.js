@@ -19,27 +19,34 @@ export const aliasMutation = (req, operationName) => {
   }
 }
 
+const fixtureMap = {
+  GetAllItems: 'items.json',
+  CreateOrderForm: 'success.json'
+};
+
 describe('checkout', () => {
   beforeEach(() => {
-    cy.intercept('POST', 'https://everuse-be-b6017dbfcc94.herokuapp.com/graphql', (req) => {
+    cy.intercept('POST', 'https://everuse-be-b6017dbfcc94.herokuapp.com/graphql*', (req) => {
       // Queries
-      aliasQuery(req, 'GetAllItems')
       if (hasOperationName(req, 'GetAllItems')) {
+        aliasQuery(req, 'GetAllItems')
+        const fixtureName = fixtureMap['GetAllItems'];
         req.reply((res) => {
           res.send({
-            fixture: 'items.json', // Use the fixture for the response
-            statusCode: 200
+            fixture: fixtureName, // Use the fixture for the response
+            statusCode: 201
           });
         });
       }
 
       // Mutations
-      aliasMutation(req, 'CreateOrderForm')
       if (hasOperationName(req, 'CreateOrderForm')) {
+        aliasMutation(req, 'CreateOrderForm')
+        const fixtureName = fixtureMap['CreateOrderForm'];
         req.reply((res) => {
           res.send({
-            fixture: 'success.json', // Use the fixture for the response
-            statusCode: 200
+            fixture: fixtureName, // Use the fixture for the response
+            statusCode: 201
           });
         });
       };
