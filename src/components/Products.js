@@ -13,7 +13,7 @@ const Products = ({itemsForDisplay}) => {
   
   const cards = itemsForDisplay.map(item => {
     return (
-        <SwiperSlide key={item.id}>
+        <SwiperSlide key={item.id} >
           <div className="card">
             <img src={item.image} alt={item.name} className="card__image" />
             <div className="card__info">
@@ -33,7 +33,8 @@ const Products = ({itemsForDisplay}) => {
           cssMode={true} 
           pagination={true}
           mousewheel={true}
-          keyboard={true} 
+          keyboard={true}
+          spaceBetween={-70} 
           modules={[Pagination, Mousewheel, Keyboard]} 
           className="swiper"
           breakpoints={

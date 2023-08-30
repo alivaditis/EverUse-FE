@@ -4,17 +4,17 @@
 .products {
   font-family: v.$secondary-font;
   background-color: v.$primary-background-color;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   .products__header {
-    margin: 5rem 0;
+    margin: 5rem 0 3rem 0;
     font-size: 1.5rem;
   }
   .products__container {
     max-width: 100%;
     height: 25rem;
+    margin-bottom: 5rem;
   }
 }
 
@@ -48,15 +48,18 @@
 }
 
 .swiper {
-  height: 25rem;
+  height: 24rem;
+}
+.swiper-slide {
+  width: 200px
 }
 
 @media screen and (min-width: 800px) {
   .products {
-    padding: 0 2rem;
     .products__header {
+      align-self: flex-start;
+      margin-left: 5rem;
       font-size: 2rem;
-      margin: 4rem 0;
     }
     .products__container {
       max-width: 100%;
