@@ -104,7 +104,6 @@ function App() {
     <div className="app">
       {!loading && !error &&
         <>
-          <NavLink to='/shopping-bag'>Cart</NavLink>
           <Routes>
             <Route path='/' element={<Home itemsForDisplay={itemsForDisplay} />} />
             <Route 

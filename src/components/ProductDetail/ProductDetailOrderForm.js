@@ -92,7 +92,6 @@ const ProductDetailOrderForm = ({product, addToShoppingBag, shoppingBag, updateQ
     }
   };
 
-
   return (
     <form className="details-order-form">
       {product?.name && <div className="details-order-form__title">
@@ -101,7 +100,7 @@ const ProductDetailOrderForm = ({product, addToShoppingBag, shoppingBag, updateQ
       </div>}
       <div className="selection-pair">
          <p className="selection-text">Size:</p> 
-         <SizeOptionsContainer isSingleSize={isSingleSize} handleSelect={handleSelect}/>
+         <SizeOptionsContainer isSingleSize={isSingleSize} handleSelect={handleSelect} />
       </div>
       <div className="selection-pair">
          <label className="selection-text">Color:</label> 
@@ -132,7 +131,6 @@ const ProductDetailOrderForm = ({product, addToShoppingBag, shoppingBag, updateQ
           <button disabled={!shoppingBag.length} className={shoppingBag.length? "submit-btn": "faded-btn"}>
             <p> Cart <span className={totalQuantity? "cart-count": "hidden"}>{totalQuantity? totalQuantity: ""}</span></p>
           </button>
-
         </Link>
       </div>
       
