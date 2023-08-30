@@ -17,6 +17,14 @@ describe('checkout', () => {
       .get('.checkout__pricing').contains('Estimated Total')
       .get('.checkout__pricing').contains('$70.00')
       .get('.checkout__form').contains('h2', 'Customer Info')
+      .get('input[name="checkout__form__email"]').should('have.value', '')
+      .get('label[for="checkout__form__email"]').contains('Email Address')
+      .get('input[name="checkout__form__firstname"]').should('have.value', '')
+      .get('label[for="checkout__form__firstname"]').contains('First Name')
+      .get('input[name="checkout__form__lastname"]').should('have.value', '')
+      .get('label[for="checkout__form__lastname"]').contains('Last Name')
+      .get('textarea[name="checkout__form__comments"]').should('have.value', '')
+      .get('label[for="checkout__form__comments"]').contains('Comments/Questions/Concerns')
     });
   it('the user should be able to fill all the fields in the form', () => {
     cy.get('input[name="checkout__form__email"]').type('example@example.com')
