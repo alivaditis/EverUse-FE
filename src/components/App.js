@@ -66,11 +66,12 @@ function App() {
       return item.id === id
     })
     operation === 'add' ? newItem.quantity += 1 : newItem.quantity -=1;
-    !newItem.quantity ? removeItemFromBag(id) :
+    !newItem.quantity ? 
+      removeItemFromBag(id) :
       setShoppingBag(shoppingBag => {
         const newBag = [...shoppingBag]
         newBag.splice(index, 1, newItem)
-        setShoppingBag(newBag)
+        return newBag
       })
   }
     

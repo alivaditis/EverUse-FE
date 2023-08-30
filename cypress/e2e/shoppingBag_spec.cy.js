@@ -63,7 +63,7 @@ describe(('Shopping Bag Page'), () => {
       cy.get('.item__delete').click()
         .get('h3').contains('Your shopping bag is empty.')
         .get('.bag__button').contains('Continue Shopping').click();
-      cy.url('eq', 'http://localhost:3000/#products')
+      cy.url().should('eq', 'http://localhost:3000/#products')
     })
   })
 })
