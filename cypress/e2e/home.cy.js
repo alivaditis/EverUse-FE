@@ -1,3 +1,5 @@
+// TEST: HOME PAGE //
+
 /* eslint-disable no-undef */
 describe('home page', () => {
   beforeEach(() => {
