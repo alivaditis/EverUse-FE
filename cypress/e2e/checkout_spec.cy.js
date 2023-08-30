@@ -35,9 +35,19 @@ describe('checkout', () => {
 
       // Mutations
       aliasMutation(req, 'CreateOrderForm')
-    })
+      if (hasOperationName(req, 'CreateOrderForm')) {
+        req.reply((res) => {
+          res.send({
+            fixture: 'success.json', // Use the fixture for the response
+            statusCode: 200
+          });
+        });
+      };
+    });
+
     cy.visit('http://localhost:3000/checkout')
   })
+
   it('All elements should be on the page and contain the correct values', () => {
     cy.wait('@gqlGetAllItemsQuery')
       .get('h2').first().contains('EverUse')
@@ -63,26 +73,27 @@ describe('checkout', () => {
       .get('textarea[name="checkout__form__comments"]').should('have.value', '')
       .get('label[for="checkout__form__comments"]').contains('Comments/Questions/Concerns')
     });
-  it('the user should be able to fill all the fields in the form', () => {
-    cy.get('input[name="checkout__form__email"]').type('example@example.com')
-      .should('have.value', 'example@example.com')
-      .get('input[name="checkout__form__firstname"]').type('Joe')
-      .should('have.value', 'Joe')
-      .get('input[name="checkout__form__lastname"]').type('Shmoe')
-      .should('have.value', 'Shmoe')
-      .get('textarea[name="checkout__form__comments"]').type('YOOO')
-      .should('have.value', 'YOOO')
+    it('If a user has left a required for blank, or email is invalid, the user will be notified', () => {
+      cy.get('.checkout__form__submit').click()
+        .get('.checkout__form__fielderror').should('have.length', 3)
+        .get('input[name="checkout__form__email"]').type('example@example.com')
+        .should('have.value', 'example@example.com')
+        .get('.checkout__form__submit').click()
+        .get('.checkout__form__fielderror').should('have.length', 2)
+        .get('input[name="checkout__form__firstname"]').type('Joe')
+        .should('have.value', 'Joe')
+        .get('.checkout__form__submit').click()
+        .get('.checkout__form__fielderror').should('have.length', 1)
     })
-  it('If a user has left a required for blank, or email is invalid, the user will be notified', () => {
-    cy.get('.checkout__form__submit').click()
-      .get('.checkout__form__fielderror').should('have.length', 3)
-      .get('input[name="checkout__form__email"]').type('example@example.com')
-      .should('have.value', 'example@example.com')
-      .get('.checkout__form__submit').click()
-      .get('.checkout__form__fielderror').should('have.length', 2)
-      .get('input[name="checkout__form__firstname"]').type('Joe')
-      .should('have.value', 'Joe')
-      .get('.checkout__form__submit').click()
-      .get('.checkout__form__fielderror').should('have.length', 1)
-    })
+    it('the user should be able to fill all the fields in the form and submit the form', () => {
+      cy.get('input[name="checkout__form__email"]').type('example@example.com')
+        .should('have.value', 'example@example.com')
+        .get('input[name="checkout__form__firstname"]').type('Joe')
+        .should('have.value', 'Joe')
+        .get('input[name="checkout__form__lastname"]').type('Shmoe')
+        .should('have.value', 'Shmoe')
+        .get('textarea[name="checkout__form__comments"]').type('YOOO')
+        .should('have.value', 'YOOO')
+        .get('.checkout__form__submit').click()
+      })
 })
