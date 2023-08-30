@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import SizeOptionsContainer from "./SizeOptionsContainer";
 import { camelToPascalCase } from "../../helperFunctions";
+import { Link } from "react-router-dom";
 
 const ProductDetailOrderForm = ({product, addToShoppingBag, shoppingBag, updateQuantity}) => {
   const [isSingleSize, setIsSingleSize] = useState(false);
@@ -11,14 +12,24 @@ const ProductDetailOrderForm = ({product, addToShoppingBag, shoppingBag, updateQ
   });
   const [colorOptions, setColorOptions] = useState([]);
   const [isFormHealthy, setIsFormHealthy] = useState(false);
+  const [totalQuantity, setTotalQuantity] = useState(0);
   
   useEffect(() => {
     setColorOptions(product?.colorOptions)
-  }, []);
+  }, [product]);
   
   useEffect(() => {
     checkFormHealth()
   }, [inputFields]);
+
+  useEffect(() => {
+    console.log(isFormHealthy)
+  }, [isFormHealthy]);
+
+  useEffect(() => {
+    const total = shoppingBag.reduce((total, item) => total + item.quantity, 0);
+    setTotalQuantity(total);
+  }, [shoppingBag])
 
   const checkFormHealth = () => {
     if (inputFields.color && inputFields.size && inputFields.quantity) {
@@ -28,9 +39,6 @@ const ProductDetailOrderForm = ({product, addToShoppingBag, shoppingBag, updateQ
     }
   }
 
-  useEffect(() => {
-    console.log(isFormHealthy)
-  }, [isFormHealthy])
 
   const handleSelect = (e, changedField) => {
     const clonedInputs = {...inputFields};
@@ -81,11 +89,11 @@ const ProductDetailOrderForm = ({product, addToShoppingBag, shoppingBag, updateQ
 
 
   return (
-    <form className="details-order-form" onSubmit={(e) => {saveItem(e)}}>
-      <div className="details-order-form__title">
-        <p>{product.name}</p>
+    <form className="details-order-form">
+      {product?.name && <div className="details-order-form__title">
+        <p>{camelToPascalCase(product.name)}</p>
         <p>${product.price}</p>
-      </div>
+      </div>}
       <div className="selection-pair">
          <p className="selection-text">Size:</p> 
          <SizeOptionsContainer isSingleSize={isSingleSize} handleSelect={handleSelect}/>
@@ -111,9 +119,17 @@ const ProductDetailOrderForm = ({product, addToShoppingBag, shoppingBag, updateQ
             <option value={9}> 9 </option>
          </select>
       </div>
-      <button disabled={!isFormHealthy} className={isFormHealthy? "submit-btn": "faded-btn"}>
-        Add to Bag
-      </button>
+      <div className="btn-container">
+        <button disabled={!isFormHealthy} className={isFormHealthy? "submit-btn": "faded-btn"}  onClick={(e) => {saveItem(e)}}>
+          Add to Bag
+        </button>
+        <Link to={'/shopping-bag'}>
+          <button disabled={!shoppingBag.length} className={shoppingBag.length? "submit-btn": "faded-btn"}>
+            <p> Cart <span className={totalQuantity? "cart-count": "hidden"}>{totalQuantity? totalQuantity: ""}</span></p>
+          </button>
+
+        </Link>
+      </div>
       
     </form>
   )

@@ -37,20 +37,55 @@
       font-size: 1.5rem;
     }
  }
-
- .submit-btn {
+ .btn-container {
+  width: 80%;
+  display: flex;
+  justify-content: space-evenly;
   margin: 10px;
-  width: 40%;
-  height: 3rem;
-  background-color: black;
-  color: white;
+  .submit-btn {
+    width: 40%;
+    height: 3rem;
+    background-color: black;
+    color: white;
+    position: relative;
+
+    .hidden {
+      display: none;
+    }
+   }
+
+   a {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    width: 40%;
+    .submit-btn, .faded-btn {
+      width: 100%
+    }
+  }
+  
+   .faded-btn {
+    width: 40%;
+    height: 3rem;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+   }
+
+   .cart-count {
+    padding: 5px;
+    background-color: white;
+    font-size: 1.2rem;
+    color: black;
+    border-radius: 50%;
+    border: 1px solid black;
+    margin: 0;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+   }
  }
 
- .faded-btn {
-  margin: 10px;
-  width: 40%;
-  height: 3rem;
-  background-color: rgba(0, 0, 0, 0.4);
-  color: white;
- }
+ 
 }
