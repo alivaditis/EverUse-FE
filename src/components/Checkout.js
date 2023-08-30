@@ -6,7 +6,6 @@ import { useNavigate } from 'react-router-dom'
 import '../styles/_Checkout.scss'
 
 const Checkout = ({shoppingBag, totalPrice}) => {
-
   const navigate = useNavigate()
 
   if(!shoppingBag.length) {

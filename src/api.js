@@ -17,6 +17,21 @@ query {
   }
 }`
 
+const GET_SINGLE_ITEM = gql`
+query GetItem ($name: String!) {
+  product (name: $name) {
+      id
+      name
+      category
+      image
+      description
+      color
+      quantity
+      size
+      price
+  }
+}`
+
   // an example of a post
   // const CREATE_POST = gql`
   //   mutation ($input: CreatePostInput!) {
@@ -43,4 +58,4 @@ query {
   //   .then(res => console.log('post response:', res))
   // };  
 
-  export { GET_ALL_ITEMS }
+  export { GET_ALL_ITEMS, GET_SINGLE_ITEM }
