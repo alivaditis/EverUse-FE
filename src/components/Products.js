@@ -5,6 +5,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Pagination, Mousewheel, Keyboard, Navigation } from 'swiper/modules';
+import { Link } from 'react-router-dom';
 
 const Products = ({itemsForDisplay}) => {
 
@@ -15,13 +16,15 @@ const Products = ({itemsForDisplay}) => {
   const cards = itemsForDisplay.map(item => {
     return (
         <SwiperSlide key={item.id} >
-          <div className="card">
-            <img src={item.image} alt={item.name} className="card__image" />
-            <div className="card__info">
-              <h2 className="card__name">{formatItemName(item.name)}</h2>
-              <p className="card__price">${item.price}</p>
+          <Link to={`/${item.id}`}>
+            <div className="card">
+              <img src={item.image} alt={item.name} className="card__image" />
+              <div className="card__info">
+                <h2 className="card__name">{formatItemName(item.name)}</h2>
+                <p className="card__price">${item.price}</p>
+              </div>
             </div>
-          </div>
+          </Link>
       </SwiperSlide>
     )
   });

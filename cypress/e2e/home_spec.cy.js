@@ -27,12 +27,12 @@ describe('home page', () => {
   });
 
   it('should display a product card with an image, title, and price', () => {
-    cy.get('.swiper-slide-active > .card > .card__image').should('have.attr', 'src').should('include', 'https://live.staticflickr.com/65535/53141442338_6cc0cceeed.jpg')
-    cy.get('.swiper-slide-active > .card > .card__info > .card__name').should('contain', 'Leash')
-    cy.get('.swiper-slide-active > .card > .card__info > .card__price').should('contain', '$30')
-    cy.get(':nth-child(5) > .card > .card__image').should('have.attr', 'src').should('include', 'https://live.staticflickr.com/65535/53141442328_c4bd1e96f5.jpg')
-    cy.get(':nth-child(5) > .card > .card__info > .card__name').should('contain', 'Basket')
-    cy.get(':nth-child(5) > .card > .card__info > .card__price').should('contain', '$30')
+    cy.get('.swiper-slide-active').find('.card').find('.card__image').should('have.attr', 'src').should('include', 'https://live.staticflickr.com/65535/53141442338_6cc0cceeed.jpg')
+    cy.get('.swiper-slide-active').find('.card').find('.card__name').should('contain', 'Leash')
+    cy.get('.swiper-slide-active').find('.card').find('.card__price').should('contain', '$30')
+    cy.get(':nth-child(5)').find('.card').find('.card__image').should('have.attr', 'src').should('include', 'https://live.staticflickr.com/65535/53141442328_c4bd1e96f5.jpg')
+    cy.get(':nth-child(5)').find('.card').find('.card__name').should('contain', 'Basket')
+    cy.get(':nth-child(5)').find('.card').find('.card__price').should('contain', '$30')
   });
 
   it('should display an about us section with a header, image, and text', () => {
