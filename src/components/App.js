@@ -58,7 +58,11 @@ function App() {
   }
 
   const updateSuccessMessage = (res) => {
-    setSuccessMessage(res.data.createOrderForm.message)
+    if (res) {
+      setSuccessMessage(res.data.createOrderForm.message)
+    } else {
+      setSuccessMessage('')
+    }
   }
 
   useEffect(() => {
@@ -131,6 +135,7 @@ function App() {
       {!loading && 
         <>
           <NavLink to='/shopping-bag'>Cart</NavLink>
+          {successMessage && <Success successMessage={successMessage} updateSuccessMessage={updateSuccessMessage}/>}
           <Routes>
             <Route path='/' element={<Home itemsForDisplay={itemsForDisplay} />} />
             <Route 
@@ -143,7 +148,6 @@ function App() {
               />} 
             />
             <Route path='/checkout' element={<Checkout shoppingBag={shoppingBag} totalPrice={totalPrice} emptyShoppingBag={emptyShoppingBag} updateSuccessMessage={updateSuccessMessage}/>}/>
-            <Route path='/success' element={<Success successMessage={successMessage}/>}/>
           </Routes>
         </>
       }
@@ -153,4 +157,3 @@ function App() {
 
 
 export default App;
-

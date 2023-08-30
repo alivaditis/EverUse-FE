@@ -60,7 +60,7 @@ const Form = ({ shoppingBag, totalPrice, emptyShoppingBag, updateSuccessMessage 
           console.log('response:', res)
           updateSuccessMessage(res)
           emptyShoppingBag()
-          navigate('/success')
+          navigate('/')
         })
     }
   }

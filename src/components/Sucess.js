@@ -1,14 +1,14 @@
 import '../styles/_Success.scss'
-import { useNavigate } from 'react-router-dom'
 
-const Success = ({ successMessage }) => {
-  const navigate = useNavigate()
-  
-  if(!successMessage) {
-    navigate('/')
-  }
+const Success = ({ successMessage, updateSuccessMessage }) => {
 
-  return <p className='success'>{successMessage}</p>
+  return (
+    <div className='success'>
+          <button className='success__button' onClick={() => updateSuccessMessage()}>X</button>
+          <h2>{successMessage}</h2>
+          <p>An order request confirmation will be sent to your email shortly.</p>
+    </div>
+    )
 }
 
 export default Success
