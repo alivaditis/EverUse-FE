@@ -6,28 +6,23 @@ import { GET_SINGLE_ITEM } from "../../api";
 import { useEffect, useState } from "react";
 import { cleanFetchedData } from "../../helperFunctions";
 
-const ProductDetail = ({itemsForDisplay, addToShoppingBag, shoppingBag, updateQuantity}) => {
+const ProductDetail = ({addToShoppingBag, shoppingBag, updateQuantity}) => {
   const [product, setProduct] = useState({});
   const productID = useParams().productID;
   const { loading, error, data } = useQuery(GET_SINGLE_ITEM, {
     variables: {
       name: productID
     }
-  })
+  });
 
   useEffect(() => {
-    console.log(product, "product")
-  }, [product])
-
-  useEffect(() => {
-    if(!product.name && data?.product && !loading) {
+    if(!product?.name && data?.product && !loading) {
       setProduct(cleanFetchedData(data.product)[0]);
     }
-  },[data])
-
+  },[data]);
  
   return (
-    <>
+    !error && !loading && <>
       <div className="details">
         <div className="details__header">
           <h2 className="details__header-text">Products handmade from upcycled climbing ropes in an effort to reduce waste</h2>

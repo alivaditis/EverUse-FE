@@ -17,7 +17,7 @@ const SizeOptionsContainer = ({isSingleSize, handleSelect}) => {
       </div>}
       {isSingleSize && <div className="single-choice-container">
         <input type="radio" name="size-options" id="onesize" value="onesize" className="single-choice-option"/>
-        <label htmlFor='onesize'>S</label>
+        <label htmlFor='onesize'>One Size</label>
       </div>}
     </div>
   )

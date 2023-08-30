@@ -16,21 +16,25 @@ const ProductDetailOrderForm = ({product, addToShoppingBag, shoppingBag, updateQ
   
   useEffect(() => {
     setColorOptions(product?.colorOptions)
+    console.log(product)
+    if (product.sizeOptions?.length === 1) {
+      setIsSingleSize(true);
+    } else {
+      setIsSingleSize(false);
+    }
   }, [product]);
+  
   
   useEffect(() => {
     checkFormHealth()
   }, [inputFields]);
-
-  useEffect(() => {
-    console.log(isFormHealthy)
-  }, [isFormHealthy]);
-
+  
   useEffect(() => {
     const total = shoppingBag.reduce((total, item) => total + item.quantity, 0);
     setTotalQuantity(total);
   }, [shoppingBag])
-
+  
+  
   const checkFormHealth = () => {
     if (inputFields.color && inputFields.size && inputFields.quantity) {
       setIsFormHealthy(true);
@@ -38,7 +42,6 @@ const ProductDetailOrderForm = ({product, addToShoppingBag, shoppingBag, updateQ
       setIsFormHealthy(false);
     }
   }
-
 
   const handleSelect = (e, changedField) => {
     const clonedInputs = {...inputFields};
@@ -70,7 +73,7 @@ const ProductDetailOrderForm = ({product, addToShoppingBag, shoppingBag, updateQ
     e.preventDefault();
 
     const newItem = {
-      id: shoppingBag.length+1,  
+      id: Date.now(),  
       type: product.name,
       color: inputFields.color,
       size: inputFields.size,
