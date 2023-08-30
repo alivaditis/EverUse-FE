@@ -64,14 +64,14 @@ function App() {
     setShoppingBag(shoppingBag.filter(item => item.id !== parseInt(id)))
   }
 
-  const updateQuantity = (id, operation = 'subtract') => {
+  const updateQuantity = (id, operation = 'subtract', change) => {
     let index;
     const newItem = shoppingBag.find((item, i) => {
       index = i;
       return item.id === id
     })
-    operation === 'add' ? newItem.quantity += 1 : newItem.quantity -=1;
-    !newItem.quantity ? 
+    operation === 'add' ? newItem.quantity += Number(change) : newItem.quantity -= Number(change);
+    !newItem.quantity ?
       removeItemFromBag(id) :
       setShoppingBag(shoppingBag => {
         const newBag = [...shoppingBag]
@@ -99,9 +99,6 @@ function App() {
     const displayProducts = getItemsForDisplay()
     setItemsForDisplay(displayProducts)
   }, [items]);
-
-  useEffect(() => {
-  }, [itemsForDisplay])
 
   return (
     <div className="app">

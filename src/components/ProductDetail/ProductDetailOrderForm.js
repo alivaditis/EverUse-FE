@@ -86,7 +86,7 @@ const ProductDetailOrderForm = ({product, addToShoppingBag, shoppingBag, updateQ
 
     const matchedProductID = checkForExistingMatch(shoppingBag, newItem);
     if (matchedProductID) {
-      updateQuantity(matchedProductID, 'add')
+      updateQuantity(matchedProductID, 'add', inputFields.quantity)
     } else {
       addToShoppingBag(newItem);
     }
