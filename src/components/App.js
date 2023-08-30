@@ -45,7 +45,6 @@ const App = () => {
 
   // eslint-disable-next-line no-unused-vars
   const { loading, error, data } = useQuery(GET_ALL_ITEMS)
-  console.log(data)
   
   useEffect(() => {
     if (!items.length && !loading && !error) {
@@ -58,11 +57,9 @@ const App = () => {
     setItemsForDisplay(displayProducts)
   }, [items]);
   
-
-
   return (
     <div className="app">
-      {!loading && 
+      {!loading && !error &&
         <>
           <Landing />
           <Products itemsForDisplay={itemsForDisplay} />

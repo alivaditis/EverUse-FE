@@ -8,11 +8,8 @@ import { Pagination, Mousewheel, Keyboard } from 'swiper/modules';
 const Products = ({itemsForDisplay}) => {
 
   const formatItemName = (name) => {
-    if (name === 'dogLeash') {
-      return 'Dog Leash'
-    }
     return name.charAt(0).toUpperCase() + name.slice(1);
-  }
+  };
   
   const cards = itemsForDisplay.map(item => {
     return (
@@ -26,7 +23,7 @@ const Products = ({itemsForDisplay}) => {
           </div>
       </SwiperSlide>
     )
-  })
+  });
 
   return (
     <div className="products">

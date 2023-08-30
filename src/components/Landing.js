@@ -8,7 +8,7 @@ const Landing = () => {
         <button className="landing__button">Explore</button>
       </div>
     </div>
-  );
+  )
 };
 
 export default Landing;

@@ -121,12 +121,6 @@ body {
   height: 25rem;
 }
 
-.swiper-slide {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 @media screen and (min-width: 800px) {
   .products {
     padding: 0 2rem;
