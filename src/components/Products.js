@@ -3,7 +3,8 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { Pagination, Mousewheel, Keyboard } from 'swiper/modules';
+import 'swiper/css/navigation';
+import { Pagination, Mousewheel, Keyboard, Navigation } from 'swiper/modules';
 
 const Products = ({itemsForDisplay}) => {
 
@@ -32,10 +33,11 @@ const Products = ({itemsForDisplay}) => {
         <Swiper
           cssMode={true} 
           pagination={true}
+          navigation={true}
           mousewheel={true}
           keyboard={true}
-          spaceBetween={-70} 
-          modules={[Pagination, Mousewheel, Keyboard]} 
+          spaceBetween={-40} 
+          modules={[Pagination, Mousewheel, Keyboard, Navigation]} 
           className="swiper"
           breakpoints={
             {
