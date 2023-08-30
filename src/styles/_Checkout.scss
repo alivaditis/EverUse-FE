@@ -7,7 +7,7 @@
 
 .checkout {
   min-height: 100vh;
-  padding: 0 2.5em;
+  padding: 0 2.5rr;
   font: v.$primary-font;
   background-color: v.$primary-background-color;
   .checkout__header {
@@ -18,12 +18,11 @@
       margin-top: 0;
     }
     border-radius: 3px;
-    border: 2px solid black;
     display: flex;
     flex-direction: column;
     width: 70%;
     margin: auto;
-    padding: 1em;
+    padding: 1rem;
     background-color: v.$ternary-background-color;
   }
   .checkout__pricing {
@@ -38,7 +37,7 @@
     margin-left: auto;
     border-bottom: solid black 2px;
   }
-  .checkout__item {
+  .checkout__itr {
     display: flex;
     justify-content: space-between;
     margin-top: 8px;

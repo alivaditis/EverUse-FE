@@ -21,9 +21,17 @@ export const aliasMutation = (req, operationName) => {
 
 describe('checkout', () => {
   beforeEach(() => {
-    cy.intercept('POST', 'http://localhost:3000/graphql', (req) => {
+    cy.intercept('POST', 'https://everuse-be-b6017dbfcc94.herokuapp.com/graphql', (req) => {
       // Queries
       aliasQuery(req, 'GetAllItems')
+      if (hasOperationName(req, 'GetAllItems')) {
+        req.reply((res) => {
+          res.send({
+            fixture: 'items.json', // Use the fixture for the response
+            statusCode: 200
+          });
+        });
+      }
 
       // Mutations
       aliasMutation(req, 'CreateOrderForm')
@@ -31,7 +39,8 @@ describe('checkout', () => {
     cy.visit('http://localhost:3000/checkout')
   })
   it('All elements should be on the page and contain the correct values', () => {
-    cy.get('h2').first().contains('EverUse')
+    cy.wait('@gqlGetAllItemsQuery')
+      .get('h2').first().contains('EverUse')
       .get('h3').first().contains('Order Request')
       .get('p').first().contains('Requests will be sent to EverUse and followed up within 5 business days. Payment through (methods) will be discussed over email.')
       .get('h3').eq(1).contains('Request Summary')
