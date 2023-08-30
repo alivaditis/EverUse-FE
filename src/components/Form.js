@@ -17,7 +17,10 @@ const Form = ({ shoppingBag, totalPrice, emptyShoppingBag, updateSuccessMessage 
   const [firstNameError, setFirstNameError] = useState(false)
   const [lastNameError, setLastNameError] = useState(false)
 
-  const [postRequest, { data, loading, error }] = useMutation(SUBMIT_REQUEST)
+  // causing linting errors use data, loading, error when needed
+  // const [postRequest, { data, loading, error }] = useMutation(SUBMIT_REQUEST)
+  
+  const [postRequest] = useMutation(SUBMIT_REQUEST)
 
   const navigate = useNavigate()
 
