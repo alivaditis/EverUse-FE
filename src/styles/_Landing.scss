@@ -20,16 +20,21 @@
     justify-content: center;
     justify-content: flex-start;
     h1 {
-      font-family: v.$primary-font;
+      font-family: v.$secondary-font;
       font-size: 2.5rem;
       color: white;
       font-weight: 600;
     }
     .landing__button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: v.$secondary-font;
+      text-decoration: none;
       opacity: 0.8;
       padding: 0;
-      width: 8rem;
-      height: 3rem;
+      width: 3.5rem;
+      height: .75rem;
       background-color: v.$secondary-background-color;
       border: none;
       border-radius: 0.5rem;
@@ -38,10 +43,28 @@
       font-weight: 600;
       padding: 1rem 2rem;
       cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
       &:hover {
-        background-color: v.$secondary-accent-color;
+        background-color: v.$primary-accent-color;
       }
     }
   }
 }
 
+@media screen and (min-width: 720px) {
+  .landing {
+    background-size: cover;
+    .landing__header {
+      padding: 0 3rem;
+      align-self: flex-start;
+      h1 {
+        font-size: 3rem;
+      }
+      .landing__button {
+        font-size: 1rem;
+        width: 5rem;
+
+      }
+    }
+  }
+}

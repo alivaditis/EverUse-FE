@@ -1,3 +1,5 @@
+// APP COMPONENT //
+
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useQuery } from '@apollo/client';
 import { GET_ALL_ITEMS } from '../api';
@@ -124,7 +126,7 @@ function App() {
 
   return (
     <div className="app">
-      {!loading && 
+      {!loading && !error &&
         <>
           <NavLink to='/shopping-bag'>Cart</NavLink>
           <Routes>
