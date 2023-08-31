@@ -65,25 +65,35 @@ const Form = ({ shoppingBag, totalPrice, emptyShoppingBag, updateSuccessMessage 
           navigate('/')
           }
         })
+        .catch(error => console.error)
     }
   }
 
-  return (
-    <form className='checkout__form'>
-      <h2>Customer Info</h2>
-      <label htmlFor='checkout__form__email'>Email Address</label>
-      <input name='checkout__form__email' type='text' value={email} onChange={(e) => setEmail(e.target.value)}/>
-      {emailError && <p className='checkout__form__fielderror'>* Please enter a valid email address</p>}
-      <label htmlFor='checkout__form__firstname'>First Name</label>
-      <input name='checkout__form__firstname' type='text' value={firstName} onChange={(e) => setFirstName(e.target.value)}/>
-      {firstNameError && <p className='checkout__form__fielderror'>* Please enter your first name</p>}
-      <label htmlFor='checkout__form__lastname'>Last Name</label>
-      <input name='checkout__form__lastname' type='text' value={lastName} onChange={(e) => setLastName(e.target.value)}/>
-      {lastNameError && <p className='checkout__form__fielderror'>* Please enter your last name</p>}
-      <label htmlFor='checkout__form__comments'>Comments/Questions/Concerns</label>
-      <textarea name='checkout__form__comments' className='checkout__form__comments' value={comments} onChange={(e) => setComments(e.target.value)}/>
-      <button className='checkout__form__submit' onClick={(e) => submitRequest(e)}>Submit</button>
-    </form>)
+  let errorMessages
+
+  if (error) {
+    return (
+      <div>
+        <p className='checkout__form__fail'>Your order request could not be processed at this time.  Please try again later.</p>
+      </div>
+    )} else {
+    return (
+      <form className='checkout__form'>
+        <h2>Customer Info</h2>
+        <label htmlFor='checkout__form__email'>Email Address</label>
+        <input name='checkout__form__email' type='text' value={email} onChange={(e) => setEmail(e.target.value)}/>
+        {emailError && <p className='checkout__form__fielderror'>* Please enter a valid email address</p>}
+        <label htmlFor='checkout__form__firstname'>First Name</label>
+        <input name='checkout__form__firstname' type='text' value={firstName} onChange={(e) => setFirstName(e.target.value)}/>
+        {firstNameError && <p className='checkout__form__fielderror'>* Please enter your first name</p>}
+        <label htmlFor='checkout__form__lastname'>Last Name</label>
+        <input name='checkout__form__lastname' type='text' value={lastName} onChange={(e) => setLastName(e.target.value)}/>
+        {lastNameError && <p className='checkout__form__fielderror'>* Please enter your last name</p>}
+        <label htmlFor='checkout__form__comments'>Comments/Questions/Concerns</label>
+        <textarea name='checkout__form__comments' className='checkout__form__comments' value={comments} onChange={(e) => setComments(e.target.value)}/>
+        <button className='checkout__form__submit' onClick={(e) => submitRequest(e)}>Submit</button>
+      </form>
+  )}
 }
 
 export default Form

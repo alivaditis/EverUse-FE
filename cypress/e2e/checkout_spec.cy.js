@@ -79,11 +79,27 @@ describe('checkout', () => {
         .get('textarea[name="checkout__form__comments"]').type('YOOO')
         .should('have.value', 'YOOO')
       cy.intercept('POST', 'https://everuse-be-b6017dbfcc94.herokuapp.com/graphql', {
-        statusCode: 201,
+        statusCode: 200,
         fixture: 'success.json'
       }).as('createOrderForm')
         .get('.checkout__form__submit').click()
         .url().should("eq", "http://localhost:3000/")
         .get('.success').contains('submission successful')
+      })
+    it('the user should be notified if there is an error processing the request submission', () => {
+      cy.get('input[name="checkout__form__email"]').type('example@example.com')
+        .should('have.value', 'example@example.com')
+        .get('input[name="checkout__form__firstname"]').type('Joe')
+        .should('have.value', 'Joe')
+        .get('input[name="checkout__form__lastname"]').type('Shmoe')
+        .should('have.value', 'Shmoe')
+        .get('textarea[name="checkout__form__comments"]').type('YOOO')
+        .should('have.value', 'YOOO')
+      cy.intercept('POST', 'https://everuse-be-b6017dbfcc94.herokuapp.com/graphql', {
+        statusCode: 500,
+        fixture: 'submitFail.json'
+      }).as('createOrderForm')
+        .get('.checkout__form__submit').click()
+        .get('.checkout__form__fail').contains('p','Your order request could not be processed at this time. Please try again later.')
       })
 })
