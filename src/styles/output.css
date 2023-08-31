@@ -444,8 +444,14 @@ body {
   padding: 8px;
   margin: 5px 0;
 }
+.item .item__img-container {
+  width: 35%;
+  display: flex;
+  align-items: center;
+}
 .item .item__img {
-  height: 50px;
+  aspect-ratio: 4/3;
+  max-width: 100%;
 }
 .item h4 {
   margin: 0;
@@ -453,6 +459,9 @@ body {
 .item .item__info {
   width: 100%;
   margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 .item .item__delete {
   font-size: 1.5rem;
@@ -489,7 +498,6 @@ body {
 .item .item__details .item__price {
   margin: 0;
   font-weight: 600;
-  font-size: 15px;
 }
 
 @media screen and (min-width: 375px) {
@@ -501,16 +509,6 @@ body {
     font-size: 12px;
   }
 }
-@media screen and (min-width: 425px) {
-  .item .item__img {
-    height: 70px;
-  }
-}
-@media screen and (min-width: 500px) {
-  .item .item__details {
-    font-size: 14px;
-  }
-}
 @media screen and (min-width: 732px) {
   .bag .bag__items {
     width: 60%;
@@ -518,18 +516,13 @@ body {
   .bag .bag__summary {
     width: 30%;
   }
+  .items .item__img-container {
+    width: 30%;
+  }
 }
 @media screen and (min-width: 850px) {
   .item .item__details {
-    font-size: 16px;
-  }
-  .item .item__img {
-    height: 90px;
-  }
-}
-@media scren and (min-width: 1100px) {
-  body {
-    max-width: 1100px;
+    font-size: 14px;
   }
 }
 .product-description-text {

@@ -6,10 +6,13 @@ import { camelToPascalCase } from '../helperFunctions';
 
 const ShoppingBag = ({ shoppingBag, totalPrice, removeItemFromBag, updateQuantity }) =>{
   console.log(shoppingBag)
+  
   const items = shoppingBag.map(item => {
     return (
     <article key={item.id} className='item'>
-      <img src={item.image} alt='bracelet' className='item__img' />
+      <div className='item__img-container'>
+        <img src={item.image} alt={item.type} className='item__img' />
+      </div>
       <span className='item__info'>
         <h4>{camelToPascalCase(item.type)}</h4>
         <div className='item__details'>
