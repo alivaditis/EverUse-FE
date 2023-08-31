@@ -52,7 +52,6 @@ const Form = ({ shoppingBag, totalPrice, emptyShoppingBag, updateSuccessMessage 
           quantity: parseInt(item.quantity)
         }
       })
-      console.log('new request:', newRequest)
       postRequest({
           variables: {
             input: newRequest
