@@ -146,9 +146,33 @@ body {
 
 .nav__header {
   border-bottom: 2px solid black;
-  padding: 0 20px;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+.nav__header h1 {
+  margin: 1rem;
+}
+.nav__header .burger {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: space-around;
+  flex-flow: column nowrap;
+  z-index: 2;
+  margin: 1rem;
+  cursor: pointer;
+}
+.nav__header .burger .burger__line {
+  width: 2rem;
+  height: 0.25rem;
+  border-radius: 10px;
+  background-color: black;
+  transform-origin: 1px;
+  transition: all 0.3s linear;
 }
 
 .nav__links {
@@ -157,14 +181,14 @@ body {
   width: 100%;
 }
 .nav__links ul {
-  margin: 0;
+  margin: 4rem 0;
   list-style: none;
   background-color: #0d2538;
   width: 100px;
   position: fixed;
   padding: 2.5rem;
   transition: margin-right 0.3s ease-in-out;
-  z-index: 1;
+  z-index: 10;
 }
 .nav__links ul .nav__link {
   margin: 1rem 0;
@@ -172,24 +196,6 @@ body {
 .nav__links ul .nav__link a {
   text-decoration: none;
   color: #fff;
-}
-
-.burger {
-  width: 2rem;
-  height: 2rem;
-  display: flex;
-  justify-content: space-around;
-  flex-flow: column nowrap;
-  z-index: 10;
-  cursor: pointer;
-}
-.burger .burger__line {
-  width: 2rem;
-  height: 0.25rem;
-  border-radius: 10px;
-  background-color: black;
-  transform-origin: 1px;
-  transition: all 0.3s linear;
 }
 
 .details {
