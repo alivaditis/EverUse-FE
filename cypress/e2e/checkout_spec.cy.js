@@ -1,7 +1,7 @@
 describe('checkout', () => {
   beforeEach(() => {
     cy.intercept('POST', 'https://everuse-be-b6017dbfcc94.herokuapp.com/graphql', {
-      statusCode: 200,
+      statusCode: 201,
       fixture: 'items.json'
     }).as('getItems')
     cy.visit('http://localhost:3000/checkout')
@@ -53,7 +53,7 @@ describe('checkout', () => {
         .get('textarea[name="checkout__form__comments"]').type('YOOO')
         .should('have.value', 'YOOO')
       cy.intercept('POST', 'https://everuse-be-b6017dbfcc94.herokuapp.com/graphql', {
-        statusCode: 200,
+        statusCode: 201,
         fixture: 'success.json'
       }).as('createOrderForm')
         .get('.checkout__form__submit').click()
