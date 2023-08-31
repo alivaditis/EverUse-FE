@@ -3,7 +3,7 @@
 import { gql } from '@apollo/client';
   
 const GET_ALL_ITEMS = gql`
-query {
+query GetAllItems {
   products {
       id
       name
@@ -14,6 +14,13 @@ query {
       quantity
       size
       price
+  }
+}`
+
+const SUBMIT_REQUEST = gql`
+mutation CreateOrderForm ($input: CreateOrderFormInput!) {
+  createOrderForm(input: $input) {
+      message
   }
 }`
 
@@ -32,30 +39,5 @@ query GetItem ($name: String!) {
   }
 }`
 
-  // an example of a post
-  // const CREATE_POST = gql`
-  //   mutation ($input: CreatePostInput!) {
-  //     createPost(input: $input) {
-  //       id
-  //       title
-  //       body
-  //     }
-  //   }`;
-
-  // const createPostInput = {
-  //   title: "A Very Captivating Post Title",
-  //   body: "Some interesting content."
-  // };
-
-  // const [createPost] = useMutation(CREATE_POST);
-
-  // const handleCreatePost = () => {
-  //   createPost({
-  //     variables: {
-  //       input: createPostInput,
-  //     },
-  //   })
-  //   .then(res => console.log('post response:', res))
-  // };  
-
-  export { GET_ALL_ITEMS, GET_SINGLE_ITEM }
+export { GET_ALL_ITEMS, SUBMIT_REQUEST, GET_SINGLE_ITEM }
+  
