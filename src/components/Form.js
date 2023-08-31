@@ -68,8 +68,6 @@ const Form = ({ shoppingBag, totalPrice, emptyShoppingBag, updateSuccessMessage 
     }
   }
 
-  let errorMessages
-
   if (error) {
     return (
       <div>
