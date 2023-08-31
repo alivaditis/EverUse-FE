@@ -57,6 +57,7 @@ describe('checkout', () => {
         fixture: 'success.json'
       }).as('createOrderForm')
         .get('.checkout__form__submit').click()
+        .wait('@createOrderForm')
         .url().should("eq", "http://localhost:3000/")
         .get('.success').contains('submission successful')
       })
@@ -74,6 +75,7 @@ describe('checkout', () => {
         fixture: 'submitFail.json'
       }).as('createOrderForm')
         .get('.checkout__form__submit').click()
+        .wait('@createOrderForm')
         .get('.checkout__form__fail').contains('p','Your order request could not be processed at this time. Please try again later.')
       })
 })
