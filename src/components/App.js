@@ -5,6 +5,7 @@ import { useQuery } from '@apollo/client';
 import { GET_ALL_ITEMS } from '../api';
 import { Route, Routes, NavLink } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { useCookies } from 'react-cookie';
 import Checkout from './Checkout';
 import ShoppingBag from './ShoppingBag';
 import Home from './Home';
@@ -15,36 +16,10 @@ import ProductDetail from './ProductDetail/ProductDetail';
 import { cleanFetchedData } from '../helperFunctions';
 
 function App() {
+  const [cookies, setCookie] = useCookies(['shoppingBag']);
   const [shoppingBag, setShoppingBag] = useState(
-    [
-      {
-        id: 1,  
-        type: "bracelet",
-        color: "moss",
-        size: 'M',
-        quantity: 2,
-        price: 10.00,
-        image: 'https://cdn.shopify.com/s/files/1/0192/8012/products/friendship-bracelet-adjustable-camp-minimalist-rope-dowling-brothers-bangle-jewellery-740.jpg'
-      },
-      {
-        id: 2,
-        type: "bracelet",
-        color: "orange plaid",
-        size: 'S',
-        quantity: 3,
-        price: 10.00,
-        image: 'https://cdn.shopify.com/s/files/1/0192/8012/products/friendship-bracelet-adjustable-camp-minimalist-rope-dowling-brothers-bangle-jewellery-740.jpg'
-      },
-      {
-        id: 3,
-        type: "leash",
-        color: "lime",
-        size: 'onesize',
-        quantity: 1,
-        price: 20.00,
-        image: 'https://cdn.shopify.com/s/files/1/0192/8012/products/friendship-bracelet-adjustable-camp-minimalist-rope-dowling-brothers-bangle-jewellery-740.jpg'
-      }       
-    ])
+      [...cookies.shoppingBag]   
+    )
     
   const { loading, error, data } = useQuery(GET_ALL_ITEMS)
   const [totalPrice, setTotalPrice] = useState(0);
@@ -61,6 +36,7 @@ function App() {
 
   const emptyShoppingBag = () => {
     setShoppingBag([])
+    setCookie('shoppingBag', [])
   }
 
   const updateSuccessMessage = (res) => {
@@ -73,6 +49,10 @@ function App() {
 
   useEffect(() => {
     addTotalPrice();
+  }, [shoppingBag])
+
+  useEffect(() => {
+    setCookie('shoppingBag', shoppingBag)
   }, [shoppingBag])
 
   const removeItemFromBag = id => {
@@ -88,11 +68,11 @@ function App() {
     operation === 'add' ? newItem.quantity += Number(change) : newItem.quantity -= Number(change);
     !newItem.quantity ?
       removeItemFromBag(id) :
-      setShoppingBag(shoppingBag => {
-        const newBag = [...shoppingBag]
-        newBag.splice(index, 1, newItem)
-        return newBag
-      })
+        setShoppingBag(shoppingBag => {
+          const newBag = [...shoppingBag]
+          newBag.splice(index, 1, newItem)
+          return newBag
+        })
   }
  
   const addToShoppingBag = (item) => {
@@ -119,6 +99,7 @@ function App() {
     <div className="app">
       {!loading && !error &&
         <>
+          {`${cookies.shoppingBag}`}
           <NavLink to='/shopping-bag'>Cart</NavLink>
           {successMessage && <Success successMessage={successMessage} updateSuccessMessage={updateSuccessMessage}/>}
           <Routes>
