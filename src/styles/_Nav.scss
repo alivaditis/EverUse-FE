@@ -7,15 +7,17 @@
 }
 
 .nav__header {
-  border-bottom: 2px solid black;
+  background-color: rgba(123, 71, 52, 0.75);
   position: fixed;
-  z-index: 1;
+  z-index: 3;
   width: 100%;
+  height: 6rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   h1 {
     margin: 1rem;
+    opacity: 1;
   }
   .burger {
     width: 2rem;
