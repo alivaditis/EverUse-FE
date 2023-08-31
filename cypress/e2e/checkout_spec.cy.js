@@ -83,5 +83,7 @@ describe('checkout', () => {
         fixture: 'success.json'
       }).as('createOrderForm')
         .get('.checkout__form__submit').click()
+        .url().should("eq", "http://localhost:3000/")
+        .get('.success').contains('submission successful')
       })
 })
