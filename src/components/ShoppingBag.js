@@ -2,19 +2,20 @@
 
 import { NavLink } from 'react-router-dom';
 import { NavHashLink } from 'react-router-hash-link';
+import { camelToPascalCase } from '../helperFunctions';
 
 const ShoppingBag = ({ shoppingBag, totalPrice, removeItemFromBag, updateQuantity }) =>{
-
+  console.log(shoppingBag)
   const items = shoppingBag.map(item => {
     return (
     <article key={item.id} className='item'>
       <img src={item.image} alt='bracelet' className='item__img' />
       <span className='item__info'>
-        <h4 className='item__title'>{item.type}</h4>
+        <h4 className='item__title'>{camelToPascalCase(item.type)}</h4>
         <div className='item__details'>
           <div className='item__specs'>
-            <p className='item__spec'>Size: {item.size}</p>
-            <p className='item__spec'>Color: {item.color}</p>
+            <p className='item__spec'>Size: {camelToPascalCase(item.size)}</p>
+            <p className='item__spec'>Color: {camelToPascalCase(item.color)}</p>
             <p className='item__spec'>Unit Price: ${item.price}</p>
           </div>
           <div className='item__counter'>
