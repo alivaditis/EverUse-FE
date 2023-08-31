@@ -1,12 +1,6 @@
 describe('checkout', () => {
   beforeEach(() => {
-    cy.intercept('POST', 'https://everuse-be-b6017dbfcc94.herokuapp.com/graphql', (req) => {
-      req.alias = req.body.operationName;
-      req.reply({
-        statusCode: 201,
-        fixture: `${req.body.operationName}GQL`
-      })
-    })
+    cy.stubRequestsDynamically();
     cy.visit('http://localhost:3000/checkout')
     cy.wait('@GetAllItems')
   })
