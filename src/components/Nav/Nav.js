@@ -2,6 +2,7 @@
 
 import RightNav from "./RightNav";
 import { useState } from "react";
+import '../../images/logo-white.png'
 
 const Nav = () => {
   const [open, setOpen] = useState(false)
@@ -13,7 +14,7 @@ const Nav = () => {
   return (
     <div className="nav">
       <div className="nav__header">
-        <h1>EverUse</h1>
+        <img src={require('../../images/logo-white.png')} alt="logo" className="nav__logo"/>
         <div className="burger" onClick={openNav}>
           <div className="burger__line"></div>
           <div className="burger__line"></div>
