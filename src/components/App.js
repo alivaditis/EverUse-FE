@@ -8,7 +8,7 @@ import { useState, useEffect } from 'react';
 import Checkout from './Checkout';
 import ShoppingBag from './ShoppingBag';
 import Home from './Home';
-import Success from './Sucess';
+import Success from './Success';
 import '../styles/_App.scss'
 
 import ProductDetail from './ProductDetail/ProductDetail';
