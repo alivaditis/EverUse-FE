@@ -73,7 +73,7 @@ const Form = ({ shoppingBag, totalPrice, emptyShoppingBag, updateSuccessMessage 
   <>
   {error && <CheckoutError/>}
   {!error &&
-      <form className='checkout__form'>
+      <form className='checkout__form' onSubmit={(e) => submitRequest(e)}>
         <h2>Customer Info</h2>
         <label htmlFor='checkout__form__email'>Email Address</label>
         <input name='checkout__form__email' type='text' value={email} onChange={(e) => setEmail(e.target.value)}/>
@@ -86,7 +86,7 @@ const Form = ({ shoppingBag, totalPrice, emptyShoppingBag, updateSuccessMessage 
         {lastNameError && <p className='checkout__form__fielderror'>* Please enter your last name</p>}
         <label htmlFor='checkout__form__comments'>Comments/Questions/Concerns</label>
         <textarea name='checkout__form__comments' className='checkout__form__comments' value={comments} onChange={(e) => setComments(e.target.value)}/>
-        <button className='checkout__form__submit' onClick={(e) => submitRequest(e)}>Submit</button>
+        <button className='checkout__form__submit'>Submit</button>
       </form>
   }
   </>
