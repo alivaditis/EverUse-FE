@@ -22,7 +22,7 @@ const Nav = () => {
         </div>      
       </div>
       <div className="nav__links">
-        {open && <RightNav />}
+        {open && <RightNav openNav={openNav}/>}
       </div>
     </div>
   )

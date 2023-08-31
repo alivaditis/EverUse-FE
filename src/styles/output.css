@@ -186,9 +186,9 @@ body {
   width: 100%;
 }
 .nav__links ul {
-  margin: 4rem 0;
+  margin: 6rem 0;
   list-style: none;
-  background-color: #0d2538;
+  background-color: #58889C;
   width: 100px;
   position: fixed;
   padding: 2.5rem;
@@ -199,6 +199,7 @@ body {
   margin: 1rem 0;
 }
 .nav__links ul .nav__link a {
+  font-size: 1.2rem;
   text-decoration: none;
   color: #fff;
 }
