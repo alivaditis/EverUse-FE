@@ -104,7 +104,6 @@ function App() {
     <div className="app">
       {!loading && !error &&
         <>
-          {`${cookies.shoppingBag}`}
           <NavLink to='/shopping-bag'>Cart</NavLink>
           {successMessage && <Success successMessage={successMessage} updateSuccessMessage={updateSuccessMessage}/>}
           <Routes>
