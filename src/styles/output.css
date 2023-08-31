@@ -399,9 +399,11 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  text-align: center;
   background-color: #FFFFFF;
   width: 98%;
-  text-align: center;
+  height: 40vh;
 }
 .bag .bag__contents {
   display: flex;
@@ -510,7 +512,8 @@ body {
   }
 }
 @media screen and (min-width: 732px) {
-  .bag .bag__items {
+  .bag .bag__items,
+  .bag .bag__empty {
     width: 60%;
   }
   .bag .bag__summary {
