@@ -16,7 +16,7 @@ const Checkout = ({shoppingBag, totalPrice, emptyShoppingBag, updateSuccessMessa
   const items = shoppingBag.map(item => {
     return <div className='checkout__item' key={item.id}>
       <div>
-        <b className='checkout__item__quantinty'>{item.quantity}x {item.type}</b>
+        <b>{item.quantity}x {item.type}</b>
         <p>Color: {item.color}</p>
         {item.size !== 'onesize' && <p>Size: {item.size}</p>}
       </div>

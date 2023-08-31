@@ -17,7 +17,7 @@ const Form = ({ shoppingBag, totalPrice, emptyShoppingBag, updateSuccessMessage 
   const [firstNameError, setFirstNameError] = useState(false)
   const [lastNameError, setLastNameError] = useState(false)
 
-  const [postRequest, { data, loading, error }] = useMutation(SUBMIT_REQUEST)
+  const [postRequest, { error }] = useMutation(SUBMIT_REQUEST)
   
   const navigate = useNavigate()
 
@@ -59,10 +59,11 @@ const Form = ({ shoppingBag, totalPrice, emptyShoppingBag, updateSuccessMessage 
           }
         })
         .then(res => {
-          console.log('response:', res)
+          if (!error) {
           updateSuccessMessage(res)
           emptyShoppingBag()
           navigate('/')
+          }
         })
     }
   }
