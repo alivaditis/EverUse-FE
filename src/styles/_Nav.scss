@@ -2,27 +2,35 @@
 @use "mixins" as m;
 
 .nav {
+  @include m.flex-column;
+}
+
+.nav__header {
   border-bottom: 2px solid black;
   padding: 0 20px;
   display: flex;
   justify-content: space-between;
 }
 
-ul {
-  list-style: none;
+.nav__links {
   display: flex;
-  flex-flow: column nowrap;
-  background-color: #0D2538;
-  width: 100px;
-  position: fixed;
-  padding: 3.5rem;
-  // transition: margin-right 0.3s ease-in-out;
-  z-index: 1;
-  li {
-    a {
-      text-decoration: none;
-      color: #fff;
-      padding: 18px 10px;
+  justify-content: flex-end;
+  width: 100%;
+  ul {
+    margin: 0;
+    list-style: none;
+    background-color: #0d2538;
+    width: 100px;
+    position: fixed;
+    padding: 2.5rem;
+    transition: margin-right 0.3s ease-in-out;
+    z-index: 1;
+    .nav__link {
+      margin: 1rem 0;
+      a {
+        text-decoration: none;
+        color: #fff;
+      }
     }
   }
 }
@@ -35,28 +43,12 @@ ul {
   flex-flow: column nowrap;
   z-index: 10;
   cursor: pointer;
-    .burger__line {
-      width: 2rem;
-      height: 0.25rem;
-      border-radius: 10px;
-      background-color: black;
-      transform-origin: 1px;
-      transition: all 0.3s linear;
-    }
-}
-
-.nav__links {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 30%;
-  .nav__link {
-    text-decoration: none;
-    color: black;
-    font-size: 1.5rem;
-    font-weight: bold;
-    &:hover {
-      color: #0D2538;
-    }
+  .burger__line {
+    width: 2rem;
+    height: 0.25rem;
+    border-radius: 10px;
+    background-color: black;
+    transform-origin: 1px;
+    transition: all 0.3s linear;
   }
 }

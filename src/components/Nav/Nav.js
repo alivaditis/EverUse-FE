@@ -12,12 +12,13 @@ const Nav = () => {
 
   return (
     <div className="nav">
-      <div className="nav__header"></div>
+      <div className="nav__header">
         <h1>EverUse</h1>
         <div className="burger" onClick={openNav}>
-        <div className="burger__line"></div>
-        <div className="burger__line"></div>
-        <div className="burger__line"></div>
+          <div className="burger__line"></div>
+          <div className="burger__line"></div>
+          <div className="burger__line"></div>
+        </div>      
       </div>
       <div className="nav__links">
         {open && <RightNav />}
