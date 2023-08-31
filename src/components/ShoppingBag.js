@@ -11,7 +11,7 @@ const ShoppingBag = ({ shoppingBag, totalPrice, removeItemFromBag, updateQuantit
     <article key={item.id} className='item'>
       <img src={item.image} alt='bracelet' className='item__img' />
       <span className='item__info'>
-        <h4 className='item__title'>{camelToPascalCase(item.type)}</h4>
+        <h4>{camelToPascalCase(item.type)}</h4>
         <div className='item__details'>
           <div className='item__specs'>
             <p className='item__spec'>Size: {camelToPascalCase(item.size)}</p>

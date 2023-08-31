@@ -14,7 +14,7 @@ body {
 
 .checkout {
   min-height: 100vh;
-  padding: 0 2.5rr;
+  padding: 0.5rem 2.5rem;
   font: "Amaranth", sans-serif;
   background-color: #F4F4F4;
 }
@@ -383,6 +383,18 @@ body {
   width: 100%;
   margin: 0;
 }
+.bag h1 {
+  font-family: "Amaranth", sans-serif;
+}
+.bag h2,
+.bag h3,
+.bag .bag__button {
+  font-family: "Roboto", sans-serif;
+}
+.bag h4,
+.bag p {
+  font-family: "Spinnaker", sans-serif;
+}
 .bag .bag__empty {
   display: flex;
   flex-direction: column;
@@ -435,7 +447,7 @@ body {
 .item .item__img {
   height: 50px;
 }
-.item .item__title {
+.item h4 {
   margin: 0;
 }
 .item .item__info {

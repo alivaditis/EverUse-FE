@@ -8,6 +8,21 @@
   width: 100%;
   margin: 0;
 
+  h1 {
+    font-family: v.$primary-font;
+  }
+
+  h2,
+  h3,
+  .bag__button{
+    font-family: v.$secondary-font;
+  }
+
+  h4,
+  p {
+    font-family: v.$ternary-font;
+  }
+
   .bag__empty {
     @include m.vertically-aligned-flex;
     background-color: v.$ternary-background-color;
@@ -66,7 +81,7 @@
     height: 50px;
   }
 
-  .item__title {
+  h4 {
     margin: 0;
   }
 
