@@ -14,7 +14,7 @@ body {
 
 .checkout {
   min-height: 100vh;
-  padding: 0 2.5rr;
+  padding: 0.5rem 2.5rem;
   font: "Amaranth", sans-serif;
   background-color: #F4F4F4;
 }

@@ -3,12 +3,15 @@
 /* eslint-disable no-undef */
 describe('home page', () => {
   beforeEach(() => {
+    cy.intercept('POST', 'https://everuse-be-b6017dbfcc94.herokuapp.com/graphql', (req) => {
+      req.alias = req.body.operationName;
+      req.reply({
+        statusCode: 201,
+        fixture: `${req.body.operationName}GQL`
+      })
+    })
     cy.visit('http://localhost:3000/')
-    cy.intercept('POST', 'https://everuse-be-b6017dbfcc94.herokuapp.com/graphql', {
-      statusCode: 201,
-      fixture: 'items.json'
-    }).as('getItems')
-    cy.wait('@getItems')
+    cy.wait('@GetAllItems')
   })
   
   it('should display tagline and button on landing page', () => {
