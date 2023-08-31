@@ -1,6 +1,6 @@
 describe('checkout', () => {
   beforeEach(() => {
-    cy.stubRequestsDynamically();
+    cy.stubRequestsDynamically()
     cy.visit('http://localhost:3000/checkout')
     cy.wait('@GetAllItems')
   })
