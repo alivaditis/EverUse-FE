@@ -83,21 +83,17 @@ function App() {
   const addToShoppingBag = (item) => {
     setShoppingBag([...shoppingBag, item]);
   }
-    
-  const getItemsForDisplay = () => {
-    return cleanFetchedData(items);
-  }
 
   // eslint-disable-next-line no-unused-vars
   useEffect(() => {
     if (!items.length && !loading && !error) {
-      setItems(data.products)
+      setItems(data.products);
     }
   }, [data]);
 
   useEffect(() => {
-    const displayProducts = getItemsForDisplay()
-    setItemsForDisplay(displayProducts)
+    const displayProducts = cleanFetchedData(items);
+    setItemsForDisplay(displayProducts);
   }, [items]);
 
   return (
