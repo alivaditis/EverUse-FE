@@ -1,10 +1,11 @@
 import { HashLink, NavHashLink } from "react-router-hash-link";
+import { NavLink } from "react-router-dom";
 
 
 
 
 
-const RightNav = ({ open }) => {
+const RightNav = () => {
   return (
     <ul>
       <li>
@@ -23,7 +24,7 @@ const RightNav = ({ open }) => {
         </HashLink>
       </li>
       <li>
-        <NavHashLink to="/shopping-bag">View Cart</NavHashLink>
+        <NavLink to="/shopping-bag">View Cart</NavLink>
       </li>
     </ul>
   );
