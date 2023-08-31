@@ -14,23 +14,26 @@ body {
 
 .checkout {
   min-height: 100vh;
-  padding: 0 2.5em;
+  padding: 0 2.5rr;
   font: "Amaranth", sans-serif;
   background-color: #F4F4F4;
 }
-.checkout .checkout-header {
+.checkout .checkout__header {
   text-align: center;
 }
-.checkout .request-summary {
+.checkout .checkout__summary {
   border-radius: 3px;
   display: flex;
   flex-direction: column;
   width: 70%;
   margin: auto;
-  padding: 1em;
+  padding: 1rem;
   background-color: #FFFFFF;
 }
-.checkout .pricing {
+.checkout .checkout__summary h3 {
+  margin-top: 0;
+}
+.checkout .checkout__pricing {
   display: flex;
   justify-content: space-between;
   font-weight: bold;
@@ -40,35 +43,36 @@ body {
   margin-left: auto;
   border-bottom: solid black 2px;
 }
-.checkout .pricing p {
+.checkout .checkout__pricing p {
   margin: 0;
 }
-.checkout .request-item {
+.checkout .checkout__item {
   display: flex;
   justify-content: space-between;
   margin-top: 8px;
   margin-bottom: 16px;
 }
-.checkout .request-item p {
+.checkout .checkout__item p {
   margin: 0;
 }
 @media screen and (min-width: 600px) {
-  .checkout .checkout-header {
+  .checkout .checkout__header {
     display: flex;
     justify-content: space-between;
   }
-  .checkout .checkout-container {
+  .checkout .checkout__container {
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
   }
-  .checkout .request-summary, .checkout .request-form {
+  .checkout .checkout__summary, .checkout .checkout__form {
     margin: 0;
     width: 45%;
   }
 }
 
 .landing {
+  position: relative;
   background-image: url("../images/landing-bg.png");
   background-size: cover;
   background-repeat: no-repeat;
@@ -375,7 +379,7 @@ body {
   flex-direction: column;
   align-items: center;
   background-color: #F4F4F4;
-  min-height: 100%;
+  min-height: 100vh;
   width: 100%;
   margin: 0;
 }
@@ -642,25 +646,26 @@ body {
     line-height: 2;
   }
 }
-.request-form {
+.checkout__form {
   height: 550px;
+  background-color: inherit;
   font: "Amaranth", sans-serif;
   display: flex;
   flex-direction: column;
 }
-.request-form input, .request-form textarea {
+.checkout__form input, .checkout__form textarea {
   margin: 0.6em 0;
 }
-.request-form .field-error {
+.checkout__form .checkout__form__fielderror {
   color: red;
 }
-.request-form .request-comments {
+.checkout__form .checkout__form__comments {
   min-height: 20%;
   max-width: 100%;
   min-width: 100%;
 }
-.request-form .request-submit {
-  margin-top: 2em;
+.checkout__form .checkout__form__submit {
+  margin-top: 2rem;
   padding: 8px 10px;
   width: 80px;
   border-radius: 10px;
@@ -670,13 +675,33 @@ body {
   color: #FFFFFF;
   font: "Roboto", sans-serif;
 }
-.request-form .request-submit:hover {
+.checkout__form .checkout__form__submit:hover {
   cursor: pointer;
 }
 @media screen and (min-width: 600px) {
-  .request-form .request-submit {
+  .checkout__form .checkout__form__submit {
     margin-top: auto;
   }
+}
+
+.success {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  padding: 1rem;
+  background-color: #F4F4F4;
+  width: 70%;
+  text-align: center;
+  padding: 1rem;
+}
+.success .success__button {
+  display: block;
+  margin-left: auto;
+}
+.success .success__button:hover {
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=output.css.map */
