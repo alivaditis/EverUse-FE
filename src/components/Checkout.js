@@ -5,7 +5,7 @@ import Form from './Form'
 import { useNavigate } from 'react-router-dom'
 import '../styles/_Checkout.scss'
 
-const Checkout = ({shoppingBag, totalPrice, emptyShoppingBag, updateSuccessMessage}) => {
+const Checkout = ({shoppingBag, totalPrice, emptyShoppingBag, updateSuccessMessage }) => {
 
   const navigate = useNavigate()
 

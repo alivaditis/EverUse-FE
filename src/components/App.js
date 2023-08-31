@@ -117,6 +117,11 @@ function App() {
 
   return (
     <div className="app">
+      {apiError && 
+        error.graphQLErrors.map(({ message }, i) => (
+          <span key={i}>{message}</span>
+        ))
+      }
       {!loading && !error &&
         <>
           <NavLink to='/shopping-bag'>Cart</NavLink>
