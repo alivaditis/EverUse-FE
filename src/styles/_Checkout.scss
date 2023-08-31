@@ -1,13 +1,9 @@
 @use 'variables' as v;
-
-@mixin space-between {
-  display: flex;
-  justify-content: space-between;
-}
+@use 'mixins' as m;
 
 .checkout {
   min-height: 100vh;
-  padding: 0 2.5rr;
+  padding: .5rem 2.5rem;
   font: v.$primary-font;
   background-color: v.$primary-background-color;
   .checkout__header {
@@ -26,7 +22,7 @@
     background-color: v.$ternary-background-color;
   }
   .checkout__pricing {
-    @include space-between;
+    @include m.space-between;
     font-weight: bold;
     margin-top: auto;
     align-self: flex-end;
@@ -38,8 +34,7 @@
     border-bottom: solid black 2px;
   }
   .checkout__item {
-    display: flex;
-    justify-content: space-between;
+    @include m.space-between;
     margin-top: 8px;
     margin-bottom: 16px;
     p {
@@ -49,8 +44,7 @@
 
   @media screen and (min-width: 600px) {
     .checkout__header {
-      display: flex;
-      justify-content: space-between;
+      @include m.space-between;
     }
     .checkout__container {
       display: flex;

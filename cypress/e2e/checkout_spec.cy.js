@@ -1,63 +1,14 @@
-export const hasOperationName = (req, operationName) => {
-  const { body } = req
-  return (
-    body.hasOwnProperty('operationName') && body.operationName === operationName
-  )
-}
-
-// Alias query if operationName matches
-export const aliasQuery = (req, operationName) => {
-  if (hasOperationName(req, operationName)) {
-    req.alias = `gql${operationName}Query`
-  }
-}
-
-// Alias mutation if operationName matches
-export const aliasMutation = (req, operationName) => {
-  if (hasOperationName(req, operationName)) {
-    req.alias = `gql${operationName}Mutation`
-  }
-}
-
-const fixtureMap = {
-  GetAllItems: 'items.json',
-  CreateOrderForm: 'success.json'
-};
-
 describe('checkout', () => {
   beforeEach(() => {
-    cy.intercept('POST', 'https://everuse-be-b6017dbfcc94.herokuapp.com/graphql*', (req) => {
-      // Queries
-      if (hasOperationName(req, 'GetAllItems')) {
-        aliasQuery(req, 'GetAllItems')
-        const fixtureName = fixtureMap['GetAllItems'];
-        req.reply((res) => {
-          res.send({
-            fixture: fixtureName, // Use the fixture for the response
-            statusCode: 201
-          });
-        });
-      }
-
-      // Mutations
-      if (hasOperationName(req, 'CreateOrderForm')) {
-        aliasMutation(req, 'CreateOrderForm')
-        const fixtureName = fixtureMap['CreateOrderForm'];
-        req.reply((res) => {
-          res.send({
-            fixture: fixtureName, // Use the fixture for the response
-            statusCode: 201
-          });
-        });
-      };
-    });
-
+    cy.intercept('POST', 'https://everuse-be-b6017dbfcc94.herokuapp.com/graphql', {
+      statusCode: 201,
+      fixture: 'items.json'
+    }).as('getItems')
     cy.visit('http://localhost:3000/checkout')
+    cy.wait('@getItems')
   })
-
   it('All elements should be on the page and contain the correct values', () => {
-    cy.wait('@gqlGetAllItemsQuery')
-      .get('h2').first().contains('EverUse')
+    cy.get('h2').first().contains('EverUse')
       .get('h3').first().contains('Order Request')
       .get('p').first().contains('Requests will be sent to EverUse and followed up within 5 business days. Payment through (methods) will be discussed over email.')
       .get('h3').eq(1).contains('Request Summary')
@@ -101,6 +52,30 @@ describe('checkout', () => {
         .should('have.value', 'Shmoe')
         .get('textarea[name="checkout__form__comments"]').type('YOOO')
         .should('have.value', 'YOOO')
+      cy.intercept('POST', 'https://everuse-be-b6017dbfcc94.herokuapp.com/graphql', {
+        statusCode: 201,
+        fixture: 'success.json'
+      }).as('createOrderForm')
         .get('.checkout__form__submit').click()
+        .wait('@createOrderForm')
+        .url().should("eq", "http://localhost:3000/")
+        .get('.success').contains('submission successful')
+      })
+    it('the user should be notified if there is an error processing the request submission', () => {
+      cy.get('input[name="checkout__form__email"]').type('example@example.com')
+        .should('have.value', 'example@example.com')
+        .get('input[name="checkout__form__firstname"]').type('Joe')
+        .should('have.value', 'Joe')
+        .get('input[name="checkout__form__lastname"]').type('Shmoe')
+        .should('have.value', 'Shmoe')
+        .get('textarea[name="checkout__form__comments"]').type('YOOO')
+        .should('have.value', 'YOOO')
+      cy.intercept('POST', 'https://everuse-be-b6017dbfcc94.herokuapp.com/graphql', {
+        statusCode: 500,
+        fixture: 'submitFail.json'
+      }).as('createOrderForm')
+        .get('.checkout__form__submit').click()
+        .wait('@createOrderForm')
+        .get('.checkout__form__fail').contains('p','Your order request could not be processed at this time. Please try again later.')
       })
 })
