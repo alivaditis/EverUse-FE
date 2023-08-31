@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 describe('checkout', () => {
   beforeEach(() => {
     cy.intercept('POST', 'https://everuse-be-b6017dbfcc94.herokuapp.com/graphql', {

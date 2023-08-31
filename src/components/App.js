@@ -3,7 +3,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useQuery } from '@apollo/client';
 import { GET_ALL_ITEMS } from '../api';
-import { Route, Routes, NavLink } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Checkout from './Checkout';
 import ShoppingBag from './ShoppingBag';
@@ -119,7 +119,6 @@ function App() {
     <div className="app">
       {!loading && !error &&
         <>
-          <NavLink to='/shopping-bag'>Cart</NavLink>
           {successMessage && <Success successMessage={successMessage} updateSuccessMessage={updateSuccessMessage}/>}
           <Routes>
             <Route path='/' element={<Home itemsForDisplay={itemsForDisplay} />} />
