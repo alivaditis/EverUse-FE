@@ -21,7 +21,7 @@
     opacity: 1;
   }
   .burger {
-    background-color: v.$primary-background-color;
+    background-color: lighten(v.$secondary-accent-color, 30%);
     display: flex;
     padding: .5rem;
     border-radius: 10px;
@@ -35,7 +35,8 @@
       height: 0.2rem;
       margin: 0.15rem 0;
       border-radius: 10px;
-      background-color: black;
+      background-color: darken(v.$secondary-accent-color, 25%);
+      opacity: 0.8;
       transform-origin: 1px;
       transition: all 0.3s linear;
     }
