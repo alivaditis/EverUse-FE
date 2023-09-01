@@ -23,3 +23,13 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('stubRequestsDynamically', () => {
+  cy.intercept('POST', 'https://everuse-be-b6017dbfcc94.herokuapp.com/graphql', (req) => {
+    req.alias = req.body.operationName;
+    req.reply({
+      statusCode: 201,
+      fixture: `${req.body.operationName}GQL`
+    })
+  })
+})
