@@ -18,8 +18,8 @@ const RightNav = ({openNav}) => {
   return (
     <>
 
-    <ul>
-      <button className="nav__close" onClick={openNav}>X</button>
+    <div className="nav__right">
+      <img src={require('../../images/home.png')} alt="home" className="nav__close" onClick={openNav}/>
       {!home && <li className="nav__link">
         <NavLink to="/">Home</NavLink>
       </li>}
@@ -41,7 +41,7 @@ const RightNav = ({openNav}) => {
       <li className="nav__link" onClick={openNav}>
         <NavLink to="/shopping-bag">View Cart</NavLink>
       </li>
-    </ul>
+    </div>
     </>
   );
 };

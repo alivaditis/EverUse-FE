@@ -173,26 +173,10 @@ body {
   cursor: pointer;
 }
 
-.burger {
-  background-color: #cecac8;
-  display: flex;
-  padding: 0.5rem;
-  border-radius: 10px;
-  justify-content: space-around;
-  flex-flow: column nowrap;
-  z-index: 10;
-  margin: 1rem;
-  cursor: pointer;
-}
-.burger .burger__line {
-  width: 1.75rem;
-  height: 0.2rem;
-  margin: 0.15rem 0;
-  border-radius: 10px;
-  background-color: #423e3b;
-  opacity: 0.8;
-  transform-origin: 1px;
-  transition: all 0.3s linear;
+.nav__burger {
+  height: 2rem;
+  width: 2rem;
+  margin: 0 2rem;
 }
 
 .nav__links {
@@ -200,7 +184,8 @@ body {
   justify-content: flex-end;
   width: 100%;
 }
-.nav__links ul {
+.nav__links .nav__right {
+  font-family: "Roboto", sans-serif;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -213,20 +198,19 @@ body {
   transition: margin-right 0.3s ease-in-out;
   z-index: 3;
 }
-.nav__links ul .nav__close {
+.nav__links .nav__right .nav__close {
   align-self: flex-end;
   border: none;
   font-weight: bold;
   margin: -1rem -1rem 0 0;
   height: 1.5rem;
   width: 1.5rem;
-  background-color: #cecac8;
   border-radius: 5px;
 }
-.nav__links ul .nav__link {
+.nav__links .nav__right .nav__link {
   margin: 1.5rem 0;
 }
-.nav__links ul .nav__link a {
+.nav__links .nav__right .nav__link a {
   font-size: 1.2rem;
   text-decoration: none;
   color: #fff;

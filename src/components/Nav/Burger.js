@@ -2,11 +2,7 @@
 
 const Burger = ({ openNav }) => {
   return (
-    <div className="burger" onClick={openNav}>
-      <div className="burger__line"></div>
-      <div className="burger__line"></div>
-      <div className="burger__line"></div>
-    </div>
+    <img src={require('../../images/hamburger-menu2.png')} alt="burger" className="nav__burger" onClick={openNav}/>
   );
 }
 
