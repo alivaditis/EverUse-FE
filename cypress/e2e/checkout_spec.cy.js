@@ -77,6 +77,7 @@ describe('checkout', () => {
     })
   it('the user should have same items in cart on refresh', () => {
     cy.reload()
+      .wait("@GetAllItems")
       .get('.checkout__item').should('have.length', '3')
       .get('.checkout__item').first().contains('b', '2x Bracelet')
       .get('.checkout__item').first().contains('p', 'Color: moss')
