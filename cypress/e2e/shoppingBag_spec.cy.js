@@ -6,6 +6,7 @@ describe("Shopping Bag Page", () => {
     cy.stubRequestsDynamically();
     cy.visit("http://localhost:3000/#products");
     cy.wait("@GetAllItems");
+    cy.clearCookies()
     cy.fillCart();
   });
 
