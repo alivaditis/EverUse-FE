@@ -16,10 +16,10 @@ const Nav = () => {
     setOpen(!open)
   }
   
-  if (location === '/shopping-bag' || location === '/checkout') {
-    navClass = "nav__header-bag"
-  } else {
+  if (location === '/') {
     navClass = "nav__header"
+  } else {
+    navClass = "nav__header-bag"
   }
 
   return (

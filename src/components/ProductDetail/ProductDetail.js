@@ -3,6 +3,7 @@
 import { useParams } from "react-router-dom";
 import ProductDetailOrderForm from "./ProductDetailOrderForm";
 import DescriptionText from "./DescriptionText";
+import Nav from "../Nav/Nav";
 import { useQuery } from "@apollo/client";
 import { GET_SINGLE_ITEM } from "../../api";
 import { useEffect, useState } from "react";
@@ -26,6 +27,7 @@ const ProductDetail = ({addToShoppingBag, shoppingBag, updateQuantity}) => {
   return (
     !error && !loading && <>
       <div className="details">
+        <Nav />
         <div className="details__header">
           <h2 className="details__header-text">Products handmade from upcycled climbing ropes in an effort to reduce waste</h2>
         </div>
