@@ -3,17 +3,10 @@
 /* eslint-disable no-undef */
 describe("Shopping Bag Page", () => {
   beforeEach(() => {
-    cy.intercept(
-      "POST",
-      "https://everuse-be-b6017dbfcc94.herokuapp.com/graphql",
-      {
-        statusCode: 201,
-        fixture: "mockBag",
-      }
-    ).as("getAllItems");
-    cy.visit("http://localhost:3000/");
-    cy.wait("@getAllItems");
-    cy.get('[href="/shopping-bag"]').click();
+    cy.stubRequestsDynamically();
+    cy.visit("http://localhost:3000/#products");
+    cy.wait("@GetAllItems");
+    cy.fillCart();
   });
 
   it("Should show shopping bag details", () => {
@@ -23,36 +16,36 @@ describe("Shopping Bag Page", () => {
     cy.get(".bag__items")
       .children()
       .first()
-      .get(".item__title")
-      .contains("bracelet")
+      .get("h4")
+      .contains("Bracelet")
       .get("p")
       .contains("Size: M")
       .get("p")
-      .contains("Color: moss")
+      .contains("Color: Moss")
       .get("p")
-      .contains("Unit Price: $10")
+      .contains("Unit Price: $20.00")
       .get(".item__quantity")
       .contains("2")
       .get(".item__price")
-      .contains("$20.00");
+      .contains("$40.00");
     cy.get(".bag__items")
       .children()
       .last()
-      .get(".item__title")
-      .contains("leash")
+      .get("h4")
+      .contains("Dog Leash")
       .get("p")
-      .contains("Size: onesize")
+      .contains("Size: Onesize")
       .get("p")
-      .contains("Color: lime")
+      .contains("Color: Lime")
       .get("p")
-      .contains("Unit Price: $20")
+      .contains("Unit Price: $30.00")
       .get(".item__quantity")
       .contains("1")
       .get(".item__price")
-      .contains("$20.00");
+      .contains("$30.00");
     cy.get("h3").contains("Request Summary");
     cy.get("p").contains("Order Subtotal:");
-    cy.get(".bag__total").contains("$70.00");
+    cy.get(".bag__total").contains("$130.00");
     cy.get(".bag__button").contains("Continue to Request");
   });
 
@@ -65,17 +58,17 @@ describe("Shopping Bag Page", () => {
       .click()
       .get(".item__price")
       .first()
-      .contains("$40.00")
+      .contains("$80.00")
       .get(".bag__total")
-      .contains("$90.00");
+      .contains("$170.00");
     cy.get(".counter__minus")
       .first()
       .click()
       .get(".item__price")
       .first()
-      .contains("$30.00")
+      .contains("$60.00")
       .get(".bag__total")
-      .contains("$80.00");
+      .contains("$150.00");
 
     cy.get(".counter__plus")
       .last()
@@ -85,30 +78,37 @@ describe("Shopping Bag Page", () => {
       .click()
       .get(".item__price")
       .last()
-      .contains("$60.00")
+      .contains("$90.00")
       .get(".bag__total")
-      .contains("$120.00");
+      .contains("$210.00");
     cy.get(".counter__minus")
       .last()
       .click()
       .get(".item__price")
       .last()
-      .contains("$40.00")
+      .contains("$60.00")
       .get(".bag__total")
-      .contains("$100.00");
+      .contains("$180.00");
   });
+
+  it ("Should be directed to checkout page", () => {
+    cy.get(".bag__button")
+      .contains("Continue to Request")
+      .click();
+    cy.url().should("eq", "http://localhost:3000/checkout");
+  })
 
   it("Should delete items and redirect to products section of landing page", () => {
     cy.get(".item__delete")
       .first()
       .click()
       .get(".bag__total")
-      .contains("$50.00");
+      .contains("$90.00");
     cy.get(".item__delete")
       .last()
       .click()
       .get(".bag__total")
-      .contains("$30.00");
+      .contains("$60.00");
     cy.get(".item__delete")
       .click()
       .get("h3")
