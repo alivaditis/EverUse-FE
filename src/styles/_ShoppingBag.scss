@@ -4,15 +4,32 @@
 .bag {
   @include m.vertically-aligned-flex;
   background-color: v.$primary-background-color;
-  min-height: 100%;
+  min-height: 100vh;
   width: 100%;
   margin: 0;
 
+  h1 {
+    font-family: v.$primary-font;
+  }
+
+  h2,
+  h3,
+  .bag__button{
+    font-family: v.$secondary-font;
+  }
+
+  h4,
+  p {
+    font-family: v.$ternary-font;
+  }
+
   .bag__empty {
     @include m.vertically-aligned-flex;
+    justify-content: center;
+    text-align: center;
     background-color: v.$ternary-background-color;
     width: 98%;
-    text-align: center;
+    height: 40vh;
   }
 
   .bag__contents {
@@ -39,8 +56,7 @@
   }
 
   .bag__subtotal {
-    display: flex;
-    justify-content: space-between;
+    @include m.space-between;
     font-weight: 600;
     margin: 0 5%;
   }
@@ -62,17 +78,26 @@
   padding: 8px;
   margin: 5px 0;
 
-  .item__img {
-    height: 50px;
+  .item__img-container {
+    width: 35%;
+    @include m.horizontally-aligned-flex;
   }
 
-  .item__title {
+  .item__img {
+    aspect-ratio: 4/3;
+    max-width: 100%;
+  }
+
+  h4 {
     margin: 0;
   }
 
   .item__info {
     width: 100%;
     margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
   }
 
   .item__delete {
@@ -82,8 +107,7 @@
   }
 
   .item__details {
-    display: flex;
-    justify-content: space-between;
+    @include m.space-between;
     align-items: flex-end;
     font-size: 10px;
     width: 100%;
@@ -97,8 +121,7 @@
     }
     
     .item__counter {
-      display: flex;
-      align-items: center;
+      @include m.horizontally-aligned-flex;
       justify-content: center;
     }
 
@@ -116,7 +139,6 @@
     .item__price {
       margin: 0;
       font-weight: 600;
-      font-size: 15px;
     }
   }
 }
@@ -136,29 +158,20 @@
   }
 }
 
-@media screen and (min-width: 425px) {
-  .item {
-    .item__img {
-      height: 70px;
-    }
-  }
-}
-
-@media screen and (min-width: 500px) {
-  .item {
-    .item__details {
-      font-size: 14px
-    }
-  }
-}
-
 @media screen and (min-width: 732px) {
   .bag {
-    .bag__items {
+    .bag__items,
+    .bag__empty {
       width: 60%;
     }
 
     .bag__summary {
+      width: 30%;
+    }
+  }
+
+  .items {
+    .item__img-container {
       width: 30%;
     }
   }
@@ -167,21 +180,8 @@
 @media screen and (min-width: 850px) {
   .item {
     .item__details {
-      font-size: 16px
-    }
-  }
-
-  .item {
-    .item__img {
-      height: 90px;
+      font-size: 14px
     }
   }
 }
-
-@media scren and (min-width: 1100px) {
-  body {
-    max-width: 1100px;
-  }
-}
-
 
