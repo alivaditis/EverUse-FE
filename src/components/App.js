@@ -5,6 +5,7 @@ import { useQuery } from '@apollo/client';
 import { GET_ALL_ITEMS } from '../api';
 import { Route, Routes } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { useCookies } from 'react-cookie';
 import Checkout from './Checkout';
 import ShoppingBag from './ShoppingBag';
 import Home from './Home';
@@ -15,12 +16,24 @@ import ProductDetail from './ProductDetail/ProductDetail';
 import { cleanFetchedData } from '../helperFunctions';
 
 function App() {
-  const [shoppingBag, setShoppingBag] = useState([]);
-  const { loading, error, data } = useQuery(GET_ALL_ITEMS);
+  const [cookies, setCookie] = useCookies(['shoppingBag']);
+  const [shoppingBag, setShoppingBag] = useState([])
+    
+  const { loading, error, data } = useQuery(GET_ALL_ITEMS)
   const [totalPrice, setTotalPrice] = useState(0);
   const [items, setItems] = useState([]);
   const [itemsForDisplay, setItemsForDisplay] = useState([]);
   const [successMessage, setSuccessMessage] = useState('');
+
+  useEffect(() => {
+    if (cookies.shoppingBag) {
+      setShoppingBag([...cookies.shoppingBag]);
+    }
+  }, [])  
+
+  useEffect(() => {
+    setCookie('shoppingBag', shoppingBag)
+  }, [shoppingBag])
 
   const addTotalPrice = () => {
     const total = shoppingBag.reduce((price, item) => {
@@ -41,6 +54,7 @@ function App() {
     addTotalPrice();
   }, [shoppingBag])
 
+
   const removeItemFromBag = id => {
     setShoppingBag(shoppingBag.filter(item => item.id !== parseInt(id)))
   }
@@ -54,11 +68,11 @@ function App() {
     operation === 'add' ? newItem.quantity += Number(change) : newItem.quantity -= Number(change);
     !newItem.quantity ?
       removeItemFromBag(id) :
-      setShoppingBag(shoppingBag => {
-        const newBag = [...shoppingBag]
-        newBag.splice(index, 1, newItem)
-        return newBag
-      })
+        setShoppingBag(shoppingBag => {
+          const newBag = [...shoppingBag]
+          newBag.splice(index, 1, newItem)
+          return newBag
+        })
   }
  
   const addToShoppingBag = (item) => {

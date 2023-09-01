@@ -4,6 +4,7 @@
 import Form from './Form'
 import { useNavigate } from 'react-router-dom'
 import '../styles/_Checkout.scss'
+import { camelToPascalCase } from '../helperFunctions'  
 
 const Checkout = ({shoppingBag, totalPrice, emptyShoppingBag, updateSuccessMessage }) => {
 
@@ -16,7 +17,7 @@ const Checkout = ({shoppingBag, totalPrice, emptyShoppingBag, updateSuccessMessa
   const items = shoppingBag.map(item => {
     return <div className='checkout__item' key={item.id}>
       <div>
-        <b>{item.quantity}x {item.type}</b>
+        <b>{item.quantity}x {camelToPascalCase(item.type)}</b>
         <p>Color: {item.color}</p>
         {item.size !== 'onesize' && <p>Size: {item.size}</p>}
       </div>
