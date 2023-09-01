@@ -10,11 +10,11 @@ jobs:
     executor: node/default
     steps:
       - checkout
-      - node/install-packages: #If you are using Yarn change this to Yarn
+      - node/install-packages:
           pkg-manager: npm
       - run : 
           name : Run build
-          command: npm run build #If you are using Yarn change this to Yarn
+          command: npm run build
       - persist_to_workspace:
           root: ~/project
           paths:
@@ -35,7 +35,7 @@ workflows:
       - build
       - deploy:
           requires:
-            - build # only deploy if the build_and_test job has completed
+            - build
           filters:
             branches:
-              only: main # only deploy when on main
+              only: main
