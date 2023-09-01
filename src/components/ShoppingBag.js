@@ -2,7 +2,10 @@
 
 import { NavLink } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
+<<<<<<< HEAD
 import { camelToPascalCase } from '../helperFunctions';
+=======
+>>>>>>> main
 
 const ShoppingBag = ({ shoppingBag, totalPrice, removeItemFromBag, updateQuantity }) =>{
   console.log(shoppingBag)
@@ -54,7 +57,7 @@ const ShoppingBag = ({ shoppingBag, totalPrice, removeItemFromBag, updateQuantit
       :
       <div className='bag__empty'>
         <h3>Your shopping bag is empty.</h3>
-        <HashLink smooth to='/#products' className='bag__button'>Continue Shopping</ HashLink>
+        <HashLink smooth to='/#products' className='bag__button'>Continue Shopping</HashLink>
       </div>
       }
     </div>
