@@ -6,6 +6,8 @@ describe('home page', () => {
   })
 
   it('should do this', () => {
-    cy.get('a')
+    cy.viewport(850,1000);
+    cy.get('.completed').should('have.css', 'text-decoration', 'line-through')
+    cy.get('.completed').should('have.css', 'color', 'rgb(217,217,217)')
   })
 })
