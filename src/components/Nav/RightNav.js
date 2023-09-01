@@ -19,7 +19,7 @@ const RightNav = ({openNav}) => {
     <>
 
     <div className="nav__right">
-      <img src={require('../../images/home.png')} alt="home" className="nav__close" onClick={openNav}/>
+      <img src={require('../../images/arrow.png')} alt="home" className="nav__close" onClick={openNav}/>
       {!home && <li className="nav__link">
         <NavLink to="/">Home</NavLink>
       </li>}
