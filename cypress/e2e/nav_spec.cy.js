@@ -36,12 +36,10 @@ describe('nav', () => {
     cy.url().should('include', '/shopping-bag')
   })
 
-  it('should show home link when not at home and navigate home when the logo is clicked', () => {
+  it('should navigate home when the logo is clicked', () => {
     cy.get('.nav__burger').click()
     cy.get('.nav__right').find('li').eq(2).click()
     cy.url().should('include', '/shopping-bag')
-    cy.get('.nav__burger').click()
-    cy.get('.nav__right').find('li').eq(0).should('contain', 'Home')
     cy.get('.nav__logo').click()
     cy.get('.landing__text').should('be.visible')
   })

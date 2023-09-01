@@ -18,7 +18,6 @@ const ProductDetailOrderForm = ({product, addToShoppingBag, shoppingBag, updateQ
   
   useEffect(() => {
     setColorOptions(product?.colorOptions)
-    console.log(product)
     if (product.sizeOptions?.length === 1) {
       setIsSingleSize(true);
     } else {
@@ -98,20 +97,20 @@ const ProductDetailOrderForm = ({product, addToShoppingBag, shoppingBag, updateQ
         <p>{camelToPascalCase(product.name)}</p>
         <p>${product.price}</p>
       </div>}
-      <div className="selection-pair">
-         <p className="selection-text">Size:</p> 
-         <SizeOptionsContainer isSingleSize={isSingleSize} handleSelect={handleSelect} />
+      <div className="details-order-form__selection-pair">
+         <p className="details-order-form__selection-text">Size:</p> 
+         <SizeOptionsContainer isSingleSize={isSingleSize} handleSelect={handleSelect}/>
       </div>
-      <div className="selection-pair">
-         <label className="selection-text">Color:</label> 
-         <select id="colorOptions" className={!inputFields.color? "faded":""} value={inputFields.color} onChange={(e)=> {handleSelect(e, "color")}}>
+      <div className="details-order-form__selection-pair">
+         <label className="details-order-form__selection-text">Color:</label> 
+         <select id="colorOptions" className={!inputFields.color? "details-order-form__faded":""} value={inputFields.color} onChange={(e)=> {handleSelect(e, "color")}}>
           <ColorOptionsCode />
          </select>
       </div>
-      <div className="selection-pair">
-         <label className="selection-text">Quantity:</label> 
-         <select id="quantityOptions" className={!inputFields.quantity? "faded":""} value={inputFields.quantity} onChange={(e) => {handleSelect(e, "quantity")}}>
-            <option value="" className="faded">Choose quantity</option>
+      <div className="details-order-form__selection-pair">
+         <label className="details-order-form__selection-text">Quantity:</label> 
+         <select id="quantityOptions" className={!inputFields.quantity? "details-order-form__faded":""} value={inputFields.quantity} onChange={(e) => {handleSelect(e, "quantity")}}>
+            <option value="" className="details-order-form__faded">Choose quantity</option>
             <option value={1}> 1 </option>
             <option value={2}> 2 </option>
             <option value={3}> 3 </option>
@@ -123,13 +122,13 @@ const ProductDetailOrderForm = ({product, addToShoppingBag, shoppingBag, updateQ
             <option value={9}> 9 </option>
          </select>
       </div>
-      <div className="btn-container">
-        <button disabled={!isFormHealthy} className={isFormHealthy? "submit-btn": "faded-btn"}  onClick={(e) => {saveItem(e)}}>
+      <div className="details-order-form__btn-container">
+        <button disabled={!isFormHealthy} className={isFormHealthy? "details-order-form__submit-btn": "details-order-form__faded-btn"}  onClick={(e) => {saveItem(e)}}>
           Add to Bag
         </button>
         <Link to={'/shopping-bag'}>
-          <button disabled={!shoppingBag.length} className={shoppingBag.length? "submit-btn": "faded-btn"}>
-            <p> Cart <span className={totalQuantity? "cart-count": "hidden"}>{totalQuantity? totalQuantity: ""}</span></p>
+          <button disabled={!shoppingBag.length} className={shoppingBag.length? "details-order-form__submit-btn": "details-order-form__faded-btn"}>
+            <p> Cart <span className={totalQuantity? "details-order-form__cart-count": "details-order-form__hidden"}>{totalQuantity? totalQuantity: ""}</span></p>
           </button>
         </Link>
       </div>

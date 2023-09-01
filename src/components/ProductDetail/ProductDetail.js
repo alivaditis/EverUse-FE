@@ -8,6 +8,12 @@ import { useQuery } from "@apollo/client";
 import { GET_SINGLE_ITEM } from "../../api";
 import { useEffect, useState } from "react";
 import { cleanFetchedData } from "../../helperFunctions";
+import { loadErrorMessages, loadDevMessages } from "@apollo/client/dev";
+
+if (process.env.NODE_ENV === "development") {
+  loadDevMessages();
+  loadErrorMessages();
+}
 
 const ProductDetail = ({addToShoppingBag, shoppingBag, updateQuantity}) => {
   const [product, setProduct] = useState({});

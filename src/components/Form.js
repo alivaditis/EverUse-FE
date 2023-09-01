@@ -91,7 +91,6 @@ const Form = ({ shoppingBag, totalPrice, emptyShoppingBag, updateSuccessMessage 
   }
   </>
   )
-
 }
 
 export default Form

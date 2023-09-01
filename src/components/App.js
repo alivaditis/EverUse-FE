@@ -5,6 +5,7 @@ import { useQuery } from '@apollo/client';
 import { GET_ALL_ITEMS } from '../api';
 import { Route, Routes } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { useCookies } from 'react-cookie';
 import Checkout from './Checkout';
 import ShoppingBag from './ShoppingBag';
 import Home from './Home';
@@ -15,42 +16,24 @@ import ProductDetail from './ProductDetail/ProductDetail';
 import { cleanFetchedData } from '../helperFunctions';
 
 function App() {
-  const [shoppingBag, setShoppingBag] = useState(
-    [
-      {
-        id: 1,  
-        type: "bracelet",
-        color: "moss",
-        size: 'M',
-        quantity: 2,
-        price: 10.00,
-        image: 'https://cdn.shopify.com/s/files/1/0192/8012/products/friendship-bracelet-adjustable-camp-minimalist-rope-dowling-brothers-bangle-jewellery-740.jpg'
-      },
-      {
-        id: 2,
-        type: "bracelet",
-        color: "orange plaid",
-        size: 'S',
-        quantity: 3,
-        price: 10.00,
-        image: 'https://cdn.shopify.com/s/files/1/0192/8012/products/friendship-bracelet-adjustable-camp-minimalist-rope-dowling-brothers-bangle-jewellery-740.jpg'
-      },
-      {
-        id: 3,
-        type: "leash",
-        color: "lime",
-        size: 'onesize',
-        quantity: 1,
-        price: 20.00,
-        image: 'https://cdn.shopify.com/s/files/1/0192/8012/products/friendship-bracelet-adjustable-camp-minimalist-rope-dowling-brothers-bangle-jewellery-740.jpg'
-      }       
-    ])
+  const [cookies, setCookie] = useCookies(['shoppingBag']);
+  const [shoppingBag, setShoppingBag] = useState([])
     
   const { loading, error, data } = useQuery(GET_ALL_ITEMS)
   const [totalPrice, setTotalPrice] = useState(0);
-  const [items, setItems] = useState([])
-  const [itemsForDisplay, setItemsForDisplay] = useState([])
-  const [successMessage, setSuccessMessage] = useState('')
+  const [items, setItems] = useState([]);
+  const [itemsForDisplay, setItemsForDisplay] = useState([]);
+  const [successMessage, setSuccessMessage] = useState('');
+
+  useEffect(() => {
+    if (cookies.shoppingBag) {
+      setShoppingBag([...cookies.shoppingBag]);
+    }
+  }, [])  
+
+  useEffect(() => {
+    setCookie('shoppingBag', shoppingBag)
+  }, [shoppingBag])
 
   const addTotalPrice = () => {
     const total = shoppingBag.reduce((price, item) => {
@@ -64,16 +47,13 @@ function App() {
   }
 
   const updateSuccessMessage = (res) => {
-    if (res) {
-      setSuccessMessage(res.data.createOrderForm.message)
-    } else {
-      setSuccessMessage('')
-    }
+    res ? setSuccessMessage(res.data.createOrderForm.message) : setSuccessMessage('');
   }
 
   useEffect(() => {
     addTotalPrice();
   }, [shoppingBag])
+
 
   const removeItemFromBag = id => {
     setShoppingBag(shoppingBag.filter(item => item.id !== parseInt(id)))
@@ -88,31 +68,27 @@ function App() {
     operation === 'add' ? newItem.quantity += Number(change) : newItem.quantity -= Number(change);
     !newItem.quantity ?
       removeItemFromBag(id) :
-      setShoppingBag(shoppingBag => {
-        const newBag = [...shoppingBag]
-        newBag.splice(index, 1, newItem)
-        return newBag
-      })
+        setShoppingBag(shoppingBag => {
+          const newBag = [...shoppingBag]
+          newBag.splice(index, 1, newItem)
+          return newBag
+        })
   }
  
   const addToShoppingBag = (item) => {
     setShoppingBag([...shoppingBag, item]);
   }
-    
-  const getItemsForDisplay = () => {
-    return cleanFetchedData(items);
-  }
 
   // eslint-disable-next-line no-unused-vars
   useEffect(() => {
     if (!items.length && !loading && !error) {
-      setItems(data.products)
+      setItems(data.products);
     }
   }, [data]);
 
   useEffect(() => {
-    const displayProducts = getItemsForDisplay()
-    setItemsForDisplay(displayProducts)
+    const displayProducts = cleanFetchedData(items);
+    setItemsForDisplay(displayProducts);
   }, [items]);
 
   return (
@@ -121,7 +97,12 @@ function App() {
         <>
           {successMessage && <Success successMessage={successMessage} updateSuccessMessage={updateSuccessMessage}/>}
           <Routes>
-            <Route path='/' element={<Home itemsForDisplay={itemsForDisplay} />} />
+            <Route 
+              path='/' 
+              element={<Home 
+                itemsForDisplay={itemsForDisplay} 
+              />} 
+            />
             <Route 
               path='/shopping-bag' 
               element={<ShoppingBag 
@@ -131,8 +112,24 @@ function App() {
                 updateQuantity={updateQuantity} 
               />} 
             />
-            <Route path='/checkout' element={<Checkout shoppingBag={shoppingBag} totalPrice={totalPrice} emptyShoppingBag={emptyShoppingBag} updateSuccessMessage={updateSuccessMessage}/>}/>
-            <Route path='/:productID' element={<ProductDetail updateQuantity={updateQuantity} shoppingBag={shoppingBag} addToShoppingBag={addToShoppingBag} itemsForDisplay={itemsForDisplay} />}/>
+            <Route 
+              path='/checkout' 
+              element={<Checkout 
+                shoppingBag={shoppingBag} 
+                totalPrice={totalPrice} 
+                emptyShoppingBag={emptyShoppingBag} 
+                updateSuccessMessage={updateSuccessMessage}
+              />}
+            />
+            <Route 
+              path='/:productID' 
+              element={<ProductDetail 
+                updateQuantity={updateQuantity} 
+                shoppingBag={shoppingBag} 
+                addToShoppingBag={addToShoppingBag} 
+                itemsForDisplay={itemsForDisplay} 
+              />}
+            />
           </Routes>
         </>
       }

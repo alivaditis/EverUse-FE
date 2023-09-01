@@ -6,11 +6,11 @@ import HomeNav from "./HomeNav";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-import '../../images/logo-white.png'
+import "../../images/logo-white.png";
 
 const Nav = () => {
-  const [open, setOpen] = useState(false)
-  const [navClass, setNavClass] = useState("nav__header")
+  const [open, setOpen] = useState(false);
+  const [navClass, setNavClass] = useState("nav__header");
   const [home, setHome] = useState(true);
   const location = window.location.pathname;
 
@@ -21,31 +21,35 @@ const Nav = () => {
       setHome(false);
     }
   }, [location]);
-  
+
   useEffect(() => {
-    if (location === '/') {
-      setNavClass("nav__header")
+    if (location === "/") {
+      setNavClass("nav__header");
     } else {
-      setNavClass("nav__header-bag")
+      setNavClass("nav__header-bag");
     }
-  }, [location])
+  }, [location]);
 
   const openNav = () => {
-    setOpen(!open)
-  }
+    setOpen(!open);
+  };
 
   return (
     <div className="nav">
       <div className={navClass}>
-        <Link to='/'><img src={require('../../images/logo-white.png')} alt="logo" className="nav__logo"/></Link>
-        {home && <Burger openNav={openNav}/>}
+        <Link to="/">
+          <img
+            src={require("../../images/logo-white.png")}
+            alt="logo"
+            className="nav__logo"
+          />
+        </Link>
+        {home && <Burger openNav={openNav} />}
         {!home && <HomeNav />}
       </div>
-      <div className="nav__links">
-        {open && <RightNav openNav={openNav}/>}
-      </div>
+      <div className="nav__links">{open && <RightNav openNav={openNav} />}</div>
     </div>
-  )
-}
+  );
+};
 
 export default Nav;

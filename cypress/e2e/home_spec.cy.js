@@ -3,12 +3,9 @@
 /* eslint-disable no-undef */
 describe('home page', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:3000/')
-    cy.intercept('POST', 'https://everuse-be-b6017dbfcc94.herokuapp.com/graphql', {
-      statusCode: 201,
-      fixture: 'items.json'
-    }).as('getItems')
-    cy.wait('@getItems')
+    cy.stubRequestsDynamically();
+    cy.visit('http://localhost:3000/');
+    cy.wait('@GetAllItems');
   })
   
   it('should display tagline and button on landing page', () => {

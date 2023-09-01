@@ -1,9 +1,11 @@
 // CHECKOUT COMPONENT //
 
-import Form from "./Form";
-import { useNavigate } from "react-router-dom";
+import Form from './Form'
+import { useNavigate } from 'react-router-dom'
+import '../styles/_Checkout.scss'
+import { camelToPascalCase } from '../helperFunctions'  
 import Nav from "./Nav/Nav";
-import "../styles/_Checkout.scss";
+
 
 const Checkout = ({
   shoppingBag,
@@ -17,20 +19,16 @@ const Checkout = ({
     navigate("/shopping-bag");
   }
 
-  const items = shoppingBag.map((item) => {
-    return (
-      <div className="checkout__item" key={item.id}>
-        <div>
-          <b>
-            {item.quantity}x {item.type}
-          </b>
-          <p>Color: {item.color}</p>
-          {item.size !== "onesize" && <p>Size: {item.size}</p>}
-        </div>
-        <b>${(item.quantity * item.price).toFixed(2)}</b>
+  const items = shoppingBag.map(item => {
+    return <div className='checkout__item' key={item.id}>
+      <div>
+        <b>{item.quantity}x {camelToPascalCase(item.type)}</b>
+        <p>Color: {item.color}</p>
+        {item.size !== 'onesize' && <p>Size: {item.size}</p>}
       </div>
-    );
-  });
+      <b>${(item.quantity * item.price).toFixed(2)}</b>
+    </div>
+  })
 
   const numberOfItems = shoppingBag.reduce((acc, curr) => {
     return acc + curr.quantity;

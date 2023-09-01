@@ -1,21 +1,25 @@
 // SHOPPING BAG COMPONENT //
 
 import { NavLink } from 'react-router-dom';
-import { NavHashLink } from 'react-router-hash-link';
+import { HashLink } from 'react-router-hash-link';
+import { camelToPascalCase } from '../helperFunctions';
 import Nav from './Nav/Nav';
 
 const ShoppingBag = ({ shoppingBag, totalPrice, removeItemFromBag, updateQuantity }) =>{
-
+  console.log(shoppingBag)
+  
   const items = shoppingBag.map(item => {
     return (
     <article key={item.id} className='item'>
-      <img src={item.image} alt='bracelet' className='item__img' />
+      <div className='item__img-container'>
+        <img src={item.image} alt={item.type} className='item__img' />
+      </div>
       <span className='item__info'>
-        <h4 className='item__title'>{item.type}</h4>
+        <h4>{camelToPascalCase(item.type)}</h4>
         <div className='item__details'>
           <div className='item__specs'>
-            <p className='item__spec'>Size: {item.size}</p>
-            <p className='item__spec'>Color: {item.color}</p>
+            <p className='item__spec'>Size: {camelToPascalCase(item.size)}</p>
+            <p className='item__spec'>Color: {camelToPascalCase(item.color)}</p>
             <p className='item__spec'>Unit Price: ${item.price}</p>
           </div>
           <div className='item__counter'>
@@ -52,7 +56,7 @@ const ShoppingBag = ({ shoppingBag, totalPrice, removeItemFromBag, updateQuantit
       :
       <div className='bag__empty'>
         <h3>Your shopping bag is empty.</h3>
-        <NavHashLink smooth to='/#products' className='bag__button'>Continue Shopping</NavHashLink>
+        <HashLink smooth to='/#products' className='bag__button'>Continue Shopping</HashLink>
       </div>
       }
     </div>
