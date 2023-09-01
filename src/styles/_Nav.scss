@@ -3,8 +3,9 @@
 
 .nav {
   @include m.flex-column;
-  
 }
+
+
 
 .nav__header {
   background-color: rgba(123, 71, 52, 0.75);
@@ -15,11 +16,24 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  img {
+  }
+
+.nav__header-bag {
+  background-color: lighten(rgba(123, 71, 52), 10%);
+  position: relative;
+  z-index: 3;
+  width: 100vw;
+  height: 6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+  .nav__logo {
     width: 10rem;
     margin: .75rem 0 0 1.5rem;
     opacity: 1;
   }
+
   .burger {
     background-color: lighten(v.$secondary-accent-color, 30%);
     display: flex;
@@ -41,7 +55,7 @@
       transition: all 0.3s linear;
     }
   }
-}
+
 
 .nav__links {
   display: flex;

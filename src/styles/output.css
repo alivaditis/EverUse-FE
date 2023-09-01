@@ -154,12 +154,25 @@ body {
   justify-content: space-between;
   align-items: center;
 }
-.nav__header img {
+
+.nav__header-bag {
+  background-color: #9f5c43;
+  position: relative;
+  z-index: 3;
+  width: 100vw;
+  height: 6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__logo {
   width: 10rem;
   margin: 0.75rem 0 0 1.5rem;
   opacity: 1;
 }
-.nav__header .burger {
+
+.burger {
   background-color: #cecac8;
   display: flex;
   padding: 0.5rem;
@@ -170,7 +183,7 @@ body {
   margin: 1rem;
   cursor: pointer;
 }
-.nav__header .burger .burger__line {
+.burger .burger__line {
   width: 1.75rem;
   height: 0.2rem;
   margin: 0.15rem 0;

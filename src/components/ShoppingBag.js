@@ -2,6 +2,7 @@
 
 import { NavLink } from 'react-router-dom';
 import { NavHashLink } from 'react-router-hash-link';
+import Nav from './Nav/Nav';
 
 const ShoppingBag = ({ shoppingBag, totalPrice, removeItemFromBag, updateQuantity }) =>{
 
@@ -31,7 +32,7 @@ const ShoppingBag = ({ shoppingBag, totalPrice, removeItemFromBag, updateQuantit
 
   return (
     <div className='bag'>
-      <h1>EverUse</h1>
+      <Nav />
       <h2>Shopping Bag</h2>
       {shoppingBag.length ?
       <div className='bag__contents'>
