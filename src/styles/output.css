@@ -704,4 +704,12 @@ body {
   cursor: pointer;
 }
 
+.footer {
+  height: 50vh;
+  background-color: #7B4734;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 /*# sourceMappingURL=output.css.map */

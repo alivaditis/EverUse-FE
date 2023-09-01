@@ -8,6 +8,7 @@ import { useState, useEffect } from 'react';
 import Checkout from './Checkout';
 import ShoppingBag from './ShoppingBag';
 import Home from './Home';
+import Footer from './Footer';
 import Success from './Success';
 import '../styles/_App.scss'
 
@@ -115,7 +116,6 @@ function App() {
     <div className="app">
       {!loading && !error &&
         <>
-          <NavLink to='/shopping-bag'>Cart</NavLink>
           {successMessage && <Success successMessage={successMessage} updateSuccessMessage={updateSuccessMessage}/>}
           <Routes>
             <Route path='/' element={<Home itemsForDisplay={itemsForDisplay} />} />
@@ -131,6 +131,7 @@ function App() {
             <Route path='/checkout' element={<Checkout shoppingBag={shoppingBag} totalPrice={totalPrice} emptyShoppingBag={emptyShoppingBag} updateSuccessMessage={updateSuccessMessage}/>}/>
             <Route path='/:productID' element={<ProductDetail updateQuantity={updateQuantity} shoppingBag={shoppingBag} addToShoppingBag={addToShoppingBag} itemsForDisplay={itemsForDisplay} />}/>
           </Routes>
+          <Footer />
         </>
       }
     </div>

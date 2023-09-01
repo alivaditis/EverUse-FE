@@ -1,0 +1,8 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+.footer {
+  height: 50vh;
+  background-color: v.$primary-accent-color;
+  @include m.vertically-aligned-flex;
+}
