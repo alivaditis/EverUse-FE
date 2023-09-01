@@ -1,6 +1,7 @@
 import { HashLink, NavHashLink } from "react-router-hash-link";
 import { NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { Link } from "react-scroll"
 import Burger from "./Burger";
 
 const RightNav = ({openNav}) => {
@@ -24,19 +25,14 @@ const RightNav = ({openNav}) => {
         <NavLink to="/">Home</NavLink>
       </li>}
       <li className="nav__link" onClick={openNav}>
-        <HashLink smooth to="/#products">
+        <Link to="products" activeClass="active" spy={true} smooth={true} offset={-95} duration={500} onClick={openNav}>
           Shop
-        </HashLink>
+        </Link>
       </li>
       <li className="nav__link" onClick={openNav}>
-        <HashLink smooth to="/#about" className="nav__about">
+        <Link to="about" activeClass="active" spy={true} smooth={true} offset={-95} duration={500} onClick={openNav}>
           About Us
-        </HashLink>
-      </li>
-      <li className="nav__link" onClick={openNav}>
-        <HashLink smooth to="/#contact" className="nav__contact">
-          Contact
-        </HashLink>
+        </Link>
       </li>
       <li className="nav__link" onClick={openNav}>
         <NavLink to="/shopping-bag">View Cart</NavLink>

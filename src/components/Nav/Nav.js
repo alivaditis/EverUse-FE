@@ -4,6 +4,7 @@ import RightNav from "./RightNav";
 import Burger from "./Burger";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+
 import '../../images/logo-white.png'
 
 const Nav = () => {
