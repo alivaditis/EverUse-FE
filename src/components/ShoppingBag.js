@@ -6,7 +6,6 @@ import { camelToPascalCase } from '../helperFunctions';
 import Nav from './Nav/Nav';
 
 const ShoppingBag = ({ shoppingBag, totalPrice, removeItemFromBag, updateQuantity }) =>{
-  console.log(shoppingBag)
   
   const items = shoppingBag.map(item => {
     return (

@@ -1,12 +1,11 @@
 
 @use 'variables' as v;
+@use 'mixins' as m;
 
 .products {
-  font-family: v.$secondary-font;
+  @include m.header-font;
   background-color: v.$primary-background-color;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include m.vertically-aligned-flex;
   .products__header {
     margin: 5rem 0 3rem 0;
     font-size: 1.5rem;

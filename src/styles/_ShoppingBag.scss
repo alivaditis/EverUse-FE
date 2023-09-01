@@ -8,19 +8,15 @@
   width: 100%;
   margin: 0;
 
-  h1 {
-    font-family: v.$primary-font;
-  }
-
   h2,
   h3,
   .bag__button{
-    font-family: v.$secondary-font;
+    @include m.header-font;
   }
 
   h4,
   p {
-    font-family: v.$ternary-font;
+    @include m.body-font;
   }
 
   .bag__empty {
@@ -66,9 +62,10 @@
     text-decoration: none;
     background-color: v.$secondary-accent-color;
     padding: 1rem;
-    border-radius: 30px;
+    border-radius: 10px;
     color: v.$primary-text-color;
     margin: 1rem;
+    @include m.body-font;
   }
 }
 

@@ -9,7 +9,9 @@ import { useCookies } from 'react-cookie';
 import Checkout from './Checkout';
 import ShoppingBag from './ShoppingBag';
 import Home from './Home';
+import Footer from './Footer';
 import Success from './Success';
+import Empty from './Empty'
 import '../styles/_App.scss'
 
 import ProductDetail from './ProductDetail/ProductDetail';
@@ -122,7 +124,7 @@ function App() {
               />}
             />
             <Route 
-              path='/:productID' 
+              path='/products/:productID' 
               element={<ProductDetail 
                 updateQuantity={updateQuantity} 
                 shoppingBag={shoppingBag} 
@@ -130,7 +132,12 @@ function App() {
                 itemsForDisplay={itemsForDisplay} 
               />}
             />
+            <Route
+              path='/*'
+              element = {<Empty/>}
+            />
           </Routes>
+          <Footer />
         </>
       }
     </div>

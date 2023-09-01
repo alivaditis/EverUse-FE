@@ -1,4 +1,5 @@
 @use 'variables' as v;
+@use 'mixins' as m;
 
 .landing {
   position: relative;
@@ -21,7 +22,7 @@
     justify-content: center;
     justify-content: flex-start;
     h1 {
-      font-family: v.$secondary-font;
+      @include m.header-font;
       font-size: 2.5rem;
       color: white;
       font-weight: 600;
@@ -30,7 +31,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      font-family: v.$secondary-font;
+      @include m.header-font;
       text-decoration: none;
       opacity: 0.8;
       padding: 0;

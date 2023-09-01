@@ -10,13 +10,13 @@
   h2 {
     margin-top: 2rem;
     margin-bottom: 1rem;
-    font-family: v.$secondary-font;
+    @include m.header-font;
   }
   
   p {
     margin-top: 0;
     margin-bottom: 2rem;
-    font-family: v.$ternary-font;
+    @include m.body-font;
   }
 }
 
