@@ -44,7 +44,6 @@ function App() {
 
   const emptyShoppingBag = () => {
     setShoppingBag([])
-    setCookie('shoppingBag', [])
   }
 
   const updateSuccessMessage = (res) => {
