@@ -2,7 +2,8 @@
 @use 'mixins' as m;
 
 .checkout__form {
-  height: 550px;
+  height: fit-content;
+  min-height: 400px;
   background-color: inherit;
   @include m.body-font;
   display: flex;
@@ -17,7 +18,7 @@
     color: red;
   }
   .checkout__form__comments {
-    min-height: 20%;
+    min-height: 60px;
     max-width: 100%;
     min-width: 100%;
   }

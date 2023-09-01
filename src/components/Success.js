@@ -5,8 +5,8 @@ const Success = ({ successMessage, updateSuccessMessage }) => {
   return (
     <div className='success'>
           <button className='success__button' onClick={() => updateSuccessMessage()}>X</button>
-          <h2>{successMessage}</h2>
-          <p>An order request confirmation will be sent to your email shortly.</p>
+          <h2>Successful Submission</h2>
+          <p>{successMessage}</p>
     </div>
     )
 }
