@@ -1,20 +1,8 @@
-import { HashLink, NavHashLink } from "react-router-hash-link";
+
 import { NavLink } from "react-router-dom";
-import { useState, useEffect } from "react";
 import { Link } from "react-scroll";
-import Burger from "./Burger";
 
 const RightNav = ({ openNav }) => {
-  const [home, setHome] = useState(true);
-  const location = window.location.pathname;
-
-  useEffect(() => {
-    if (location === "/") {
-      setHome(true);
-    } else {
-      setHome(false);
-    }
-  }, [location]);
 
   return (
     <>
@@ -25,11 +13,6 @@ const RightNav = ({ openNav }) => {
           className="nav__close"
           onClick={openNav}
         />
-        {!home && (
-          <li className="nav__link">
-            <NavLink to="/">Home</NavLink>
-          </li>
-        )}
         <li className="nav__link" onClick={openNav}>
           <Link
             to="products"
