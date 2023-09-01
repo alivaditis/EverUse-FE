@@ -37,6 +37,7 @@ Cypress.Commands.add('stubRequestsDynamically', () => {
 })
 
 Cypress.Commands.add('fillCart', () => {
+  cy.clearCookies()
   cy.get(".card")
     .contains("Bracelet")
     .click();

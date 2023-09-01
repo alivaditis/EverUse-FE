@@ -1,22 +1,9 @@
 describe('checkout', () => {
   beforeEach(() => {
     cy.stubRequestsDynamically()
-    cy.clearCookies()
-    cy.visit('http://localhost:3000/bracelet')
-      .get('#colorOptions').select('moss')
-      .get('#quantityOptions').select('2')
-      .get('input[name="size-options"][value="M"]').click({force: true})
-      .get('.submit-btn').contains('Add to Bag').click();
-    cy.visit('http://localhost:3000/bracelet')
-      .get('#colorOptions').select('Orange Plaid')
-      .get('#quantityOptions').select('3')
-      .get('input[name="size-options"][value="S"]').click({force: true})
-      .get('.submit-btn').contains('Add to Bag').click();
-    cy.visit('http://localhost:3000/dogLeash')
-      .get('#colorOptions').select('lime')
-      .get('#quantityOptions').select('1')
-      .get('input[name="size-options"][value="onesize"]').click({force: true})
-      .get('.submit-btn').contains('Add to Bag').click();
+    cy.visit("http://localhost:3000/#products")
+    cy.wait("@GetAllItems")
+    cy.fillCart()
     cy.visit('http://localhost:3000/checkout')
     cy.wait('@GetAllItems')
   })
