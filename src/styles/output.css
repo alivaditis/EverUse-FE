@@ -15,7 +15,7 @@ body {
 .checkout {
   min-height: 100vh;
   padding: 0.5rem 2.5rem;
-  font: "Amaranth", sans-serif;
+  font: "Spinnaker", sans-serif;
   background-color: #F4F4F4;
 }
 .checkout .checkout__header {
@@ -31,6 +31,7 @@ body {
   background-color: #FFFFFF;
 }
 .checkout .checkout__summary h3 {
+  font: "Roboto", sans-serif;
   margin-top: 0;
 }
 .checkout .checkout__pricing {
@@ -232,7 +233,7 @@ body {
   font-weight: 500;
   width: 90%;
 }
-.details-order-form .selection-pair {
+.details-order-form .details-order-form__selection-pair {
   width: 90%;
   min-height: 5rem;
   margin: 10px;
@@ -240,34 +241,24 @@ body {
   flex-direction: column;
   justify-content: space-evenly;
 }
-.details-order-form .selection-pair .selection-text {
+.details-order-form .details-order-form__selection-pair .details-order-form__selection-text {
   font-size: 1.4rem;
   margin: 5px;
 }
-.details-order-form .selection-pair .faded {
+.details-order-form .details-order-form__selection-pair .details-order-form__faded {
   color: rgba(0, 0, 0, 0.4);
 }
-.details-order-form .selection-pair select {
+.details-order-form .details-order-form__selection-pair select {
   height: 3rem;
   font-size: 1.5rem;
 }
-.details-order-form .btn-container {
+.details-order-form .details-order-form__btn-container {
   width: 80%;
   display: flex;
   justify-content: space-evenly;
   margin: 10px;
 }
-.details-order-form .btn-container .submit-btn {
-  width: 40%;
-  height: 3rem;
-  background-color: black;
-  color: white;
-  position: relative;
-}
-.details-order-form .btn-container .submit-btn .hidden {
-  display: none;
-}
-.details-order-form .btn-container a {
+.details-order-form .details-order-form__btn-container a {
   display: flex;
   align-items: center;
   padding: 0;
@@ -275,16 +266,26 @@ body {
   text-decoration: none;
   width: 40%;
 }
-.details-order-form .btn-container a .submit-btn, .details-order-form .btn-container a .faded-btn {
+.details-order-form .details-order-form__btn-container a .details-order-form__submit-btn, .details-order-form .details-order-form__btn-container a .details-order-form__faded-btn {
   width: 100%;
 }
-.details-order-form .btn-container .faded-btn {
+.details-order-form .details-order-form__btn-container .details-order-form__submit-btn {
+  width: 40%;
+  height: 3rem;
+  background-color: black;
+  color: white;
+  position: relative;
+}
+.details-order-form .details-order-form__btn-container .details-order-form__submit-btn .details-order-form__hidden {
+  display: none;
+}
+.details-order-form .details-order-form__btn-container .details-order-form__faded-btn {
   width: 40%;
   height: 3rem;
   background-color: rgba(0, 0, 0, 0.4);
   color: white;
 }
-.details-order-form .btn-container .cart-count {
+.details-order-form .details-order-form__btn-container .details-order-form__cart-count {
   padding: 5px;
   background-color: white;
   font-size: 1.2rem;
@@ -657,9 +658,12 @@ body {
 .checkout__form {
   height: 550px;
   background-color: inherit;
-  font: "Amaranth", sans-serif;
+  font: "Spinnaker", sans-serif;
   display: flex;
   flex-direction: column;
+}
+.checkout__form h2, .checkout__form h3 {
+  font-family: "Roboto", sans-serif;
 }
 .checkout__form input, .checkout__form textarea {
   margin: 0.6em 0;

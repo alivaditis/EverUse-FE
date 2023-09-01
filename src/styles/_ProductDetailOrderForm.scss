@@ -18,18 +18,18 @@
     width: 90%;
  }
 
- .selection-pair {
+ .details-order-form__selection-pair {
     width: 90%;
     min-height: 5rem;
     margin: 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    .selection-text {
+    .details-order-form__selection-text {
       font-size: 1.4rem;
       margin: 5px;
     }
-    .faded {
+    .details-order-form__faded {
       color: rgba(0, 0, 0, 0.4);
     }
     select {
@@ -37,43 +37,44 @@
       font-size: 1.5rem;
     }
  }
- .btn-container {
+ .details-order-form__btn-container {
   width: 80%;
   display: flex;
   justify-content: space-evenly;
   margin: 10px;
-  .submit-btn {
-    width: 40%;
-    height: 3rem;
-    background-color: black;
-    color: white;
-    position: relative;
-
-    .hidden {
-      display: none;
-    }
-   }
-
-   a {
+  
+  a {
     display: flex;
     align-items: center;
     padding: 0;
     margin: 0;
     text-decoration: none;
     width: 40%;
-    .submit-btn, .faded-btn {
+    .details-order-form__submit-btn, .details-order-form__faded-btn {
       width: 100%
     }
   }
+
+  .details-order-form__submit-btn {
+    width: 40%;
+    height: 3rem;
+    background-color: black;
+    color: white;
+    position: relative;
+
+    .details-order-form__hidden {
+      display: none;
+    }
+   }
   
-   .faded-btn {
+   .details-order-form__faded-btn {
     width: 40%;
     height: 3rem;
     background-color: rgba(0, 0, 0, 0.4);
     color: white;
    }
 
-   .cart-count {
+   .details-order-form__cart-count {
     padding: 5px;
     background-color: white;
     font-size: 1.2rem;
@@ -88,6 +89,6 @@
     right: -10px;
    }
  }
-
+  
  
 }
