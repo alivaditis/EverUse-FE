@@ -2,6 +2,10 @@
   "name": "everuse-fe",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "npm":"10.x",
+    "node": "20.x"
+  },
   "dependencies": {
     "@apollo/client": "^3.8.1",
     "@testing-library/jest-dom": "^5.17.0",
