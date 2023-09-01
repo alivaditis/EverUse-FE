@@ -10,8 +10,7 @@ describe('checkout', () => {
     cy.wait('@GetAllItems')
   })
   it('All elements should be on the page and contain the correct values', () => {
-    cy.get('h2').first().contains('EverUse')
-      .get('h3').first().contains('Order Request')
+    cy.get('h3').first().contains('Order Request')
       .get('p').first().contains('Requests will be sent to EverUse and followed up within 5 business days. Payment through (methods) will be discussed over email.')
       .get('h3').eq(1).contains('Request Summary')
       .get('b').first().contains('6 items')

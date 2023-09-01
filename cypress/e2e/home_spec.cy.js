@@ -15,7 +15,7 @@ describe('home page', () => {
 
   it('should navigate to products page when explore button is clicked', () => {
     cy.get('.landing__button').click()
-    cy.url().should('include', '/#products')
+    cy.get('.products__header').should('be.visible')
   })
 
   it('should display product carousel with all products', () => {

@@ -218,6 +218,7 @@ body {
   margin: 1.5rem 0;
 }
 .nav__links .nav__right .nav__link a {
+  cursor: pointer;
   font-size: 1.2rem;
   text-decoration: none;
   color: #fff;
