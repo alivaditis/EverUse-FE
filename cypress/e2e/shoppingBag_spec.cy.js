@@ -6,30 +6,7 @@ describe("Shopping Bag Page", () => {
     cy.stubRequestsDynamically();
     cy.visit("http://localhost:3000/#products");
     cy.wait("@GetAllItems");
-
-    // cy.stubRequestsDynamically();
-    cy.get(".card").contains("Bracelet").click();
-    // cy.wait("@braceletGetItemGQL");
-    cy.get("label").contains("M").click();
-    cy.get("#colorOptions").select("Moss");
-    cy.get("#quantityOptions").select("2");
-    cy.get("button").contains("Add to Bag").click();
-
-    cy.get("label").contains("S").click();
-    cy.get("#colorOptions").select("Orange Plaid");
-    cy.get("#quantityOptions").select("3");
-    cy.get("button").contains("Add to Bag").click();
-    
-    cy.go("back");
-    // Refactor once word spacing is fixed
-    cy.get(".card").contains("DogLeash").click();
-    // Refactor once onesize auto-select is done
-    cy.get("label").contains("One Size").click();
-    cy.get("#colorOptions").select("Lime");
-    cy.get("#quantityOptions").select("1");
-    cy.get("button").contains("Add to Bag").click();
-
-    cy.get("button").contains("Cart").click();
+    cy.fillCart();
   });
 
   it("Should show shopping bag details", () => {
