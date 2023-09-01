@@ -9,10 +9,10 @@ import { useEffect, useState } from "react";
 import { cleanFetchedData } from "../../helperFunctions";
 import { loadErrorMessages, loadDevMessages } from "@apollo/client/dev";
 
-// if (process.env.NODE_ENV === "development") {
-//   loadDevMessages();
-//   loadErrorMessages();
-// }
+if (process.env.NODE_ENV === "development") {
+  loadDevMessages();
+  loadErrorMessages();
+}
 
 const ProductDetail = ({addToShoppingBag, shoppingBag, updateQuantity}) => {
   const [product, setProduct] = useState({});
