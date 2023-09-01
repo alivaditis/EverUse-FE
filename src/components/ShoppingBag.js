@@ -5,7 +5,6 @@ import { HashLink } from 'react-router-hash-link';
 import { camelToPascalCase } from '../helperFunctions';
 
 const ShoppingBag = ({ shoppingBag, totalPrice, removeItemFromBag, updateQuantity }) =>{
-  console.log(shoppingBag)
   
   const items = shoppingBag.map(item => {
     return (

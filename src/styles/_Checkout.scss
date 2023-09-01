@@ -2,8 +2,8 @@
 @use 'mixins' as m;
 
 .checkout {
-  min-height: 100vh;
-  padding: .5rem 2.5rem;
+  min-height: 85vh;
+  padding: 1rem 2.5rem;
   @include m.body-font;
   background-color: v.$primary-background-color;
   .checkout__header {
