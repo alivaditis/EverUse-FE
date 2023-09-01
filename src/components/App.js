@@ -3,7 +3,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useQuery } from '@apollo/client';
 import { GET_ALL_ITEMS } from '../api';
-import { Route, Routes, NavLink } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Checkout from './Checkout';
 import ShoppingBag from './ShoppingBag';
