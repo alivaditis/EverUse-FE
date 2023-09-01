@@ -32,6 +32,7 @@
     width: 10rem;
     margin: .75rem 0 0 1.5rem;
     opacity: 1;
+    cursor: pointer;
   }
 
   .burger {
@@ -41,7 +42,7 @@
     border-radius: 10px;
     justify-content: space-around;
     flex-flow: column nowrap;
-    z-index: 2;
+    z-index: 10;
     margin: 1rem;
     cursor: pointer;
     .burger__line {
@@ -62,16 +63,29 @@
   justify-content: flex-end;
   width: 100%;
   ul {
-    margin: 6rem 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
     list-style: none;
     background-color: v.$secondary-background-color;
     width: 100px;
     position: fixed;
     padding: 2.5rem;
     transition: margin-right 0.3s ease-in-out;
-    z-index: 10;
+    z-index: 3;
+    .nav__close {
+      align-self: flex-end;
+      border: none;
+      font-weight: bold;
+      margin: -1rem -1rem 0 0;
+      height: 1.5rem;
+      width: 1.5rem;
+      background-color: lighten(v.$secondary-accent-color, 30%);
+      border-radius: 5px;
+    }
     .nav__link {
-      margin: 1rem 0;
+      margin: 1.5rem 0;
       a {
         font-size: 1.2rem;
         text-decoration: none;

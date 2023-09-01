@@ -1,7 +1,9 @@
 // NAV COMPONENT //
 
 import RightNav from "./RightNav";
+import Burger from "./Burger";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import '../../images/logo-white.png'
 
 const Nav = () => {
@@ -22,12 +24,8 @@ const Nav = () => {
   return (
     <div className="nav">
       <div className={navClass}>
-        <img src={require('../../images/logo-white.png')} alt="logo" className="nav__logo"/>
-        <div className="burger" onClick={openNav}>
-          <div className="burger__line"></div>
-          <div className="burger__line"></div>
-          <div className="burger__line"></div>
-        </div>      
+        <Link to='/'><img src={require('../../images/logo-white.png')} alt="logo" className="nav__logo"/></Link>
+        <Burger openNav={openNav}/>    
       </div>
       <div className="nav__links">
         {open && <RightNav openNav={openNav}/>}
