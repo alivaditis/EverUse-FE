@@ -1,7 +1,7 @@
 describe('home page', () => {
   beforeEach(() => {
     cy.stubRequestsDynamically();
-    cy.visit('http://localhost:3000/beerKoozie');
+    cy.visit('http://localhost:3000/products/beerKoozie');
     cy.wait('@GetItem');
   })
 
