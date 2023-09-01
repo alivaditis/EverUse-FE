@@ -35,7 +35,7 @@ const ShoppingBag = ({ shoppingBag, totalPrice, removeItemFromBag, updateQuantit
 
   return (
     <div className='bag'>
-      <h1>EverUse</h1>
+      {/* place Nav here */}
       <h2>Shopping Bag</h2>
       {shoppingBag.length ?
       <div className='bag__contents'>

@@ -10,12 +10,15 @@
   @include m.vertically-aligned-flex;
  
   .details-order-form__title {
-    display: flex;
+    @include m.horizontally-aligned-flex;
     justify-content: space-between;
-    align-items: center;
+    @include m.body-font;
     font-size: 1.6rem;
-    font-weight: 500;
     width: 90%;
+ }
+
+ .selection-text {
+  @include m.body-font;
  }
 
  .selection-pair {
@@ -62,7 +65,7 @@
     text-decoration: none;
     width: 40%;
     .submit-btn, .faded-btn {
-      width: 100%
+      width: 100%;
     }
   }
   

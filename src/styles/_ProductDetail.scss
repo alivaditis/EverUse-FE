@@ -16,8 +16,9 @@
     padding: 3rem;
     .details__header-text {
       font-size: 2rem;
-      font-family: v.$secondary-font;
-      font-weight: 600;
+      // font-family: v.$secondary-font;
+      // font-weight: 600;
+      @include m.header-font;
       color: v.$primary-text-color;
       text-align: center;
     }

@@ -15,7 +15,9 @@ body {
 .checkout {
   min-height: 100vh;
   padding: 0.5rem 2.5rem;
-  font: "Amaranth", sans-serif;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.5px;
   background-color: #F4F4F4;
 }
 .checkout .checkout__header {
@@ -31,6 +33,7 @@ body {
   background-color: #FFFFFF;
 }
 .checkout .checkout__summary h3 {
+  font: "Roboto", sans-serif;
   margin-top: 0;
 }
 .checkout .checkout__pricing {
@@ -94,7 +97,9 @@ body {
   justify-content: flex-start;
 }
 .landing .landing__header h1 {
-  font-family: "Roboto", sans-serif;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
   font-size: 2.5rem;
   color: white;
   font-weight: 600;
@@ -103,7 +108,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Roboto", sans-serif;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
   text-decoration: none;
   opacity: 0.8;
   padding: 0;
@@ -158,8 +165,9 @@ body {
 }
 .details .details__header .details__header-text {
   font-size: 2rem;
-  font-family: "Roboto", sans-serif;
-  font-weight: 600;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
   color: #FFFFFF;
   text-align: center;
 }
@@ -226,11 +234,18 @@ body {
 }
 .details-order-form .details-order-form__title {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.5px;
   font-size: 1.6rem;
-  font-weight: 500;
   width: 90%;
+}
+.details-order-form .selection-text {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.5px;
 }
 .details-order-form .selection-pair {
   width: 90%;
@@ -300,7 +315,9 @@ body {
 }
 
 .products {
-  font-family: "Roboto", sans-serif;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
   background-color: #F4F4F4;
   display: flex;
   flex-direction: column;
@@ -383,17 +400,18 @@ body {
   width: 100%;
   margin: 0;
 }
-.bag h1 {
-  font-family: "Amaranth", sans-serif;
-}
 .bag h2,
 .bag h3,
 .bag .bag__button {
-  font-family: "Roboto", sans-serif;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 .bag h4,
 .bag p {
-  font-family: "Spinnaker", sans-serif;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.5px;
 }
 .bag .bag__empty {
   display: flex;
@@ -435,9 +453,12 @@ body {
   text-decoration: none;
   background-color: #867C77;
   padding: 1rem;
-  border-radius: 30px;
+  border-radius: 10px;
   color: #FFFFFF;
   margin: 1rem;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.5px;
 }
 
 .item {
@@ -537,12 +558,16 @@ body {
 .product-description-text h2 {
   margin-top: 2rem;
   margin-bottom: 1rem;
-  font-family: "Roboto", sans-serif;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 .product-description-text p {
   margin-top: 0;
   margin-bottom: 2rem;
-  font-family: "Spinnaker", sans-serif;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.5px;
 }
 
 @media (min-width: 600px) {
@@ -595,7 +620,9 @@ body {
 }
 
 .about {
-  font-family: "Roboto", sans-serif;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
   min-height: 100vh;
   background-color: #58889C;
 }
@@ -620,8 +647,12 @@ body {
   color: white;
   padding: 2rem;
   line-height: 1.5;
-  font-weight: normal;
   text-align: left;
+}
+.about .about__description .about__description-text {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.5px;
 }
 
 @media screen and (min-width: 672px) {
@@ -657,9 +688,12 @@ body {
 .checkout__form {
   height: 550px;
   background-color: inherit;
-  font: "Amaranth", sans-serif;
+  font: "Open Sans", sans-serif;
   display: flex;
   flex-direction: column;
+}
+.checkout__form h2, .checkout__form h3 {
+  font-family: "Roboto", sans-serif;
 }
 .checkout__form input, .checkout__form textarea {
   margin: 0.6em 0;
@@ -681,7 +715,9 @@ body {
   text-decoration: none;
   background-color: #867C77;
   color: #FFFFFF;
-  font: "Roboto", sans-serif;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.5px;
 }
 .checkout__form .checkout__form__submit:hover {
   cursor: pointer;
@@ -724,10 +760,17 @@ body {
   width: 100px;
 }
 .footer .footer__text {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.5px;
   font-size: 10px;
-  font-family: "Spinnaker", sans-serif;
   color: #FFFFFF;
   margin: 0;
+}
+.footer .footer__instagram {
+  margin-top: 1rem;
+  height: 24px;
+  width: 24px;
 }
 
 /*# sourceMappingURL=output.css.map */
