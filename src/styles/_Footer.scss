@@ -3,7 +3,7 @@
 
 .footer {
   height: 15vh;
-  background-color: v.$secondary-text-color;
+  background-color: v.$primary-accent-color;
   @include m.vertically-aligned-flex;
   justify-content: center;
 
