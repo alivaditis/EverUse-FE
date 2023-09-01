@@ -31,8 +31,9 @@ const ShoppingBag = ({ shoppingBag, totalPrice, removeItemFromBag, updateQuantit
   })
 
   return (
+    <>
+    <Nav />
     <div className='bag'>
-      <Nav />
       <h2>Shopping Bag</h2>
       {shoppingBag.length ?
       <div className='bag__contents'>
@@ -55,6 +56,7 @@ const ShoppingBag = ({ shoppingBag, totalPrice, removeItemFromBag, updateQuantit
       </div>
       }
     </div>
+    </>
   )
 }
 

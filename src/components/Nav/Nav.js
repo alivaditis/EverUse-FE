@@ -13,7 +13,7 @@ const Nav = () => {
     setOpen(!open)
   }
   
-  if (location === '/shopping-bag') {
+  if (location === '/shopping-bag' || location === '/checkout') {
     navClass = "nav__header-bag"
   } else {
     navClass = "nav__header"
