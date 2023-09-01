@@ -2,7 +2,19 @@
 @use 'mixins' as m;
 
 .footer {
-  height: 50vh;
-  background-color: v.$primary-accent-color;
+  height: 15vh;
+  background-color: v.$secondary-text-color;
   @include m.vertically-aligned-flex;
+  justify-content: center;
+
+  .footer__logo {
+   width: 100px 
+  }
+
+  .footer__text {
+    font-size: 10px;
+    font-family: v.$ternary-font;
+    color: v.$primary-text-color;
+    margin: 0;
+  }
 }
