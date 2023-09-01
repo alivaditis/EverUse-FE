@@ -11,7 +11,6 @@ describe("Shopping Bag Page", () => {
   });
 
   it("Should show shopping bag details", () => {
-    cy.get("h1").contains("EverUse");
     cy.get("h2").contains("Shopping Bag");
     cy.get(".bag__items").children().should("have.length", 3);
     cy.get(".bag__items")

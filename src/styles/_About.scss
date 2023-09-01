@@ -1,7 +1,8 @@
 @use 'variables' as v;
+@use 'mixins' as m;
 
 .about {
-  font-family: v.$secondary-font;
+  @include m.header-font;
   min-height: 100vh;
   background-color: v.$secondary-background-color;
   .about__header {
@@ -25,8 +26,10 @@
     color: white;
     padding: 2rem;
     line-height: 1.5;
-    font-weight: normal;
     text-align: left;
+    .about__description-text {
+      @include m.body-font;
+    }
   }
 }
 

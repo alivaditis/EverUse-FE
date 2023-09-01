@@ -9,6 +9,7 @@ import { useCookies } from 'react-cookie';
 import Checkout from './Checkout';
 import ShoppingBag from './ShoppingBag';
 import Home from './Home';
+import Footer from './Footer';
 import Success from './Success';
 import '../styles/_App.scss'
 
@@ -131,6 +132,7 @@ function App() {
               />}
             />
           </Routes>
+          <Footer />
         </>
       }
     </div>
