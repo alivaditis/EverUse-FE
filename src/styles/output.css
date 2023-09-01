@@ -142,6 +142,8 @@ body {
 .nav {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  align-items: center;
 }
 
 .nav__header {
@@ -153,6 +155,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 1600px;
 }
 
 .nav__header-bag {
@@ -164,6 +167,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 1600px;
 }
 
 .nav__logo {
@@ -177,6 +181,7 @@ body {
   height: 2rem;
   width: 2rem;
   margin: 0 2rem;
+  cursor: pointer;
 }
 
 .nav__links {
@@ -206,6 +211,7 @@ body {
   height: 2rem;
   width: 2rem;
   border-radius: 5px;
+  cursor: pointer;
 }
 .nav__links .nav__right .nav__link {
   margin: 1.5rem 0;
@@ -216,6 +222,17 @@ body {
   color: #fff;
 }
 
+@media screen and (min-width: 768px) {
+  .nav .nav__header .nav__logo,
+  .nav .nav__header-bag .nav__logo {
+    width: 12rem;
+    margin: 1rem 0 0 4rem;
+  }
+  .nav .nav__header .nav__burger,
+  .nav .nav__header-bag .nav__burger {
+    margin: 0 4rem;
+  }
+}
 .details {
   font-family: "Roboto", sans-serif;
   min-height: 100vh;

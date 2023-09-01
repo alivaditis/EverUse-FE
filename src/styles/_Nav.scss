@@ -3,6 +3,8 @@
 
 .nav {
   @include m.flex-column;
+  width: 100%;
+  align-items: center;
 }
 
 
@@ -16,7 +18,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  }
+  max-width: 1600px;
+}
 
 .nav__header-bag {
   background-color: lighten(rgba(123, 71, 52), 10%);
@@ -27,6 +30,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 1600px;
 }
   .nav__logo {
     width: 10rem;
@@ -39,6 +43,7 @@
   height: 2rem;
   width: 2rem;
   margin: 0 2rem;
+  cursor: pointer;
 }
 
 
@@ -67,6 +72,7 @@
       height: 2rem;
       width: 2rem;
       border-radius: 5px;
+      cursor: pointer;
     }
     .nav__link {
       margin: 1.5rem 0;
@@ -80,3 +86,17 @@
 }
 
 
+@media screen and (min-width: 768px) {
+  .nav {
+    .nav__header,
+    .nav__header-bag {
+      .nav__logo {
+        width: 12rem;
+        margin: 1rem 0 0 4rem;
+      }
+      .nav__burger {
+        margin: 0 4rem;
+      }
+    }
+  }
+}
