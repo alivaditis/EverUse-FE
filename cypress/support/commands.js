@@ -26,10 +26,12 @@
 
 Cypress.Commands.add('stubRequestsDynamically', () => {
   cy.intercept('POST', 'https://everuse-be-b6017dbfcc94.herokuapp.com/graphql', (req) => {
+    console.log(req);
     req.alias = req.body.operationName;
+    const fixtureName = req.body.variables.name? `${req.body.variables.name}${req.body.operationName}GQL`: `${req.body.operationName}GQL`;
     req.reply({
       statusCode: 201,
-      fixture: `${req.body.operationName}GQL`
-    })
+      fixture: fixtureName
+    });
   })
 })

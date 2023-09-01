@@ -18,7 +18,6 @@ const ProductDetailOrderForm = ({product, addToShoppingBag, shoppingBag, updateQ
   
   useEffect(() => {
     setColorOptions(product?.colorOptions)
-    console.log(product)
     if (product.sizeOptions?.length === 1) {
       setIsSingleSize(true);
     } else {
