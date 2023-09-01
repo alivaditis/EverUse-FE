@@ -37,11 +37,9 @@ Cypress.Commands.add('stubRequestsDynamically', () => {
 })
 
 Cypress.Commands.add('fillCart', () => {
-  // cy.stubRequestsDynamically();
   cy.get(".card")
     .contains("Bracelet")
     .click();
-  // cy.wait("@braceletGetItemGQL");
   cy.get("label")
     .contains("M")
     .click();
