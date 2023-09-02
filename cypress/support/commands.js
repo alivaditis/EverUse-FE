@@ -44,15 +44,14 @@ Cypress.Commands.add('checkBagItem', (name, size, color, unitPrice, quantity) =>
   cy.get('.item__price').contains(`$${unitPrice*Number(quantity)}`)
 })
 
-Cypress.Commands.add('fillBeerKoozieForm', () => {
-  cy.get('.multiple-choice-container').find('label').eq(0).click()
-  cy.get('#colorOptions').select('orangePlaid')
-  cy.get('#quantityOptions').select('2')
+Cypress.Commands.add('fillForm', (size, colorOptionValue, quantity) => {
+  // cy.get('.multiple-choice-container').find('label').eq(0).click()
+  cy.get('label').contains(size).click()
+  cy.get('#colorOptions').select(colorOptionValue)
+  cy.get('#quantityOptions').select(quantity)
   cy.get('.details-order-form__btn-container').find('button').eq(0).should('be.enabled')
-  cy.get('.details-order-form__btn-container').find('button').eq(1).should('be.disabled')
   cy.get('.details-order-form__btn-container').find('button').eq(0).click()
   cy.get('.details-order-form__btn-container').find('button').eq(1).should('be.enabled')
-  cy.get('.details-order-form__cart-count').contains('2')
 })
 
 Cypress.Commands.add('fillCart', () => {

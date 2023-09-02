@@ -71,14 +71,67 @@ describe('test userflows', () => {
     cy.visit('http://localhost:3000/beerKoozie');
     cy.wait('@GetItem');
   })
+
   it('should activate the buttons', () => {
-    cy.fillBeerKoozieForm()
+    cy.fillForm('S', 'orangePlaid', 2 )
   })
-  it('should confirm that items are added to the cart', () => {
-    cy.fillBeerKoozieForm()
+
+  it('should add items to the cart', () => {
+    cy.get('.details-order-form__btn-container').find('button').eq(1).should('be.disabled')
+    cy.fillForm('S', 'orangePlaid', 2)
+    cy.get('.details-order-form__cart-count').contains('2')
     cy.get('button').contains('Cart').click()
     cy.url().should('eq', 'http://localhost:3000/shopping-bag')
     cy.get('.bag__items').children().should('have.length', 1)
     cy.checkBagItem('Beer Koozie', 'S', 'Orange Plaid', 25, 2)
+    cy.get('.item__delete').click()
+    cy.get('h3').contains('Your shopping bag is empty')
+  })
+
+  it('should be able to add same and different item to the cart', () => {
+    cy.fillForm('M', 'moss', 1)
+    cy.get('.details-order-form__cart-count').contains('1')
+    cy.fillForm('S', 'lime', 1)
+    cy.get('.details-order-form__cart-count').contains('2')
+    cy.fillForm('M', 'moss', 1)
+    cy.get('.details-order-form__cart-count').contains('3')
+    cy.get('button').contains('Cart').click()
+    cy.url().should('eq', 'http://localhost:3000/shopping-bag')
+    cy.get('.bag__items').children().should('have.length', 2)
+    cy.checkBagItem('Beer Koozie', 'M', 'Moss', 25, 2)
+    cy.checkBagItem('Beer Koozie', 'S', 'Lime', 25, 1)
+  })
+
+  it.only('should change cart count upon different bag item length', () => {
+    cy.fillForm('L', 'bluePlaid', 1)
+    cy.fillForm('M', 'moss', 1)
+    cy.fillForm('S', 'bluePlaid', 3)
+    cy.get('.details-order-form__cart-count').contains('5')
+    cy.get('button').contains('Cart').click()
+    cy.get('.item').eq(0).find('.item__delete').click()
+    cy.go(-1)
+    cy.get('.details-order-form__cart-count').contains('4')
+    cy.get('button').contains('Cart').click()
+    cy.get('.item').eq(0).find('.item__delete').click()
+    cy.go(-1)
+    cy.get('.details-order-form__cart-count').contains('3')
+    cy.get('button').contains('Cart').click()
+    cy.get('.counter__minus').click()
+    cy.go(-1)
+    cy.get('.details-order-form__cart-count').contains('2')
+    cy.get('button').contains('Cart').click()
+    cy.get('.counter__minus').click()
+    cy.go(-1)
+    cy.get('.details-order-form__cart-count').contains('1')
+    cy.get('button').contains('Cart').click()
+    cy.get('.counter__minus').click()
+    cy.go(-1)
+    cy.get('.details-order-form__btn-container').find('button').eq(1).should('be.disabled')
+  })
+
+  it('should retain cart count even after reload', () => {
+    cy.fillForm('S', 'lime', 7)
+    cy.reload()
+    cy.get('.details-order-form__cart-count').contains('7')
   })
 })
