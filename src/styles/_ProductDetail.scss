@@ -3,7 +3,7 @@
 
 .details {
   font-family: v.$secondary-font;
-  min-height: 100vh;
+  min-height: 100vh; 
   height: 100%;
   @include m.vertically-aligned-flex;
   overflow: auto;
