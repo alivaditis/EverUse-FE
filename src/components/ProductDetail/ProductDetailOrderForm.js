@@ -103,13 +103,13 @@ const ProductDetailOrderForm = ({product, addToShoppingBag, shoppingBag, updateQ
          <SizeOptionsContainer isSingleSize={isSingleSize} handleSelect={handleSelect}/>
       </div>
       <div className="details-order-form__selection-pair">
-         <label className="details-order-form__selection-text">Color:</label> 
+         <label className="details-order-form__selection-text details-order-form__color-options">Color:</label> 
          <select id="colorOptions" className={!inputFields.color? "details-order-form__faded":""} value={inputFields.color} onChange={(e)=> {handleSelect(e, "color")}}>
           <ColorOptionsCode />
          </select>
       </div>
       <div className="details-order-form__selection-pair">
-         <label className="details-order-form__selection-text">Quantity:</label> 
+         <label className="details-order-form__selection-text details-order-form__quantity-options">Quantity:</label> 
          <select id="quantityOptions" className={!inputFields.quantity? "details-order-form__faded":""} value={inputFields.quantity} onChange={(e) => {handleSelect(e, "quantity")}}>
             <option value="" className="details-order-form__faded">Choose quantity</option>
             <option value={1}> 1 </option>

@@ -64,3 +64,21 @@ describe('test layouts without userflow', () => {
     cy.get('.details__info-product').should('have.css', 'flex-direction', 'column')
   })
 })
+
+describe('test userflows', () => {
+  beforeEach(() => {
+    cy.stubRequestsDynamically();
+    cy.visit('http://localhost:3000/beerKoozie');
+    cy.wait('@GetItem');
+  })
+  it('should activate the buttons', () => {
+    cy.fillBeerKoozieForm()
+  })
+  it('should confirm that items are added to the cart', () => {
+    cy.fillBeerKoozieForm()
+    cy.get('button').contains('Cart').click()
+    cy.url().should('eq', 'http://localhost:3000/shopping-bag')
+    cy.get('.bag__items').children().should('have.length', 1)
+    cy.checkBagItem('Beer Koozie', 'S', 'Orange Plaid', 25, 2)
+  })
+})
