@@ -1,5 +1,7 @@
 @use 'variables' as v;
 
+// LAYOUT
+
 @mixin horizontally-aligned-flex {
   display: flex;
   align-items: center;
@@ -11,18 +13,23 @@
   align-items: center;
 }
 
+@mixin true-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @mixin space-between {
   display: flex;
   justify-content: space-between;
 }
 
-@mixin button-style {
-  background-color: v.$secondary-accent-color;
-  color: v.$primary-text-color;
-  padding: 1rem;
-  border: none;
-  border-radius: 30px;
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
 }
+
+// FONTS
 
 @mixin header-font {
   font-family: v.$font;
@@ -36,11 +43,16 @@
   letter-spacing: 0.5px;
 }
 
-@mixin flex-column {
-  display: flex;
-  flex-direction: column;
+// ELEMENTS
+
+@mixin button-style {
+  background-color: v.$secondary-accent-color;
+  color: v.$primary-text-color;
+  padding: 1rem;
+  border: none;
+  border-radius: 30px;
 }
 
 @mixin box-border {
-  border: solid 1px v.$secondary-accent-color;
+  border: solid 1px v.$secondary-text-color;
 }
