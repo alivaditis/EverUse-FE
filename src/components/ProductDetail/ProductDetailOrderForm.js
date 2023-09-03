@@ -10,7 +10,7 @@ const ProductDetailOrderForm = ({product, addToShoppingBag, shoppingBag, updateQ
   const [inputFields, setInputFields] = useState({
     "color":"",
     "size": "",
-    "quantity":0
+    "quantity":1
   });
   const [colorOptions, setColorOptions] = useState([]);
   const [isFormHealthy, setIsFormHealthy] = useState(false);
@@ -111,7 +111,6 @@ const ProductDetailOrderForm = ({product, addToShoppingBag, shoppingBag, updateQ
       <div className="details-order-form__selection-pair">
          <label className="details-order-form__selection-text details-order-form__quantity-options">Quantity:</label> 
          <select id="quantityOptions" className={!inputFields.quantity? "details-order-form__faded":""} value={inputFields.quantity} onChange={(e) => {handleSelect(e, "quantity")}}>
-            <option value="" className="details-order-form__faded">Choose quantity</option>
             <option value={1}> 1 </option>
             <option value={2}> 2 </option>
             <option value={3}> 3 </option>
