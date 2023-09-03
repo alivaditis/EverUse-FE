@@ -3,9 +3,9 @@
 import { NavLink } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import { camelToPascalCase } from '../helperFunctions';
+import Nav from './Nav/Nav';
 
 const ShoppingBag = ({ shoppingBag, totalPrice, removeItemFromBag, updateQuantity }) =>{
-  console.log(shoppingBag)
   
   const items = shoppingBag.map(item => {
     return (
@@ -34,8 +34,9 @@ const ShoppingBag = ({ shoppingBag, totalPrice, removeItemFromBag, updateQuantit
   })
 
   return (
+    <>
+    <Nav />
     <div className='bag'>
-      <h1>EverUse</h1>
       <h2>Shopping Bag</h2>
       {shoppingBag.length ?
       <div className='bag__contents'>
@@ -58,6 +59,7 @@ const ShoppingBag = ({ shoppingBag, totalPrice, removeItemFromBag, updateQuantit
       </div>
       }
     </div>
+    </>
   )
 }
 

@@ -1,13 +1,15 @@
 @use 'variables' as v;
+@use 'mixins' as m;
 
 .checkout__form {
-  height: 550px;
+  height: fit-content;
+  min-height: 400px;
   background-color: inherit;
-  font: v.$ternary-font;
+  @include m.body-font;
   display: flex;
   flex-direction: column;
   h2, h3 {
-    font-family: v.$secondary-font;
+    @include m.header-font;
   }
   input, textarea {
     margin: .6em 0;
@@ -16,7 +18,7 @@
     color: red;
   }
   .checkout__form__comments {
-    min-height: 20%;
+    min-height: 60px;
     max-width: 100%;
     min-width: 100%;
   }
@@ -29,7 +31,7 @@
     text-decoration: none;
     background-color: v.$secondary-accent-color;
     color: v.$ternary-background-color;
-    font: v.$secondary-font;
+    @include m.body-font;
     &:hover {
     cursor: pointer;
     }

@@ -1,12 +1,10 @@
-
-@use 'variables' as v;
+@use "variables" as v;
+@use "mixins" as m;
 
 .products {
-  font-family: v.$secondary-font;
+  @include m.header-font;
   background-color: v.$primary-background-color;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include m.vertically-aligned-flex;
   .products__header {
     margin: 5rem 0 3rem 0;
     font-size: 1.5rem;
@@ -15,34 +13,39 @@
     max-width: 100%;
     height: 25rem;
     margin-bottom: 5rem;
+    a {
+      text-decoration: none;
+      color: black;
+    }
   }
 }
 
 .card {
   display: flex;
   flex-direction: column;
-  padding: .5rem;
+  padding: 0.5rem;
   margin: auto;
   margin-top: 2rem;
   width: 60%;
   max-width: 15rem;
-  min-width: 12rem;
+  min-width: 11rem;
   background: #fff;
   .card__image {
     max-width: 100%;
-    height: 12rem;
+    height: 11rem;
     object-fit: cover;
   }
   .card__info {
     text-align: left;
-    .card__name{
+
+    .card__name {
       font-size: 1.1rem;
       font-weight: normal;
       margin: 1rem 0;
     }
     .card__price {
       font-size: 1rem;
-      margin: .5rem 0;
+      margin: 0.5rem 0;
     }
   }
 }
@@ -51,7 +54,7 @@
   height: 24rem;
 }
 .swiper-slide {
-  width: 200px
+  width: 200px;
 }
 
 @media screen and (min-width: 800px) {

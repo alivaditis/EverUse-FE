@@ -22,3 +22,20 @@
   border-radius: 30px;
   color: v.$primary-text-color;
 }
+
+@mixin header-font {
+  font-family: v.$font;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+@mixin body-font {
+  font-family: v.$font;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}

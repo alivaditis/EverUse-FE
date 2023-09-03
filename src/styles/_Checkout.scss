@@ -2,16 +2,16 @@
 @use 'mixins' as m;
 
 .checkout {
-  min-height: 100vh;
-  padding: .5rem 2.5rem;
-  font: v.$ternary-font;
+  min-height: 85vh;
+  padding: 1rem 2.5rem;
+  @include m.body-font;
   background-color: v.$primary-background-color;
   .checkout__header {
     text-align: center;
   }
   .checkout__summary {
     h3 {
-      font: v.$secondary-font;
+      @include m.header-font;
       margin-top: 0;
     }
     border-radius: 3px;

@@ -1,11 +1,12 @@
 @use 'variables' as v;
+@use 'mixins' as m;
 
 .landing {
   position: relative;
   background-image: url('../images/landing-bg.png');
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: 0% center;
+  background-position: 10% center;
   margin: 0;
   padding: 2rem;
   min-height: 100vh;
@@ -21,7 +22,7 @@
     justify-content: center;
     justify-content: flex-start;
     h1 {
-      font-family: v.$secondary-font;
+      @include m.header-font;
       font-size: 2.5rem;
       color: white;
       font-weight: 600;
@@ -30,7 +31,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      font-family: v.$secondary-font;
+      @include m.header-font;
       text-decoration: none;
       opacity: 0.8;
       padding: 0;
@@ -55,6 +56,7 @@
 @media screen and (min-width: 720px) {
   .landing {
     background-size: cover;
+    background-position: 0% center;
     .landing__header {
       padding: 0 3rem;
       align-self: flex-start;

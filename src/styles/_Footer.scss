@@ -1,0 +1,26 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+.footer {
+  height: 15vh;
+  background-color: v.$secondary-background-color;
+  @include m.vertically-aligned-flex;
+  justify-content: center;
+
+  .footer__logo {
+   width: 100px 
+  }
+
+  .footer__text {
+    @include m.body-font;
+    font-size: 10px;
+    color: v.$primary-text-color;
+    margin: 0;
+  }
+
+  .footer__instagram {
+    margin-top: 1rem;
+    height: 24px;
+    width: 24px;
+  }
+}

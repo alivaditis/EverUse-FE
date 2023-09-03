@@ -1,0 +1,99 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+.nav {
+  @include m.flex-column;
+  width: 100%;
+  align-items: center;
+}
+
+.nav__header {
+  background-color: rgba(88, 136, 156, 0.9);
+  position: fixed;
+  z-index: 3;
+  width: 100%;
+  height: 6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1600px;
+}
+
+.nav__header-bag {
+  background-color: v.$secondary-background-color;
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  height: 6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1600px;
+}
+.nav__logo {
+  width: 10rem;
+  margin: 0.75rem 0 0 1.5rem;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.nav__burger {
+  height: 2rem;
+  width: 2rem;
+  margin: 0 2rem;
+  cursor: pointer;
+}
+
+.nav__links {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  .nav__right {
+    font-family: v.$font;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    list-style: none;
+    background-color: v.$secondary-background-color;
+    width: 100px;
+    position: fixed;
+    padding: 2.5rem;
+    transition: margin-right 0.3s ease-in-out;
+    z-index: 3;
+    .nav__close {
+      align-self: flex-end;
+      border: none;
+      font-weight: bold;
+      margin: -1rem -1rem 0 0;
+      height: 2rem;
+      width: 2rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .nav__link {
+      margin: 1.5rem 0;
+      a {
+        cursor: pointer;
+        font-size: 1.2rem;
+        text-decoration: none;
+        color: #fff;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .nav {
+    .nav__header,
+    .nav__header-bag {
+      .nav__logo {
+        width: 12rem;
+        margin: 1rem 0 0 4rem;
+      }
+      .nav__burger {
+        margin: 0 4rem;
+      }
+    }
+  }
+}

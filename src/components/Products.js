@@ -3,7 +3,8 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { Pagination, Mousewheel, Keyboard } from 'swiper/modules';
+import 'swiper/css/navigation';
+import { Pagination, Mousewheel, Keyboard, Navigation } from 'swiper/modules';
 import { Link } from 'react-router-dom';
 
 const Products = ({itemsForDisplay}) => {
@@ -15,7 +16,7 @@ const Products = ({itemsForDisplay}) => {
   const cards = itemsForDisplay.map(item => {
     return (
         <SwiperSlide key={item.id} >
-          <Link to={`/${item.id}`}>
+          <Link to={`/products/${item.id}`}>
             <div className="card">
               <img src={item.image} alt={item.name} className="card__image" />
               <div className="card__info">
@@ -35,10 +36,11 @@ const Products = ({itemsForDisplay}) => {
         <Swiper
           cssMode={true} 
           pagination={true}
+          navigation={true}
           mousewheel={true}
           keyboard={true}
-          spaceBetween={-70} 
-          modules={[Pagination, Mousewheel, Keyboard]} 
+          spaceBetween={-40} 
+          modules={[Pagination, Mousewheel, Keyboard, Navigation]} 
           className="swiper"
           breakpoints={
             {

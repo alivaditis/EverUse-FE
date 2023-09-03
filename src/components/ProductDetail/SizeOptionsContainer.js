@@ -19,7 +19,7 @@ const SizeOptionsContainer = ({isSingleSize, handleSelect}) => {
         </>
       </div>}
       {isSingleSize && <div className="single-choice-container">
-        <input checked type="radio" name="size-options" id="onesize" value="onesize" className="single-choice-option"/>
+        <input checked type="radio" name="size-options" id="onesize" value="onesize" className="single-choice-option" readOnly/>
         <label htmlFor='onesize'>One Size</label>
       </div>}
     </div>

@@ -8,19 +8,15 @@
   width: 100%;
   margin: 0;
 
-  h1 {
-    font-family: v.$primary-font;
-  }
-
   h2,
   h3,
   .bag__button{
-    font-family: v.$secondary-font;
+    @include m.header-font;
   }
 
   h4,
   p {
-    font-family: v.$ternary-font;
+    @include m.body-font;
   }
 
   .bag__empty {
@@ -66,6 +62,7 @@
     text-decoration: none;
     @include m.button-style;
     margin: 1rem;
+    @include m.body-font;
   }
 }
 
