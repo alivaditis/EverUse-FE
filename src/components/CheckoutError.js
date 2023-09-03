@@ -1,3 +1,5 @@
+// CHECKOUT ERROR COMPONENT //
+
 const CheckoutError = () => {
   return (
     <div>

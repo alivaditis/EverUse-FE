@@ -32,7 +32,6 @@ const Home = ({itemsForDisplay, setItems}) => {
       </>}
     </>
   )
-  
-}
+};
 
 export default Home;

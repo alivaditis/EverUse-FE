@@ -15,12 +15,12 @@
       margin-top: 0;
     }
     border-radius: 3px;
-    display: flex;
-    flex-direction: column;
+    @include m.flex-column;
     width: 70%;
     margin: auto;
     padding: 1rem;
     background-color: v.$ternary-background-color;
+    min-width: 250px;
   }
   .checkout__pricing {
     @include m.space-between;
@@ -48,10 +48,10 @@
       @include m.space-between;
     }
     .checkout__container {
-      display: flex;
+      @include m.space-between;
       flex-direction: row-reverse;
-      justify-content: space-between;
     }
+
     .checkout__summary, .checkout__form {
       margin: 0;
       width: 45%;

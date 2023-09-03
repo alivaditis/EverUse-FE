@@ -39,5 +39,5 @@ query GetItem ($name: String!) {
   }
 }`
 
-export { GET_ALL_ITEMS, SUBMIT_REQUEST, GET_SINGLE_ITEM }
+export { GET_ALL_ITEMS, SUBMIT_REQUEST, GET_SINGLE_ITEM };
   

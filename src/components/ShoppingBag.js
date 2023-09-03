@@ -5,7 +5,7 @@ import { HashLink } from 'react-router-hash-link';
 import { camelToPascalCase } from '../helperFunctions';
 import Nav from './Nav/Nav';
 
-const ShoppingBag = ({ shoppingBag, totalPrice, removeItemFromBag, updateQuantity }) =>{
+const ShoppingBag = ({ shoppingBag, totalPrice, removeItemFromBag, updateQuantity }) => {
   
   const items = shoppingBag.map(item => {
     return (
@@ -31,7 +31,7 @@ const ShoppingBag = ({ shoppingBag, totalPrice, removeItemFromBag, updateQuantit
       </span>
       <span className="material-icons-round item__delete" id={item.id} onClick={(e) => removeItemFromBag(e.target.id)}>close</span>
     </article>)
-  })
+  });
 
   return (
     <>
@@ -61,6 +61,6 @@ const ShoppingBag = ({ shoppingBag, totalPrice, removeItemFromBag, updateQuantit
     </div>
     </>
   )
-}
+};
 
 export default ShoppingBag;

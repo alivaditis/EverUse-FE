@@ -1,26 +1,27 @@
 // FORM COMPONENT //
 
-import { useState } from "react"
-import { useNavigate } from "react-router-dom"
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { SUBMIT_REQUEST } from "../api";
 import CheckoutError from "./CheckoutError";
-import '../styles/_Form.scss'
+import '../styles/_Form.scss';
+
 const validator = require("email-validator");
 
 const Form = ({ shoppingBag, totalPrice, emptyShoppingBag, updateSuccessMessage }) => {
   
-  const [email, setEmail] = useState('')
-  const [firstName, setFirstName] = useState('')
-  const [lastName, setLastName] = useState('')
-  const [comments, setComments] = useState('')
-  const [emailError, setEmailError] = useState(false)
-  const [firstNameError, setFirstNameError] = useState(false)
-  const [lastNameError, setLastNameError] = useState(false)
+  const [email, setEmail] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [comments, setComments] = useState('');
+  const [emailError, setEmailError] = useState(false);
+  const [firstNameError, setFirstNameError] = useState(false);
+  const [lastNameError, setLastNameError] = useState(false);
 
-  const [postRequest, { error }] = useMutation(SUBMIT_REQUEST)
+  const [postRequest, { error }] = useMutation(SUBMIT_REQUEST);
   
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const submitRequest = (e) => {
     e.preventDefault()
@@ -52,7 +53,7 @@ const Form = ({ shoppingBag, totalPrice, emptyShoppingBag, updateSuccessMessage 
           size: item.size,
           quantity: parseInt(item.quantity)
         }
-      })
+      });
       postRequest({
           variables: {
             input: newRequest
@@ -67,7 +68,7 @@ const Form = ({ shoppingBag, totalPrice, emptyShoppingBag, updateSuccessMessage 
         })
         .catch(error => console.error)
     }
-  }
+  };
 
   return (
   <>
@@ -87,10 +88,9 @@ const Form = ({ shoppingBag, totalPrice, emptyShoppingBag, updateSuccessMessage 
         <label htmlFor='checkout__form__comments'>Comments/Questions/Concerns</label>
         <textarea name='checkout__form__comments' className='checkout__form__comments' value={comments} onChange={(e) => setComments(e.target.value)}/>
         <button className='checkout__form__submit'>Submit</button>
-      </form>
-  }
+      </form>}
   </>
   )
-}
+};
 
-export default Form
+export default Form;

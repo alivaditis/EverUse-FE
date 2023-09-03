@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 // ***********************************************
 // This example commands.js shows you how to
 // create various custom commands and overwrite
@@ -83,7 +84,7 @@ Cypress.Commands.add('fillCart', () => {
   cy.go("back");
   // Refactor once word spacing is fixed
   cy.get(".card")
-    .contains("DogLeash")
+    .contains("Dog Leash")
     .click();
   // Refactor once onesize auto-select is done
   cy.get("label")

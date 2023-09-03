@@ -1,34 +1,32 @@
-@use 'variables' as v;
-@use 'mixins' as m;
+@use "variables" as v;
+@use "mixins" as m;
 
 .details-order-form {
+  @include m.vertically-aligned-flex;
   width: 65%;
   border-radius: 15px;
   max-width: 400px;
   border: solid 1px v.$secondary-accent-color;
   padding: 20px;
   margin-bottom: 30px;
-  @include m.vertically-aligned-flex;
- 
   .details-order-form__title {
     @include m.horizontally-aligned-flex;
-    justify-content: space-between;
     @include m.body-font;
+    justify-content: space-between;
     font-size: 1.6rem;
     width: 90%;
     color: v.$primary-accent-color;
- }
+  }
 
- .details-order-form__selection-text {
-  @include m.body-font;
- }
+  .details-order-form__selection-text {
+    @include m.body-font;
+  }
 
- .details-order-form__selection-pair {
+  .details-order-form__selection-pair {
+    @include m.flex-column;
     width: 90%;
     min-height: 5rem;
     margin: 10px;
-    display: flex;
-    flex-direction: column;
     justify-content: space-evenly;
     color: v.$primary-accent-color;
     .details-order-form__selection-text {
@@ -47,59 +45,60 @@
       font-size: 1.5rem;
       color: v.$primary-accent-color;
     }
- }
-
- .details-order-form__btn-container {
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
-  margin: 10px;
-  
-  a {
-    display: flex;
-    align-items: center;
-    padding: 0;
-    margin: 0;
-    text-decoration: none;
-    width: 40%;
-    .details-order-form__submit-btn, .details-order-form__faded-btn {
-      width: 100%;
-      padding: 0
-    }
   }
 
-  .details-order-form__submit-btn {
-    @include m.button-style;
-    position: relative;
-    padding: 0;
-    width: 40%;
+  .details-order-form__btn-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px;
 
-    .details-order-form__hidden {
-      display: none;
+    a {
+      display: flex;
+      align-items: center;
+      padding: 0;
+      margin: 0;
+      text-decoration: none;
+      width: 40%;
+      .details-order-form__submit-btn,
+      .details-order-form__faded-btn {
+        width: 100%;
+        padding: 0;
+      }
     }
-   }
-  
-   .details-order-form__faded-btn {
-    width: 40%;
-    @include m.button-style;
-    opacity: 0.6;
-    padding: 0;
-   }
 
-   .details-order-form__cart-count {
-    padding: 5px;
-    background-color: white;
-    font-size: 1.2rem;
-    color: black;
-    border-radius: 50%;
-    height: 1.5rem;
-    width: 1.5rem;
-    border: 1px solid black;
-    position: absolute;
-    top: -10px;
-    right: -10px;
-   }
- }
+    .details-order-form__submit-btn {
+      @include m.button-style;
+      position: relative;
+      padding: 0;
+      width: 40%;
+
+      .details-order-form__hidden {
+        display: none;
+      }
+    }
+
+    .details-order-form__faded-btn {
+      @include m.button-style;
+      width: 40%;
+      opacity: 0.6;
+      padding: 0;
+    }
+
+    .details-order-form__cart-count {
+      padding: 5px;
+      background-color: white;
+      font-size: 1.2rem;
+      color: black;
+      border-radius: 50%;
+      height: 1.5rem;
+      width: 1.5rem;
+      border: 1px solid black;
+      position: absolute;
+      top: -10px;
+      right: -10px;
+    }
+  }
 }
 
 @media (min-width: 800px) {

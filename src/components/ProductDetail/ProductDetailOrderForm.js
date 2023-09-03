@@ -1,3 +1,5 @@
+// PRODUCT DETAIL ORDER FORM COMPONENT //
+
 /* eslint-disable react-hooks/exhaustive-deps */
 
 import { useEffect, useState } from "react";
@@ -69,8 +71,8 @@ const ProductDetailOrderForm = ({product, addToShoppingBag, shoppingBag, updateQ
       return (existingItem.type?.toLowerCase() === item.type?.toLowerCase()) && (existingItem.size === item.size) && (existingItem.color === item.color)
     });
     return result?.id;
-  }
-
+  };
+  
   const saveItem = (e) => {
     e.preventDefault();
 
