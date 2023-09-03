@@ -15,9 +15,8 @@ describe('test layouts without userflow', () => {
     cy.get('#colorOptions').should('have.class', 'details-order-form__faded')
     cy.get('#colorOptions').find('option').should('have.length', 5)
     cy.get('#colorOptions').find('option').first().contains('Choose color')
-    cy.get('#quantityOptions').should('have.class', 'details-order-form__faded')
-    cy.get('#quantityOptions').find('option').should('have.length', 10)
-    cy.get('#quantityOptions').find('option').first().contains('Choose quantity')
+    cy.get('#quantityOptions').should('have.value', 1)
+    cy.get('#quantityOptions').find('option').should('have.length', 9)
     cy.get('.details-order-form__btn-container').children().should('have.length', 2)
     cy.get('.details-order-form__btn-container').find('button').eq(0).should('be.disabled')
     cy.get('.details-order-form__btn-container').find('button').eq(0).contains('Add to Bag')
@@ -26,7 +25,7 @@ describe('test layouts without userflow', () => {
   })
 
   it('should show the right elements for dog leash', () => {
-    cy.visit('http://localhost:3000/dogLeash')
+    cy.visit('http://localhost:3000/products/dogLeash')
     cy.wait('@GetItem')
     cy.get('.details__header').should('have.css', 'background-image', 'url("http://localhost:3000/static/media/detail-horizontal-bg.4ba54468bd483e6c6dc5.jpg")')
     cy.get('.details__header-text').contains('Products handmade from upcycled climbing ropes in an effort to reduce waste')
@@ -37,9 +36,8 @@ describe('test layouts without userflow', () => {
     cy.get('#colorOptions').should('have.class', 'details-order-form__faded')
     cy.get('#colorOptions').find('option').should('have.length', 5)
     cy.get('#colorOptions').find('option').first().contains('Choose color')
-    cy.get('#quantityOptions').should('have.class', 'details-order-form__faded')
-    cy.get('#quantityOptions').find('option').should('have.length', 10)
-    cy.get('#quantityOptions').find('option').first().contains('Choose quantity')
+    cy.get('#quantityOptions').should('have.value', 1)
+    cy.get('#quantityOptions').find('option').should('have.length', 9)
     cy.get('.details-order-form__btn-container').children().should('have.length', 2)
     cy.get('.details-order-form__btn-container').find('button').eq(0).should('be.disabled')
     cy.get('.details-order-form__btn-container').find('button').eq(0).contains('Add to Bag')
@@ -68,7 +66,7 @@ describe('test layouts without userflow', () => {
 describe('test userflows', () => {
   beforeEach(() => {
     cy.stubRequestsDynamically();
-    cy.visit('http://localhost:3000/beerKoozie');
+    cy.visit('http://localhost:3000/products/beerKoozie');
     cy.wait('@GetItem');
   })
 
@@ -78,7 +76,7 @@ describe('test userflows', () => {
 
   it('should add items to the cart', () => {
     cy.get('.details-order-form__btn-container').find('button').eq(1).should('be.disabled')
-    cy.fillForm('S', 'orangePlaid', 2)
+    cy.fillForm('S', 'orangePlaid', '2')
     cy.get('.details-order-form__cart-count').contains('2')
     cy.get('button').contains('Cart').click()
     cy.url().should('eq', 'http://localhost:3000/shopping-bag')
@@ -89,11 +87,11 @@ describe('test userflows', () => {
   })
 
   it('should be able to add same and different item to the cart', () => {
-    cy.fillForm('M', 'moss', 1)
+    cy.fillForm('M', 'moss', '1')
     cy.get('.details-order-form__cart-count').contains('1')
-    cy.fillForm('S', 'lime', 1)
+    cy.fillForm('S', 'lime', '1')
     cy.get('.details-order-form__cart-count').contains('2')
-    cy.fillForm('M', 'moss', 1)
+    cy.fillForm('M', 'moss', '1')
     cy.get('.details-order-form__cart-count').contains('3')
     cy.get('button').contains('Cart').click()
     cy.url().should('eq', 'http://localhost:3000/shopping-bag')
@@ -102,10 +100,10 @@ describe('test userflows', () => {
     cy.checkBagItem('Beer Koozie', 'S', 'Lime', 25, 1)
   })
 
-  it.only('should change cart count upon different bag item length', () => {
-    cy.fillForm('L', 'bluePlaid', 1)
-    cy.fillForm('M', 'moss', 1)
-    cy.fillForm('S', 'bluePlaid', 3)
+  it('should change cart count upon different bag item length', () => {
+    cy.fillForm('L', 'bluePlaid', '1')
+    cy.fillForm('M', 'moss', '1')
+    cy.fillForm('S', 'bluePlaid', '3')
     cy.get('.details-order-form__cart-count').contains('5')
     cy.get('button').contains('Cart').click()
     cy.get('.item').eq(0).find('.item__delete').click()
@@ -130,7 +128,7 @@ describe('test userflows', () => {
   })
 
   it('should retain cart count even after reload', () => {
-    cy.fillForm('S', 'lime', 7)
+    cy.fillForm('S', 'lime', '7')
     cy.reload()
     cy.get('.details-order-form__cart-count').contains('7')
   })
