@@ -8,10 +8,11 @@ import Nav from './Nav/Nav';
 import LoadSpinner from './LoadSpinner';
 import { useQuery } from '@apollo/client';
 import { GET_ALL_ITEMS } from '../api';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 const Home = ({itemsForDisplay, setItems}) => {
   const { loading, error, data } = useQuery(GET_ALL_ITEMS);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     if (!itemsForDisplay.length && !loading && !error) {
@@ -26,10 +27,10 @@ const Home = ({itemsForDisplay, setItems}) => {
       </>}
       
       {!loading && <>
-      <Nav />
-      <Landing />
-      <Products itemsForDisplay={itemsForDisplay} />
-      <About />
+      <Nav open={open} setOpen={setOpen}/>
+      <Landing setOpen={setOpen}/>
+      <Products setOpen={setOpen} itemsForDisplay={itemsForDisplay} />
+      <About setOpen={setOpen}/>
       </>}
     </>
   )
