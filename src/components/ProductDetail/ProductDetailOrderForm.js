@@ -91,7 +91,6 @@ const ProductDetailOrderForm = ({product, addToShoppingBag, shoppingBag, updateQ
     }
   };
 
-
   return (
     <form className="details-order-form">
       {product?.name && <div className="details-order-form__title">
@@ -131,7 +130,6 @@ const ProductDetailOrderForm = ({product, addToShoppingBag, shoppingBag, updateQ
           <button disabled={!shoppingBag.length} className={shoppingBag.length? "details-order-form__submit-btn": "details-order-form__faded-btn"}>
             <p> Cart <span className={totalQuantity? "details-order-form__cart-count": "details-order-form__hidden"}>{totalQuantity? totalQuantity: ""}</span></p>
           </button>
-
         </Link>
       </div>
       

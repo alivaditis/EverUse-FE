@@ -1,13 +1,13 @@
 // LANDING COMPONENT //
 
-import { HashLink } from 'react-router-hash-link';
+import { Link } from "react-scroll";
 
 const Landing = () => {
   return (
     <div className="landing">
       <div className="landing__header">
         <h1 className="landing__text">FROM PEAK TO POCKET</h1>
-        <HashLink smooth to='/#products' className="landing__button">Explore</HashLink>
+        <Link to="products" activeClass="active" spy={true} smooth={true} offset={-95} duration={500} className="landing__button">Explore</Link>
       </div>
     </div>
   )

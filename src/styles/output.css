@@ -8,7 +8,7 @@ body {
 
 .app {
   width: 100vw;
-  max-width: 1425px;
+  max-width: 1600px;
   min-height: 100vh;
 }
 
@@ -81,7 +81,7 @@ body {
   background-image: url("../images/landing-bg.png");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: 0% center;
+  background-position: 10% center;
   margin: 0;
   padding: 2rem;
   min-height: 100vh;
@@ -135,6 +135,7 @@ body {
 @media screen and (min-width: 720px) {
   .landing {
     background-size: cover;
+    background-position: 0% center;
   }
   .landing .landing__header {
     padding: 0 3rem;
@@ -148,10 +149,103 @@ body {
     width: 5rem;
   }
 }
+.nav {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.nav__header {
+  background-color: rgba(88, 136, 156, 0.9);
+  position: fixed;
+  z-index: 3;
+  width: 100%;
+  height: 6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1600px;
+}
+
+.nav__header-bag {
+  background-color: #58889C;
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  height: 6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1600px;
+}
+
+.nav__logo {
+  width: 10rem;
+  margin: 0.75rem 0 0 1.5rem;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.nav__burger {
+  height: 2rem;
+  width: 2rem;
+  margin: 0 2rem;
+  cursor: pointer;
+}
+
+.nav__links {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+.nav__links .nav__right {
+  font-family: "Open Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+  list-style: none;
+  background-color: #58889C;
+  width: 100px;
+  position: fixed;
+  padding: 2.5rem;
+  transition: margin-right 0.3s ease-in-out;
+  z-index: 3;
+}
+.nav__links .nav__right .nav__close {
+  align-self: flex-end;
+  border: none;
+  font-weight: bold;
+  margin: -1rem -1rem 0 0;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.nav__links .nav__right .nav__link {
+  margin: 1.5rem 0;
+}
+.nav__links .nav__right .nav__link a {
+  cursor: pointer;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: #fff;
+}
+
+@media screen and (min-width: 768px) {
+  .nav .nav__header .nav__logo,
+  .nav .nav__header-bag .nav__logo {
+    width: 12rem;
+    margin: 1rem 0 0 4rem;
+  }
+  .nav .nav__header .nav__burger,
+  .nav .nav__header-bag .nav__burger {
+    margin: 0 4rem;
+  }
+}
 .details {
   font-family: "Open Sans", sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.5px;
   min-height: 100vh;
   height: 100%;
   display: flex;
@@ -336,6 +430,10 @@ body {
   height: 25rem;
   margin-bottom: 5rem;
 }
+.products .products__container a {
+  text-decoration: none;
+  color: black;
+}
 
 .card {
   display: flex;
@@ -345,12 +443,12 @@ body {
   margin-top: 2rem;
   width: 60%;
   max-width: 15rem;
-  min-width: 12rem;
+  min-width: 11rem;
   background: #fff;
 }
 .card .card__image {
   max-width: 100%;
-  height: 12rem;
+  height: 11rem;
   object-fit: cover;
 }
 .card .card__info {
@@ -759,7 +857,7 @@ body {
 
 .footer {
   height: 15vh;
-  background-color: #7B4734;
+  background-color: #58889C;
   display: flex;
   flex-direction: column;
   align-items: center;
