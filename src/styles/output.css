@@ -210,6 +210,7 @@ body {
   }
   .details .details__info .details__info-product {
     flex-direction: column;
+    margin-top: 0;
   }
   .details .details__info .details__info-product .details__info-img-container {
     width: 80%;
@@ -305,15 +306,23 @@ body {
   font-size: 1.2rem;
   color: black;
   border-radius: 50%;
-  height: 1rem;
-  width: 1rem;
+  height: 1.5rem;
+  width: 1.5rem;
   border: 1px solid black;
-  margin: 0;
   position: absolute;
   top: -10px;
   right: -10px;
 }
 
+@media (min-width: 800px) {
+  .details-order-form__selection-pair select:hover {
+    cursor: pointer;
+    border: 2px solid #7B4734;
+  }
+  .details-order-form__submit-btn:hover {
+    cursor: pointer;
+  }
+}
 .products {
   font-family: "Roboto", sans-serif;
   background-color: #F4F4F4;
@@ -585,12 +594,12 @@ body {
   text-align: center;
   width: 2.1rem;
   padding: 15px;
-  color: #7B4734;
+  color: #867C77;
   border-radius: 12px;
   border: 1px solid #7B4734;
 }
 .size-options-container .multiple-choice-container input:checked + label {
-  background-color: #7B4734;
+  background-color: #867C77;
   color: white;
 }
 .size-options-container .single-choice-container {
@@ -611,6 +620,12 @@ body {
   color: white;
 }
 
+@media (min-width: 800px) {
+  .multiple-choice-container label:hover {
+    cursor: pointer;
+    background-color: #D9CFC9;
+  }
+}
 .about {
   font-family: "Roboto", sans-serif;
   min-height: 100vh;

@@ -14,12 +14,12 @@
       text-align: center;
       width: 2.1rem;
       padding: 15px;
-      color: v.$primary-accent-color;
+      color: v.$secondary-accent-color;
       border-radius: 12px;
       border: 1px solid v.$primary-accent-color;
     }
     input:checked+label {
-      background-color: v.$primary-accent-color;
+      background-color: v.$secondary-accent-color;
       color: white;
     }
   }
@@ -38,6 +38,15 @@
     input:checked+label {
       background-color: black;
       color: white;
+    }
+  }
+}
+
+@media (min-width: 800px) {
+  .multiple-choice-container {
+    label:hover {
+      cursor: pointer;
+      background-color: v.$ternary-accent-color;
     }
   }
 }
