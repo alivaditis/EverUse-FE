@@ -1,3 +1,5 @@
+// SIZE OPTIONS CONTAINER COMPONENT //
+
 const SizeOptionsContainer = ({isSingleSize, handleSelect}) => {
 
   return (

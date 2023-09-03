@@ -1,3 +1,5 @@
+// EMPTY COMPONENT //
+
 import '../styles/_Empty.scss'
 
 const Empty = () => {

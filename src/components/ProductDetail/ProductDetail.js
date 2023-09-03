@@ -1,3 +1,5 @@
+// PRODUCT DETAIL COMPONENT //
+
 /* eslint-disable react-hooks/exhaustive-deps */
 
 import { useParams } from "react-router-dom";
