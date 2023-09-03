@@ -29,15 +29,8 @@
     input {
       display: none;
     }
-    label {
-      text-align: center;
-      width: 2.1rem;
-      padding: 15px;
-      border: 1px solid black;
-    }
     input:checked+label {
-      background-color: black;
-      color: white;
+      @include m.button-style;
     }
   }
 }

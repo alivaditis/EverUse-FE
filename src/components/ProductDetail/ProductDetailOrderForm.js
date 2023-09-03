@@ -15,11 +15,12 @@ const ProductDetailOrderForm = ({product, addToShoppingBag, shoppingBag, updateQ
   const [colorOptions, setColorOptions] = useState([]);
   const [isFormHealthy, setIsFormHealthy] = useState(false);
   const [totalQuantity, setTotalQuantity] = useState(0);
-  
+
   useEffect(() => {
     setColorOptions(product?.colorOptions)
     if (product.sizeOptions?.length === 1) {
       setIsSingleSize(true);
+      handleSelect('onesize', 'size')
     } else {
       setIsSingleSize(false);
     }
@@ -44,9 +45,9 @@ const ProductDetailOrderForm = ({product, addToShoppingBag, shoppingBag, updateQ
     }
   }
 
-  const handleSelect = (e, changedField) => {
+  const handleSelect = (value, changedField) => {
     const clonedInputs = {...inputFields};
-    clonedInputs[changedField] = e.target.value;
+    clonedInputs[changedField] = value;
     setInputFields(clonedInputs);
     checkFormHealth();
   }
@@ -104,13 +105,13 @@ const ProductDetailOrderForm = ({product, addToShoppingBag, shoppingBag, updateQ
       </div>
       <div className="details-order-form__selection-pair">
          <label className="details-order-form__selection-text details-order-form__color-options">Color:</label> 
-         <select id="colorOptions" className={!inputFields.color? "details-order-form__faded":""} value={inputFields.color} onChange={(e)=> {handleSelect(e, "color")}}>
+         <select id="colorOptions" className={!inputFields.color? "details-order-form__faded":""} value={inputFields.color} onChange={(e)=> {handleSelect(e.target.value, "color")}}>
           <ColorOptionsCode />
          </select>
       </div>
       <div className="details-order-form__selection-pair">
          <label className="details-order-form__selection-text details-order-form__quantity-options">Quantity:</label> 
-         <select id="quantityOptions" className={!inputFields.quantity? "details-order-form__faded":""} value={inputFields.quantity} onChange={(e) => {handleSelect(e, "quantity")}}>
+         <select id="quantityOptions" className={!inputFields.quantity? "details-order-form__faded":""} value={inputFields.quantity} onChange={(e) => {handleSelect(e.target.value, "quantity")}}>
             <option value={1}> 1 </option>
             <option value={2}> 2 </option>
             <option value={3}> 3 </option>

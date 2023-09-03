@@ -609,15 +609,11 @@ body {
 .size-options-container .single-choice-container input {
   display: none;
 }
-.size-options-container .single-choice-container label {
-  text-align: center;
-  width: 2.1rem;
-  padding: 15px;
-  border: 1px solid black;
-}
 .size-options-container .single-choice-container input:checked + label {
-  background-color: black;
-  color: white;
+  background-color: #867C77;
+  padding: 1rem;
+  border-radius: 30px;
+  color: #FFFFFF;
 }
 
 @media (min-width: 800px) {
