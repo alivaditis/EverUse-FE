@@ -7,7 +7,6 @@ describe('checkout', () => {
     cy.clearCookies()
     cy.fillCart()
     cy.visit('http://localhost:3000/checkout')
-    cy.wait('@GetAllItems')
   })
   it('All elements should be on the page and contain the correct values', () => {
     cy.get('h3').first().contains('Order Request')
@@ -77,7 +76,6 @@ describe('checkout', () => {
     })
   it('the user should have same items in cart on refresh', () => {
     cy.reload()
-      .wait("@GetAllItems")
       .get('.checkout__item').should('have.length', '3')
       .get('.checkout__item').first().contains('b', '2x Bracelet')
       .get('.checkout__item').first().contains('p', 'Color: moss')
