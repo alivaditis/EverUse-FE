@@ -17,7 +17,7 @@ const Home = ({itemsForDisplay, setItems}) => {
     if (!itemsForDisplay.length && !loading && !error) {
       setItems(data.products);
     }
-  }, [data]);
+  }, [data, itemsForDisplay.length, loading, error, setItems]);
 
   return (
     <>
