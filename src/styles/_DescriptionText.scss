@@ -2,8 +2,7 @@
 @use 'mixins' as m;
 
 .product-description-text {
-  display: flex;
-  flex-direction: column;
+  @include m.flex-column;
   width: 70%;
   font-size: 1.1rem;
 

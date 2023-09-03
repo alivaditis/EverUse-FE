@@ -31,6 +31,7 @@ body {
   margin: auto;
   padding: 1rem;
   background-color: #FFFFFF;
+  min-width: 250px;
 }
 .checkout .checkout__summary h3 {
   font-family: "Open Sans", sans-serif;
@@ -67,8 +68,8 @@ body {
   }
   .checkout .checkout__container {
     display: flex;
-    flex-direction: row-reverse;
     justify-content: space-between;
+    flex-direction: row-reverse;
   }
   .checkout .checkout__summary, .checkout .checkout__form {
     margin: 0;
@@ -87,8 +88,8 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 .landing .landing__header {
   height: 25rem;
@@ -108,11 +109,11 @@ body {
 }
 .landing .landing__header .landing__button {
   display: flex;
-  justify-content: center;
   align-items: center;
   font-family: "Open Sans", sans-serif;
   font-weight: 700;
   letter-spacing: 0.5px;
+  justify-content: center;
   text-decoration: none;
   opacity: 0.8;
   padding: 0;
@@ -156,7 +157,7 @@ body {
   align-items: center;
 }
 
-.nav__header {
+.nav__header-landing {
   background-color: rgba(88, 136, 156, 0.9);
   position: fixed;
   z-index: 3;
@@ -168,14 +169,14 @@ body {
   max-width: 1600px;
 }
 
-.nav__header-bag {
+.nav__header {
+  display: flex;
+  justify-content: space-between;
   background-color: #58889C;
   position: relative;
   z-index: 3;
   width: 100%;
   height: 6rem;
-  display: flex;
-  justify-content: space-between;
   align-items: center;
   max-width: 1600px;
 }

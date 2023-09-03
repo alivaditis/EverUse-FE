@@ -24,9 +24,9 @@ const Nav = () => {
 
   useEffect(() => {
     if (location === "/") {
-      setNavClass("nav__header");
+      setNavClass("nav__header-landing");
     } else {
-      setNavClass("nav__header-bag");
+      setNavClass("nav__header");
     }
   }, [location]);
 

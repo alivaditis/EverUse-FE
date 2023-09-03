@@ -10,10 +10,9 @@
   margin: 0;
   padding: 2rem;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  @include m.vertically-aligned-flex;
   justify-content: center;
-  align-items: center;
+
   .landing__header {
     height: 25rem;
     display: flex;
@@ -28,10 +27,9 @@
       font-weight: 600;
     }
     .landing__button {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include m.horizontally-aligned-flex;
       @include m.header-font;
+      justify-content: center;
       text-decoration: none;
       opacity: 0.8;
       padding: 0;
