@@ -47,6 +47,7 @@
   display: flex;
   justify-content: flex-end;
   width: 100%;
+  @include m.body-font;
   .nav__right {
     @include m.flex-column;
     font-family: v.$font;
@@ -61,12 +62,11 @@
     z-index: 3;
     .nav__close {
       align-self: flex-end;
-      border: none;
-      font-weight: bold;
+      font-weight: 700;
+      color: v.$primary-text-color;
       margin: -1rem -1rem 0 0;
       height: 2rem;
       width: 2rem;
-      border-radius: 5px;
       cursor: pointer;
     }
     .nav__link {
