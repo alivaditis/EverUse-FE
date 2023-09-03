@@ -6,7 +6,6 @@ import '../styles/_Checkout.scss'
 import { camelToPascalCase } from '../helperFunctions'  
 import Nav from "./Nav/Nav";
 
-
 const Checkout = ({
   shoppingBag,
   totalPrice,
@@ -23,7 +22,7 @@ const Checkout = ({
     return <div className='checkout__item' key={item.id}>
       <div>
         <b>{item.quantity}x {camelToPascalCase(item.type)}</b>
-        <p>Color: {item.color}</p>
+        <p>Color: {camelToPascalCase(item.color)}</p>
         {item.size !== 'onesize' && <p>Size: {item.size}</p>}
       </div>
       <b>${(item.quantity * item.price).toFixed(2)}</b>
