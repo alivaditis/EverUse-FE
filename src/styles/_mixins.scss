@@ -1,3 +1,5 @@
+@use 'variables' as v;
+
 @mixin horizontally-aligned-flex {
   display: flex;
   align-items: center;
@@ -12,4 +14,11 @@
 @mixin space-between {
   display: flex;
   justify-content: space-between;
+}
+
+@mixin button-style {
+  background-color: v.$secondary-accent-color;
+  padding: 1rem;
+  border-radius: 30px;
+  color: v.$primary-text-color;
 }

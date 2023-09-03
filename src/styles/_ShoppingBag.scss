@@ -64,10 +64,7 @@
   .bag__button {
     align-self: center;
     text-decoration: none;
-    background-color: v.$secondary-accent-color;
-    padding: 1rem;
-    border-radius: 30px;
-    color: v.$primary-text-color;
+    @include m.button-style;
     margin: 1rem;
   }
 }
