@@ -43,6 +43,11 @@
       font-size: 1.5rem;
       @include m.body-font;
     }
+
+    select:hover {
+      cursor: pointer;
+      border: 2px solid v.$primary-accent-color;
+    }
   }
 
   .details-order-form__btn-container {
@@ -61,6 +66,10 @@
 
     .details-order-form__submit-btn {
       position: relative;
+    }
+
+    .details-order-form__submit-btn:hover {
+      cursor: pointer;
     }
 
     .details-order-form__faded-btn {
@@ -96,17 +105,5 @@
     .details-order-form__hidden {
       display: none;
     }
-  }
-}
-
-@media (min-width: 800px) {
-  .details-order-form__selection-pair {
-    select:hover {
-      cursor: pointer;
-      border: 2px solid v.$primary-accent-color;
-    }
-  }
-  .details-order-form__submit-btn:hover {
-    cursor: pointer;
   }
 }
