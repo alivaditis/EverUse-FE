@@ -3,12 +3,9 @@
 
 describe('nav', () => {
   beforeEach(() => {
-    cy.intercept('POST', 'https://everuse-be-b6017dbfcc94.herokuapp.com/graphql', {
-      statusCode: 201,
-      fixture: 'items.json'
-    }).as('getItems')
-    cy.visit('http://localhost:3000/')
-    cy.wait('@getItems')
+    cy.stubRequestsDynamically();
+    cy.visit('http://localhost:3000/');
+    cy.wait('@GetAllItems');
   })
 
   it('should display a nav bar with a logo and a hamburger menu', () => {

@@ -43,7 +43,7 @@ const Checkout = ({
         </div>
         <p>
           Requests will be sent to EverUse and followed up within 5 business
-          days. Payment through (methods) will be discussed over email.
+          days. Payment methods will be discussed over email.
         </p>
         <div className="checkout__container">
           <div className="checkout__summary">

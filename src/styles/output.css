@@ -81,7 +81,7 @@ body {
   background-image: url("../images/landing-bg.png");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: 0% center;
+  background-position: 10% center;
   margin: 0;
   padding: 2rem;
   min-height: 100vh;
@@ -135,6 +135,7 @@ body {
 @media screen and (min-width: 720px) {
   .landing {
     background-size: cover;
+    background-position: 0% center;
   }
   .landing .landing__header {
     padding: 0 3rem;
@@ -156,7 +157,7 @@ body {
 }
 
 .nav__header {
-  background-color: rgba(123, 71, 52, 0.75);
+  background-color: rgba(88, 136, 156, 0.9);
   position: fixed;
   z-index: 3;
   width: 100%;
@@ -168,7 +169,7 @@ body {
 }
 
 .nav__header-bag {
-  background-color: #9f5c43;
+  background-color: #58889C;
   position: relative;
   z-index: 3;
   width: 100%;
@@ -856,7 +857,7 @@ body {
 
 .footer {
   height: 15vh;
-  background-color: #7B4734;
+  background-color: #58889C;
   display: flex;
   flex-direction: column;
   align-items: center;

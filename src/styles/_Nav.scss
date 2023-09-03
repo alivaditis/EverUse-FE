@@ -8,7 +8,7 @@
 }
 
 .nav__header {
-  background-color: rgba(123, 71, 52, 0.75);
+  background-color: rgba(88, 136, 156, 0.9);
   position: fixed;
   z-index: 3;
   width: 100%;
@@ -20,7 +20,7 @@
 }
 
 .nav__header-bag {
-  background-color: lighten(rgba(123, 71, 52), 10%);
+  background-color: v.$secondary-background-color;
   position: relative;
   z-index: 3;
   width: 100%;
