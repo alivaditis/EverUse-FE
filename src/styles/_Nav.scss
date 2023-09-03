@@ -48,9 +48,8 @@
   justify-content: flex-end;
   width: 100%;
   .nav__right {
+    @include m.flex-column;
     font-family: v.$font;
-    display: flex;
-    flex-direction: column;
     height: 100vh;
     margin: 0;
     list-style: none;
@@ -85,7 +84,7 @@
 @media screen and (min-width: 768px) {
   .nav {
     .nav__header,
-    .nav__header-bag {
+    .nav__header-landing {
       .nav__logo {
         width: 12rem;
         margin: 1rem 0 0 4rem;

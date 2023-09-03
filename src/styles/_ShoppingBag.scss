@@ -41,8 +41,7 @@
   }
 
   .bag__summary {
-    display: flex;
-    flex-direction: column;
+    @include m.flex-column;
     background-color: v.$ternary-background-color;
     margin: 5px 0;
   }
@@ -58,11 +57,11 @@
   }
 
   .bag__button {
+    @include m.button-style;
+    @include m.body-font;
     align-self: center;
     text-decoration: none;
-    @include m.button-style;
     margin: 1rem;
-    @include m.body-font;
   }
 }
 
@@ -73,8 +72,8 @@
   margin: 5px 0;
 
   .item__img-container {
-    width: 35%;
     @include m.horizontally-aligned-flex;
+    width: 35%;
   }
 
   .item__img {

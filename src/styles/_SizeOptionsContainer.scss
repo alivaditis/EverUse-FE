@@ -4,9 +4,8 @@
 .size-options-container {
   width: 100%;
   .multiple-choice-container {
+    @include m.space-between;
     width: 100%;
-    display: flex;
-    justify-content: space-between;
     input {
       display: none;
     }

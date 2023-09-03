@@ -2,10 +2,10 @@
 @use 'mixins' as m;
 
 .details {
+  @include m.vertically-aligned-flex;
   font-family: v.$font;
   min-height: 100vh;
   height: 100%;
-  @include m.vertically-aligned-flex;
   overflow: auto;
   .details__header {
     background-image: url('../images/detail-horizontal-bg.jpg');
@@ -15,8 +15,8 @@
     align-items: center;
     padding: 3rem;
     .details__header-text {
-      font-size: 2rem;
       @include m.header-font;
+      font-size: 2rem;
       color: v.$primary-text-color;
       text-align: center;
     }
