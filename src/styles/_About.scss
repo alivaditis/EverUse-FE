@@ -6,8 +6,7 @@
   min-height: 100vh;
   background-color: v.$secondary-background-color;
   .about__header {
-    display: flex;
-    align-items: center;
+    @include m.horizontally-aligned-flex;
     font-size: 1.5rem;
     background-image: url('../images/about-bg.jpg');
     background-size: cover;

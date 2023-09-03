@@ -31,6 +31,7 @@ body {
   margin: auto;
   padding: 1rem;
   background-color: #FFFFFF;
+  min-width: 250px;
 }
 .checkout .checkout__summary h3 {
   font-family: "Open Sans", sans-serif;
@@ -67,8 +68,8 @@ body {
   }
   .checkout .checkout__container {
     display: flex;
-    flex-direction: row-reverse;
     justify-content: space-between;
+    flex-direction: row-reverse;
   }
   .checkout .checkout__summary, .checkout .checkout__form {
     margin: 0;
@@ -87,8 +88,8 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 .landing .landing__header {
   height: 25rem;
@@ -108,11 +109,11 @@ body {
 }
 .landing .landing__header .landing__button {
   display: flex;
-  justify-content: center;
   align-items: center;
   font-family: "Open Sans", sans-serif;
   font-weight: 700;
   letter-spacing: 0.5px;
+  justify-content: center;
   text-decoration: none;
   opacity: 0.8;
   padding: 0;
@@ -156,7 +157,7 @@ body {
   align-items: center;
 }
 
-.nav__header {
+.nav__header-landing {
   background-color: rgba(88, 136, 156, 0.9);
   position: fixed;
   z-index: 3;
@@ -168,14 +169,14 @@ body {
   max-width: 1600px;
 }
 
-.nav__header-bag {
+.nav__header {
+  display: flex;
+  justify-content: space-between;
   background-color: #58889C;
   position: relative;
   z-index: 3;
   width: 100%;
   height: 6rem;
-  display: flex;
-  justify-content: space-between;
   align-items: center;
   max-width: 1600px;
 }
@@ -200,9 +201,9 @@ body {
   width: 100%;
 }
 .nav__links .nav__right {
-  font-family: "Open Sans", sans-serif;
   display: flex;
   flex-direction: column;
+  font-family: "Open Sans", sans-serif;
   height: 100vh;
   margin: 0;
   list-style: none;
@@ -235,22 +236,22 @@ body {
 
 @media screen and (min-width: 768px) {
   .nav .nav__header .nav__logo,
-  .nav .nav__header-bag .nav__logo {
+  .nav .nav__header-landing .nav__logo {
     width: 12rem;
     margin: 1rem 0 0 4rem;
   }
   .nav .nav__header .nav__burger,
-  .nav .nav__header-bag .nav__burger {
+  .nav .nav__header-landing .nav__burger {
     margin: 0 4rem;
   }
 }
 .details {
-  font-family: "Open Sans", sans-serif;
-  min-height: 100vh;
-  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: "Open Sans", sans-serif;
+  min-height: 100vh;
+  height: 100%;
   overflow: auto;
 }
 .details .details__header {
@@ -262,10 +263,10 @@ body {
   padding: 3rem;
 }
 .details .details__header .details__header-text {
-  font-size: 2rem;
   font-family: "Open Sans", sans-serif;
   font-weight: 700;
   letter-spacing: 0.5px;
+  font-size: 2rem;
   color: #FFFFFF;
   text-align: center;
 }
@@ -322,23 +323,23 @@ body {
   }
 }
 .details-order-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 65%;
   border-radius: 15px;
   max-width: 400px;
   border: solid 1px #867C77;
   padding: 20px;
   margin-bottom: 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 .details-order-form .details-order-form__title {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
   letter-spacing: 0.5px;
+  justify-content: space-between;
   font-size: 1.6rem;
   width: 90%;
   color: #7B4734;
@@ -349,11 +350,11 @@ body {
   letter-spacing: 0.5px;
 }
 .details-order-form .details-order-form__selection-pair {
+  display: flex;
+  flex-direction: column;
   width: 90%;
   min-height: 5rem;
   margin: 10px;
-  display: flex;
-  flex-direction: column;
   justify-content: space-evenly;
   color: #7B4734;
 }
@@ -387,7 +388,8 @@ body {
   text-decoration: none;
   width: 40%;
 }
-.details-order-form .details-order-form__btn-container a .details-order-form__submit-btn, .details-order-form .details-order-form__btn-container a .details-order-form__faded-btn {
+.details-order-form .details-order-form__btn-container a .details-order-form__submit-btn,
+.details-order-form .details-order-form__btn-container a .details-order-form__faded-btn {
   width: 100%;
   padding: 0;
 }
@@ -404,11 +406,11 @@ body {
   display: none;
 }
 .details-order-form .details-order-form__btn-container .details-order-form__faded-btn {
-  width: 40%;
   background-color: #867C77;
   padding: 1rem;
   border-radius: 30px;
   color: #FFFFFF;
+  width: 40%;
   opacity: 0.6;
   padding: 0;
 }
@@ -574,16 +576,16 @@ body {
   margin: 0 5%;
 }
 .bag .bag__button {
-  align-self: center;
-  text-decoration: none;
   background-color: #867C77;
   padding: 1rem;
   border-radius: 30px;
   color: #FFFFFF;
-  margin: 1rem;
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
   letter-spacing: 0.5px;
+  align-self: center;
+  text-decoration: none;
+  margin: 1rem;
 }
 
 .item {
@@ -593,9 +595,9 @@ body {
   margin: 5px 0;
 }
 .item .item__img-container {
-  width: 35%;
   display: flex;
   align-items: center;
+  width: 35%;
 }
 .item .item__img {
   aspect-ratio: 4/3;
@@ -709,9 +711,9 @@ body {
   width: 100%;
 }
 .size-options-container .multiple-choice-container {
-  width: 100%;
   display: flex;
   justify-content: space-between;
+  width: 100%;
 }
 .size-options-container .multiple-choice-container input {
   display: none;

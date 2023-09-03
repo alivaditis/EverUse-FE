@@ -14,7 +14,6 @@ const Home = ({itemsForDisplay}) => {
       <About /> 
     </>
   )
-  
-}
+};
 
 export default Home;

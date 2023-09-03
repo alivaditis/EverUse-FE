@@ -6,8 +6,7 @@
   min-height: 400px;
   background-color: inherit;
   @include m.body-font;
-  display: flex;
-  flex-direction: column;
+  @include m.flex-column;
   h2, h3 {
     @include m.header-font;
   }

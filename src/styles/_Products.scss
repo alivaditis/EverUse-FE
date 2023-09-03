@@ -21,8 +21,7 @@
 }
 
 .card {
-  display: flex;
-  flex-direction: column;
+  @include m.flex-column;
   padding: 0.5rem;
   margin: auto;
   margin-top: 2rem;
@@ -37,7 +36,6 @@
   }
   .card__info {
     text-align: left;
-
     .card__name {
       font-size: 1.1rem;
       font-weight: normal;

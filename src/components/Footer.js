@@ -1,3 +1,5 @@
+// FOOTER COMPONENT //
+
 import logo from '../images/logo-white.png'
 import instagram from '../images/1024px-Instagram_icon.png'
 import '../styles/_Footer.scss'

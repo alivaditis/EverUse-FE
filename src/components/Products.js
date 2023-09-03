@@ -6,12 +6,9 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Pagination, Mousewheel, Keyboard, Navigation } from 'swiper/modules';
 import { Link } from 'react-router-dom';
+import { camelToPascalCase } from '../helperFunctions';
 
 const Products = ({itemsForDisplay}) => {
-
-  const formatItemName = (name) => {
-    return name.charAt(0).toUpperCase() + name.slice(1);
-  };
   
   const cards = itemsForDisplay.map(item => {
     return (
@@ -20,7 +17,7 @@ const Products = ({itemsForDisplay}) => {
             <div className="card">
               <img src={item.image} alt={item.name} className="card__image" />
               <div className="card__info">
-                <h2 className="card__name">{formatItemName(item.name)}</h2>
+                <h2 className="card__name">{camelToPascalCase(item.name)}</h2>
                 <p className="card__price">${item.price}</p>
               </div>
             </div>

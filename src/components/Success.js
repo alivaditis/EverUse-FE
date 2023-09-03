@@ -1,4 +1,6 @@
-import '../styles/_Success.scss'
+// SUCCESS COMPONENT // 
+
+import '../styles/_Success.scss';
 
 const Success = ({ successMessage, updateSuccessMessage }) => {
 
@@ -9,6 +11,6 @@ const Success = ({ successMessage, updateSuccessMessage }) => {
           <p>{successMessage}</p>
     </div>
     )
-}
+};
 
-export default Success
+export default Success;
