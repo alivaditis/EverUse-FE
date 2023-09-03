@@ -8,8 +8,7 @@ import { Link } from "react-router-dom";
 
 import "../../images/logo-white.png";
 
-const Nav = () => {
-  const [open, setOpen] = useState(false);
+const Nav = ({open, setOpen}) => {
   const [navClass, setNavClass] = useState("nav__header");
   const [home, setHome] = useState(true);
   const location = window.location.pathname;
@@ -17,15 +16,9 @@ const Nav = () => {
   useEffect(() => {
     if (location === "/") {
       setHome(true);
-    } else {
-      setHome(false);
-    }
-  }, [location]);
-
-  useEffect(() => {
-    if (location === "/") {
       setNavClass("nav__header-landing");
     } else {
+      setHome(false);
       setNavClass("nav__header");
     }
   }, [location]);

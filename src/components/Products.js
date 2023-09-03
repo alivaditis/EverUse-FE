@@ -8,7 +8,7 @@ import { Pagination, Mousewheel, Keyboard, Navigation } from 'swiper/modules';
 import { Link } from 'react-router-dom';
 import { camelToPascalCase } from '../helperFunctions';
 
-const Products = ({itemsForDisplay}) => {
+const Products = ({itemsForDisplay, setOpen}) => {
   
   const cards = itemsForDisplay.map(item => {
     return (
@@ -27,7 +27,7 @@ const Products = ({itemsForDisplay}) => {
   });
 
   return (
-    <div id="products" className="products">
+    <div id="products" className="products" onClick={() => {setOpen(false)}}>
       <h1 className="products__header">Products</h1>
       <div className="products__container">
         <Swiper

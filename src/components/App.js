@@ -1,8 +1,7 @@
 // APP COMPONENT //
 
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useQuery } from '@apollo/client';
-import { GET_ALL_ITEMS } from '../api';
+
 import { Route, Routes } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { useCookies } from 'react-cookie';
@@ -21,7 +20,7 @@ function App() {
   const [cookies, setCookie] = useCookies(['shoppingBag']);
   const [shoppingBag, setShoppingBag] = useState([])
     
-  const { loading, error, data } = useQuery(GET_ALL_ITEMS)
+
   const [totalPrice, setTotalPrice] = useState(0);
   const [items, setItems] = useState([]);
   const [itemsForDisplay, setItemsForDisplay] = useState([]);
@@ -82,11 +81,6 @@ function App() {
   }
 
   // eslint-disable-next-line no-unused-vars
-  useEffect(() => {
-    if (!items.length && !loading && !error) {
-      setItems(data.products);
-    }
-  }, [data]);
 
   useEffect(() => {
     const displayProducts = cleanFetchedData(items);
@@ -95,7 +89,7 @@ function App() {
 
   return (
     <div className="app">
-      {!loading && !error &&
+      
         <>
           {successMessage && <Success successMessage={successMessage} updateSuccessMessage={updateSuccessMessage}/>}
           <Routes>
@@ -103,6 +97,7 @@ function App() {
               path='/' 
               element={<Home 
                 itemsForDisplay={itemsForDisplay} 
+                setItems={setItems}
               />} 
             />
             <Route 
@@ -139,7 +134,7 @@ function App() {
           </Routes>
           <Footer />
         </>
-      }
+      
     </div>
   );
 }
