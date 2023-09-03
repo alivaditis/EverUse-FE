@@ -1,4 +1,5 @@
 // HOME COMPONENT //
+  // eslint-disable-next-line no-unused-vars
 
 import Landing from './Landing';
 import Products from './Products';
