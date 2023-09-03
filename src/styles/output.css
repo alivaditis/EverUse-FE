@@ -252,15 +252,19 @@ body {
   font-family: "Open Sans", sans-serif;
   min-height: 100vh;
   height: 100%;
+  width: 100%;
   overflow: auto;
+  background: #F4F4F4;
 }
 .details .details__header {
   background-image: url("../images/detail-horizontal-bg.jpg");
   background-size: cover;
   height: 15rem;
+  width: 100%;
   display: flex;
   align-items: center;
-  padding: 3rem;
+  justify-content: center;
+  padding: 3rem 0;
 }
 .details .details__header .details__header-text {
   font-family: "Open Sans", sans-serif;
