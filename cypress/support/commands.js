@@ -83,7 +83,7 @@ Cypress.Commands.add('fillCart', () => {
   cy.go("back");
   // Refactor once word spacing is fixed
   cy.get(".card")
-    .contains("DogLeash")
+    .contains("Dog Leash")
     .click();
   // Refactor once onesize auto-select is done
   cy.get("label")
