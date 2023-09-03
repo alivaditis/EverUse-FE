@@ -14,10 +14,12 @@
       text-align: center;
       width: 2.1rem;
       padding: 15px;
-      border: 1px solid black;
+      color: v.$primary-accent-color;
+      border-radius: 12px;
+      border: 1px solid v.$primary-accent-color;
     }
     input:checked+label {
-      background-color: black;
+      background-color: v.$primary-accent-color;
       color: white;
     }
   }
