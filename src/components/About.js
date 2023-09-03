@@ -1,8 +1,8 @@
 // ABOUT COMPONENT //
 
-const About = () => {
+const About = ({setOpen}) => {
   return (
-    <div className="about" id="about">
+    <div className="about" id="about" onClick={() => {setOpen(false)}}>
       <div className="about__header">
         <h1 className="about__header-text">About Us</h1>
       </div>
