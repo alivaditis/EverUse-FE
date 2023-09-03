@@ -20,8 +20,8 @@
   }
 
   .bag__empty {
-    @include m.vertically-aligned-flex;
-    justify-content: center;
+    @include m.true-center;
+    flex-direction: column;
     text-align: center;
     background-color: v.$ternary-background-color;
     width: 98%;
@@ -77,6 +77,7 @@
   }
 
   .item__img {
+    object-fit: cover;
     aspect-ratio: 4/3;
     max-width: 100%;
   }
@@ -88,8 +89,7 @@
   .item__info {
     width: 100%;
     margin-left: 1rem;
-    display: flex;
-    flex-direction: column;
+    @include m.flex-column;
     justify-content: space-around;
   }
 
@@ -114,8 +114,7 @@
     }
     
     .item__counter {
-      @include m.horizontally-aligned-flex;
-      justify-content: center;
+      @include m.true-center;
     }
 
     .item__quantity {
@@ -151,6 +150,14 @@
   }
 }
 
+@media screen and (min-width: 550px) {
+  .item {
+    .item__details {
+      font-size: 14px
+    }
+  }
+}
+
 @media screen and (min-width: 732px) {
   .bag {
     .bag__items,
@@ -173,7 +180,7 @@
 @media screen and (min-width: 850px) {
   .item {
     .item__details {
-      font-size: 14px
+      font-size: 16px
     }
   }
 }
