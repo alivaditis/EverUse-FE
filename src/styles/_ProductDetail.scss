@@ -2,7 +2,7 @@
 @use 'mixins' as m;
 
 .details {
-  font-family: v.$secondary-font;
+  font-family: v.$font;
   min-height: 100vh;
   height: 100%;
   @include m.vertically-aligned-flex;
@@ -16,8 +16,6 @@
     padding: 3rem;
     .details__header-text {
       font-size: 2rem;
-      // font-family: v.$secondary-font;
-      // font-weight: 600;
       @include m.header-font;
       color: v.$primary-text-color;
       text-align: center;
