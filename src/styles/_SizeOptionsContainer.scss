@@ -14,10 +14,12 @@
       text-align: center;
       width: 2.1rem;
       padding: 15px;
-      border: 1px solid black;
+      color: v.$secondary-accent-color;
+      border-radius: 12px;
+      border: 1px solid v.$primary-accent-color;
     }
     input:checked+label {
-      background-color: black;
+      background-color: v.$secondary-accent-color;
       color: white;
     }
   }
@@ -27,15 +29,17 @@
     input {
       display: none;
     }
-    label {
-      text-align: center;
-      width: 2.1rem;
-      padding: 15px;
-      border: 1px solid black;
-    }
     input:checked+label {
-      background-color: black;
-      color: white;
+      @include m.button-style;
+    }
+  }
+}
+
+@media (min-width: 800px) {
+  .multiple-choice-container {
+    label:hover {
+      cursor: pointer;
+      background-color: v.$ternary-accent-color;
     }
   }
 }

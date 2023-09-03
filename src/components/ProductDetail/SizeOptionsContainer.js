@@ -1,6 +1,7 @@
 const SizeOptionsContainer = ({isSingleSize, handleSelect}) => {
+
   return (
-    <div className="size-options-container" onChange={(e) => handleSelect(e, "size")}>
+    <div className="size-options-container" onChange={(e) => handleSelect(e.target.value, "size")}>
       {!isSingleSize && <div className="multiple-choice-container">
         <>
           <input type="radio" name="size-options" id="S" value="S" className="multiple-choice-option"/>
@@ -16,7 +17,7 @@ const SizeOptionsContainer = ({isSingleSize, handleSelect}) => {
         </>
       </div>}
       {isSingleSize && <div className="single-choice-container">
-        <input type="radio" name="size-options" id="onesize" value="onesize" className="single-choice-option"/>
+        <input checked type="radio" name="size-options" id="onesize" value="onesize" className="single-choice-option" readOnly/>
         <label htmlFor='onesize'>One Size</label>
       </div>}
     </div>

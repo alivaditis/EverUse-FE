@@ -315,6 +315,7 @@ body {
   }
   .details .details__info .details__info-product {
     flex-direction: column;
+    margin-top: 0;
   }
   .details .details__info .details__info-product .details__info-img-container {
     width: 80%;
@@ -322,8 +323,9 @@ body {
 }
 .details-order-form {
   width: 65%;
+  border-radius: 15px;
   max-width: 400px;
-  border: solid 1px black;
+  border: solid 1px #867C77;
   padding: 20px;
   margin-bottom: 30px;
   display: flex;
@@ -339,6 +341,7 @@ body {
   letter-spacing: 0.5px;
   font-size: 1.6rem;
   width: 90%;
+  color: #7B4734;
 }
 .details-order-form .details-order-form__selection-text {
   font-family: "Open Sans", sans-serif;
@@ -352,20 +355,26 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  color: #7B4734;
 }
 .details-order-form .details-order-form__selection-pair .details-order-form__selection-text {
   font-size: 1.4rem;
   margin: 5px;
 }
 .details-order-form .details-order-form__selection-pair .details-order-form__faded {
-  color: rgba(0, 0, 0, 0.4);
+  color: #867C77;
+  opacity: 0.8;
 }
 .details-order-form .details-order-form__selection-pair select {
+  text-align: center;
+  border: 1px solid #7B4734;
+  border-radius: 12px;
   height: 3rem;
   font-size: 1.5rem;
+  color: #7B4734;
 }
 .details-order-form .details-order-form__btn-container {
-  width: 80%;
+  width: 100%;
   display: flex;
   justify-content: space-evenly;
   margin: 10px;
@@ -380,22 +389,28 @@ body {
 }
 .details-order-form .details-order-form__btn-container a .details-order-form__submit-btn, .details-order-form .details-order-form__btn-container a .details-order-form__faded-btn {
   width: 100%;
+  padding: 0;
 }
 .details-order-form .details-order-form__btn-container .details-order-form__submit-btn {
-  width: 40%;
-  height: 3rem;
-  background-color: black;
-  color: white;
+  background-color: #867C77;
+  padding: 1rem;
+  border-radius: 30px;
+  color: #FFFFFF;
   position: relative;
+  padding: 0;
+  width: 40%;
 }
 .details-order-form .details-order-form__btn-container .details-order-form__submit-btn .details-order-form__hidden {
   display: none;
 }
 .details-order-form .details-order-form__btn-container .details-order-form__faded-btn {
   width: 40%;
-  height: 3rem;
-  background-color: rgba(0, 0, 0, 0.4);
-  color: white;
+  background-color: #867C77;
+  padding: 1rem;
+  border-radius: 30px;
+  color: #FFFFFF;
+  opacity: 0.6;
+  padding: 0;
 }
 .details-order-form .details-order-form__btn-container .details-order-form__cart-count {
   padding: 5px;
@@ -403,15 +418,23 @@ body {
   font-size: 1.2rem;
   color: black;
   border-radius: 50%;
-  height: 1rem;
-  width: 1rem;
+  height: 1.5rem;
+  width: 1.5rem;
   border: 1px solid black;
-  margin: 0;
   position: absolute;
   top: -10px;
   right: -10px;
 }
 
+@media (min-width: 800px) {
+  .details-order-form__selection-pair select:hover {
+    cursor: pointer;
+    border: 2px solid #7B4734;
+  }
+  .details-order-form__submit-btn:hover {
+    cursor: pointer;
+  }
+}
 .products {
   font-family: "Open Sans", sans-serif;
   font-weight: 700;
@@ -555,7 +578,7 @@ body {
   text-decoration: none;
   background-color: #867C77;
   padding: 1rem;
-  border-radius: 10px;
+  border-radius: 30px;
   color: #FFFFFF;
   margin: 1rem;
   font-family: "Open Sans", sans-serif;
@@ -697,10 +720,12 @@ body {
   text-align: center;
   width: 2.1rem;
   padding: 15px;
-  border: 1px solid black;
+  color: #867C77;
+  border-radius: 12px;
+  border: 1px solid #7B4734;
 }
 .size-options-container .multiple-choice-container input:checked + label {
-  background-color: black;
+  background-color: #867C77;
   color: white;
 }
 .size-options-container .single-choice-container {
@@ -710,17 +735,19 @@ body {
 .size-options-container .single-choice-container input {
   display: none;
 }
-.size-options-container .single-choice-container label {
-  text-align: center;
-  width: 2.1rem;
-  padding: 15px;
-  border: 1px solid black;
-}
 .size-options-container .single-choice-container input:checked + label {
-  background-color: black;
-  color: white;
+  background-color: #867C77;
+  padding: 1rem;
+  border-radius: 30px;
+  color: #FFFFFF;
 }
 
+@media (min-width: 800px) {
+  .multiple-choice-container label:hover {
+    cursor: pointer;
+    background-color: #D9CFC9;
+  }
+}
 .about {
   font-family: "Open Sans", sans-serif;
   font-weight: 700;

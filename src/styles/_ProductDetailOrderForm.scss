@@ -3,8 +3,9 @@
 
 .details-order-form {
   width: 65%;
+  border-radius: 15px;
   max-width: 400px;
-  border: solid 1px black;
+  border: solid 1px v.$secondary-accent-color;
   padding: 20px;
   margin-bottom: 30px;
   @include m.vertically-aligned-flex;
@@ -15,6 +16,7 @@
     @include m.body-font;
     font-size: 1.6rem;
     width: 90%;
+    color: v.$primary-accent-color;
  }
 
  .details-order-form__selection-text {
@@ -28,20 +30,27 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    color: v.$primary-accent-color;
     .details-order-form__selection-text {
       font-size: 1.4rem;
       margin: 5px;
     }
     .details-order-form__faded {
-      color: rgba(0, 0, 0, 0.4);
+      color: v.$secondary-accent-color;
+      opacity: 0.8;
     }
     select {
+      text-align: center;
+      border: 1px solid v.$primary-accent-color;
+      border-radius: 12px;
       height: 3rem;
       font-size: 1.5rem;
+      color: v.$primary-accent-color;
     }
  }
+
  .details-order-form__btn-container {
-  width: 80%;
+  width: 100%;
   display: flex;
   justify-content: space-evenly;
   margin: 10px;
@@ -54,16 +63,16 @@
     text-decoration: none;
     width: 40%;
     .details-order-form__submit-btn, .details-order-form__faded-btn {
-      width: 100%
+      width: 100%;
+      padding: 0
     }
   }
 
   .details-order-form__submit-btn {
-    width: 40%;
-    height: 3rem;
-    background-color: black;
-    color: white;
+    @include m.button-style;
     position: relative;
+    padding: 0;
+    width: 40%;
 
     .details-order-form__hidden {
       display: none;
@@ -72,9 +81,9 @@
   
    .details-order-form__faded-btn {
     width: 40%;
-    height: 3rem;
-    background-color: rgba(0, 0, 0, 0.4);
-    color: white;
+    @include m.button-style;
+    opacity: 0.6;
+    padding: 0;
    }
 
    .details-order-form__cart-count {
@@ -83,15 +92,24 @@
     font-size: 1.2rem;
     color: black;
     border-radius: 50%;
-    height: 1rem;
-    width: 1rem;
+    height: 1.5rem;
+    width: 1.5rem;
     border: 1px solid black;
-    margin: 0;
     position: absolute;
     top: -10px;
     right: -10px;
    }
  }
-  
- 
+}
+
+@media (min-width: 800px) {
+  .details-order-form__selection-pair {
+    select:hover {
+      cursor: pointer;
+      border: 2px solid v.$primary-accent-color;
+    }
+  }
+  .details-order-form__submit-btn:hover {
+    cursor: pointer;
+  }
 }

@@ -16,6 +16,13 @@
   justify-content: space-between;
 }
 
+@mixin button-style {
+  background-color: v.$secondary-accent-color;
+  padding: 1rem;
+  border-radius: 30px;
+  color: v.$primary-text-color;
+}
+
 @mixin header-font {
   font-family: v.$font;
   font-weight: 700;
