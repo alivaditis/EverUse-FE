@@ -9,6 +9,7 @@ import { GET_SINGLE_ITEM } from "../../api";
 import { useEffect, useState } from "react";
 import { cleanFetchedData } from "../../helperFunctions";
 import { loadErrorMessages, loadDevMessages } from "@apollo/client/dev";
+import LoadSpinner from "../LoadSpinner";
 
 if (process.env.NODE_ENV === "development") {
   loadDevMessages();
@@ -31,9 +32,11 @@ const ProductDetail = ({addToShoppingBag, shoppingBag, updateQuantity}) => {
   },[data]);
  
   return (
-    !error && !loading && <>
-      <div className="details">
+    <>
+      {loading && <LoadSpinner />}
+      {!error && !loading && <div className="details">
         <Nav />
+        
         <div className="details__header">
           <h2 className="details__header-text">Products handmade from upcycled climbing ropes in an effort to reduce waste</h2>
         </div>
@@ -46,7 +49,7 @@ const ProductDetail = ({addToShoppingBag, shoppingBag, updateQuantity}) => {
           </div>
           <ProductDetailOrderForm product={product} updateQuantity={updateQuantity} shoppingBag={shoppingBag} addToShoppingBag={addToShoppingBag}/>
         </div>
-      </div>
+      </div>}
     </>
   )
 }
