@@ -3,10 +3,13 @@
 <!-- PROJECT SHIELDS -->
 <img src="./src/images/logo-white.png" alt="Logo" width="200" height="200" margin="0">
 
+<!--  API KEY FOR CIRCLE CI 77487a9c4e7a05ab874ab41c0bb4690220dc2d3c -->
+
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
+[![Circle CI][circleci-badge]][issues-url]
 <!-- [![MIT License][license-shield]][license-url] -->
 
 
@@ -170,6 +173,7 @@ Additional features, functionality, and potential refactors:
 <!-- [license-shield]: https://img.shields.io/github/license/jcjurado3/civic_voice_plus_be.svg?style=for-the-badge -->
 <!-- [license-url]: https://github.com/jcjurado3/civic_voice_plus_be/blob/main/LICENSE.txt -->
 <!-- [linkedin-shield]: https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white -->
+[circleci-badge]: https://circleci.com/gh/EverUse/EverUse-FE.svg?style=svg
 [alec-li-url]: https://www.linkedin.com/in/alec-livaditis/
 [taranveer-li-url]: https://www.linkedin.com/in/taranveersingh93/
 [jamie-li-url]: https://www.linkedin.com/in/jamie-caudill/
