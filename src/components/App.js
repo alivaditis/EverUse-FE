@@ -23,7 +23,6 @@ function App() {
   const [items, setItems] = useState([]);
   const [itemsForDisplay, setItemsForDisplay] = useState([]);
   const [successMessage, setSuccessMessage] = useState('');
-  const [error, setError] = useState('');
 
   useEffect(() => {
     if (cookies.shoppingBag) {
