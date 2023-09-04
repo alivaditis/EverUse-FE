@@ -8,12 +8,12 @@ const RightNav = ({ openNav }) => {
   return (
     <>
       <div className="nav__right">
-        <img
-          src={require("../../images/arrow.png")}
-          alt="home"
-          className="nav__close"
+        <span
+          className="material-icons-round nav__close"
           onClick={openNav}
-        />
+        >
+          arrow_forward
+        </span>
         <li className="nav__link" onClick={openNav}>
           <Link
             to="products"

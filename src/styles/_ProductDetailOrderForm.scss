@@ -3,23 +3,26 @@
 
 .details-order-form {
   @include m.vertically-aligned-flex;
+  @include m.box-border;
   width: 65%;
-  border-radius: 15px;
   max-width: 400px;
-  border: solid 1px v.$secondary-accent-color;
   padding: 20px;
   margin-bottom: 30px;
+  background-color: v.$ternary-background-color;
   .details-order-form__title {
     @include m.horizontally-aligned-flex;
     @include m.body-font;
+    width: 90%;
     justify-content: space-between;
     font-size: 1.6rem;
-    width: 90%;
-    color: v.$primary-accent-color;
+    color: v.$secondary-text-color;
   }
 
   .details-order-form__selection-text {
     @include m.body-font;
+    color: v.$secondary-text-color;
+    font-size: 1.4rem;
+    margin: 5px;
   }
 
   .details-order-form__selection-pair {
@@ -28,22 +31,22 @@
     min-height: 5rem;
     margin: 10px;
     justify-content: space-evenly;
-    color: v.$primary-accent-color;
-    .details-order-form__selection-text {
-      font-size: 1.4rem;
-      margin: 5px;
-    }
+
     .details-order-form__faded {
       color: v.$secondary-accent-color;
       opacity: 0.8;
     }
     select {
       text-align: center;
-      border: 1px solid v.$primary-accent-color;
-      border-radius: 12px;
+      @include m.box-border;
       height: 3rem;
       font-size: 1.5rem;
-      color: v.$primary-accent-color;
+      @include m.body-font;
+    }
+
+    select:hover {
+      cursor: pointer;
+      border: 2px solid v.$primary-accent-color;
     }
   }
 
@@ -53,9 +56,28 @@
     justify-content: space-evenly;
     margin: 10px;
 
+    .details-order-form__submit-btn,
+    .details-order-form__faded-btn {
+      @include m.button-style;
+      @include m.body-font;
+      width: 40%;
+      padding: 0;
+    }
+
+    .details-order-form__submit-btn {
+      position: relative;
+    }
+
+    .details-order-form__submit-btn:hover {
+      cursor: pointer;
+    }
+
+    .details-order-form__faded-btn {
+      opacity: 0.6;
+    }
+
     a {
-      display: flex;
-      align-items: center;
+      @include m.horizontally-aligned-flex;
       padding: 0;
       margin: 0;
       text-decoration: none;
@@ -63,32 +85,13 @@
       .details-order-form__submit-btn,
       .details-order-form__faded-btn {
         width: 100%;
-        padding: 0;
       }
-    }
-
-    .details-order-form__submit-btn {
-      @include m.button-style;
-      position: relative;
-      padding: 0;
-      width: 40%;
-
-      .details-order-form__hidden {
-        display: none;
-      }
-    }
-
-    .details-order-form__faded-btn {
-      @include m.button-style;
-      width: 40%;
-      opacity: 0.6;
-      padding: 0;
     }
 
     .details-order-form__cart-count {
       padding: 5px;
       background-color: white;
-      font-size: 1.2rem;
+      font-size: 1rem;
       color: black;
       border-radius: 50%;
       height: 1.5rem;
@@ -98,17 +101,9 @@
       top: -10px;
       right: -10px;
     }
-  }
-}
 
-@media (min-width: 800px) {
-  .details-order-form__selection-pair {
-    select:hover {
-      cursor: pointer;
-      border: 2px solid v.$primary-accent-color;
+    .details-order-form__hidden {
+      display: none;
     }
-  }
-  .details-order-form__submit-btn:hover {
-    cursor: pointer;
   }
 }

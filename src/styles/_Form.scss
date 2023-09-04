@@ -24,9 +24,8 @@
   .checkout__form__submit {
     margin-top: 2rem;
     padding: 8px 10px;
-    width: 80px;
-    border-radius: 10px;
-    border: none;
+    width: 6rem;
+    @include m.button-style;
     text-decoration: none;
     background-color: v.$secondary-accent-color;
     color: v.$ternary-background-color;

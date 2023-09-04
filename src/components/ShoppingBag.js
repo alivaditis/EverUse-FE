@@ -49,7 +49,7 @@ const ShoppingBag = ({ shoppingBag, totalPrice, removeItemFromBag, updateQuantit
             <p>Order Subtotal:</p>
             <p className='bag__total'>${totalPrice}</p>
           </div>
-          <NavLink to='/checkout' className='bag__button'>Continue to Request</NavLink>
+          <NavLink to='/checkout' className='bag__button bag__button-submit'>Continue to Request</NavLink>
         </section>
       </div>
       :

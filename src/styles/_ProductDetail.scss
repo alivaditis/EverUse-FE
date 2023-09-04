@@ -6,19 +6,23 @@
   font-family: v.$font;
   min-height: 100vh;
   height: 100%;
+  width: 100%;
   overflow: auto;
+  background: v.$primary-background-color;
   .details__header {
     background-image: url('../images/detail-horizontal-bg.jpg');
     background-size: cover;
     height: 15rem;
-    display: flex;
-    align-items: center;
-    padding: 3rem;
+    width: 100%;
+    @include m.horizontally-aligned-flex;
+    justify-content: center;
+    padding: 3rem 0;
     .details__header-text {
       @include m.header-font;
       font-size: 2rem;
       color: v.$primary-text-color;
       text-align: center;
+      max-width: 85%;
     }
   }
   .details__info {

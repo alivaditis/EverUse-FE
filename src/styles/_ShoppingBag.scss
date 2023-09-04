@@ -7,6 +7,7 @@
   min-height: 100vh;
   width: 100%;
   margin: 0;
+  flex: 1;
 
   h2,
   h3,
@@ -20,8 +21,8 @@
   }
 
   .bag__empty {
-    @include m.vertically-aligned-flex;
-    justify-content: center;
+    @include m.true-center;
+    flex-direction: column;
     text-align: center;
     background-color: v.$ternary-background-color;
     width: 98%;
@@ -63,13 +64,18 @@
     text-decoration: none;
     margin: 1rem;
   }
+
+  .bag__button-submit {
+    margin-top: 3rem;
+  }
 }
 
 .item {
   background-color: v.$ternary-background-color;
   display: flex;
   padding: 8px;
-  margin: 5px 0;
+  margin: 10px 0;
+  box-shadow: 0px 1px 2px 0px v.$ternary-accent-color;
 
   .item__img-container {
     @include m.horizontally-aligned-flex;
@@ -77,6 +83,7 @@
   }
 
   .item__img {
+    object-fit: cover;
     aspect-ratio: 4/3;
     max-width: 100%;
   }
@@ -88,8 +95,7 @@
   .item__info {
     width: 100%;
     margin-left: 1rem;
-    display: flex;
-    flex-direction: column;
+    @include m.flex-column;
     justify-content: space-around;
   }
 
@@ -114,8 +120,7 @@
     }
     
     .item__counter {
-      @include m.horizontally-aligned-flex;
-      justify-content: center;
+      @include m.true-center;
     }
 
     .item__quantity {
@@ -151,6 +156,14 @@
   }
 }
 
+@media screen and (min-width: 550px) {
+  .item {
+    .item__details {
+      font-size: 14px
+    }
+  }
+}
+
 @media screen and (min-width: 732px) {
   .bag {
     .bag__items,
@@ -173,7 +186,7 @@
 @media screen and (min-width: 850px) {
   .item {
     .item__details {
-      font-size: 14px
+      font-size: 16px
     }
   }
 }

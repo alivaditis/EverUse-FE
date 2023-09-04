@@ -3,42 +3,42 @@
 
 .size-options-container {
   width: 100%;
-  .multiple-choice-container {
-    @include m.space-between;
-    width: 100%;
-    input {
-      display: none;
-    }
-    label {
-      text-align: center;
-      width: 2.1rem;
-      padding: 15px;
-      color: v.$secondary-accent-color;
-      border-radius: 12px;
-      border: 1px solid v.$primary-accent-color;
-    }
-    input:checked+label {
-      background-color: v.$secondary-accent-color;
-      color: white;
-    }
+
+  label {
+    text-align: center;
+    width: 2.1rem;
+    padding: 15px;
+    @include m.box-border;
   }
+
+  input:checked+label {
+    border: none;
+    background-color: v.$secondary-accent-color;
+    color: white;
+  }
+
+  input {
+    display: none;
+  }
+
+  .multiple-choice-container,
   .single-choice-container {
     width: 100%;
-    display: flex;
-    input {
-      display: none;
-    }
-    input:checked+label {
-      @include m.button-style;
-    }
   }
-}
 
-@media (min-width: 800px) {
   .multiple-choice-container {
+    @include m.space-between;
     label:hover {
       cursor: pointer;
       background-color: v.$ternary-accent-color;
+    }
+  }
+  
+  .single-choice-container {
+    display: flex;
+    input:checked+label {
+      padding: 10px 12px;
+      width: 3rem;
     }
   }
 }
