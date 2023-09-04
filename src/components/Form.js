@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { SUBMIT_REQUEST } from "../api";
+import { camelToPascalCase } from '../helperFunctions'  
 import CheckoutError from "./CheckoutError";
 import '../styles/_Form.scss';
 
@@ -48,9 +49,9 @@ const Form = ({ shoppingBag, totalPrice, emptyShoppingBag, updateSuccessMessage 
       newRequest.total = parseFloat(totalPrice)
       newRequest.products = shoppingBag.map(item => {
         return {
-          name: item.type,
-          color: item.color,
-          size: item.size,
+          name: camelToPascalCase(item.type),
+          color: camelToPascalCase(item.color),
+          size: camelToPascalCase(item.size),
           quantity: parseInt(item.quantity)
         }
       });
