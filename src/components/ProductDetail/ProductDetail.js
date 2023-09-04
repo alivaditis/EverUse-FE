@@ -40,7 +40,7 @@ const ProductDetail = ({addToShoppingBag, shoppingBag, updateQuantity}) => {
   return (
     <>
       {loading && <LoadSpinner />}
-      {!loading && data && <div className="details">
+      {!loading && <div className="details">
         <Nav />     
         <div className="details__header">
           <h2 className="details__header-text">Products handmade from upcycled climbing ropes in an effort to reduce waste</h2>
