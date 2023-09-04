@@ -51,13 +51,13 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-EverUse is a living breathing company that upcycles and repurposes discarded materials into jewelry and accessories. We aim to enhance the company's exposure and functionality by providing them with a full-stack web ecommerce application.
+EverUse is a living breathing company that upcycles and repurposes discarded materials into jewelry and accessories. We aim to enhance the company's exposure and functionality by providing them with a full-stack web application.
 
 In order to meet the business needs of this small company, we created a front end application focused on streamlining the user experience by beautifully displaying products and allowing buyers to easily place orders. After an order is submitted, the customer receives a detailed confirmation email, and the sellers receive an emailed order form containing the customer's contact information and requested items. Payment is handled externally, in line with the businesses current practices. 
 
 This application was built with scalability and longevity in mind, and we are proud to have created a website tailored to the company's specific needs.
 
-[See it in action.](https://everuse-fe-c2ebec288f10.herokuapp.com/)
+[See it in action](https://everuse-fe-c2ebec288f10.herokuapp.com/)
 
 Github repositories:
 * Front End: [![Github][Github]][project-fe-gh-url]
