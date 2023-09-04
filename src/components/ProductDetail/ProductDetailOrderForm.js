@@ -5,7 +5,7 @@
 import { useEffect, useState } from "react";
 import SizeOptionsContainer from "./SizeOptionsContainer";
 import { camelToPascalCase } from "../../helperFunctions";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const ProductDetailOrderForm = ({product, addToShoppingBag, shoppingBag, updateQuantity}) => {
   const [isSingleSize, setIsSingleSize] = useState(false);
@@ -17,7 +17,11 @@ const ProductDetailOrderForm = ({product, addToShoppingBag, shoppingBag, updateQ
   const [colorOptions, setColorOptions] = useState([]);
   const [isFormHealthy, setIsFormHealthy] = useState(false);
   const [totalQuantity, setTotalQuantity] = useState(0);
-
+  const navigate = useNavigate();
+  const navigateToCart = (e) => {
+    e.preventDefault();
+    navigate('/shopping-bag')
+  }
   useEffect(() => {
     setColorOptions(product?.colorOptions)
     if (product.sizeOptions?.length === 1) {
@@ -128,11 +132,11 @@ const ProductDetailOrderForm = ({product, addToShoppingBag, shoppingBag, updateQ
         <button disabled={!isFormHealthy} className={isFormHealthy? "details-order-form__submit-btn": "details-order-form__faded-btn"}  onClick={(e) => {saveItem(e)}}>
           Add to Bag
         </button>
-        <Link to={'/shopping-bag'}>
-          <button disabled={!shoppingBag.length} className={shoppingBag.length? "details-order-form__submit-btn": "details-order-form__faded-btn"}>
+        {/* <Link to={'/shopping-bag'}> */}
+          <button onClick={(e) => {navigateToCart(e)}} disabled={!shoppingBag.length} className={shoppingBag.length? "details-order-form__submit-btn": "details-order-form__faded-btn"}>
             <p> Cart <span className={totalQuantity? "details-order-form__cart-count": "details-order-form__hidden"}>{totalQuantity? totalQuantity: ""}</span></p>
           </button>
-        </Link>
+        {/* </Link> */}
       </div>
       
     </form>
