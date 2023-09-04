@@ -1,7 +1,7 @@
 <a name="readme-top"></a>
 
 <!-- PROJECT SHIELDS -->
-<img src="./src/images/logo-white.png" alt="Logo" width="200" height="200" margin="0">
+<img src="./src/images/logo-white.png" alt="Logo" width="800" margin="0">
 
 <!--  API KEY FOR CIRCLE CI 77487a9c4e7a05ab874ab41c0bb4690220dc2d3c -->
 
@@ -80,6 +80,7 @@ Github repositories:
 
 ### Built With
 
+* [![JavaScript][JavaScript]][JavaScript-url]
 * [![React][React]][React-url]
 * [![Sass][Sass]][Sass-url]
 * [![Cypress][Cypress]][Cypress-url]
@@ -87,9 +88,9 @@ Github repositories:
 * [![Circleci][Circleci]][CircleCI-url]
 * [![Graphql][GraphQL]][GraphQL-url]
 
-
+<!-- 
 EverUse uses these integrations:
-* [Sendgrid](https://docs.sendgrid.com/for-developers/sending-email/rubyonrails)
+* [Sendgrid](https://docs.sendgrid.com/for-developers/sending-email/rubyonrails) -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -186,6 +187,8 @@ Additional features, functionality, and potential refactors:
 [taranveer-gh-url]: https://github.com/taranveersingh93
 [jamie-gh-url]: https://github.com/JamieCaudill
 [rachel-gh-url]: https://github.com/rachelsoae
+[React]: https://img.shields.io/badge/JavaScript-%23F7DF1E?style=for-the-badge&logo=javascript&logoColor=white
+[React-url]: https://react.dev/
 [React]: https://img.shields.io/badge/React-%2361DAFB?style=for-the-badge&logo=react&logoColor=white
 [React-url]: https://react.dev/
 [Sass]: https://img.shields.io/badge/Sass-%23CC6699?style=for-the-badge&logo=sass&logoColor=white
