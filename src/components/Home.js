@@ -13,8 +13,13 @@ import { useEffect, useState } from 'react';
 const Home = ({itemsForDisplay, setItems}) => {
   const { loading, error, data } = useQuery(GET_ALL_ITEMS);
   const [open, setOpen] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   useEffect(() => {
+    if (error) {  
+      setErrorMessage(`${error.message} - Please try again later`);
+      console.log(error)
+    }
     if (!itemsForDisplay.length && !loading && !error) {
       setItems(data.products);
     }
@@ -29,7 +34,7 @@ const Home = ({itemsForDisplay, setItems}) => {
       {!loading && <>
       <Nav open={open} setOpen={setOpen}/>
       <Landing setOpen={setOpen}/>
-      <Products setOpen={setOpen} itemsForDisplay={itemsForDisplay} />
+      <Products setOpen={setOpen} itemsForDisplay={itemsForDisplay} errorMessage={errorMessage}/>
       <About setOpen={setOpen}/>
       </>}
     </>

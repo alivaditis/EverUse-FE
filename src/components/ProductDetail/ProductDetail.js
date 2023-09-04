@@ -20,6 +20,7 @@ if (process.env.NODE_ENV === "development") {
 
 const ProductDetail = ({addToShoppingBag, shoppingBag, updateQuantity}) => {
   const [product, setProduct] = useState({});
+  const [errorMessage, setErrorMessage] = useState('');
   const productID = useParams().productID;
   const { loading, error, data } = useQuery(GET_SINGLE_ITEM, {
     variables: {
@@ -28,20 +29,23 @@ const ProductDetail = ({addToShoppingBag, shoppingBag, updateQuantity}) => {
   });
 
   useEffect(() => {
+    if (error) {
+      setErrorMessage(`${error.message} - Please try again later`);
+    }
     if(!product?.name && data?.product && !loading) {
       setProduct(cleanFetchedData(data.product)[0]);
     }
-  },[data]);
+  },[data, error]);
  
   return (
     <>
       {loading && <LoadSpinner />}
-      {!error && !loading && <div className="details">
-        <Nav />
-        
+      {!loading && <div className="details">
+        <Nav />     
         <div className="details__header">
           <h2 className="details__header-text">Products handmade from upcycled climbing ropes in an effort to reduce waste</h2>
         </div>
+        {error ? <p className="details__error">{errorMessage}</p> :
         <div className="details__info">
           <div className="details__info-product">
             <div className="details__info-img-container">
@@ -50,7 +54,7 @@ const ProductDetail = ({addToShoppingBag, shoppingBag, updateQuantity}) => {
             <DescriptionText description={product.description} />
           </div>
           <ProductDetailOrderForm product={product} updateQuantity={updateQuantity} shoppingBag={shoppingBag} addToShoppingBag={addToShoppingBag}/>
-        </div>
+        </div>}
       </div>}
     </>
   )

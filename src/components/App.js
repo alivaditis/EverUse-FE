@@ -19,8 +19,6 @@ import { cleanFetchedData } from '../helperFunctions';
 function App() {
   const [cookies, setCookie] = useCookies(['shoppingBag']);
   const [shoppingBag, setShoppingBag] = useState([])
-    
-
   const [totalPrice, setTotalPrice] = useState(0);
   const [items, setItems] = useState([]);
   const [itemsForDisplay, setItemsForDisplay] = useState([]);
