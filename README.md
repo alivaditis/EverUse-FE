@@ -81,7 +81,7 @@ Github repositories:
 ### Built With
 
 * [![React][React]][React-url]
-* [![Sass][Cypress]][Sass-url]
+* [![Sass][Sass]][Sass-url]
 * [![Cypress][Cypress]][Cypress-url]
 * [![Heroku][Heroku]][Heroku-url]
 * [![Circleci][Circleci]][CircleCI-url]
