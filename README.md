@@ -1,13 +1,12 @@
 <a name="readme-top"></a>
 
 <!-- PROJECT SHIELDS -->
-<img src="./src/images/logo-white.png" alt="Logo" width="600" margin="0">
-
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 ![Circle CI][circleci-badge]
+
 
 <!-- PROJECT LOGO -->
 <br />
@@ -15,14 +14,11 @@
   <a href="https://everuse-fe-c2ebec288f10.herokuapp.com/">
     <img src="https://user-images.githubusercontent.com/118572701/265548814-8cc28897-0066-40a7-9f92-bb25de9c3247.png" alt="main page">
   </a>
-
-<h3 align="center">EverUse</h3>
-
+  <h3 align="center">EverUse</h3>
   <p align="center">
     Welcome to the front end repository for EverUse!
     EverUse is a web application built for the Turing School of Software and Design's Mod 4 Capstone project. Read more about project requirements:https://mod4.turing.edu/projects/capstone/
 </div>
-
 
 
 <!-- TABLE OF CONTENTS -->
@@ -55,11 +51,13 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Everuse is an ecommerce tool which ... *INSERT HERE*
+EverUse is a living breathing company that upcycles and repurposes the discarded materials into jewelry and accessories. We aim to enhance the company's exposure and functionality by providing them with a full-stack web ecommerce application.
 
-The back end application is an API built with the Rails framework. It exposes 3 POST endpoints utilizing GraphQL and is responsible for receiving requests, querying the internal database, and formatting JSON responses to send data to the front end application.
+In order to meet the business needs of this small company, we created a front end application focused on streamlining the user experience by beautifully displaying products and allowing buyers to easily place orders. After an order is submitted, the customer receives a detailed confirmation email, and the sellers receive an emailed order form containing the customer's contact information and requested items. Payment is handled externally, in line with the businesses current practices. 
 
-Our Production Site is available [here](https://everuse-fe-c2ebec288f10.herokuapp.com/)
+This application was built with scalability and longevity in mind, and we are proud to have created a website tailored to the company's specific needs.
+
+[See it in action.](https://everuse-fe-c2ebec288f10.herokuapp.com/)
 
 Github repositories:
 * Front End: [![Github][Github]][project-fe-gh-url]
@@ -96,36 +94,44 @@ To demo EverUse on your local machine, follow these steps:
 1. Clone the back end [here](https://github.com/EverUse/EverUse-BE)
 1. Follow instuctions in the back end repo `README`
 
-
-### Prerequisites
-
-<!-- * ruby 3.2.2 -->
-<!-- * Rails Version 7.0.6 -->
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 <!-- Testing -->
 # Testing
-
-Run `npm run cypress open` to view and run the test suite. *All tests passing at time of writing.*
+We utilized Cypress for all end-to-end user testing.
+Run `npm run cypress open` to view and run the test suite. 
+*All tests passing at time of writing.*
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 <!-- Technical Solutions -->
 ## Technical Solutions:
-As part of the Capstone project requirements, the EverUse backend team challenged ourselves to stretch technologies during the 14-day design and development process. We selected the following based on the challenges we anticipated facing while building out our MVP, and adjusted our choices to reflect our individual and team learning goals as well as blockers that came up during the course of working on the project.
+As part of the Capstone project requirements, the EverUse front end team challenged ourselves to learn new technologies within the 14-day design and development process. We selected the following based on the challenges we anticipated facing while building out our MVP, and adjusted our choices to reflect our individual and team learning goals as well as blockers that came up during the course of working on the project.
 
-### technical solutions
-* Challenge: insert
-* Solution: insert
+### GraphQL
+* Challenge: Flexiblity of network requests
+* Solution: GraphQL allowed us to use queries to obtain the exact data we needed at every stage of the application, streamlining our network request process.
+
+### React Swiper
+* Challenge: Ease of navigation on mobile
+* Solution: This application was designed with a mobile-first mindset. Because of the relatively small inventory size at this time, the design of the Products section was intentinoal, but the carousel feature limited navigability on mobile devices. We chose to use React Swiper to create a seamless scrolling experience, so all users can view inventory with ease.
+
+### React Cookies
+* Challenge: Data persistence without an assumed user
+* Solution: Because of the small scale of our MVP, user data was not created on the back end of the application. We implemented cookies to allow the current user to preserve their cart on page refresh. 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- Roadmap -->
 ## Roadmap
 Additional features, functionality, and potential refactors:
-  * insert here
+  * Refactor with TypeScript for type checking
+  * Create a "Continue Shopping" button that appears on every page
+  * Create a user profile with login that allows users to view their previous orders
+  * Create an admin profile and login that allows business owners to edit inventory details, including adding new products
+  * Add estimated shipping costs to Request Summary sections
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -142,7 +148,7 @@ Additional features, functionality, and potential refactors:
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* []()
+* Special thanks to [EverUse UpCycled Products](https://www.instagram.com/everuseproducts/?hl=en)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
