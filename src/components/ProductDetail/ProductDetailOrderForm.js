@@ -5,7 +5,7 @@
 import { useEffect, useState } from "react";
 import SizeOptionsContainer from "./SizeOptionsContainer";
 import { camelToPascalCase } from "../../helperFunctions";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const ProductDetailOrderForm = ({product, addToShoppingBag, shoppingBag, updateQuantity}) => {
   const [isSingleSize, setIsSingleSize] = useState(false);
