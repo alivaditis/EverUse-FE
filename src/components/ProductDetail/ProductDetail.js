@@ -20,7 +20,7 @@ if (process.env.NODE_ENV === "development") {
 
 const ProductDetail = ({addToShoppingBag, shoppingBag, updateQuantity}) => {
   const [product, setProduct] = useState({});
-  const [errorMessage, setErrorMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('We could not find the product you are looking for.');
   const productID = useParams().productID;
   const { loading, error, data } = useQuery(GET_SINGLE_ITEM, {
     variables: {
@@ -40,12 +40,12 @@ const ProductDetail = ({addToShoppingBag, shoppingBag, updateQuantity}) => {
   return (
     <>
       {loading && <LoadSpinner />}
-      {!loading && <div className="details">
+      {!loading && data && <div className="details">
         <Nav />     
         <div className="details__header">
           <h2 className="details__header-text">Products handmade from upcycled climbing ropes in an effort to reduce waste</h2>
         </div>
-        {error ? <p className="details__error">{errorMessage}</p> :
+        {error || !data.product.length ? <p className="details__error">{errorMessage}</p> :
         <div className="details__info">
           <div className="details__info-product">
             <div className="details__info-img-container">
