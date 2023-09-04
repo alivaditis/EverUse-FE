@@ -28,10 +28,6 @@
 
   .multiple-choice-container {
     @include m.space-between;
-    label:hover {
-      cursor: pointer;
-      background-color: v.$ternary-accent-color;
-    }
   }
   
   .single-choice-container {
@@ -39,6 +35,15 @@
     input:checked+label {
       padding: 10px 12px;
       width: 3rem;
+    }
+  }
+}
+
+@media (min-width: 800px) {
+  .multiple-choice-container {
+    label:hover {
+      cursor: pointer;
+      background-color: v.$ternary-accent-color;
     }
   }
 }
