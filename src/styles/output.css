@@ -752,10 +752,6 @@ body {
   display: flex;
   justify-content: space-between;
 }
-.size-options-container .multiple-choice-container label:hover {
-  cursor: pointer;
-  background-color: #D9CFC9;
-}
 .size-options-container .single-choice-container {
   display: flex;
 }
@@ -764,6 +760,12 @@ body {
   width: 3rem;
 }
 
+@media (min-width: 800px) {
+  .multiple-choice-container label:hover {
+    cursor: pointer;
+    background-color: #D9CFC9;
+  }
+}
 .about {
   font-family: "Open Sans", sans-serif;
   font-weight: 700;
