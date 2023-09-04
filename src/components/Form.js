@@ -51,7 +51,7 @@ const Form = ({ shoppingBag, totalPrice, emptyShoppingBag, updateSuccessMessage 
         return {
           name: camelToPascalCase(item.type),
           color: camelToPascalCase(item.color),
-          size: camelToPascalCase(item.size),
+          size: item.size,
           quantity: parseInt(item.quantity)
         }
       });
