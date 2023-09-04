@@ -36,6 +36,17 @@ Cypress.Commands.add('stubRequestsDynamically', () => {
   })
 });
 
+Cypress.Commands.add('stubErrorRequestsDynamically', () => {
+  cy.intercept('POST', 'https://everuse-be-b6017dbfcc94.herokuapp.com/graphql', (req) => {
+    req.alias = req.body.operationName;
+    const fixtureName = req.body.variables.name? `${req.body.variables.name}${req.body.operationName}GQL`: `${req.body.operationName}GQL`;
+    req.reply({
+      statusCode: 500,
+      fixture: fixtureName
+    });
+  })
+});
+
 Cypress.Commands.add('checkBagItem', (name, size, color, unitPrice, quantity) => {
   cy.get('.item__info').contains(`${name}`)
   cy.get('.item__spec').contains(`Size: ${size}`)
