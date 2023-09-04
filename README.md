@@ -107,8 +107,8 @@ To demo EverUse on your local machine, follow these steps:
 1. Run `npm  start` to view live in your browser
 
 ### Back End Repository
-1. Clone the front end [here](https://github.com/EverUse/EverUse-BE)
-1. Follow instuctions in the front end repo `README`
+1. Clone the back end [here](https://github.com/EverUse/EverUse-BE)
+1. Follow instuctions in the back end repo `README`
 
 
 ### Prerequisites
@@ -121,7 +121,8 @@ To demo EverUse on your local machine, follow these steps:
 <!-- Testing -->
 # Testing
 
-`npm run cypress open` will run the entire test suite. *All tests passing at time of writing.*
+Run `npm run cypress open` to view and run the test suite. *All tests passing at time of writing.*
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -172,7 +173,7 @@ Additional features, functionality, and potential refactors:
 [issues-url]: https://github.com/EverUse/EverUse-FE/issues
 <!-- [license-shield]: https://img.shields.io/github/license/jcjurado3/civic_voice_plus_be.svg?style=for-the-badge -->
 <!-- [license-url]: https://github.com/jcjurado3/civic_voice_plus_be/blob/main/LICENSE.txt -->
-<!-- [linkedin-shield]: https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white -->
+[linkedin-shield]: https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white
 [circleci-badge]: https://circleci.com/gh/EverUse/EverUse-FE.svg?style=svg
 [alec-li-url]: https://www.linkedin.com/in/alec-livaditis/
 [taranveer-li-url]: https://www.linkedin.com/in/taranveersingh93/
@@ -182,18 +183,18 @@ Additional features, functionality, and potential refactors:
 [project-fe-gh-url]: https://github.com/EverUse/EverUse-FE
 [project-be-gh-url]: https://github.com/EverUse/EverUse-BE
 [alec-gh-url]: https://github.com/alivaditis
-[taranver-gh-url]: https://github.com/taranveersingh93
+[taranveer-gh-url]: https://github.com/taranveersingh93
 [jamie-gh-url]: https://github.com/JamieCaudill
 [rachel-gh-url]: https://github.com/rachelsoae
-<!-- [Ruby]: https://img.shields.io/badge/Ruby-CC342D?style=for-the-badge&logo=ruby&logoColor=white -->
+[React]: https://img.shields.io/badge/React-%2361DAFB?style=for-the-badge&logo=react&logoColor=white
 [React-url]: https://react.dev/
-<!-- [Rails]: https://img.shields.io/badge/Ruby_on_Rails-CC0000?style=for-the-badge&logo=ruby-on-rails&logoColor=white -->
+[Sass]: https://img.shields.io/badge/Sass-%23CC6699?style=for-the-badge&logo=sass&logoColor=white
 [Sass-url]: https://sass-lang.com/
-<!-- [Postgres]: https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white -->
+[Cypress]: https://img.shields.io/badge/Cypress-%2317202C?style=for-the-badge&logo=cypress&logoColor=white
 [Cypress-url]: https://docs.cypress.io/guides/overview/why-cypress
 [Heroku]: https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white
 [Heroku-url]: https://devcenter.heroku.com/articles/getting-started-with-rails7
 [CircleCI]: https://img.shields.io/badge/circleci-343434?style=for-the-badge&logo=circleci&logoColor=white
 [CircleCI-url]: https://circleci.com/
-[GraphQL]: https://graphql.org/
-[GraphQL-url]: https://img.shields.io/badge/Graphql-E10098?style=for-the-badge&logo=graphql&logoColor=white
+[GraphQL]: https://img.shields.io/badge/Graphql-E10098?style=for-the-badge&logo=graphql&logoColor=white
+[GraphQL-url]: https://graphql.org/
