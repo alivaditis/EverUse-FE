@@ -80,9 +80,9 @@ Github repositories:
 
 ### Built With
 
-* [![React][React]][Ruby-url]
-* [![Sass][Cypress]][Ruby-url]
-* [![Cypress][Cypress]][Ruby-url]
+* [![React][React]][React-url]
+* [![Sass][Cypress]][Sass-url]
+* [![Cypress][Cypress]][Cypress-url]
 * [![Heroku][Heroku]][Heroku-url]
 * [![Circleci][Circleci]][CircleCI-url]
 * [![Graphql][GraphQL]][GraphQL-url]
