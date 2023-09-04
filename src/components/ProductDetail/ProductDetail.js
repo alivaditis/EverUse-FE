@@ -28,6 +28,9 @@ const ProductDetail = ({addToShoppingBag, shoppingBag, updateQuantity}) => {
   });
 
   useEffect(() => {
+    if (error) {
+      console.log(error);
+    }
     if(!product?.name && data?.product && !loading) {
       setProduct(cleanFetchedData(data.product)[0]);
     }

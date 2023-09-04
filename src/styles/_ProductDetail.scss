@@ -16,10 +16,11 @@
     width: 100%;
     @include m.horizontally-aligned-flex;
     justify-content: center;
-    padding: 3rem 0;
+    padding: 3rem;
     .details__header-text {
       @include m.header-font;
       font-size: 2rem;
+      padding: 0 2rem;
       color: v.$primary-text-color;
       text-align: center;
     }
