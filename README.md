@@ -1,24 +1,19 @@
 <a name="readme-top"></a>
 
 <!-- PROJECT SHIELDS -->
-<img src="./src/images/logo-white.png" alt="Logo" width="800" margin="0">
-
-<!--  API KEY FOR CIRCLE CI 77487a9c4e7a05ab874ab41c0bb4690220dc2d3c -->
+<img src="./src/images/logo-white.png" alt="Logo" width="600" margin="0">
 
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-[![Circle CI][circleci-badge]][issues-url]
-<!-- [![MIT License][license-shield]][license-url] -->
-
+![Circle CI][circleci-badge]
 
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
   <a href="https://everuse-fe-c2ebec288f10.herokuapp.com/">
-    <!-- replace this image with updated screenshot -->
-    <img src="https://live.staticflickr.com/65535/53155716350_6f92c57155_b.jpg" alt="main page">
+    <img src="https://user-images.githubusercontent.com/118572701/265548814-8cc28897-0066-40a7-9f92-bb25de9c3247.png" alt="main page">
   </a>
 
 <h3 align="center">EverUse</h3>
@@ -43,17 +38,13 @@
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#Back End Repository">Back End Repository</a></li>
         <li><a href="#Front End Repository">Front End Repository</a></li>
+        <li><a href="#Back End Repository">Back End Repository</a></li>
       </ul>
     </li>
     <li><a href="#testing">Testing</a></li>
-    <li><a href="#DB Design">DB Design</a></li>
-    <li><a href="#Endpoints">Endpoints</a></li>
     <li><a href="#Technical Solutions">Technical Solutions</a></li>
-    <li><a href="#Roadmap">Roadmap</a></li>
-    <li><a href="#license">License</a></li>
+    <li><a href="#Roadmap">Roadmap</a></li
     <li><a href="#Project Contributor Contact Info">Project Contributor Contact Info</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
@@ -80,7 +71,7 @@ Github repositories:
 
 ### Built With
 
-* [![JavaScript][JavaScript]][JavaScript-url]
+* ![JavaScript][JavaScript]
 * [![React][React]][React-url]
 * [![Sass][Sass]][Sass-url]
 * [![Cypress][Cypress]][Cypress-url]
@@ -88,13 +79,7 @@ Github repositories:
 * [![Circleci][Circleci]][CircleCI-url]
 * [![Graphql][GraphQL]][GraphQL-url]
 
-<!-- 
-EverUse uses these integrations:
-* [Sendgrid](https://docs.sendgrid.com/for-developers/sending-email/rubyonrails) -->
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -164,18 +149,16 @@ Additional features, functionality, and potential refactors:
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-<!-- [contributors-shield]: https://img.shields.io/github/contributors/jcjurado3/civic_voice_plus_be.svg?style=for-the-badge -->
+[contributors-shield]: https://img.shields.io/github/contributors/EverUse/EverUse-FE.svg?style=flat
 [contributors-url]: https://github.com/EverUse/EverUse-FE/graphs/contributors
-<!-- [forks-shield]: https://img.shields.io/github/forks/jcjurado3/civic_voice_plus_be.svg?style=for-the-badge -->
+[forks-shield]: https://img.shields.io/github/forks/EverUse/EverUse-FE.svg?style=flat
 [forks-url]: https://github.com/EverUse/EverUse-FE/forks
-<!-- [stars-shield]: https://img.shields.io/github/stars/jcjurado3/civic_voice_plus_be.svg?style=for-the-badge -->
+[stars-shield]: https://img.shields.io/github/stars/EverUse/EverUse-FE.svg?style=flat
 [stars-url]: https://github.com/jcjurado3/civic_voice_plus_be/stargazers
-<!-- [issues-shield]: https://img.shields.io/github/issues/jcjurado3/civic_voice_plus_be.svg?style=for-the-badge -->
+[issues-shield]: https://img.shields.io/github/issues/EverUse/EverUse-FE.svg?style=flat
 [issues-url]: https://github.com/EverUse/EverUse-FE/issues
-<!-- [license-shield]: https://img.shields.io/github/license/jcjurado3/civic_voice_plus_be.svg?style=for-the-badge -->
-<!-- [license-url]: https://github.com/jcjurado3/civic_voice_plus_be/blob/main/LICENSE.txt -->
 [linkedin-shield]: https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white
-[circleci-badge]: https://circleci.com/gh/EverUse/EverUse-FE.svg?style=svg
+[circleci-badge]: https://circleci.com/gh/EverUse/EverUse-FE.svg?style=shield&circle-token=77487a9c4e7a05ab874ab41c0bb4690220dc2d3c
 [alec-li-url]: https://www.linkedin.com/in/alec-livaditis/
 [taranveer-li-url]: https://www.linkedin.com/in/taranveersingh93/
 [jamie-li-url]: https://www.linkedin.com/in/jamie-caudill/
@@ -187,9 +170,8 @@ Additional features, functionality, and potential refactors:
 [taranveer-gh-url]: https://github.com/taranveersingh93
 [jamie-gh-url]: https://github.com/JamieCaudill
 [rachel-gh-url]: https://github.com/rachelsoae
-[React]: https://img.shields.io/badge/JavaScript-%23F7DF1E?style=for-the-badge&logo=javascript&logoColor=white
-[React-url]: https://react.dev/
-[React]: https://img.shields.io/badge/React-%2361DAFB?style=for-the-badge&logo=react&logoColor=white
+[JavaScript]: https://img.shields.io/badge/JavaScript-%23F7DF1E?style=for-the-badge&logo=javascript&logoColor=black
+[React]: https://img.shields.io/badge/React-%2361DAFB?style=for-the-badge&logo=react&logoColor=black
 [React-url]: https://react.dev/
 [Sass]: https://img.shields.io/badge/Sass-%23CC6699?style=for-the-badge&logo=sass&logoColor=white
 [Sass-url]: https://sass-lang.com/
