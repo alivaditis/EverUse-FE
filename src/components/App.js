@@ -30,8 +30,14 @@ function App() {
     }
   }, [])  
 
+
+useEffect(() => {
+  console.log(cookies, "cookies")
+}, [cookies])
+
   useEffect(() => {
     setCookie('shoppingBag', shoppingBag)
+    console.log('shopping bag', shoppingBag)
   }, [shoppingBag])
 
   const addTotalPrice = () => {

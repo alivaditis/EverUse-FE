@@ -45,7 +45,7 @@ body {
   font-weight: bold;
   margin-top: auto;
   align-self: flex-end;
-  width: 70%;
+  width: 80%;
   margin-left: auto;
   border-bottom: solid black 2px;
 }
@@ -895,6 +895,14 @@ body {
   width: 70%;
   text-align: center;
   padding: 1rem;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+.success h2 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 .success .success__button {
   display: block;
