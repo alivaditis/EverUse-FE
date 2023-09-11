@@ -35,10 +35,9 @@ useEffect(() => {
   console.log(cookies, "cookies")
 }, [cookies])
 
-  useEffect(() => {
-    setCookie('shoppingBag', shoppingBag)
-    console.log('shopping bag', shoppingBag)
-  }, [shoppingBag])
+useEffect(() => {
+  setCookie('shoppingBag', shoppingBag, { path: '/' })
+}, [shoppingBag])
 
   const addTotalPrice = () => {
     const total = shoppingBag.reduce((price, item) => {
