@@ -28,15 +28,10 @@ function App() {
     if (cookies.shoppingBag) {
       setShoppingBag([...cookies.shoppingBag]);
     }
-  }, [])  
-
-
-useEffect(() => {
-  console.log(cookies, "cookies")
-}, [cookies])
+  }, []) 
 
 useEffect(() => {
-  setCookie('shoppingBag', shoppingBag, { path: '/' })
+  setCookie('shoppingBag', shoppingBag)
 }, [shoppingBag])
 
   const addTotalPrice = () => {
