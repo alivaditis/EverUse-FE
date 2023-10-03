@@ -5,8 +5,6 @@
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-![Circle CI][circleci-badge]
-
 
 <!-- PROJECT LOGO -->
 <br />
